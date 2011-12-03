@@ -13,16 +13,23 @@ import ca.charland.bgm.graph.ArrayCollection;
 import ca.charland.bgm.graph.Bubble;
 
 /**
+ * The Class ArrayCollectionTest.
+ *
  * @author mcharland
- * 
  */
 public class ArrayCollectionTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	public void test() {
 		assertNotNull(new ArrayCollection());
 	}
 
+	/**
+	 * Test add.
+	 */
 	@Test
 	public void testAdd() {
 		ArrayCollection ac = new ArrayCollection();
@@ -38,6 +45,9 @@ public class ArrayCollectionTest {
 				element.get(0));
 	}
 
+	/**
+	 * Test to string.
+	 */
 	@Test
 	public void testToString() {
 		ArrayCollection ac = new ArrayCollection();

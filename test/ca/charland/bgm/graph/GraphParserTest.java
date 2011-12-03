@@ -17,8 +17,9 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.GraphParser;
 
 /**
- * @author mcharland
+ * The Class GraphParserTest.
  *
+ * @author mcharland
  */
 public class GraphParserTest {
 

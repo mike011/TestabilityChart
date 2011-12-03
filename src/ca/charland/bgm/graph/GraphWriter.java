@@ -8,22 +8,45 @@ import java.util.Map;
 
 import ca.charland.bgm.FileAccessing;
 
+/**
+ * The Class GraphWriter.
+ */
 public class GraphWriter {
 
+	/** The _raw. */
 	private List<String> _raw;
+	
+	/** The _array collection. */
 	private List<ArrayCollection> _arrayCollection;
+	
+	/** The _bubble series. */
 	private List<String> _bubbleSeries;
+	
+	/** The _out. */
 	private StringBuffer _out;
 
+	/**
+	 * Instantiates a new graph writer.
+	 */
 	public GraphWriter() {
 		_arrayCollection = new ArrayList<ArrayCollection>();
 	}
 
+	/**
+	 * Load raw file.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean loadRawFile() {
 		_raw = FileAccessing.read("src/res/raw_graph.mxml");
 		return _raw != null;
 	}
 
+	/**
+	 * Adds the bubbles.
+	 *
+	 * @param changes the changes
+	 */
 	public void addBubbles(Map<String, ArrayList<Bubble>> changes) {
 		if (changes == null) {
 			return;
@@ -32,6 +55,11 @@ public class GraphWriter {
 
 	}
 
+	/**
+	 * Adds the data for bubbles.
+	 *
+	 * @param bubbles the bubbles
+	 */
 	public void addDataForBubbles(ArrayList<Bubble> bubbles) {
 		ArrayCollection ac = new ArrayCollection();
 		for(Bubble bubble : bubbles) {
@@ -40,10 +68,21 @@ public class GraphWriter {
 		_arrayCollection.add(ac);
 	}
 
+	/**
+	 * Gets the bubble data.
+	 *
+	 * @return the bubble data
+	 */
 	public List<ArrayCollection> getBubbleData() {
 		return _arrayCollection;
 	}
 
+	/**
+	 * Format.
+	 *
+	 * @param x the x
+	 * @return the string
+	 */
 	private String format(float x) {
 		StringBuilder sb = new StringBuilder();
 		// Send all output to the Appendable object sb
@@ -52,6 +91,11 @@ public class GraphWriter {
 		return sb.toString();
 	}
 
+	/**
+	 * Creates the output.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean createOutput() {
 		_out = new StringBuffer();
 		for (String line : _raw) {
@@ -65,6 +109,11 @@ public class GraphWriter {
 		return _out.length() != 0;
 	}
 
+	/**
+	 * Write file.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean writeFile() {
 
 		String out = "";

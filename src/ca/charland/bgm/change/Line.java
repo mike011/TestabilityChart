@@ -1,11 +1,26 @@
 package ca.charland.bgm.change;
 
+/**
+ * The Class Line.
+ */
 public class Line {
 	
+	/** The removed. */
 	private final String removed;
+	
+	/** The added. */
 	private final String added;
+	
+	/** The file. */
 	private final String file;
 
+	/**
+	 * Instantiates a new line.
+	 *
+	 * @param added the added
+	 * @param removed the removed
+	 * @param file the file
+	 */
 	public Line(String added, String removed, String file) {
 		this.added = added;
 		this.removed = removed;
@@ -13,6 +28,11 @@ public class Line {
 		
 	}
 	
+	/**
+	 * Gets the test diff.
+	 *
+	 * @return the test diff
+	 */
 	public int getTestDiff() {
 		int total = 0;
 		if(!isSource()) {
@@ -21,6 +41,11 @@ public class Line {
 		return total;
 	}
 	
+	/**
+	 * Gets the src diff.
+	 *
+	 * @return the src diff
+	 */
 	public int getSrcDiff() {
 		int total = 0;
 		if(isSource()) {
@@ -29,6 +54,11 @@ public class Line {
 		return total;
 	}
 	
+	/**
+	 * Gets the diff.
+	 *
+	 * @return the diff
+	 */
 	private int getDiff() {
 		int total = 0;
 		if(!removed.equals("-")) {
@@ -42,14 +72,27 @@ public class Line {
 		return total;
 	}
 
+	/**
+	 * Checks if is valid.
+	 *
+	 * @return true, if is valid
+	 */
 	public boolean isValid() {		
 		return !(removed.equals("-") && added.equals("-"));
 	}
 	
+	/**
+	 * Checks if is source.
+	 *
+	 * @return true, if is source
+	 */
 	public boolean isSource() {
 		return  isValid() && !file.contains("test");
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString() {
 		return file;
 	}

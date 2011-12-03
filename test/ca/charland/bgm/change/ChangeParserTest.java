@@ -18,11 +18,15 @@ import ca.charland.bgm.change.FileParser;
 import ca.charland.bgm.change.Line;
 
 /**
+ * The Class ChangeParserTest.
+ *
  * @author mcharland
- * 
  */
 public class ChangeParserTest {
 
+	/**
+	 * Test simple.
+	 */
 	@Test
 	public void testSimple() {
 		List<String> read = FileAccessing.read("test/res/simple.txt");
@@ -31,6 +35,9 @@ public class ChangeParserTest {
 		assertEquals(1, parse.size());
 	}
 
+	/**
+	 * Test two.
+	 */
 	@Test
 	public void testTwo() {
 		List<String> read = FileAccessing.read("test/res/two.txt");
@@ -44,6 +51,9 @@ public class ChangeParserTest {
 		assertEquals(change.getCoverage(), change2.getCoverage(), 0.1);
 	}
 
+	/**
+	 * Test parse line.
+	 */
 	@Test
 	public void testParseLine() {
 		Line line = FileParser.line("1	1	permissions.txt");

@@ -18,6 +18,12 @@ import java.util.List;
  */
 public class FileAccessing {
 
+	/**
+	 * Read.
+	 *
+	 * @param filename the filename
+	 * @return the list
+	 */
 	public static List<String> read(String filename) {
 
 		List<String> result = new ArrayList<String>();
@@ -54,6 +60,12 @@ public class FileAccessing {
 		return result;
 	}
 
+	/**
+	 * Write.
+	 *
+	 * @param filename the filename
+	 * @param contents the contents
+	 */
 	public static void write(String filename, String contents) {
 		try {
 			// Create file

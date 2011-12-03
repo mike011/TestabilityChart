@@ -16,11 +16,15 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.GraphWriter;
 
 /**
+ * The Class GraphWriterTest.
+ *
  * @author mcharland
- * 
  */
 public class GraphWriterTest {
 	
+	/**
+	 * Test load raw file.
+	 */
 	@Test
 	public void testLoadRawFile() {
 		GraphWriter graph = new GraphWriter();
@@ -30,6 +34,9 @@ public class GraphWriterTest {
 		Assert.assertTrue(loaded);
 	}
 
+	/**
+	 * Test add changes.
+	 */
 	@Test
 	public void testAddChanges() {
 		
@@ -42,6 +49,9 @@ public class GraphWriterTest {
 		graph.addBubbles(null);
 	}
 	
+	/**
+	 * Creates the output.
+	 */
 	@Test
 	public void createOutput() {
 		
@@ -59,6 +69,9 @@ public class GraphWriterTest {
 
 	}
 	
+	/**
+	 * Write file.
+	 */
 	@Test
 	public void writeFile() {
 		GraphWriter graph = new GraphWriter();
@@ -66,6 +79,9 @@ public class GraphWriterTest {
 		Assert.assertFalse(wrote);
 	}
 	
+	/**
+	 * Adds the data for bubbles.
+	 */
 	@Test
 	public void addDataForBubbles() {
 		GraphWriter graph = new GraphWriter();

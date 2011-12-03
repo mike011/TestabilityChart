@@ -12,8 +12,9 @@ import org.junit.Test;
 import ca.charland.bgm.FileAccessing;
 
 /**
- * @author mcharland
+ * The Class FileInputTest.
  *
+ * @author mcharland
  */
 public class FileInputTest {
 

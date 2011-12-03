@@ -5,15 +5,29 @@ import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * The Class ArrayCollection.
+ */
 public class ArrayCollection {
 
+	/** The elements. */
 	List<String> elements;
+	
+	/** The Constant NEW_LINE. */
 	private static final String NEW_LINE = "\r\n";
 
+	/**
+	 * Instantiates a new array collection.
+	 */
 	ArrayCollection() {
 		elements = new ArrayList<String>();
 	}
 
+	/**
+	 * Adds the.
+	 *
+	 * @param bubble the bubble
+	 */
 	public void add(Bubble bubble) {
 		StringBuffer bubblesData = new StringBuffer();
 		bubblesData.append("{\"Date\":").append(format(bubble.getX()));
@@ -23,6 +37,12 @@ public class ArrayCollection {
 		elements.add(bubblesData.toString());
 	}
 
+	/**
+	 * Format.
+	 *
+	 * @param x the x
+	 * @return the string
+	 */
 	private String format(float x) {
 		StringBuilder sb = new StringBuilder();
 		Formatter formatter = new Formatter(sb, Locale.US);
@@ -30,10 +50,18 @@ public class ArrayCollection {
 		return sb.toString();
 	}
 
+	/**
+	 * Gets the elements.
+	 *
+	 * @return the elements
+	 */
 	public List<String> getElements() {
 		return elements;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString() {
 		StringBuffer expected = new StringBuffer();
 		expected.append("[Bindable]").append(NEW_LINE);

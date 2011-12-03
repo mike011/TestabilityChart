@@ -8,8 +8,17 @@ import java.util.TreeMap;
 
 import ca.charland.bgm.change.Change;
 
+/**
+ * The Class GraphParser.
+ */
 public class GraphParser {
 
+	/**
+	 * Bubbles.
+	 *
+	 * @param changes the changes
+	 * @return the map
+	 */
 	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes) {
 
 		Map<String, ArrayList<Bubble>> series = new TreeMap<String, ArrayList<Bubble>>();

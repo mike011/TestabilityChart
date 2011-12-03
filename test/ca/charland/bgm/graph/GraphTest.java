@@ -16,8 +16,9 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.Graph;
 
 /**
- * @author mcharland
+ * The Class GraphTest.
  *
+ * @author mcharland
  */
 public class GraphTest {
 
@@ -29,6 +30,11 @@ public class GraphTest {
 		assertNotNull(new Graph(null));
 	}
 	
+	/**
+	 * Gets the normalized bubbles.
+	 *
+	 * @return the normalized bubbles
+	 */
 	@Test
 	public void getNormalizedBubbles() {
 		

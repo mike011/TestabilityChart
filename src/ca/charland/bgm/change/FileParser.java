@@ -3,8 +3,17 @@ package ca.charland.bgm.change;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class FileParser.
+ */
 public class FileParser {
 
+	/**
+	 * Changes.
+	 *
+	 * @param lines the lines
+	 * @return the list
+	 */
 	public static List<Change> changes(List<String> lines) {
 		List<Change> result = new ArrayList<Change>();
 
@@ -45,6 +54,12 @@ public class FileParser {
 		return result;
 	}
 
+	/**
+	 * Line.
+	 *
+	 * @param line the line
+	 * @return the line
+	 */
 	static Line line(String line) {
 		String[] splits = line.split("\t");
 		Line result = null;

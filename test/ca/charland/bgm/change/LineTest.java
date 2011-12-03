@@ -10,11 +10,15 @@ import org.junit.Test;
 import ca.charland.bgm.change.Line;
 
 /**
+ * The Class LineTest.
+ *
  * @author mcharland
- * 
  */
 public class LineTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	public void test() {
 		String added = "1";
@@ -22,6 +26,9 @@ public class LineTest {
 		assertNotNull(new Line(added, removed, "dank.tt"));
 	}
 
+	/**
+	 * Test get src diff.
+	 */
 	@Test
 	public void testGetSrcDiff() {
 		String added = "1";
@@ -36,6 +43,9 @@ public class LineTest {
 		assertEquals(0, test);
 	}
 	
+	/**
+	 * Test get test diff.
+	 */
 	@Test
 	public void testGetTestDiff() {
 		String added = "1";
@@ -51,6 +61,9 @@ public class LineTest {
 	}
 	
 
+	/**
+	 * Test get diff added.
+	 */
 	@Test
 	public void testGetDiffAdded() {
 		String added = "-";
@@ -63,6 +76,9 @@ public class LineTest {
 
 	}
 	
+	/**
+	 * Test get diff removed.
+	 */
 	@Test
 	public void testGetDiffRemoved() {
 		String added = "1";
@@ -75,6 +91,9 @@ public class LineTest {
 		
 	}
 	
+	/**
+	 * Testis valid yes.
+	 */
 	@Test
 	public void testisValidYes() {
 		String added = "1";
@@ -86,6 +105,9 @@ public class LineTest {
 		assertTrue(valid);
 	}
 	
+	/**
+	 * Testis valid yes2.
+	 */
 	@Test
 	public void testisValidYes2() {
 		String added = "-";
@@ -97,6 +119,9 @@ public class LineTest {
 		assertTrue(valid);
 	}
 	
+	/**
+	 * Testis valid yes3.
+	 */
 	@Test
 	public void testisValidYes3() {
 		String added = "3";
@@ -108,6 +133,9 @@ public class LineTest {
 		assertTrue(valid);
 	}
 	
+	/**
+	 * Testis valid no.
+	 */
 	@Test
 	public void testisValidNo() {
 		String added = "-";
@@ -119,6 +147,9 @@ public class LineTest {
 		assertFalse(valid);
 	}
 	
+	/**
+	 * Test is src.
+	 */
 	@Test
 	public void testIsSrc() {
 		String added = "6";
@@ -131,6 +162,9 @@ public class LineTest {
 		assertTrue(src);
 	}
 	
+	/**
+	 * Test is src no.
+	 */
 	@Test
 	public void testIsSrcNo() {
 		String added = "-";
@@ -143,6 +177,9 @@ public class LineTest {
 		assertFalse(src);
 	}
 	
+	/**
+	 * Test is src no2.
+	 */
 	@Test
 	public void testIsSrcNo2() {
 		String added = "6";
