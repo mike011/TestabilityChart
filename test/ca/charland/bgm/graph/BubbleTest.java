@@ -8,7 +8,7 @@ import org.junit.Test;
 import ca.charland.bgm.graph.Bubble;
 
 /**
- * The Class BubbleTest.
+ * Tests for Bubble.
  */
 public class BubbleTest {
 

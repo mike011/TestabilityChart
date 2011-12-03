@@ -9,7 +9,9 @@ import java.util.Map;
 import ca.charland.bgm.FileAccessing;
 
 /**
- * The Class GraphWriter.
+ * Creates the mxml file.
+ * 
+ * @author mcharland
  */
 public class GraphWriter {
 

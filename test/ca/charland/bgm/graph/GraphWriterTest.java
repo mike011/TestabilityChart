@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
@@ -16,7 +13,7 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.GraphWriter;
 
 /**
- * The Class GraphWriterTest.
+ * Tests for GraphWriter.
  *
  * @author mcharland
  */

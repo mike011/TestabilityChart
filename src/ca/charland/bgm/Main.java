@@ -12,7 +12,9 @@ import ca.charland.bgm.graph.GraphParser;
 import ca.charland.bgm.graph.GraphWriter;
 
 /**
- * The Class Main.
+ * The main entry point for the application.
+ * 
+ * @author mcharland
  */
 public class Main {
 

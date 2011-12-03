@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.charland.bgm.change;
 
 import static org.junit.Assert.assertEquals;
@@ -18,7 +15,7 @@ import ca.charland.bgm.change.FileParser;
 import ca.charland.bgm.change.Line;
 
 /**
- * The Class ChangeParserTest.
+ * Tests for ChangeParser.
  *
  * @author mcharland
  */

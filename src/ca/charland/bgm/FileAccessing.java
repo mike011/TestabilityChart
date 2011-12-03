@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This program reads a text file line by line and print to the console. It uses
- * FileOutputStream to read the file.
+ * The Class FileAccessing.
  * 
+ * @author mcharland
  */
 public class FileAccessing {
 

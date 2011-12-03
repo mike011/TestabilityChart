@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.charland.bgm.change;
 
 import static org.junit.Assert.assertEquals;
@@ -16,7 +13,7 @@ import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.Line;
 
 /**
- * The Class ChangeTest.
+ * Tests for Change.
  *
  * @author mcharland
  */

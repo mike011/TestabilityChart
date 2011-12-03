@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * The Class ArrayCollection.
+ * Data that will be printed to the mxml.
+ * 
+ * @author mcharland
  */
 public class ArrayCollection {
 

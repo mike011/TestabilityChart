@@ -9,14 +9,17 @@ import java.util.TreeMap;
 import ca.charland.bgm.change.Change;
 
 /**
- * The Class GraphParser.
+ * Parses data into context for the graph.
+ * 
+ * @author mcharland
  */
 public class GraphParser {
 
 	/**
 	 * Bubbles.
-	 *
-	 * @param changes the changes
+	 * 
+	 * @param changes
+	 *            the changes
 	 * @return the map
 	 */
 	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes) {
@@ -31,8 +34,8 @@ public class GraphParser {
 
 			String author = change.getAuthor();
 			if (!series.containsKey(author)) {
-				series.put(author, new ArrayList<Bubble>());				
-			} 
+				series.put(author, new ArrayList<Bubble>());
+			}
 			series.get(author).add(bubble);
 		}
 		return series;

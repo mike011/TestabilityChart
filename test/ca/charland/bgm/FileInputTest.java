@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.charland.bgm;
 
 import java.util.List;
@@ -12,7 +9,7 @@ import org.junit.Test;
 import ca.charland.bgm.FileAccessing;
 
 /**
- * The Class FileInputTest.
+ * Tests for FileInput.
  *
  * @author mcharland
  */

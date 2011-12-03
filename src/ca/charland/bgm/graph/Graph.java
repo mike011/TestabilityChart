@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * The Class Graph.
+ * Represents the Bubble Graph mxml.
+ * 
+ * @author mcharland
  */
 public class Graph {
 

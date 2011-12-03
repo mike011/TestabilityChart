@@ -1,16 +1,14 @@
-/**
- * 
- */
 package ca.charland.bgm.change;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import ca.charland.bgm.change.Line;
-
 /**
- * The Class LineTest.
+ * Tests for Line.
  *
  * @author mcharland
  */

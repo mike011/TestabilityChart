@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.charland.bgm.graph;
 
 import static org.junit.Assert.*;
@@ -17,7 +14,7 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.GraphParser;
 
 /**
- * The Class GraphParserTest.
+ * Test for GraphParser.
  *
  * @author mcharland
  */

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The Class FileParser.
+ * Parses the contents from the file into changes.
+ * 
+ * @author mcharland
  */
 public class FileParser {
 

@@ -6,7 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * The Class Change.
+ * Holds one change which is a commit into the repo.
+ * 
+ * @author mcharland
  */
 public class Change {
 

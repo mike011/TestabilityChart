@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertEquals;
@@ -16,7 +13,7 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.Graph;
 
 /**
- * The Class GraphTest.
+ * Tests for Graph.
  *
  * @author mcharland
  */

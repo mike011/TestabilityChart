@@ -1,7 +1,9 @@
 package ca.charland.bgm.graph;
 
 /**
- * The Class Bubble.
+ * A pretty Bubble.
+ * 
+ * @author mcharland
  */
 public class Bubble {
 
