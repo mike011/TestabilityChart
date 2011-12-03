@@ -1,0 +1,7 @@
+commit d4572ab6e5ef5a38ec6f14e05515897ea9587947
+Author: Michael Charland <mcharland@rim.com>
+Date:   Tue Nov 29 05:39:55 2011 -0500
+
+    adding Brian Vanpee and Emmanuel MacCaull
+
+1	1	permissions.txt
