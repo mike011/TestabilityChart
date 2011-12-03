@@ -3,17 +3,7 @@
      <mx:Script>  
   	<![CDATA[  
             import mx.collections.ArrayCollection;
-            [Bindable]
-            private var s1:ArrayCollection = new ArrayCollection( [
-                {"x": 20, "y": 10, "r":10 },
-                {"x": 40, "y": 5, "r":20 } ,
-                {"x": 60, "y": 0, "r":30 }]);
-                
-            [Bindable]
-            private var s2:ArrayCollection = new ArrayCollection( [
-                {"x": 20, "y": 50, "r":2 },
-                {"x": 40, "y": 75, "r":4 },
-                {"x": 60, "y": 100, "r":8 } ]);
+{1}
     ]]>
     </mx:Script>
     

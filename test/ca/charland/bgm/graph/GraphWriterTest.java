@@ -73,10 +73,9 @@ public class GraphWriterTest {
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 		bubbles.add(new Bubble(0, 0, 0));
 		graph.addDataForBubbles(bubbles);
-		List<String> bubbleData = graph.getBubbleData();
+		List<ArrayCollection> bubbleData = graph.getBubbleData();
 		
 		Assert.assertNotNull(bubbleData);
 		Assert.assertEquals(1, bubbleData.size());
-		Assert.assertEquals("{Date:0.00, Coverage:0.00, Size:0.00}\r\n", bubbleData.get(0));
 	}
 }

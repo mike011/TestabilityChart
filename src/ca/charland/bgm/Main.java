@@ -16,7 +16,7 @@ public class Main {
 	public static void main (String args[]) {
 		
 		// Gather change info.
-		List<String> lines = FileAccessing.read("/home/mcharland/colt/unittest/out.txt");		
+		List<String> lines = FileAccessing.read(args[0]);		
 		List<Change> changes = FileParser.changes(lines);		
 		
 		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);

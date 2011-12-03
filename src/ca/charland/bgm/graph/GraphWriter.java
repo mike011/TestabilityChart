@@ -11,13 +11,12 @@ import ca.charland.bgm.FileAccessing;
 public class GraphWriter {
 
 	private List<String> _raw;
-	private List<String> _bubbleData;
+	private List<ArrayCollection> _arrayCollection;
 	private List<String> _bubbleSeries;
-	private StringBuffer _bubbles;
 	private StringBuffer _out;
 
 	public GraphWriter() {
-		_bubbleData = new ArrayList<String>();
+		_arrayCollection = new ArrayList<ArrayCollection>();
 	}
 
 	public boolean loadRawFile() {
@@ -26,34 +25,23 @@ public class GraphWriter {
 	}
 
 	public void addBubbles(Map<String, ArrayList<Bubble>> changes) {
-		_bubbles = new StringBuffer();
 		if (changes == null) {
 			return;
 		}
+		
 
 	}
 
 	public void addDataForBubbles(ArrayList<Bubble> bubbles) {
-		StringBuffer bubblesData = new StringBuffer();
-		if (bubbles == null) {
-			return;
+		ArrayCollection ac = new ArrayCollection();
+		for(Bubble bubble : bubbles) {
+			ac.add(bubble);
 		}
-		for (int index = 0; index < bubbles.size(); index++) {
-			Bubble bubble = bubbles.get(index);
-			bubblesData.append("{Date:").append(format(bubble.getX()));
-			bubblesData.append(", Coverage:").append(format(bubble.getY()));
-			bubblesData.append(", Size:").append(format(bubble.getSize()));
-			bubblesData.append("}");
-			if (index + 1 < bubbles.size()) {
-				bubblesData.append(",");
-			}
-			bubblesData.append("\r\n");
-		}
-		_bubbleData.add(bubblesData.toString());
+		_arrayCollection.add(ac);
 	}
 
-	public List<String> getBubbleData() {
-		return _bubbleData;
+	public List<ArrayCollection> getBubbleData() {
+		return _arrayCollection;
 	}
 
 	private String format(float x) {
@@ -67,8 +55,9 @@ public class GraphWriter {
 	public boolean createOutput() {
 		_out = new StringBuffer();
 		for (String line : _raw) {
-			if (line.contains("{}")) {
-				line = _bubbles.toString();
+			if (line.contains("{1}")) {
+				for(ArrayCollection ac: _arrayCollection)
+				line = ac.toString();
 			}
 			_out.append(line);
 			_out.append("\r\n");

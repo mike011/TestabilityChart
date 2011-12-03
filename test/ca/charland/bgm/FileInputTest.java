@@ -32,7 +32,7 @@ public class FileInputTest {
 	 */
 	@Test
 	public void testReadAS() {
-		List<String> read = FileAccessing.read("src/res/graph.mxml");
+		List<String> read = FileAccessing.read("src/res/raw_graph.mxml");
 		Assert.assertNotNull(read);
 		Assert.assertTrue(read.size() > 0);
 	}
