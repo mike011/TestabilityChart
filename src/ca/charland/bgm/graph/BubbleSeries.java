@@ -7,10 +7,16 @@ package ca.charland.bgm.graph;
  * 
  */
 public class BubbleSeries {
-	
-	/** The _number. */
+
+	/** The number. */
 	private int _number;
 
+	/**
+	 * Instantiates a new bubble series.
+	 * 
+	 * @param number
+	 *            the number
+	 */
 	BubbleSeries(int number) {
 		_number = number;
 	}
