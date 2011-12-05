@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import ca.charland.bgm.FileAccessing;
 
@@ -15,14 +14,11 @@ import ca.charland.bgm.FileAccessing;
  */
 public class GraphWriter {
 
-	/** The _raw. */
+	/** The raw data from the MXML. */
 	private List<String> _raw;
 
-	/** The _array collection. */
-	private List<ArrayCollection> _arrayCollection;
-
-	/** The _bubble series. */
-	private List<BubbleSeries> _bubbleSeries;
+	/** The graph to write. */
+	private Graph _graph;
 
 	/** The output. */
 	private List<String> _out;
@@ -32,10 +28,12 @@ public class GraphWriter {
 
 	/**
 	 * Instantiates a new graph writer.
+	 * 
+	 * @param g
+	 *            The graph
 	 */
-	public GraphWriter() {
-		_arrayCollection = new ArrayList<ArrayCollection>();
-		_bubbleSeries = new ArrayList<BubbleSeries>();
+	public GraphWriter(Graph g) {
+		_graph = g;
 		_out = new ArrayList<String>();
 	}
 
@@ -47,48 +45,6 @@ public class GraphWriter {
 	public boolean loadRawFile() {
 		_raw = FileAccessing.read("src/res/raw_graph.mxml");
 		return _raw != null;
-	}
-
-	/**
-	 * Adds the bubbles.
-	 * 
-	 * @param changes
-	 *            the changes
-	 */
-	public void addBubbles(Map<String, ArrayList<Bubble>> changes) {
-		if (changes == null) {
-			return;
-		}
-		int x = 0;
-		for (String key : changes.keySet()) {
-			addDataForBubbles(x, changes.get(key));
-			_bubbleSeries.add(new BubbleSeries(x));
-			++x;
-		}
-	}
-
-	/**
-	 * Adds the data for bubbles.
-	 * @param i The index to identify the element.
-	 * 
-	 * @param bubbles
-	 *            the bubbles
-	 */
-	void addDataForBubbles(int i, ArrayList<Bubble> bubbles) {
-		ArrayCollection ac = new ArrayCollection(i);
-		for (Bubble bubble : bubbles) {
-			ac.add(bubble);
-		}
-		_arrayCollection.add(ac);
-	}
-
-	/**
-	 * Gets all the bubble data.
-	 * 
-	 * @return the bubble data
-	 */
-	public List<ArrayCollection> getAllBubbleData() {
-		return _arrayCollection;
 	}
 
 	/**
@@ -113,11 +69,11 @@ public class GraphWriter {
 	public boolean createOutput() {
 		for (String line : _raw) {
 			if (line.startsWith("{1}")) {
-				for (ArrayCollection ac : _arrayCollection) {
+				for (ArrayCollection ac : _graph.getAllBubbleData()) {
 					_out.add(ac.toString() + NEW_LINE);
 				}
 			} else if (line.startsWith("{2}")) {
-				for (BubbleSeries bc : _bubbleSeries) {
+				for (BubbleSeries bc : _graph.getAllBubbleSeries()) {
 					_out.add(bc.toString() + NEW_LINE);
 				}
 			} else {
@@ -146,15 +102,6 @@ public class GraphWriter {
 		}
 
 		return false;
-	}
-
-	/**
-	 * Gets all bubble series.
-	 * 
-	 * @return All bubble series
-	 */
-	public List<BubbleSeries> getAllBubbleSeries() {
-		return _bubbleSeries;
 	}
 
 	/**
