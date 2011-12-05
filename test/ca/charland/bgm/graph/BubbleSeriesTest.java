@@ -31,10 +31,10 @@ public class BubbleSeriesTest {
 		StringBuffer actual = new StringBuffer();
 		actual.append("<mx:BubbleSeries\r\n");
 		actual.append("dataProvider=\"{s2}\"\r\n");
-		actual.append("displayName=\"series1\"\r\n");
-		actual.append("xField=\"x\"\r\n");
-		actual.append("yField=\"y\"\r\n");
-		actual.append("radiusField=\"r\"\r\n");
+		actual.append("displayName=\"series2\"\r\n");
+		actual.append("xField=\"Date\"\r\n");
+		actual.append("yField=\"Coverage\"\r\n");
+		actual.append("radiusField=\"Size\"\r\n");
 		actual.append("/>\r\n");
 		Assert.assertEquals(actual.toString(), string);
 	}

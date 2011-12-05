@@ -19,7 +19,7 @@ public class ArrayCollectionTest {
 	 */
 	@Test
 	public void test() {
-		assertNotNull(new ArrayCollection());
+		assertNotNull(new ArrayCollection(0));
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class ArrayCollectionTest {
 	 */
 	@Test
 	public void testAdd() {
-		ArrayCollection ac = new ArrayCollection();
+		ArrayCollection ac = new ArrayCollection(2);
 		Bubble b = new Bubble(0, 0, 0);
 
 		ac.add(b);
@@ -45,7 +45,7 @@ public class ArrayCollectionTest {
 	 */
 	@Test
 	public void testToString() {
-		ArrayCollection ac = new ArrayCollection();
+		ArrayCollection ac = new ArrayCollection(134);
 		Bubble b = new Bubble(0, 0, 0);
 		ac.add(b);
 		
@@ -53,7 +53,27 @@ public class ArrayCollectionTest {
 		
 		StringBuffer expected = new StringBuffer();
 		expected.append("[Bindable]\r\n");
-		expected.append("private var s1:ArrayCollection = new ArrayCollection( [\r\n");
+		expected.append("private var s134:ArrayCollection = new ArrayCollection( [\r\n");
+		expected.append("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}\r\n");
+		expected.append("]);\r\n");
+		assertEquals(expected.toString(), out);
+	}
+
+	/**
+	 * Test to string.
+	 */
+	@Test
+	public void testToStringTwoLines() {
+		ArrayCollection ac = new ArrayCollection(3);
+		ac.add(new Bubble(0, 0, 0));
+		ac.add(new Bubble(0, 0, 0));
+		
+		String out = ac.toString();
+		
+		StringBuffer expected = new StringBuffer();
+		expected.append("[Bindable]\r\n");
+		expected.append("private var s3:ArrayCollection = new ArrayCollection( [\r\n");
+		expected.append("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00},\r\n");
 		expected.append("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}\r\n");
 		expected.append("]);\r\n");
 		assertEquals(expected.toString(), out);

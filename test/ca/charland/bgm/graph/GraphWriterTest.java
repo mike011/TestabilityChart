@@ -9,9 +9,6 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import ca.charland.bgm.change.Change;
-import ca.charland.bgm.change.Line;
-
 /**
  * Tests for GraphWriter.
  * 
@@ -25,11 +22,20 @@ public class GraphWriterTest {
 	@Test
 	public void testGraphWriter() {
 		GraphWriter graph = new GraphWriter();
-		
-		List<ArrayCollection> bubbleData = graph.getAllBubbleData();
-		Assert.assertNotNull(bubbleData);
-		List<BubbleSeries> bubbleSeries = graph.getAllBubbleSeries();
-		Assert.assertNotNull(bubbleSeries);
+
+		assertList(graph.getAllBubbleData());
+		assertList(graph.getAllBubbleSeries());
+		assertList(graph.getGeneratedMXML());
+	}
+
+	/**
+	 * Assert list.
+	 *
+	 * @param list the list
+	 */
+	private void assertList(List<?> list) {
+		Assert.assertNotNull(list);
+		Assert.assertEquals("Should be empty", 0, list.size());
 	}
 
 	/**
@@ -45,38 +51,58 @@ public class GraphWriterTest {
 	}
 
 	/**
-	 * Test add changes.
-	 */
-	@Test
-	public void testAddChanges() {
-
-		List<Change> changes = new ArrayList<Change>();
-		ArrayList<Line> lines = new ArrayList<Line>();
-		lines.add(new Line("2", "5", "bob.txt"));
-		changes.add(new Change(null, null,
-				"Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
-		GraphWriter graph = new GraphWriter();
-
-		graph.addBubbles(null);
-	}
-
-	/**
 	 * Creates the output.
 	 */
 	@Test
-	public void createOutput() {
+	public void testCreateOutput() {
 
-		List<Change> changes = new ArrayList<Change>();
-		ArrayList<Line> lines = new ArrayList<Line>();
-		lines.add(new Line("2", "5", "bob.txt"));
-		changes.add(new Change(null, null,
-				"Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		// Setup
 		GraphWriter graph = new GraphWriter();
 		graph.loadRawFile();
-		graph.addBubbles(null);
+		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
+		bubbles.add(new Bubble(0, 0, 0));
+		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
+		changes.put("b1", bubbles);
 
+		graph.addBubbles(changes);
+
+		// Exercise
 		boolean createOutput = graph.createOutput();
+
+		// Verify
 		Assert.assertTrue(createOutput);
+		List<String> out = graph.getGeneratedMXML();
+		assertParsed(out);
+
+	}
+
+	/**
+	 * Assert parsed.
+	 * 
+	 * @param out
+	 *            the out
+	 */
+	private void assertParsed(List<String> out) {
+		boolean one = false;
+		boolean two = false;
+		boolean data = false;
+		boolean series = false;
+		for (String line : out) {
+			if (line.contains("{1}")) {
+				one = true;
+			} else if (line.contains("private var s0:ArrayCollection = new ArrayCollection( [")) {
+				data = true;
+			}else if (line.contains("{2}")) {
+				two = true;
+			} else if (line.contains("<mx:BubbleSeries")) {
+				series = true;
+			}
+		}
+		Assert.assertFalse("data parsing string not removed", one);
+		Assert.assertTrue("data not added", data);
+		
+		Assert.assertFalse("series parsing not removed", two);
+		Assert.assertTrue("series not added", series);
 	}
 
 	/**
@@ -100,7 +126,7 @@ public class GraphWriterTest {
 		bubbles.add(new Bubble(0, 0, 0));
 
 		// Exercise
-		graph.addDataForBubbles(bubbles);
+		graph.addDataForBubbles(75, bubbles);
 
 		// Verify
 		List<ArrayCollection> bubbleData = graph.getAllBubbleData();
@@ -142,8 +168,36 @@ public class GraphWriterTest {
 		// Verify
 		List<ArrayCollection> bubbleData = graph.getAllBubbleData();
 		Assert.assertEquals(1, bubbleData.size());
-		
+
 		List<BubbleSeries> bubbleSeries = graph.getAllBubbleSeries();
 		Assert.assertEquals(1, bubbleSeries.size());
+	}
+	
+	/**
+	 * Test adding the bubbles.
+	 */
+	@Test
+	public void testAddBubblesTwo() {
+
+		// Setup
+		GraphWriter graph = new GraphWriter();
+		ArrayList<Bubble> bubblesOne = new ArrayList<Bubble>();
+		bubblesOne.add(new Bubble(0, 0, 0));
+		
+		ArrayList<Bubble> bubblesTwo = new ArrayList<Bubble>();
+		bubblesTwo.add(new Bubble(0, 0, 0));
+		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
+		changes.put("b1", bubblesOne);
+		changes.put("b2", bubblesTwo);
+
+		// Exercise
+		graph.addBubbles(changes);
+
+		// Verify
+		List<ArrayCollection> bubbleData = graph.getAllBubbleData();
+		Assert.assertEquals(2, bubbleData.size());
+
+		List<BubbleSeries> bubbleSeries = graph.getAllBubbleSeries();
+		Assert.assertEquals(2, bubbleSeries.size());
 	}
 }

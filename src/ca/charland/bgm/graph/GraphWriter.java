@@ -24,8 +24,11 @@ public class GraphWriter {
 	/** The _bubble series. */
 	private List<BubbleSeries> _bubbleSeries;
 
-	/** The _out. */
-	private StringBuffer _out;
+	/** The output. */
+	private List<String> _out;
+
+	/** The Constant NEW_LINE. */
+	static final String NEW_LINE = "\r\n";
 
 	/**
 	 * Instantiates a new graph writer.
@@ -33,6 +36,7 @@ public class GraphWriter {
 	public GraphWriter() {
 		_arrayCollection = new ArrayList<ArrayCollection>();
 		_bubbleSeries = new ArrayList<BubbleSeries>();
+		_out = new ArrayList<String>();
 	}
 
 	/**
@@ -57,19 +61,21 @@ public class GraphWriter {
 		}
 		int x = 0;
 		for (String key : changes.keySet()) {
-			addDataForBubbles(changes.get(key));
+			addDataForBubbles(x, changes.get(key));
 			_bubbleSeries.add(new BubbleSeries(x));
+			++x;
 		}
 	}
 
 	/**
 	 * Adds the data for bubbles.
+	 * @param i The index to identify the element.
 	 * 
 	 * @param bubbles
 	 *            the bubbles
 	 */
-	void addDataForBubbles(ArrayList<Bubble> bubbles) {
-		ArrayCollection ac = new ArrayCollection();
+	void addDataForBubbles(int i, ArrayList<Bubble> bubbles) {
+		ArrayCollection ac = new ArrayCollection(i);
 		for (Bubble bubble : bubbles) {
 			ac.add(bubble);
 		}
@@ -105,16 +111,20 @@ public class GraphWriter {
 	 * @return true, if successful
 	 */
 	public boolean createOutput() {
-		_out = new StringBuffer();
 		for (String line : _raw) {
-			if (line.contains("{1}")) {
-				for (ArrayCollection ac : _arrayCollection)
-					line = ac.toString();
+			if (line.startsWith("{1}")) {
+				for (ArrayCollection ac : _arrayCollection) {
+					_out.add(ac.toString() + NEW_LINE);
+				}
+			} else if (line.startsWith("{2}")) {
+				for (BubbleSeries bc : _bubbleSeries) {
+					_out.add(bc.toString() + NEW_LINE);
+				}
+			} else {
+				_out.add(line + NEW_LINE);
 			}
-			_out.append(line);
-			_out.append("\r\n");
 		}
-		return _out.length() != 0;
+		return _out.size() != 0;
 	}
 
 	/**
@@ -124,11 +134,13 @@ public class GraphWriter {
 	 */
 	public boolean writeFile() {
 
-		String out = "";
-		if (_out != null) {
-			out = _out.toString();
+		if (_out.size() > 0) {
+			StringBuffer out = new StringBuffer();
+			for (String line : _out) {
+				out.append(line);
+			}
 
-			FileAccessing.write("src/res/graph.mxml", out);
+			FileAccessing.write("src/res/graph.mxml", out.toString());
 
 			return true;
 		}
@@ -143,5 +155,14 @@ public class GraphWriter {
 	 */
 	public List<BubbleSeries> getAllBubbleSeries() {
 		return _bubbleSeries;
+	}
+
+	/**
+	 * Gets the generated MXML.
+	 * 
+	 * @return the generated MXML
+	 */
+	public List<String> getGeneratedMXML() {
+		return _out;
 	}
 }

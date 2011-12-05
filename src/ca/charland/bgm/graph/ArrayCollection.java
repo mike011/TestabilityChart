@@ -6,29 +6,31 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Data that will be printed to the mxml.
+ * Data that will be printed to the MXML.
  * 
  * @author mcharland
  */
 public class ArrayCollection {
 
-	/** The elements. */
-	List<String> elements;
+	/** The number. */
+	private final int _number;
 	
-	/** The Constant NEW_LINE. */
-	private static final String NEW_LINE = "\r\n";
+	/** The elements. */
+	private final List<String> _elements;
 
 	/**
 	 * Instantiates a new array collection.
 	 */
-	ArrayCollection() {
-		elements = new ArrayList<String>();
+	ArrayCollection(int number) {
+		_number = number;
+		_elements = new ArrayList<String>();
 	}
 
 	/**
 	 * Adds the.
-	 *
-	 * @param bubble the bubble
+	 * 
+	 * @param bubble
+	 *            the bubble
 	 */
 	public void add(Bubble bubble) {
 		StringBuffer bubblesData = new StringBuffer();
@@ -36,13 +38,14 @@ public class ArrayCollection {
 		bubblesData.append(", \"Coverage\":").append(format(bubble.getY()));
 		bubblesData.append(", \"Size\":").append(format(bubble.getSize()));
 		bubblesData.append("}");
-		elements.add(bubblesData.toString());
+		_elements.add(bubblesData.toString());
 	}
 
 	/**
 	 * Format.
-	 *
-	 * @param x the x
+	 * 
+	 * @param x
+	 *            the x
 	 * @return the string
 	 */
 	private String format(float x) {
@@ -54,24 +57,31 @@ public class ArrayCollection {
 
 	/**
 	 * Gets the elements.
-	 *
+	 * 
 	 * @return the elements
 	 */
 	public List<String> getElements() {
-		return elements;
+		return _elements;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+	/** {@inheritDoc} */
+	@Override
 	public String toString() {
 		StringBuffer expected = new StringBuffer();
-		expected.append("[Bindable]").append(NEW_LINE);
-		expected.append("private var s1:ArrayCollection = new ArrayCollection( [\r\n");
-		for(String s : elements) {
-			expected.append(s).append(NEW_LINE);
+		expected.append("[Bindable]").append(GraphWriter.NEW_LINE);
+		expected.append("private var s");
+		expected.append(_number);
+		expected.append(":ArrayCollection = new ArrayCollection( [").append(GraphWriter.NEW_LINE);
+		int current = 0;
+		for (String element : _elements) {
+			expected.append(element);
+			++current;
+			if(current < _elements.size()) {
+				expected.append(',');
+			}
+			expected.append(GraphWriter.NEW_LINE);
 		}
-		expected.append("]);").append(NEW_LINE);
+		expected.append("]);").append(GraphWriter.NEW_LINE);
 		return expected.toString();
 	}
 }

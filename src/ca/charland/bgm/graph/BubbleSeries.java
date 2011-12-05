@@ -1,7 +1,7 @@
 package ca.charland.bgm.graph;
 
 /**
- * Holds the mxml representation of a BubbleSeries.
+ * Holds the MXML representation of a BubbleSeries.
  * 
  * @author mcharland
  * 
@@ -29,10 +29,12 @@ public class BubbleSeries {
 		result.append("dataProvider=\"{s");
 		result.append(_number);
 		result.append("}\"\r\n");
-		result.append("displayName=\"series1\"\r\n");
-		result.append("xField=\"x\"\r\n");
-		result.append("yField=\"y\"\r\n");
-		result.append("radiusField=\"r\"\r\n");
+		result.append("displayName=\"series");
+		result.append(_number);
+		result.append("\"\r\n");
+		result.append("xField=\"Date\"\r\n");
+		result.append("yField=\"Coverage\"\r\n");
+		result.append("radiusField=\"Size\"\r\n");
 		result.append("/>\r\n");
 		return result.toString();
 	}
