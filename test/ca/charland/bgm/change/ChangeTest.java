@@ -50,7 +50,7 @@ public class ChangeTest {
 		double diff = change.getCoverage();
 		assertEquals(0, diff, 0.1);
 	}
-
+	
 	/**
 	 * Test get coverage half.
 	 */

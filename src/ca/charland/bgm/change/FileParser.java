@@ -45,7 +45,8 @@ public class FileParser {
 				} else if (line.startsWith("Merge")) {
 					// ignored.
 				} else {
-					fileLines.add(line(line));
+					Line lineObject = line(line);
+					fileLines.add(lineObject);
 				}
 			}
 		}

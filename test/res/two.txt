@@ -1,13 +1,13 @@
 commit d4572ab6e5ef5a38ec6f14e05515897ea9587947
-Author: Michael Charland <mcharland@rim.com>
+Author: Michael Charland <sgeorge@rim.com>
 Date:   Tue Nov 29 05:39:55 2011 -0500
 
-    adding Brian Vanpee and Emmanuel MacCaull
+    adding Sam George and Frank Bush
 
 1	1	permissions.txt
 
 commit 60da55f51fed17932878fbead0846ec16ae11781
-Author: Emmanuel MacCaull <emaccaull@rim.com>
+Author: John Hammock <jhammock@rim.com>
 Date:   Mon Nov 28 15:59:17 2011 -0500
 
     Adding more detail to the README
