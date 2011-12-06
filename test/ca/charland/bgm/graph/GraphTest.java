@@ -29,31 +29,6 @@ public class GraphTest {
 	}
 	
 	/**
-	 * Gets the normalized bubbles.
-	 *
-	 * @return the normalized bubbles
-	 */
-	@Test
-	public void getNormalizedBubbles() {
-		
-		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(500, 0, 0));
-		bubbles.add(new Bubble(10000, 0, 0));
-		
-		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
-		String author = "author";
-		map.put(author, bubbles);
-		
-		Graph graph = new Graph();
-		graph.addBubbles(map);
-		
-		graph.normalizeBubbleData();
-		
-		List<BubbleSeries> normalized = graph.getAllBubbleSeries();
-		assertEquals(1, normalized.size());
-	}
-	
-	/**
 	 * Test adding the bubbles.
 	 */
 	@Test

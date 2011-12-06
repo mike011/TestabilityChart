@@ -30,9 +30,10 @@ public class Main {
 		List<Change> changes = FileParser.changes(lines);		
 		
 		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
+		GraphParser.normalizeBubbleData(bubbles);
+		
 		Graph graph = new Graph();
 		graph.addBubbles(bubbles);
-		graph.normalizeBubbleData();
 		
 		GraphWriter writer = new GraphWriter(graph);
 		writer.loadRawFile();

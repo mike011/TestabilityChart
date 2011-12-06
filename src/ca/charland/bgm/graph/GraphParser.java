@@ -16,7 +16,7 @@ import ca.charland.bgm.change.Change;
 public class GraphParser {
 
 	/**
-	 * Bubbles.
+	 * Gets the Bubbles from the changes.
 	 * 
 	 * @param changes
 	 *            the changes
@@ -39,6 +39,56 @@ public class GraphParser {
 			series.get(author).add(bubble);
 		}
 		return series;
+	}
+
+	// /**
+	// * Set the date range from 0 to 100.
+	// */
+	// private void normalizeX(Map<String, ArrayList<Bubble>> bubbles) {
+	//
+	// // First find mins and maxes
+	// float min = bubbles.get(0).getX();
+	// float max = bubbles.get(0).getX();
+	// for (Bubble b : bubbles) {
+	// min = Math.min(min, b.getX());
+	// max = Math.max(max, b.getX());
+	// }
+	//
+	// // Normalizing.
+	// for (Bubble b : bubbles) {
+	// b.normalizeX(min, max);
+	// }
+	// }
+	//
+	/**
+	 * Set the date range from 0 to 50.
+	 */
+//	private void normalizeSize(Map<String, ArrayList<Bubble>> bubbles) {
+//
+//		// First find mins and maxes
+//		float min = _arrayCollection.get(0).getDate();
+//		float max = _arrayCollection.get(0).getDate();
+//		for (Bubble b : bubbles) {
+//			min = Math.min(min, b.getSize());
+//			max = Math.max(max, b.getSize());
+//		}
+//
+//		// Normalizing.
+//		for (Bubble b : _arrayCollection) {
+//			b.normalizeSize(min, max);
+//		}
+//	}
+
+	/**
+	 * Normalizes the bubble data.
+	 * 
+	 * @param bubbles
+	 *            the bubbles
+	 */
+	public static void normalizeBubbleData(
+			Map<String, ArrayList<Bubble>> bubbles) {
+		// // normalizeX();
+//		normalizeSize();
 	}
 
 }
