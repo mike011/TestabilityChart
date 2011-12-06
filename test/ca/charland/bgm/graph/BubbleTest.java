@@ -44,7 +44,7 @@ public class BubbleTest {
 		object.normalizeX(min, max);
 
 		float date = object.getX();
-		Assert.assertEquals(100000, date, 0.1);
+		Assert.assertEquals(100, date, 0.1);
 	}
 	
 	/**
@@ -74,7 +74,7 @@ public class BubbleTest {
 		object.normalizeX(min, max);
 
 		float date = object.getX();
-		Assert.assertEquals(50000, date, 0.1);
+		Assert.assertEquals(50, date, 0.1);
 	}
 	
 	/**

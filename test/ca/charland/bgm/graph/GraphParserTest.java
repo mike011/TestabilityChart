@@ -64,7 +64,7 @@ public class GraphParserTest {
 		List<ArrayCollection> normalized = graph.getAllBubbleData();
 		assertEquals(1, normalized.size());
 
-		assertEquals(500, map.get("author").get(0).getX(), 0.1);
-		assertEquals(10000, map.get("author").get(1).getX(), 0.1);
+		assertEquals(0.0, map.get("author").get(0).getX(), 0.1);
+		assertEquals(95, map.get("author").get(1).getX(), 0.1);
 	}
 }

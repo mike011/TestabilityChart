@@ -41,43 +41,55 @@ public class GraphParser {
 		return series;
 	}
 
-	// /**
-	// * Set the date range from 0 to 100.
-	// */
-	// private void normalizeX(Map<String, ArrayList<Bubble>> bubbles) {
-	//
-	// // First find mins and maxes
-	// float min = bubbles.get(0).getX();
-	// float max = bubbles.get(0).getX();
-	// for (Bubble b : bubbles) {
-	// min = Math.min(min, b.getX());
-	// max = Math.max(max, b.getX());
-	// }
-	//
-	// // Normalizing.
-	// for (Bubble b : bubbles) {
-	// b.normalizeX(min, max);
-	// }
-	// }
-	//
+	/**
+	 * Set the date range from 0 to 100.
+	 */
+	private static void normalizeX(Map<String, ArrayList<Bubble>> bubbles) {
+
+		// First find mins and maxes
+		ArrayList<Bubble> arrayList = bubbles.get(bubbles.keySet().toArray()[0]);
+		Bubble bubble = arrayList.get(0);
+		float min = bubble.getX();
+		float max = bubble.getX();
+		for (String key : bubbles.keySet()) {
+			for (Bubble b : bubbles.get(key)) {
+				min = Math.min(min, b.getX());
+				max = Math.max(max, b.getX());
+			}
+		}
+
+		// Normalizing.
+		for (String key : bubbles.keySet()) {
+			for (Bubble b : bubbles.get(key)) {
+				b.normalizeX(min, max);
+			}
+		}
+	}
+
 	/**
 	 * Set the date range from 0 to 50.
 	 */
-//	private void normalizeSize(Map<String, ArrayList<Bubble>> bubbles) {
-//
-//		// First find mins and maxes
-//		float min = _arrayCollection.get(0).getDate();
-//		float max = _arrayCollection.get(0).getDate();
-//		for (Bubble b : bubbles) {
-//			min = Math.min(min, b.getSize());
-//			max = Math.max(max, b.getSize());
-//		}
-//
-//		// Normalizing.
-//		for (Bubble b : _arrayCollection) {
-//			b.normalizeSize(min, max);
-//		}
-//	}
+	private static void normalizeSize(Map<String, ArrayList<Bubble>> bubbles) {
+
+		// First find mins and maxes
+		ArrayList<Bubble> arrayList = bubbles.get(bubbles.keySet().toArray()[0]);
+		Bubble bubble = arrayList.get(0);
+		float min = bubble.getSize();
+		float max = bubble.getSize();
+		for (String key : bubbles.keySet()) {
+			for (Bubble b : bubbles.get(key)) {
+				min = Math.min(min, b.getSize());
+				max = Math.max(max, b.getSize());
+			}
+		}
+
+		// Normalizing.
+		for (String s : bubbles.keySet()) {
+			for (Bubble b : bubbles.get(s)) {
+				b.normalizeSize(min, max);
+			}
+		}
+	}
 
 	/**
 	 * Normalizes the bubble data.
@@ -85,10 +97,9 @@ public class GraphParser {
 	 * @param bubbles
 	 *            the bubbles
 	 */
-	public static void normalizeBubbleData(
-			Map<String, ArrayList<Bubble>> bubbles) {
-		// // normalizeX();
-//		normalizeSize();
+	public static void normalizeBubbleData(Map<String, ArrayList<Bubble>> bubbles) {
+		normalizeX(bubbles);
+		normalizeSize(bubbles);
 	}
 
 }

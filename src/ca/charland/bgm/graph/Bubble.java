@@ -45,7 +45,7 @@ public class Bubble {
 	 * @param max the max
 	 */
 	public void normalizeX(float min, float max) {
-		x = (x - min) / max * 100000;
+		x = (x - min) / max * 100;
 	}
 
 	/**
