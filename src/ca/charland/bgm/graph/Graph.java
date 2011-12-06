@@ -27,7 +27,7 @@ public class Graph {
 		_arrayCollection = new ArrayList<ArrayCollection>();
 		_bubbleSeries = new ArrayList<BubbleSeries>();
 	}
-	
+
 	/**
 	 * Adds the data for bubbles.
 	 * 

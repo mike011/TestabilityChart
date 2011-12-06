@@ -10,7 +10,7 @@ import ca.charland.bgm.FileAccessing;
 
 /**
  * Tests for FileInput.
- *
+ * 
  * @author mcharland
  */
 public class FileInputTest {
@@ -24,7 +24,7 @@ public class FileInputTest {
 		Assert.assertNotNull(read);
 		Assert.assertTrue(read.size() > 0);
 	}
-	
+
 	/**
 	 * Test method for {@link ca.charland.bgm.FileAccessing#read()}.
 	 */

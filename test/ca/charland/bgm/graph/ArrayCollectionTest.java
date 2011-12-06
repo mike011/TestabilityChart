@@ -9,7 +9,7 @@ import org.junit.Test;
 
 /**
  * Tests for ArrayCollection.
- *
+ * 
  * @author mcharland
  */
 public class ArrayCollectionTest {
@@ -36,8 +36,7 @@ public class ArrayCollectionTest {
 
 		assertNotNull(element);
 		assertEquals(1, element.size());
-		assertEquals("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}",
-				element.get(0));
+		assertEquals("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}", element.get(0));
 	}
 
 	/**
@@ -48,9 +47,9 @@ public class ArrayCollectionTest {
 		ArrayCollection ac = new ArrayCollection(134);
 		Bubble b = new Bubble(0, 0, 0);
 		ac.add(b);
-		
+
 		String out = ac.toString();
-		
+
 		StringBuffer expected = new StringBuffer();
 		expected.append("[Bindable]\r\n");
 		expected.append("private var s134:ArrayCollection = new ArrayCollection( [\r\n");
@@ -67,9 +66,9 @@ public class ArrayCollectionTest {
 		ArrayCollection ac = new ArrayCollection(3);
 		ac.add(new Bubble(0, 0, 0));
 		ac.add(new Bubble(0, 0, 0));
-		
+
 		String out = ac.toString();
-		
+
 		StringBuffer expected = new StringBuffer();
 		expected.append("[Bindable]\r\n");
 		expected.append("private var s3:ArrayCollection = new ArrayCollection( [\r\n");

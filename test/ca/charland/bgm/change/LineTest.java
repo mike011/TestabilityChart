@@ -9,7 +9,7 @@ import org.junit.Test;
 
 /**
  * Tests for Line.
- *
+ * 
  * @author mcharland
  */
 public class LineTest {
@@ -32,15 +32,15 @@ public class LineTest {
 		String added = "1";
 		String removed = "1";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		int diff = line.getSrcDiff();
-		
+
 		assertEquals(2, diff);
-		
+
 		int test = line.getTestDiff();
 		assertEquals(0, test);
 	}
-	
+
 	/**
 	 * Test get test diff.
 	 */
@@ -49,15 +49,14 @@ public class LineTest {
 		String added = "1";
 		String removed = "1";
 		Line line = new Line(added, removed, "test/dank.tt");
-		
+
 		int diff = line.getSrcDiff();
-		
+
 		assertEquals(0, diff);
-		
+
 		int test = line.getTestDiff();
 		assertEquals(2, test);
 	}
-	
 
 	/**
 	 * Test get diff added.
@@ -67,13 +66,13 @@ public class LineTest {
 		String added = "-";
 		String removed = "1";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		int src = line.getSrcDiff();
-		
+
 		assertEquals(1, src);
 
 	}
-	
+
 	/**
 	 * Test get diff removed.
 	 */
@@ -82,13 +81,13 @@ public class LineTest {
 		String added = "1";
 		String removed = "-";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		int diff = line.getSrcDiff();
-		
+
 		assertEquals(1, diff);
-		
+
 	}
-	
+
 	/**
 	 * Testis valid yes.
 	 */
@@ -97,12 +96,12 @@ public class LineTest {
 		String added = "1";
 		String removed = "2";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		boolean valid = line.isValid();
-		
+
 		assertTrue(valid);
 	}
-	
+
 	/**
 	 * Testis valid yes2.
 	 */
@@ -111,12 +110,12 @@ public class LineTest {
 		String added = "-";
 		String removed = "2";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		boolean valid = line.isValid();
-		
+
 		assertTrue(valid);
 	}
-	
+
 	/**
 	 * Testis valid yes3.
 	 */
@@ -125,12 +124,12 @@ public class LineTest {
 		String added = "3";
 		String removed = "-";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		boolean valid = line.isValid();
-		
+
 		assertTrue(valid);
 	}
-	
+
 	/**
 	 * Testis valid no.
 	 */
@@ -139,12 +138,12 @@ public class LineTest {
 		String added = "-";
 		String removed = "-";
 		Line line = new Line(added, removed, "dank.tt");
-		
+
 		boolean valid = line.isValid();
-		
+
 		assertFalse(valid);
 	}
-	
+
 	/**
 	 * Test is src.
 	 */
@@ -154,12 +153,12 @@ public class LineTest {
 		String removed = "7";
 		String file = "dank.tt";
 		Line line = new Line(added, removed, file);
-		
+
 		boolean src = line.isSource();
-		
+
 		assertTrue(src);
 	}
-	
+
 	/**
 	 * Test is src no.
 	 */
@@ -169,12 +168,12 @@ public class LineTest {
 		String removed = "-";
 		String file = "dank.tt";
 		Line line = new Line(added, removed, file);
-		
+
 		boolean src = line.isSource();
-		
+
 		assertFalse(src);
 	}
-	
+
 	/**
 	 * Test is src no2.
 	 */
@@ -184,9 +183,9 @@ public class LineTest {
 		String removed = "4";
 		String file = "test/dank.tt";
 		Line line = new Line(added, removed, file);
-		
+
 		boolean src = line.isSource();
-		
+
 		assertFalse(src);
 	}
 }

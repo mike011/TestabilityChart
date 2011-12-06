@@ -14,7 +14,7 @@ import ca.charland.bgm.change.Line;
 
 /**
  * Tests for Change.
- *
+ * 
  * @author mcharland
  */
 public class ChangeTest {
@@ -50,7 +50,7 @@ public class ChangeTest {
 		double diff = change.getCoverage();
 		assertEquals(0, diff, 0.1);
 	}
-	
+
 	/**
 	 * Test get coverage half.
 	 */
@@ -63,7 +63,7 @@ public class ChangeTest {
 		double diff = change.getCoverage();
 		assertEquals(0.5, diff, 0.1);
 	}
-	
+
 	/**
 	 * Test get coverage one.
 	 */
@@ -76,7 +76,7 @@ public class ChangeTest {
 		double diff = change.getCoverage();
 		assertEquals(1, diff, 0.1);
 	}
-	
+
 	/**
 	 * Test get lines covered.
 	 */
@@ -89,7 +89,7 @@ public class ChangeTest {
 		int covered = change.getLinesCovered();
 		assertEquals(12, covered, 0.1);
 	}
-	
+
 	/**
 	 * Test get date.
 	 */
@@ -99,7 +99,7 @@ public class ChangeTest {
 		Date date = change.getDate();
 		assertNotNull(date);
 	}
-	
+
 	/**
 	 * Test get author.
 	 */
@@ -107,11 +107,11 @@ public class ChangeTest {
 	public void testGetAuthor() {
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "test"));
-		
+
 		String expectedAuthor = "frank";
 		Change change = new Change(null, expectedAuthor, null, null, lines);
 		String author = change.getAuthor();
-		
+
 		assertEquals(expectedAuthor, author);
 	}
 }

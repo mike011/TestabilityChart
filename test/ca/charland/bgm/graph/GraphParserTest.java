@@ -22,8 +22,7 @@ import ca.charland.bgm.graph.GraphParser;
 public class GraphParserTest {
 
 	/**
-	 * Test method for
-	 * {@link ca.charland.bgm.graph.GraphParser#bubbles(java.util.List)}.
+	 * Test method for {@link ca.charland.bgm.graph.GraphParser#bubbles(java.util.List)}.
 	 */
 	@Test
 	public void testBubbles() {
@@ -31,8 +30,7 @@ public class GraphParserTest {
 		List<Change> changes = new ArrayList<Change>();
 		ArrayList<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("2", "5", "bob.txt"));
-		changes.add(new Change(null, "bob",
-				"Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new Change(null, "bob", "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 
 		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
 
@@ -45,7 +43,7 @@ public class GraphParserTest {
 	 * @return the normalized bubbles
 	 */
 	@Test
-	public void getNormalizedBubbles() {
+	public void getNormalisedBubblesX() {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
@@ -58,13 +56,45 @@ public class GraphParserTest {
 		graph.addBubbles(map);
 
 		// Exercise
-		GraphParser.normalizeBubbleData(map);
+		GraphParser.normaliseBubbleData(map);
 
 		// Verify
 		List<ArrayCollection> normalized = graph.getAllBubbleData();
 		assertEquals(1, normalized.size());
 
-		assertEquals(0.0, map.get("author").get(0).getX(), 0.1);
-		assertEquals(95, map.get("author").get(1).getX(), 0.1);
+		ArrayList<Bubble> normalizedBubbles = map.get("author");
+		assertEquals(0.0, normalizedBubbles.get(0).getX(), 0.1);
+		assertEquals(95, normalizedBubbles.get(1).getX(), 0.1);
 	}
+
+	/**
+	 * Gets the normalized bubbles.
+	 * 
+	 * @return the normalized bubbles
+	 */
+	@Test
+	public void getNormalisedBubblesSize() {
+
+		// Setup
+		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
+		bubbles.add(new Bubble(0, 0, 500));
+		bubbles.add(new Bubble(0, 0, 01000));
+
+		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
+		map.put("author", bubbles);
+		Graph graph = new Graph();
+		graph.addBubbles(map);
+
+		// Exercise
+		GraphParser.normaliseBubbleData(map);
+
+		// Verify
+		List<ArrayCollection> normalized = graph.getAllBubbleData();
+		assertEquals(1, normalized.size());
+
+		ArrayList<Bubble> normalizedBubbles = map.get("author");
+		assertEquals(1.0, normalizedBubbles.get(0).getSize(), 0.1);
+		assertEquals(2.17, normalizedBubbles.get(1).getSize(), 0.1);
+	}
+
 }

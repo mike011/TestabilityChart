@@ -62,10 +62,10 @@ public class GraphWriterTest {
 
 		Graph g = new Graph();
 		g.addBubbles(changes);
-		
+
 		GraphWriter gw = new GraphWriter(g);
 		gw.loadRawFile();
-		
+
 		// Exercise
 		boolean createOutput = gw.createOutput();
 
@@ -90,8 +90,7 @@ public class GraphWriterTest {
 		for (String line : out) {
 			if (line.contains("{1}")) {
 				one = true;
-			} else if (line.contains("private var s")
-					&& line.contains(":ArrayCollection = new ArrayCollection( [")) {
+			} else if (line.contains("private var s") && line.contains(":ArrayCollection = new ArrayCollection( [")) {
 				data = true;
 			} else if (line.contains("{2}")) {
 				two = true;

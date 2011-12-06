@@ -12,8 +12,9 @@ public class FileParser {
 
 	/**
 	 * Changes.
-	 *
-	 * @param lines the lines
+	 * 
+	 * @param lines
+	 *            the lines
 	 * @return the list
 	 */
 	public static List<Change> changes(List<String> lines) {
@@ -28,8 +29,7 @@ public class FileParser {
 			if (line.length() > 0) {
 				if (line.startsWith("commit")) {
 					if (commit != null) {
-						Change change = new Change(commit, author, date, desc,
-								fileLines);
+						Change change = new Change(commit, author, date, desc, fileLines);
 						result.add(change);
 						fileLines = new ArrayList<Line>();
 					}
@@ -58,14 +58,15 @@ public class FileParser {
 
 	/**
 	 * Line.
-	 *
-	 * @param line the line
+	 * 
+	 * @param line
+	 *            the line
 	 * @return the line
 	 */
 	static Line line(String line) {
 		String[] splits = line.split("\t");
 		Line result = null;
-			result = new Line(splits[0], splits[1], splits[2]);
+		result = new Line(splits[0], splits[1], splits[2]);
 		return result;
 	}
 }

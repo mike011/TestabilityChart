@@ -14,30 +14,34 @@ public class Change {
 
 	/** The commit. */
 	private final String commit;
-	
+
 	/** The author. */
 	private final String author;
-	
+
 	/** The date string. */
 	private final String dateString;
-	
+
 	/** The description. */
 	private final String description;
-	
+
 	/** The lines. */
 	private final List<Line> lines;
 
 	/**
 	 * Instantiates a new change.
-	 *
-	 * @param commit the commit
-	 * @param author the author
-	 * @param date the date
-	 * @param description the description
-	 * @param lines the lines
+	 * 
+	 * @param commit
+	 *            the commit
+	 * @param author
+	 *            the author
+	 * @param date
+	 *            the date
+	 * @param description
+	 *            the description
+	 * @param lines
+	 *            the lines
 	 */
-	public Change(String commit, String author, String date,
-			String description, List<Line> lines) {
+	public Change(String commit, String author, String date, String description, List<Line> lines) {
 		this.commit = commit;
 		this.author = author;
 		this.dateString = date;
@@ -48,7 +52,7 @@ public class Change {
 
 	/**
 	 * Gets the coverage.
-	 *
+	 * 
 	 * @return the coverage
 	 */
 	public float getCoverage() {
@@ -65,7 +69,7 @@ public class Change {
 
 	/**
 	 * Gets the test.
-	 *
+	 * 
 	 * @return the test
 	 */
 	private int getTest() {
@@ -78,7 +82,7 @@ public class Change {
 
 	/**
 	 * Gets the src.
-	 *
+	 * 
 	 * @return the src
 	 */
 	private int getSrc() {
@@ -91,14 +95,16 @@ public class Change {
 
 	/**
 	 * Gets the lines covered.
-	 *
+	 * 
 	 * @return the lines covered
 	 */
 	public int getLinesCovered() {
 		return getSrc() + getTest();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals(Object o) {
@@ -108,14 +114,16 @@ public class Change {
 
 	/**
 	 * Gets the commit.
-	 *
+	 * 
 	 * @return the commit
 	 */
 	private String getCommit() {
 		return commit;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
@@ -124,15 +132,13 @@ public class Change {
 
 	/**
 	 * Gets the date.
-	 *
+	 * 
 	 * @return the date
 	 */
 	public Date getDate() {
-		SimpleDateFormat formatter = new SimpleDateFormat(
-				"E MMM dd HH:mm:ss yyyy Z");
+		SimpleDateFormat formatter = new SimpleDateFormat("E MMM dd HH:mm:ss yyyy Z");
 
-		String sub = dateString.substring(
-				dateString.indexOf("Date:") + "Date:".length()).trim();
+		String sub = dateString.substring(dateString.indexOf("Date:") + "Date:".length()).trim();
 		Date date = null;
 		try {
 			date = (Date) formatter.parse(sub);
@@ -144,7 +150,7 @@ public class Change {
 
 	/**
 	 * Gets the author.
-	 *
+	 * 
 	 * @return the author
 	 */
 	public String getAuthor() {

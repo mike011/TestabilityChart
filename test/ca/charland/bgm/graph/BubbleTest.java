@@ -33,62 +33,79 @@ public class BubbleTest {
 	}
 
 	/**
-	 * Test normalize date max.
+	 * Test normalise date max.
 	 */
 	@Test
-	public void testNormalizeDateMax() {
+	public void testNormaliseDateMax() {
 		Bubble object = new Bubble(200, 0, 0);
 
 		long min = 0;
 		long max = 200;
-		object.normalizeX(min, max);
+		object.normaliseX(min, max);
 
 		float date = object.getX();
 		Assert.assertEquals(100, date, 0.1);
 	}
-	
+
 	/**
-	 * Test normalize date min.
+	 * Test normalise date min.
 	 */
 	@Test
-	public void testNormalizeDateMin() {
+	public void testNormaliseDateMin() {
 		Bubble object = new Bubble(0, 0, 0);
 
 		long min = 0;
 		long max = 200;
-		object.normalizeX(min, max);
+		object.normaliseX(min, max);
 
 		float date = object.getX();
 		Assert.assertEquals(0, date, 0.1);
 	}
-	
+
 	/**
-	 * Test normalize date mid.
+	 * Test normalise date mid.
 	 */
 	@Test
-	public void testNormalizeDateMid() {
+	public void testNormaliseDateMid() {
 		Bubble object = new Bubble(60, 0, 0);
 
 		long min = 0;
 		long max = 120;
-		object.normalizeX(min, max);
+		object.normaliseX(min, max);
 
 		float date = object.getX();
 		Assert.assertEquals(50, date, 0.1);
 	}
-	
+
 	/**
-	 * Test normalize size.
+	 * Test normalise size for the minimum amount.
 	 */
 	@Test
-	public void testNormalizeSize() {
-		Bubble object = new Bubble(0, 0, 60);
+	public void testNormaliseSizeMin() {
+		long size = 0;
+		Bubble object = new Bubble(0, 0, size);
 
 		long min = 0;
 		long max = 120;
-		object.normalizeSize(min, max);
+		object.normaliseSize(min, max);
 
 		float date = object.getSize();
-		Assert.assertEquals(26, date, 0.1);
+		Assert.assertEquals(1.0, date, 0.1);
+	}
+
+	/**
+	 * Test normalise size for the maximum amount.
+	 */
+	@Test
+	public void testNormaliseSizeMax() {
+		long size = 120;
+		Bubble object = new Bubble(0, 0, size);
+
+		long min = 0;
+		long max = 120;
+		object.normaliseSize(min, max);
+
+		float date = object.getSize();
+		Assert.assertEquals(50, date, 0.1);
 	}
 }

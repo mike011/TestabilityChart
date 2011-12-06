@@ -14,7 +14,7 @@ public class ArrayCollection {
 
 	/** The number. */
 	private final int _number;
-	
+
 	/** The elements. */
 	private final List<String> _elements;
 
@@ -76,7 +76,7 @@ public class ArrayCollection {
 		for (String element : _elements) {
 			expected.append(element);
 			++current;
-			if(current < _elements.size()) {
+			if (current < _elements.size()) {
 				expected.append(',');
 			}
 			expected.append(GraphWriter.NEW_LINE);

@@ -11,7 +11,7 @@ import org.junit.Test;
 
 /**
  * Tests for Graph.
- *
+ * 
  * @author mcharland
  */
 public class GraphTest {
@@ -25,7 +25,7 @@ public class GraphTest {
 		GraphWriterTest.assertList(g.getAllBubbleData());
 		GraphWriterTest.assertList(g.getAllBubbleSeries());
 	}
-	
+
 	/**
 	 * Test adding the bubbles.
 	 */
@@ -38,7 +38,7 @@ public class GraphTest {
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubbles);
 		Graph g = new Graph();
-		
+
 		// Exercise
 		g.addBubbles(changes);
 
@@ -78,7 +78,7 @@ public class GraphTest {
 		List<BubbleSeries> bubbleSeries = g.getAllBubbleSeries();
 		Assert.assertEquals(2, bubbleSeries.size());
 	}
-	
+
 	/**
 	 * Testing an empty set of changes.
 	 */
@@ -86,7 +86,7 @@ public class GraphTest {
 	public void testAddBubblesEmpty() {
 		// Setup
 		Graph g = new Graph();
-		
+
 		// Exercise
 		g.addBubbles(null);
 

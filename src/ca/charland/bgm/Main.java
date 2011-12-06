@@ -20,21 +20,22 @@ public class Main {
 
 	/**
 	 * The main method.
-	 *
-	 * @param args the arguments
+	 * 
+	 * @param args
+	 *            the arguments
 	 */
-	public static void main (String args[]) {
-		
+	public static void main(String args[]) {
+
 		// Gather change info.
-		List<String> lines = FileAccessing.read(args[0]);		
-		List<Change> changes = FileParser.changes(lines);		
-		
+		List<String> lines = FileAccessing.read(args[0]);
+		List<Change> changes = FileParser.changes(lines);
+
 		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
-		GraphParser.normalizeBubbleData(bubbles);
-		
+		GraphParser.normaliseBubbleData(bubbles);
+
 		Graph graph = new Graph();
 		graph.addBubbles(bubbles);
-		
+
 		GraphWriter writer = new GraphWriter(graph);
 		writer.loadRawFile();
 		writer.createOutput();

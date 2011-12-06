@@ -16,7 +16,7 @@ import ca.charland.bgm.change.Line;
 
 /**
  * Tests for ChangeParser.
- *
+ * 
  * @author mcharland
  */
 public class ChangeParserTest {
@@ -40,11 +40,11 @@ public class ChangeParserTest {
 		List<String> read = FileAccessing.read("test/res/two.txt");
 		List<Change> parse = FileParser.changes(read);
 		assertEquals(2, parse.size());
-		
+
 		Change change = parse.get(0);
 		Change change2 = parse.get(1);
 		assertFalse(change.equals(change2));
-		
+
 		assertEquals(change.getCoverage(), change2.getCoverage(), 0.1);
 	}
 
