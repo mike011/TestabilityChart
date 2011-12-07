@@ -75,7 +75,7 @@ public class BubbleTest {
 		String date = object.getCoverageString();
 
 		// Verify
-		Assert.assertEquals("100%", date);
+		Assert.assertEquals("100", date);
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class BubbleTest {
 		// Verify
 		StringBuffer bubblesData = new StringBuffer();
 		bubblesData.append("{\"Date\":\"").append("0.00").append('"');
-		bubblesData.append(", \"Coverage\":\"").append("0%").append('"');
+		bubblesData.append(", \"Coverage\":\"").append("0").append('"');
 		bubblesData.append(", \"Size\":\"").append("120.00").append('"');
 		bubblesData.append("}");
 		Assert.assertEquals(bubblesData.toString(), out);

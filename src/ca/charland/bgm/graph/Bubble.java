@@ -74,7 +74,6 @@ public class Bubble {
 		StringBuffer out = new StringBuffer();
 		Formatter formatter = new Formatter(out, Locale.US);
 		formatter.format("%.0f", getCoverage());
-		out.append('%');
 		return out.toString();
 	}
 
