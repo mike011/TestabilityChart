@@ -9,16 +9,22 @@ package ca.charland.bgm.graph;
 public class BubbleSeries {
 
 	/** The number. */
-	private int _number;
+	private int number;
+	
+	/** The author. */
+	private final String author;
 
 	/**
 	 * Instantiates a new bubble series.
 	 * 
 	 * @param number
-	 *            the number
+	 *            The number that ties it into the array collection.
+	 * @param author
+	 *            The author of the change.
 	 */
-	BubbleSeries(int number) {
-		_number = number;
+	BubbleSeries(int number, String author) {
+		this.number = number;
+		this.author = author;
 	}
 
 	/** {@inheritDoc} */
@@ -27,10 +33,10 @@ public class BubbleSeries {
 		StringBuffer result = new StringBuffer();
 		result.append("<mx:BubbleSeries\r\n");
 		result.append("dataProvider=\"{s");
-		result.append(_number);
+		result.append(number);
 		result.append("}\"\r\n");
-		result.append("displayName=\"series");
-		result.append(_number);
+		result.append("displayName=\"");
+		result.append(author);
 		result.append("\"\r\n");
 		result.append("xField=\"Date\"\r\n");
 		result.append("yField=\"Coverage\"\r\n");

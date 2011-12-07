@@ -27,13 +27,17 @@ public class GraphParserTest {
 	@Test
 	public void testBubbles() {
 
+		// Setup
 		List<Change> changes = new ArrayList<Change>();
 		ArrayList<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("2", "5", "bob.txt"));
-		changes.add(new Change(null, "bob", "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		String author = "Author: defected <defected@defected-P5K-EPU.(none)>";
+		changes.add(new Change(null, author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 
+		// Exercise
 		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
 
+		// Verify
 		assertNotNull(bubbles);
 	}
 

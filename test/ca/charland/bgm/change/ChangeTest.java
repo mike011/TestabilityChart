@@ -19,7 +19,7 @@ import org.junit.Test;
 public class ChangeTest {
 
 	/**
-	 * Test.
+	 * Test constructor.
 	 */
 	@Test
 	public void test() {
@@ -108,14 +108,14 @@ public class ChangeTest {
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "test"));
 
-		String expectedAuthor = "frank";
-		Change change = new Change(null, expectedAuthor, null, null, lines);
+		String authorString = "Author: defected <defected@defected-P5K-EPU.(none)>";
+		Change change = new Change(null, authorString, null, null, lines);
 		
 		// Exercise
 		String author = change.getAuthor();
 
 		// Verify
-		assertEquals(expectedAuthor, author);
+		assertEquals("defected", author);
 	}
 	
 	/**

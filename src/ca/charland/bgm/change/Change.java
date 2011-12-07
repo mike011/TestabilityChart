@@ -121,11 +121,8 @@ public class Change {
 		return commit;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
+	/** {@inheritDoc} */
+	@Override
 	public String toString() {
 		return commit;
 	}
@@ -149,12 +146,15 @@ public class Change {
 	}
 
 	/**
-	 * Gets the author.
+	 * Gets the parsed author.
 	 * 
 	 * @return the author
 	 */
 	public String getAuthor() {
-		return author;
+		int start = "Author:".length();
+		int end = author.indexOf('<');
+		String parsed = author.substring(start, end).trim();
+		return parsed;
 	}
 
 	/**

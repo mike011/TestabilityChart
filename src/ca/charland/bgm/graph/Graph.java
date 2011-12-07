@@ -67,7 +67,7 @@ public class Graph {
 		int x = 0;
 		for (String key : changes.keySet()) {
 			addDataForBubbles(x, changes.get(key));
-			_bubbleSeries.add(new BubbleSeries(x));
+			_bubbleSeries.add(new BubbleSeries(x, key));
 			++x;
 		}
 	}
