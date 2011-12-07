@@ -32,11 +32,10 @@ public class ArrayCollectionTest {
 
 		ac.add(b);
 
-		List<String> element = ac.getElements();
+		List<Bubble> element = ac.getElements();
 
 		assertNotNull(element);
 		assertEquals(1, element.size());
-		assertEquals("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}", element.get(0));
 	}
 
 	/**
@@ -53,7 +52,7 @@ public class ArrayCollectionTest {
 		StringBuffer expected = new StringBuffer();
 		expected.append("[Bindable]\r\n");
 		expected.append("private var s134:ArrayCollection = new ArrayCollection( [\r\n");
-		expected.append("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}\r\n");
+		expected.append(b.toString()).append("\r\n");
 		expected.append("]);\r\n");
 		assertEquals(expected.toString(), out);
 	}
@@ -64,16 +63,18 @@ public class ArrayCollectionTest {
 	@Test
 	public void testToStringTwoLines() {
 		ArrayCollection ac = new ArrayCollection(3);
-		ac.add(new Bubble(0, 0, 0));
-		ac.add(new Bubble(0, 0, 0));
+		Bubble b = new Bubble(0, 0, 0);
+		ac.add(b);
+		Bubble b2 = new Bubble(0, 0, 0);
+		ac.add(b2);
 
 		String out = ac.toString();
 
 		StringBuffer expected = new StringBuffer();
 		expected.append("[Bindable]\r\n");
 		expected.append("private var s3:ArrayCollection = new ArrayCollection( [\r\n");
-		expected.append("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00},\r\n");
-		expected.append("{\"Date\":0.00, \"Coverage\":0.00, \"Size\":0.00}\r\n");
+		expected.append(b.toString()).append(",\r\n");
+		expected.append(b2.toString()).append("\r\n");
 		expected.append("]);\r\n");
 		assertEquals(expected.toString(), out);
 	}

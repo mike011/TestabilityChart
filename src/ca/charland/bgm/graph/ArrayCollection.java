@@ -1,9 +1,7 @@
 package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * Data that will be printed to the MXML.
@@ -16,14 +14,14 @@ public class ArrayCollection {
 	private final int _number;
 
 	/** The elements. */
-	private final List<String> _elements;
+	private final List<Bubble> _elements;
 
 	/**
 	 * Instantiates a new array collection.
 	 */
 	ArrayCollection(int number) {
 		_number = number;
-		_elements = new ArrayList<String>();
+		_elements = new ArrayList<Bubble>();
 	}
 
 	/**
@@ -33,26 +31,7 @@ public class ArrayCollection {
 	 *            the bubble
 	 */
 	public void add(Bubble bubble) {
-		StringBuffer bubblesData = new StringBuffer();
-		bubblesData.append("{\"Date\":").append(format(bubble.getX()));
-		bubblesData.append(", \"Coverage\":").append(format(bubble.getY()));
-		bubblesData.append(", \"Size\":").append(format(bubble.getSize()));
-		bubblesData.append("}");
-		_elements.add(bubblesData.toString());
-	}
-
-	/**
-	 * Format.
-	 * 
-	 * @param x
-	 *            the x
-	 * @return the string
-	 */
-	private String format(float x) {
-		StringBuilder sb = new StringBuilder();
-		Formatter formatter = new Formatter(sb, Locale.US);
-		formatter.format("%.2f", x);
-		return sb.toString();
+		_elements.add(bubble);
 	}
 
 	/**
@@ -60,7 +39,7 @@ public class ArrayCollection {
 	 * 
 	 * @return the elements
 	 */
-	public List<String> getElements() {
+	public List<Bubble> getElements() {
 		return _elements;
 	}
 
@@ -73,7 +52,7 @@ public class ArrayCollection {
 		expected.append(_number);
 		expected.append(":ArrayCollection = new ArrayCollection( [").append(GraphWriter.NEW_LINE);
 		int current = 0;
-		for (String element : _elements) {
+		for (Bubble element : _elements) {
 			expected.append(element);
 			++current;
 			if (current < _elements.size()) {

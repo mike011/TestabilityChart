@@ -7,13 +7,17 @@
 		]]>
 	</mx:Script>
 
-	<mx:Panel title="Testability Bubble Chart">
-		<mx:BubbleChart id="myChart"
-			showDataTips="true"
-		>
+	<mx:Panel title="Testability Bubble Chart" height="100%" width="100%">
+		<mx:BubbleChart height="100%" width="100%" id="myChart"	showDataTips="true">
 		    <mx:series>
 {2}
 			</mx:series>
+			<mx:horizontalAxis>
+        		<mx:LinearAxis title="Date" />
+      		</mx:horizontalAxis>      
+      		<mx:verticalAxis>
+        		<mx:LinearAxis title="Test / (Production +Test)" />
+      		</mx:verticalAxis> 
 		</mx:BubbleChart>
 		<mx:Legend dataProvider="{myChart}"/>
 	</mx:Panel>

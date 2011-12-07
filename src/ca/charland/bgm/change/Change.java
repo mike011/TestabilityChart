@@ -61,6 +61,7 @@ public class Change {
 
 		float test = getTest();
 
+		// Prevent a divide by zero.
 		if ((src + test) == 0) {
 			src = 1;
 		}

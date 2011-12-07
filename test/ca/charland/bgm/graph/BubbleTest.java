@@ -24,13 +24,13 @@ public class BubbleTest {
 	 * Test get the X value.
 	 */
 	@Test
-	public void testGetX() {
+	public void testGetDate() {
 
 		// Setup
 		Bubble object = new Bubble(0, 0, 0);
 
 		// Exercise
-		float date = object.getX();
+		float date = object.getDate();
 
 		// Verify
 		Assert.assertEquals(0.0, date, 0.1);
@@ -52,16 +52,30 @@ public class BubbleTest {
 
 	/** Test getting the y value. */
 	@Test
-	public void testGetY() {
+	public void testGetCoverage() {
 
 		// Setup
 		Bubble object = new Bubble(0, 1, 0);
 
 		// Exercise
-		float date = object.getY();
+		float date = object.getCoverage();
 
 		// Verify
 		Assert.assertEquals(100.0, date, 0.1);
+	}
+
+	/** Test getting the y string value. */
+	@Test
+	public void testGetCoverageString() {
+
+		// Setup
+		Bubble object = new Bubble(0, 1, 0);
+
+		// Exercise
+		String date = object.getCoverageString();
+
+		// Verify
+		Assert.assertEquals("100%", date);
 	}
 
 	/**
@@ -69,18 +83,18 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testNormaliseDateMax() {
-		
+
 		// Setup
 		Bubble object = new Bubble(200, 0, 0);
 
 		long min = 0;
 		long max = 200;
-		
+
 		// Exercise
 		object.normaliseX(min, max);
 
 		// Verify
-		float date = object.getX();
+		float date = object.getDate();
 		Assert.assertEquals(100, date, 0.1);
 	}
 
@@ -89,18 +103,18 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testNormaliseDateMin() {
-		
+
 		// Setup
 		Bubble object = new Bubble(0, 0, 0);
 
 		long min = 0;
 		long max = 200;
-		
+
 		// Exercise
 		object.normaliseX(min, max);
 
 		// Verify
-		float date = object.getX();
+		float date = object.getDate();
 		Assert.assertEquals(0, date, 0.1);
 	}
 
@@ -109,17 +123,17 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testNormaliseDateMid() {
-		
+
 		// Setup
 		Bubble object = new Bubble(60, 0, 0);
 		long min = 0;
 		long max = 120;
-		
+
 		// Exercise
 		object.normaliseX(min, max);
 
 		// Verify
-		float date = object.getX();
+		float date = object.getDate();
 		Assert.assertEquals(50, date, 0.1);
 	}
 
@@ -134,7 +148,7 @@ public class BubbleTest {
 
 		long min = 0;
 		long max = 120;
-		
+
 		// Exercise
 		object.normaliseSize(min, max);
 
@@ -156,11 +170,30 @@ public class BubbleTest {
 		long min = 0;
 		long max = 120;
 
-		// Exercise.
+		// Exercise
 		object.normaliseSize(min, max);
 
 		// Verify
 		float date = object.getSize();
 		Assert.assertEquals(50, date, 0.1);
+	}
+
+	@Test
+	public void testToString() {
+
+		// Setup
+		Bubble object = new Bubble(0, 0, 120);
+
+		// Exercise
+		String out = object.toString();
+
+		// Verify
+		StringBuffer bubblesData = new StringBuffer();
+		bubblesData.append("{\"Date\":\"").append("0.00").append('"');
+		bubblesData.append(", \"Coverage\":\"").append("0%").append('"');
+		bubblesData.append(", \"Size\":\"").append("120.00").append('"');
+		bubblesData.append("}");
+		Assert.assertEquals(bubblesData.toString(), out);
+
 	}
 }

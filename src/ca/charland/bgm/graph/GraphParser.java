@@ -49,12 +49,12 @@ public class GraphParser {
 		// First find mins and maxes
 		ArrayList<Bubble> arrayList = bubbles.get(bubbles.keySet().toArray()[0]);
 		Bubble bubble = arrayList.get(0);
-		float min = bubble.getX();
-		float max = bubble.getX();
+		float min = bubble.getDate();
+		float max = bubble.getDate();
 		for (String key : bubbles.keySet()) {
 			for (Bubble b : bubbles.get(key)) {
-				min = Math.min(min, b.getX());
-				max = Math.max(max, b.getX());
+				min = Math.min(min, b.getDate());
+				max = Math.max(max, b.getDate());
 			}
 		}
 
