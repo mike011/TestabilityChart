@@ -22,11 +22,22 @@ import ca.charland.bgm.change.Line;
 public class ChangeParserTest {
 
 	/**
-	 * Test simple.
+	 * Test the simple case with one change.
 	 */
 	@Test
-	public void testSimple() {
-		List<String> read = FileAccessing.read("test/res/simple.txt");
+	public void testOne() {
+		List<String> read = FileAccessing.read("test/res/one.txt");
+		List<Change> parse = FileParser.changes(read);
+		assertNotNull(parse);
+		assertTrue("Not empty", parse.isEmpty());
+	}
+
+	/**
+	 * Test the simple case with one Java change.
+	 */
+	@Test
+	public void testOneJava() {
+		List<String> read = FileAccessing.read("test/res/java.txt");
 		List<Change> parse = FileParser.changes(read);
 		assertNotNull(parse);
 		assertEquals(1, parse.size());
@@ -39,6 +50,16 @@ public class ChangeParserTest {
 	public void testTwo() {
 		List<String> read = FileAccessing.read("test/res/two.txt");
 		List<Change> parse = FileParser.changes(read);
+		assertTrue(parse.isEmpty());
+	}
+	
+	/**
+	 * Test two java files.
+	 */
+	@Test
+	public void testTwoJava() {
+		List<String> read = FileAccessing.read("test/res/java_two.txt");
+		List<Change> parse = FileParser.changes(read);
 		assertEquals(2, parse.size());
 
 		Change change = parse.get(0);
@@ -48,12 +69,13 @@ public class ChangeParserTest {
 		assertEquals(change.getCoverage(), change2.getCoverage(), 0.1);
 	}
 
+
 	/**
 	 * Test parse line.
 	 */
 	@Test
 	public void testParseLine() {
-		Line line = FileParser.line("1	1	permissions.txt");
+		Line line = FileParser.line("1	1	permissions.java");
 		assertNotNull(line);
 		assertTrue(line.isValid());
 		assertEquals(2, line.getSrcDiff());

@@ -4,7 +4,7 @@ Date:   Tue Nov 29 05:39:55 2011 -0500
 
     adding Sam George and Frank Bush
 
-1	1	permissions.exe
+1	1	permissions.java
 
 commit 60da55f51fed17932878fbead0846ec16ae11781
 Author: John Hammock <jhammock@rom.ca>
@@ -12,4 +12,4 @@ Date:   Mon Nov 28 15:59:17 2011 -0500
 
     Adding more detail to the README
 
-88	12	readme.xml
+88	12	readme.java

@@ -1,16 +1,15 @@
 package ca.charland.bgm.change;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
-
-import ca.charland.bgm.change.Change;
-import ca.charland.bgm.change.Line;
 
 /**
  * Tests for Change.
@@ -44,8 +43,8 @@ public class ChangeTest {
 	@Test
 	public void testGetCoverageZero() {
 		List<Line> lines = new ArrayList<Line>();
-		lines.add(new Line("3", "3", "dog"));
-		lines.add(new Line("2", "55", "dog"));
+		lines.add(new Line("3", "3", "dog.java"));
+		lines.add(new Line("2", "55", "dog.java"));
 		Change change = new Change(null, null, null, null, lines);
 		double diff = change.getCoverage();
 		assertEquals(0, diff, 0.1);
@@ -57,8 +56,8 @@ public class ChangeTest {
 	@Test
 	public void testGetCoverageHalf() {
 		List<Line> lines = new ArrayList<Line>();
-		lines.add(new Line("3", "3", "dog"));
-		lines.add(new Line("3", "3", "test"));
+		lines.add(new Line("3", "3", "dog.java"));
+		lines.add(new Line("3", "3", "test.java"));
 		Change change = new Change(null, null, null, null, lines);
 		double diff = change.getCoverage();
 		assertEquals(0.5, diff, 0.1);
@@ -105,13 +104,56 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetAuthor() {
+		// Setup
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "test"));
 
 		String expectedAuthor = "frank";
 		Change change = new Change(null, expectedAuthor, null, null, lines);
+		
+		// Exercise
 		String author = change.getAuthor();
 
+		// Verify
 		assertEquals(expectedAuthor, author);
+	}
+	
+	/**
+	 * Test if the change is valid.
+	 */
+	@Test
+	public void testIsValidNo() {
+
+		// Setup
+		List<Line> lines = new ArrayList<Line>();
+
+		String expectedAuthor = "frank";
+		Change change = new Change(null, expectedAuthor, null, null, lines);
+
+		// Exercise
+		boolean valid = change.isValid();
+		
+		// Verify
+		assertFalse(valid);
+	}
+	
+	/**
+	 * Test if the change is valid.
+	 */
+	@Test
+	public void testIsValidYes() {
+
+		// Setup
+		List<Line> lines = new ArrayList<Line>();
+		lines.add(new Line("3", "3", "test"));
+
+		String expectedAuthor = "frank";
+		Change change = new Change(null, expectedAuthor, null, null, lines);
+
+		// Exercise
+		boolean valid = change.isValid();
+		
+		// Verify
+		assertTrue(valid);
 	}
 }

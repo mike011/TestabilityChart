@@ -20,7 +20,7 @@ public class FileInputTest {
 	 */
 	@Test
 	public void testReadTxt() {
-		List<String> read = FileAccessing.read("test/res/simple.txt");
+		List<String> read = FileAccessing.read("test/res/one.txt");
 		Assert.assertNotNull(read);
 		Assert.assertTrue(read.size() > 0);
 	}

@@ -83,7 +83,7 @@ public class Line {
 	 * @return true, if is valid
 	 */
 	public boolean isValid() {
-		return !(removed.equals("-") && added.equals("-"));
+		return file.contains(".java") && !(removed.equals("-") && added.equals("-"));
 	}
 
 	/**

@@ -30,7 +30,9 @@ public class FileParser {
 				if (line.startsWith("commit")) {
 					if (commit != null) {
 						Change change = new Change(commit, author, date, desc, fileLines);
-						result.add(change);
+						if (change.isValid()) {
+							result.add(change);
+						}
 						fileLines = new ArrayList<Line>();
 					}
 					commit = line;
@@ -46,23 +48,27 @@ public class FileParser {
 					// ignored.
 				} else {
 					Line lineObject = line(line);
-					fileLines.add(lineObject);
+					if (lineObject.isValid()) {
+						fileLines.add(lineObject);
+					}
 				}
 			}
 		}
 
 		Change change = new Change(commit, author, date, desc, fileLines);
-		result.add(change);
+		if (change.isValid()) {
+			result.add(change);
+		}
 
 		return result;
 	}
 
 	/**
-	 * Line.
+	 * Parses the string into the object Line.
 	 * 
 	 * @param line
-	 *            the line
-	 * @return the line
+	 *            the string
+	 * @return the Line object.
 	 */
 	static Line line(String line) {
 		String[] splits = line.split("\t");

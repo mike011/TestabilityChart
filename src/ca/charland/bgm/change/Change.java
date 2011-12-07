@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Holds one change which is a commit into the repo.
+ * Holds one change which is a commit into the repository.
  * 
  * @author mcharland
  */
@@ -155,5 +155,14 @@ public class Change {
 	 */
 	public String getAuthor() {
 		return author;
+	}
+
+	/**
+	 * Checks if the Change is valid meaning that it containing any lines.
+	 * 
+	 * @return If the Change is valid.
+	 */
+	public boolean isValid() {
+		return !lines.isEmpty();
 	}
 }
