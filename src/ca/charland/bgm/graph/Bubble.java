@@ -23,13 +23,13 @@ public class Bubble {
 	 *            the date
 	 * @param coverage
 	 *            the coverage
-	 * @param rawSize
-	 *            the raw size
+	 * @param linesCovered
+	 *           The amount of lines covered.
 	 */
-	Bubble(float date, float coverage, float rawSize) {
+	Bubble(float date, float coverage, float linesCovered) {
 		this.x = date;
 		this.y = coverage;
-		this.size = rawSize;
+		this.size = linesCovered;
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class Bubble {
 	 * @return the y
 	 */
 	public float getY() {
-		return y;
+		return y * 100;
 	}
 
 	/**

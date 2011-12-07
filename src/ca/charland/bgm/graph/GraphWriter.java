@@ -1,9 +1,7 @@
 package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.List;
-import java.util.Locale;
 
 import ca.charland.bgm.FileAccessing;
 
@@ -45,20 +43,6 @@ public class GraphWriter {
 	public boolean loadRawFile() {
 		_raw = FileAccessing.read("src/res/raw_graph.mxml");
 		return _raw != null;
-	}
-
-	/**
-	 * Format.
-	 * 
-	 * @param x
-	 *            the x
-	 * @return the string
-	 */
-	private String format(float x) {
-		StringBuilder sb = new StringBuilder();
-		Formatter formatter = new Formatter(sb, Locale.US);
-		formatter.format("%.2f", x);
-		return sb.toString();
 	}
 
 	/**

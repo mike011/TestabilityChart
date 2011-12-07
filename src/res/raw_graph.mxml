@@ -7,7 +7,7 @@
 		]]>
 	</mx:Script>
 
-	<mx:Panel title="Bubble Chart (Bubbles relative to other series)">
+	<mx:Panel title="Testability Bubble Chart">
 		<mx:BubbleChart id="myChart"
 			showDataTips="true"
 		>
