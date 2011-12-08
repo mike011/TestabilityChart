@@ -1,5 +1,6 @@
 package ca.charland.bgm.graph;
 
+import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -10,8 +11,8 @@ import java.util.Locale;
  */
 public class Bubble {
 
-	/** The x. */
-	private float date;
+	/** The date. */
+	private final Date date;
 
 	/** The y. */
 	private final float coverage;
@@ -21,15 +22,13 @@ public class Bubble {
 
 	/**
 	 * Instantiates a new bubble.
-	 * 
-	 * @param date
-	 *            the date
+	 * @param date The date
 	 * @param coverage
 	 *            the coverage
 	 * @param linesCovered
 	 *            The amount of lines covered.
 	 */
-	Bubble(float date, float coverage, float linesCovered) {
+	Bubble(Date date, float coverage, float linesCovered) {
 		this.date = date;
 		this.coverage = coverage;
 		this.size = linesCovered;
@@ -41,7 +40,10 @@ public class Bubble {
 	 * @return the x
 	 */
 	public float getDate() {
-		return date;
+		if(date == null) {
+			return 0;
+		}
+		return date.getTime();
 	}
 
 	/**
@@ -53,7 +55,7 @@ public class Bubble {
 	 *            the max
 	 */
 	public void normaliseX(float min, float max) {
-		date = (date - min) / max * 100;
+		//dateF = (dateF - min) / max * 100;
 	}
 
 	/**

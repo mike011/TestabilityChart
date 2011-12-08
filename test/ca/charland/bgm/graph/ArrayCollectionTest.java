@@ -28,7 +28,7 @@ public class ArrayCollectionTest {
 	@Test
 	public void testAdd() {
 		ArrayCollection ac = new ArrayCollection(2);
-		Bubble b = new Bubble(0, 0, 0);
+		Bubble b = new Bubble(null, 0, 0);
 
 		ac.add(b);
 
@@ -44,7 +44,7 @@ public class ArrayCollectionTest {
 	@Test
 	public void testToString() {
 		ArrayCollection ac = new ArrayCollection(134);
-		Bubble b = new Bubble(0, 0, 0);
+		Bubble b = new Bubble(null, 0, 0);
 		ac.add(b);
 
 		String out = ac.toString();
@@ -63,9 +63,9 @@ public class ArrayCollectionTest {
 	@Test
 	public void testToStringTwoLines() {
 		ArrayCollection ac = new ArrayCollection(3);
-		Bubble b = new Bubble(0, 0, 0);
+		Bubble b = new Bubble(null, 0, 0);
 		ac.add(b);
-		Bubble b2 = new Bubble(0, 0, 0);
+		Bubble b2 = new Bubble(null, 0, 0);
 		ac.add(b2);
 
 		String out = ac.toString();

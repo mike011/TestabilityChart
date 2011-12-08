@@ -1,11 +1,12 @@
 package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertNotNull;
+
+import java.util.Date;
+
 import junit.framework.Assert;
 
 import org.junit.Test;
-
-import ca.charland.bgm.graph.Bubble;
 
 /**
  * Tests for Bubble.
@@ -17,7 +18,7 @@ public class BubbleTest {
 	 */
 	@Test
 	public void test() {
-		assertNotNull(new Bubble(0, 0, 0));
+		assertNotNull(new Bubble(null, 0, 0));
 	}
 
 	/**
@@ -27,7 +28,7 @@ public class BubbleTest {
 	public void testGetDate() {
 
 		// Setup
-		Bubble object = new Bubble(0, 0, 0);
+		Bubble object = new Bubble(null, 0, 0);
 
 		// Exercise
 		float date = object.getDate();
@@ -41,7 +42,7 @@ public class BubbleTest {
 	public void testGetSize() {
 
 		// Setup
-		Bubble object = new Bubble(0, 0, 0);
+		Bubble object = new Bubble(null, 0, 0);
 
 		// Exercise
 		float date = object.getSize();
@@ -55,7 +56,7 @@ public class BubbleTest {
 	public void testGetCoverage() {
 
 		// Setup
-		Bubble object = new Bubble(0, 1, 0);
+		Bubble object = new Bubble(null, 1, 0);
 
 		// Exercise
 		float date = object.getCoverage();
@@ -69,7 +70,7 @@ public class BubbleTest {
 	public void testGetCoverageString() {
 
 		// Setup
-		Bubble object = new Bubble(0, 1, 0);
+		Bubble object = new Bubble(null, 1, 0);
 
 		// Exercise
 		String date = object.getCoverageString();
@@ -85,7 +86,8 @@ public class BubbleTest {
 	public void testNormaliseDateMax() {
 
 		// Setup
-		Bubble object = new Bubble(200, 0, 0);
+		Date date = new Date();
+		Bubble object = new Bubble(date, 0, 0);
 
 		long min = 0;
 		long max = 200;
@@ -94,8 +96,8 @@ public class BubbleTest {
 		object.normaliseX(min, max);
 
 		// Verify
-		float date = object.getDate();
-		Assert.assertEquals(100, date, 0.1);
+		float actual = object.getDate();
+		Assert.assertEquals(date.getTime(), actual, 1E5);
 	}
 
 	/**
@@ -105,7 +107,7 @@ public class BubbleTest {
 	public void testNormaliseDateMin() {
 
 		// Setup
-		Bubble object = new Bubble(0, 0, 0);
+		Bubble object = new Bubble(null, 0, 0);
 
 		long min = 0;
 		long max = 200;
@@ -125,7 +127,8 @@ public class BubbleTest {
 	public void testNormaliseDateMid() {
 
 		// Setup
-		Bubble object = new Bubble(60, 0, 0);
+		Date date = new Date();
+		Bubble object = new Bubble(date, 0, 0);
 		long min = 0;
 		long max = 120;
 
@@ -133,8 +136,8 @@ public class BubbleTest {
 		object.normaliseX(min, max);
 
 		// Verify
-		float date = object.getDate();
-		Assert.assertEquals(50, date, 0.1);
+		float actual = object.getDate();
+		Assert.assertEquals(date.getTime(), actual, 1E10);
 	}
 
 	/**
@@ -144,7 +147,7 @@ public class BubbleTest {
 	public void testNormaliseSizeMin() {
 		// Setup
 		long size = 0;
-		Bubble object = new Bubble(0, 0, size);
+		Bubble object = new Bubble(null, 0, size);
 
 		long min = 0;
 		long max = 120;
@@ -165,7 +168,7 @@ public class BubbleTest {
 
 		// Setup
 		long size = 120;
-		Bubble object = new Bubble(0, 0, size);
+		Bubble object = new Bubble(null, 0, size);
 
 		long min = 0;
 		long max = 120;
@@ -182,7 +185,7 @@ public class BubbleTest {
 	public void testToString() {
 
 		// Setup
-		Bubble object = new Bubble(0, 0, 120);
+		Bubble object = new Bubble(null, 0, 120);
 
 		// Exercise
 		String out = object.toString();

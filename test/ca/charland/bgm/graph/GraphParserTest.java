@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -50,8 +51,9 @@ public class GraphParserTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(500, 0, 0));
-		bubbles.add(new Bubble(10000, 0, 0));
+		Date date = new Date();
+		bubbles.add(new Bubble(date, 0, 0));
+		bubbles.add(new Bubble(date, 0, 0));
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);
@@ -66,8 +68,8 @@ public class GraphParserTest {
 		assertEquals(1, normalized.size());
 
 		ArrayList<Bubble> normalizedBubbles = map.get("author");
-		assertEquals(0.0, normalizedBubbles.get(0).getDate(), 0.1);
-		assertEquals(95, normalizedBubbles.get(1).getDate(), 0.1);
+		assertEquals(date.getTime(), normalizedBubbles.get(0).getDate(), 1E5);
+		assertEquals(date.getTime(), normalizedBubbles.get(1).getDate(), 1E5);
 	}
 
 	/**
@@ -80,8 +82,8 @@ public class GraphParserTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(0, 0, 500));
-		bubbles.add(new Bubble(0, 0, 01000));
+		bubbles.add(new Bubble(null, 0, 500));
+		bubbles.add(new Bubble(null, 0, 01000));
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);

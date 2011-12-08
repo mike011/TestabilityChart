@@ -1,7 +1,6 @@
 package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -28,9 +27,8 @@ public class GraphParser {
 
 		for (Change change : changes) {
 			float coverage = change.getCoverage();
-			Date date = change.getDate();
 			float linesCovered = change.getLinesCovered();
-			Bubble bubble = new Bubble(date.getTime(), coverage, linesCovered);
+			Bubble bubble = new Bubble(change.getDate(), coverage, linesCovered);
 
 			String author = change.getAuthor();
 			if (!series.containsKey(author)) {

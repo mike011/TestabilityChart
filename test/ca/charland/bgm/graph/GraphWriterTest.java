@@ -56,7 +56,7 @@ public class GraphWriterTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(0, 0, 0));
+		bubbles.add(new Bubble(null, 0, 0));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubbles);
 
@@ -122,7 +122,7 @@ public class GraphWriterTest {
 	public void addDataForBubbles() {
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(0, 0, 0));
+		bubbles.add(new Bubble(null, 0, 0));
 
 		// Exercise
 		Graph g = new Graph();
