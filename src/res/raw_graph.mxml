@@ -26,16 +26,27 @@
 		        return numForm.format(cat) + "%";
 		    }
 		
+		    // Format the x axis.
 		    public function defineHorizontalLabel(cat:Object, pcat:Object, ax:LinearAxis):String 
 		    {
 		        return numForm.format(cat);
 		    }
+		    
+		    // For the bubbles that pop up make them prettier.
+		    private function dataTip(hitData:HitData):String
+            {
+                var item:Object = hitData.item;
+                var html:String = "<b>Day</b>: " + item.Date + "<br>";
+                html += "<b>Coverage</b>: " + item.Coverage + "<br>";
+                html += "<b>Size</b>: " + item.Size;
+                return html;
+            }
 {1}
 		]]>
 	</fx:Script>
 
 	<mx:Panel title="Testability Bubble Chart" height="100%" width="100%">
-		<mx:BubbleChart height="100%" width="100%" id="myChart"	showDataTips="true">
+		<mx:BubbleChart height="100%" width="100%" id="myChart" showDataTips="true" dataTipFunction="dataTip">
 		    <mx:series>
 {2}
 			</mx:series>
