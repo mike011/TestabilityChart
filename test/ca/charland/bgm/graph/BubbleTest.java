@@ -86,14 +86,14 @@ public class BubbleTest {
 	public void testNormaliseDateMax() {
 
 		// Setup
-		Date date = new Date();
+		Date date = new Date(0);
 		Bubble object = new Bubble(date, 0, 0);
 
 		long min = 0;
 		long max = 200;
 
 		// Exercise
-		object.normaliseX(min, max);
+		object.normaliseDate(min, max);
 
 		// Verify
 		float actual = object.getDate();
@@ -107,13 +107,13 @@ public class BubbleTest {
 	public void testNormaliseDateMin() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 0);
+		Bubble object = new Bubble(new Date(0), 0, 0);
 
 		long min = 0;
 		long max = 200;
 
 		// Exercise
-		object.normaliseX(min, max);
+		object.normaliseDate(min, max);
 
 		// Verify
 		float date = object.getDate();
@@ -127,13 +127,13 @@ public class BubbleTest {
 	public void testNormaliseDateMid() {
 
 		// Setup
-		Date date = new Date();
+		Date date = new Date(0);
 		Bubble object = new Bubble(date, 0, 0);
 		long min = 0;
 		long max = 120;
 
 		// Exercise
-		object.normaliseX(min, max);
+		object.normaliseDate(min, max);
 
 		// Verify
 		float actual = object.getDate();

@@ -31,17 +31,18 @@ public class BubbleSeries {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append("<mx:BubbleSeries\r\n");
-		result.append("dataProvider=\"{s");
+		String tabs = "\t\t\t\t";
+		result.append(tabs).append("<mx:BubbleSeries\r\n");
+		result.append(tabs).append('\t').append("dataProvider=\"{s");
 		result.append(number);
 		result.append("}\"\r\n");
-		result.append("displayName=\"");
+		result.append(tabs).append('\t').append("displayName=\"");
 		result.append(author);
 		result.append("\"\r\n");
-		result.append("xField=\"Date\"\r\n");
-		result.append("yField=\"Coverage\"\r\n");
-		result.append("radiusField=\"Size\"\r\n");
-		result.append("/>\r\n");
+		result.append(tabs).append('\t').append("xField=\"Date\"\r\n");
+		result.append(tabs).append('\t').append("yField=\"Coverage\"\r\n");
+		result.append(tabs).append('\t').append("radiusField=\"Size\"\r\n");
+		result.append(tabs).append("/>\r\n");
 		return result.toString();
 	}
 }

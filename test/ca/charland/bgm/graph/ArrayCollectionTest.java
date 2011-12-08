@@ -50,10 +50,11 @@ public class ArrayCollectionTest {
 		String out = ac.toString();
 
 		StringBuffer expected = new StringBuffer();
-		expected.append("[Bindable]\r\n");
-		expected.append("private var s134:ArrayCollection = new ArrayCollection( [\r\n");
-		expected.append(b.toString()).append("\r\n");
-		expected.append("]);\r\n");
+		String tabs = "\t\t\t";
+		expected.append(tabs).append("[Bindable]\r\n");
+		expected.append(tabs).append("private var s134:ArrayCollection = new ArrayCollection( [\r\n");
+		expected.append(tabs).append('\t').append(b.toString()).append("\r\n");
+		expected.append(tabs).append("]);\r\n");
 		assertEquals(expected.toString(), out);
 	}
 
@@ -71,11 +72,12 @@ public class ArrayCollectionTest {
 		String out = ac.toString();
 
 		StringBuffer expected = new StringBuffer();
-		expected.append("[Bindable]\r\n");
-		expected.append("private var s3:ArrayCollection = new ArrayCollection( [\r\n");
-		expected.append(b.toString()).append(",\r\n");
-		expected.append(b2.toString()).append("\r\n");
-		expected.append("]);\r\n");
+		String tabs = "\t\t\t";
+		expected.append(tabs).append("[Bindable]\r\n");
+		expected.append(tabs).append("private var s3:ArrayCollection = new ArrayCollection( [\r\n");
+		expected.append(tabs).append('\t').append(b.toString()).append(",\r\n");
+		expected.append(tabs).append('\t').append(b2.toString()).append("\r\n");
+		expected.append(tabs).append("]);\r\n");
 		assertEquals(expected.toString(), out);
 	}
 

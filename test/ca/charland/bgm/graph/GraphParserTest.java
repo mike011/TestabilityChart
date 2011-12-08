@@ -47,11 +47,11 @@ public class GraphParserTest {
 	 * @return the normalized bubbles
 	 */
 	@Test
-	public void getNormalisedBubblesX() {
+	public void getNormalisedBubblesDate() {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		Date date = new Date();
+		Date date = new Date(0);
 		bubbles.add(new Bubble(date, 0, 0));
 		bubbles.add(new Bubble(date, 0, 0));
 
@@ -82,8 +82,8 @@ public class GraphParserTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(null, 0, 500));
-		bubbles.add(new Bubble(null, 0, 01000));
+		bubbles.add(new Bubble(new Date(0), 0, 500));
+		bubbles.add(new Bubble(new Date(0), 0, 01000));
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);

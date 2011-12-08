@@ -32,13 +32,14 @@ public class BubbleSeriesTest {
 
 		// Verify
 		StringBuffer actual = new StringBuffer();
-		actual.append("<mx:BubbleSeries\r\n");
-		actual.append("dataProvider=\"{s2}\"\r\n");
-		actual.append("displayName=\"mcharland\"\r\n");
-		actual.append("xField=\"Date\"\r\n");
-		actual.append("yField=\"Coverage\"\r\n");
-		actual.append("radiusField=\"Size\"\r\n");
-		actual.append("/>\r\n");
+		String tabs = "\t\t\t\t";
+		actual.append(tabs).append("<mx:BubbleSeries\r\n");
+		actual.append(tabs).append('\t').append("dataProvider=\"{s2}\"\r\n");
+		actual.append(tabs).append('\t').append("displayName=\"mcharland\"\r\n");
+		actual.append(tabs).append('\t').append("xField=\"Date\"\r\n");
+		actual.append(tabs).append('\t').append("yField=\"Coverage\"\r\n");
+		actual.append(tabs).append('\t').append("radiusField=\"Size\"\r\n");
+		actual.append(tabs).append("/>\r\n");
 		Assert.assertEquals(actual.toString(), string);
 	}
 }

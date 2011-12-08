@@ -40,7 +40,7 @@
 {2}
 			</mx:series>
 			<mx:horizontalAxis>
-        		<mx:LinearAxis title="Date"/>
+        		<mx:LinearAxis title="Date in days since start of project"/>
       		</mx:horizontalAxis>   
    
       		<mx:verticalAxis>

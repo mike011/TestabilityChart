@@ -54,8 +54,8 @@ public class Bubble {
 	 * @param max
 	 *            the max
 	 */
-	public void normaliseX(float min, float max) {
-		//dateF = (dateF - min) / max * 100;
+	public void normaliseDate(float min, float max) {
+		date.setTime((long)(date.getTime() - min));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class Bubble {
 	@Override
 	public String toString() {
 		StringBuffer bubblesData = new StringBuffer();
-		bubblesData.append("{\"Date\":\"").append(format(getDate())).append("\"");
+		bubblesData.append("{\"Date\":\"").append(format(getDate()/84000000)).append("\"");
 		bubblesData.append(", \"Coverage\":\"").append(getCoverageString()).append("\"");
 		bubblesData.append(", \"Size\":\"").append(format(getSize())).append("\"");
 		bubblesData.append("}");

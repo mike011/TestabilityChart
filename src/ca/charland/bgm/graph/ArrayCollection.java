@@ -47,20 +47,21 @@ public class ArrayCollection {
 	@Override
 	public String toString() {
 		StringBuffer expected = new StringBuffer();
-		expected.append("[Bindable]").append(GraphWriter.NEW_LINE);
-		expected.append("private var s");
+		String tabs = "\t\t\t";
+		expected.append(tabs).append("[Bindable]").append(GraphWriter.NEW_LINE);
+		expected.append(tabs).append("private var s");
 		expected.append(_number);
 		expected.append(":ArrayCollection = new ArrayCollection( [").append(GraphWriter.NEW_LINE);
 		int current = 0;
 		for (Bubble element : _elements) {
-			expected.append(element);
+			expected.append(tabs).append('\t').append(element);
 			++current;
 			if (current < _elements.size()) {
 				expected.append(',');
 			}
 			expected.append(GraphWriter.NEW_LINE);
 		}
-		expected.append("]);").append(GraphWriter.NEW_LINE);
+		expected.append(tabs).append("]);").append(GraphWriter.NEW_LINE);
 		return expected.toString();
 	}
 }

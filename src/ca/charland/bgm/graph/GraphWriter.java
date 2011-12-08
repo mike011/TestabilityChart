@@ -57,8 +57,8 @@ public class GraphWriter {
 					_out.add(ac.toString() + NEW_LINE);
 				}
 			} else if (line.startsWith("{2}")) {
-				for (BubbleSeries bc : _graph.getAllBubbleSeries()) {
-					_out.add(bc.toString() + NEW_LINE);
+				for (BubbleSeries bs : _graph.getAllBubbleSeries()) {
+					_out.add(bs.toString() + NEW_LINE);
 				}
 			} else {
 				_out.add(line + NEW_LINE);
