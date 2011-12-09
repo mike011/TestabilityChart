@@ -103,14 +103,11 @@ public class Change {
 		return getSrc() + getTest();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+	/** {@inheritDoc} */
+	@Override
 	public boolean equals(Object o) {
 		Change c2 = (Change) o;
-		return this.commit.equals(c2.getCommit());
+		return getCommit().equals(c2.getCommit());
 	}
 
 	/**
@@ -118,14 +115,14 @@ public class Change {
 	 * 
 	 * @return the commit
 	 */
-	private String getCommit() {
-		return commit;
+	public String getCommit() {
+		return commit.substring("commit ".length()).trim();
 	}
 
 	/** {@inheritDoc} */
 	@Override
 	public String toString() {
-		return commit;
+		return getCommit();
 	}
 
 	/**

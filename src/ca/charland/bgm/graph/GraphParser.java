@@ -28,7 +28,7 @@ public class GraphParser {
 		for (Change change : changes) {
 			float coverage = change.getCoverage();
 			float linesCovered = change.getLinesCovered();
-			Bubble bubble = new Bubble(change.getDate(), coverage, linesCovered);
+			Bubble bubble = new Bubble(change.getDate(), coverage, linesCovered, change.getCommit());
 
 			String author = change.getAuthor();
 			if (!series.containsKey(author)) {

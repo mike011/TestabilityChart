@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
 
 /**
@@ -155,5 +157,53 @@ public class ChangeTest {
 		
 		// Verify
 		assertTrue(valid);
+	}
+	
+	/** 
+	 * Test equals.
+	 */
+	@Test
+	public void testEquals() {
+	
+		// Setup
+		Change c = new Change("commit ax", null, null, null, null);
+		
+		// Exercise
+		boolean equals = c.equals(c);
+		
+		// Verify
+		Assert.assertTrue("not equal", equals);
+	}
+
+	/** 
+	 * Test get commit.
+	 */
+	@Test
+	public void testGetCommit() {
+	
+		// Setup
+		Change c = new Change("commit bob", null, null, null, null);
+		
+		// Exercise
+		String commit = c.getCommit();
+		
+		// Verify
+		Assert.assertEquals("bob", commit);
+	}
+
+	/** 
+	 * Test to string.
+	 */
+	@Test
+	public void testToString() {
+	
+		// Setup
+		Change c = new Change("commit bob", null, null, null, null);
+		
+		// Exercise
+		String commit = c.toString();
+		
+		// Verify
+		Assert.assertEquals("bob", commit);
 	}
 }

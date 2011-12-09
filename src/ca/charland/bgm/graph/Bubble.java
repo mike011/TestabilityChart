@@ -20,18 +20,26 @@ public class Bubble {
 	/** The size. */
 	private float size;
 
+	/** The link. to the change. */
+	private String change;
+
 	/**
 	 * Instantiates a new bubble.
-	 * @param date The date
+	 * 
+	 * @param date
+	 *            The date
 	 * @param coverage
 	 *            the coverage
 	 * @param linesCovered
 	 *            The amount of lines covered.
+	 * @param change
+	 *            The change.
 	 */
-	Bubble(Date date, float coverage, float linesCovered) {
+	Bubble(Date date, float coverage, float linesCovered, String change) {
 		this.date = date;
 		this.coverage = coverage;
 		this.size = linesCovered;
+		this.change = change;
 	}
 
 	/**
@@ -40,7 +48,7 @@ public class Bubble {
 	 * @return the x
 	 */
 	public float getDate() {
-		if(date == null) {
+		if (date == null) {
 			return 0;
 		}
 		return date.getTime();
@@ -55,7 +63,7 @@ public class Bubble {
 	 *            the max
 	 */
 	public void normaliseDate(float min, float max) {
-		date.setTime((long)(date.getTime() - min));
+		date.setTime((long) (date.getTime() - min));
 	}
 
 	/**
@@ -102,6 +110,15 @@ public class Bubble {
 	}
 
 	/**
+	 * Gets the link.
+	 * 
+	 * @return the link
+	 */
+	String getLink() {
+		return "https://github.com/mike011/TestabilityChart/commit/" + change;
+	}
+
+	/**
 	 * Format.
 	 * 
 	 * @param x
@@ -115,14 +132,15 @@ public class Bubble {
 		return sb.toString();
 	}
 
-	/** {@inheritDoc}  */
+	/** {@inheritDoc} */
 	@Override
 	public String toString() {
-		StringBuffer bubblesData = new StringBuffer();
-		bubblesData.append("{\"Date\":\"").append(format(getDate()/84000000)).append("\"");
-		bubblesData.append(", \"Coverage\":\"").append(getCoverageString()).append("\"");
-		bubblesData.append(", \"Size\":\"").append(format(getSize())).append("\"");
-		bubblesData.append("}");
-		return bubblesData.toString();
+		StringBuffer result = new StringBuffer();
+		result.append("{\"Date\":\"").append(format(getDate() / 84000000)).append("\"");
+		result.append(", \"Coverage\":\"").append(getCoverageString()).append("\"");
+		result.append(", \"Size\":\"").append(format(getSize())).append("\"");
+		result.append(", \"Link\":\"").append(getLink()).append('"');
+		result.append("}");
+		return result.toString();
 	}
 }

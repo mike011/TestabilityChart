@@ -18,7 +18,7 @@ public class BubbleTest {
 	 */
 	@Test
 	public void test() {
-		assertNotNull(new Bubble(null, 0, 0));
+		assertNotNull(new Bubble(null, 0, 0, ""));
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class BubbleTest {
 	public void testGetDate() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 0);
+		Bubble object = new Bubble(null, 0, 0, "");
 
 		// Exercise
 		float date = object.getDate();
@@ -42,7 +42,7 @@ public class BubbleTest {
 	public void testGetSize() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 0);
+		Bubble object = new Bubble(null, 0, 0, "");
 
 		// Exercise
 		float date = object.getSize();
@@ -56,7 +56,7 @@ public class BubbleTest {
 	public void testGetCoverage() {
 
 		// Setup
-		Bubble object = new Bubble(null, 1, 0);
+		Bubble object = new Bubble(null, 1, 0, "");
 
 		// Exercise
 		float date = object.getCoverage();
@@ -70,7 +70,7 @@ public class BubbleTest {
 	public void testGetCoverageString() {
 
 		// Setup
-		Bubble object = new Bubble(null, 1, 0);
+		Bubble object = new Bubble(null, 1, 0, "");
 
 		// Exercise
 		String date = object.getCoverageString();
@@ -87,7 +87,7 @@ public class BubbleTest {
 
 		// Setup
 		Date date = new Date(0);
-		Bubble object = new Bubble(date, 0, 0);
+		Bubble object = new Bubble(date, 0, 0, "");
 
 		long min = 0;
 		long max = 200;
@@ -107,7 +107,7 @@ public class BubbleTest {
 	public void testNormaliseDateMin() {
 
 		// Setup
-		Bubble object = new Bubble(new Date(0), 0, 0);
+		Bubble object = new Bubble(new Date(0), 0, 0, "");
 
 		long min = 0;
 		long max = 200;
@@ -128,7 +128,7 @@ public class BubbleTest {
 
 		// Setup
 		Date date = new Date(0);
-		Bubble object = new Bubble(date, 0, 0);
+		Bubble object = new Bubble(date, 0, 0, "");
 		long min = 0;
 		long max = 120;
 
@@ -147,7 +147,7 @@ public class BubbleTest {
 	public void testNormaliseSizeMin() {
 		// Setup
 		long size = 0;
-		Bubble object = new Bubble(null, 0, size);
+		Bubble object = new Bubble(null, 0, size, "");
 
 		long min = 0;
 		long max = 120;
@@ -168,7 +168,7 @@ public class BubbleTest {
 
 		// Setup
 		long size = 120;
-		Bubble object = new Bubble(null, 0, size);
+		Bubble object = new Bubble(null, 0, size, "");
 
 		long min = 0;
 		long max = 120;
@@ -180,21 +180,42 @@ public class BubbleTest {
 		float date = object.getSize();
 		Assert.assertEquals(50, date, 0.1);
 	}
+	
+	/**
+	 * Test get link.
+	 */
+	@Test
+	public void testGetLink() {
 
+		// Setup
+		Bubble object = new Bubble(null, 0, 120, "98a");
+
+		// Exercise
+		String link = object.getLink();
+
+		// Verify
+		Assert.assertEquals("Link is wrong", "https://github.com/mike011/TestabilityChart/commit/98a", link);
+		
+	}
+
+	/**
+	 * Test to string.
+	 */
 	@Test
 	public void testToString() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 120);
+		Bubble bubble = new Bubble(null, 0, 120, "123423");
 
 		// Exercise
-		String out = object.toString();
+		String out = bubble.toString();
 
 		// Verify
 		StringBuffer bubblesData = new StringBuffer();
 		bubblesData.append("{\"Date\":\"").append("0.00").append('"');
 		bubblesData.append(", \"Coverage\":\"").append("0").append('"');
 		bubblesData.append(", \"Size\":\"").append("120.00").append('"');
+		bubblesData.append(", \"Link\":\"").append(bubble.getLink()).append('"');
 		bubblesData.append("}");
 		Assert.assertEquals(bubblesData.toString(), out);
 

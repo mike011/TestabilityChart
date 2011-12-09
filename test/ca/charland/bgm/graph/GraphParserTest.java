@@ -32,7 +32,7 @@ public class GraphParserTest {
 		ArrayList<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("2", "5", "bob.txt"));
 		String author = "Author: defected <defected@defected-P5K-EPU.(none)>";
-		changes.add(new Change(null, author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 
 		// Exercise
 		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
@@ -52,8 +52,8 @@ public class GraphParserTest {
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 		Date date = new Date(0);
-		bubbles.add(new Bubble(date, 0, 0));
-		bubbles.add(new Bubble(date, 0, 0));
+		bubbles.add(new Bubble(date, 0, 0, ""));
+		bubbles.add(new Bubble(date, 0, 0, ""));
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);
@@ -82,8 +82,8 @@ public class GraphParserTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(new Date(0), 0, 500));
-		bubbles.add(new Bubble(new Date(0), 0, 01000));
+		bubbles.add(new Bubble(new Date(0), 0, 500, ""));
+		bubbles.add(new Bubble(new Date(0), 0, 01000, ""));
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);

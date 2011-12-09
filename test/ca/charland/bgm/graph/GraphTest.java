@@ -34,7 +34,7 @@ public class GraphTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(null, 0, 0));
+		bubbles.add(new Bubble(null, 0, 0, ""));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubbles);
 		Graph g = new Graph();
@@ -58,10 +58,10 @@ public class GraphTest {
 
 		// Setup
 		ArrayList<Bubble> bubblesOne = new ArrayList<Bubble>();
-		bubblesOne.add(new Bubble(null, 0, 0));
+		bubblesOne.add(new Bubble(null, 0, 0, ""));
 
 		ArrayList<Bubble> bubblesTwo = new ArrayList<Bubble>();
-		bubblesTwo.add(new Bubble(null, 0, 0));
+		bubblesTwo.add(new Bubble(null, 0, 0, ""));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubblesOne);
 		changes.put("b2", bubblesTwo);
