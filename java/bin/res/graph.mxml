@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:mx="library://ns.adobe.com/flex/mx">
+
+    <fx:Declarations>
+         <s:NumberFormatter id="numForm" useGrouping="true" fractionalDigits="0"/>  
+    </fx:Declarations>
+
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.charts.*;
+    
+    		// For a NumericAxis, you do not use the labelItem argument.
+    		// This example uses a NumberFormatter to add a thousands
+		    // separator (by setting useGrouping to true) and removes decimal values 
+		    // (by setting fractionalDigits to 0).
+		    public function defineVerticalLabel(cat:Object, pcat:Object, ax:LinearAxis):String 
+		    {
+		
+			// You can't have less then zero or more then 100 percentage.
+			if(cat < 0 || cat > 100) {
+				return "";
+			}
+		        return numForm.format(cat) + "%";
+		    }
+		
+		    // Format the x axis.
+		    public function defineHorizontalLabel(cat:Object, pcat:Object, ax:LinearAxis):String 
+		    {
+		        return numForm.format(cat);
+		    }
+		    
+		    // For the bubbles that pop up make them prettier.
+		    private function dataTip(hitData:HitData):String
+            {
+                var item:Object = hitData.item;
+                var html:String = "<b>Day</b>: " + item.Date + "<br>";
+                html += "<b>Coverage</b>: " + item.Coverage + "<br>";
+                html += "<b>Size</b>: " + item.Size + "<br>";
+                return html;
+            }
+            
+            public function handleMouseMove(e:MouseEvent):void {
+		        // Use coordinates to get HitData object of 
+		        // current data point.
+		        var hda:Array = chart.findDataPoints(e.currentTarget.mouseX, e.currentTarget.mouseY);
+		        if (hda[0]) {
+		           ta.text += "Commit:" + hda[0].item.Link;
+		        }
+		     }
+			[Bindable]
+			private var s0:ArrayCollection = new ArrayCollection( [
+				{"Date":"5.09", "Coverage":"80", "Size":"1.12", "Link":"https://github.com/mike011/TestabilityChart/commit/5118c54ef6e81fce18724947b811328513fd6e13"},
+				{"Date":"4.31", "Coverage":"44", "Size":"8.54", "Link":"https://github.com/mike011/TestabilityChart/commit/91a23c1b92490f8c5a4f14432a44cbf9d3d9549a"}
+			]);
+
+			[Bindable]
+			private var s1:ArrayCollection = new ArrayCollection( [
+				{"Date":"6.07", "Coverage":"54", "Size":"5.08", "Link":"https://github.com/mike011/TestabilityChart/commit/2e373c11abc9f331bb4f9aea3306906ed84b75be"},
+				{"Date":"6.02", "Coverage":"76", "Size":"4.67", "Link":"https://github.com/mike011/TestabilityChart/commit/c74060cef746fe1adcb02619af1dcbb4b19cbeac"},
+				{"Date":"4.22", "Coverage":"72", "Size":"4.71", "Link":"https://github.com/mike011/TestabilityChart/commit/ee12e4889b7ba038f1938b93fa63b599bc1c3acf"},
+				{"Date":"4.18", "Coverage":"41", "Size":"3.43", "Link":"https://github.com/mike011/TestabilityChart/commit/c39819b51e2e7d9f96fcc77b3d21018df0b5fa6b"},
+				{"Date":"4.15", "Coverage":"81", "Size":"7.55", "Link":"https://github.com/mike011/TestabilityChart/commit/fb4933eb12a07f8025b969f94f5f1e0d4574f5fa"},
+				{"Date":"4.09", "Coverage":"40", "Size":"1.12", "Link":"https://github.com/mike011/TestabilityChart/commit/d7a57069af6c7a4bfb25a779c4f49587f224bf2b"},
+				{"Date":"4.06", "Coverage":"55", "Size":"17.69", "Link":"https://github.com/mike011/TestabilityChart/commit/16518fe2c707bc658174f02df4db784c4d1ae1f3"},
+				{"Date":"3.30", "Coverage":"8", "Size":"4.92", "Link":"https://github.com/mike011/TestabilityChart/commit/bba0d8aa4e75a49b41c6c9b121ead72a48678cdb"},
+				{"Date":"3.21", "Coverage":"100", "Size":"1.00", "Link":"https://github.com/mike011/TestabilityChart/commit/c62bd3deeef8efad0b4da3a5c48b62ced006edf0"},
+				{"Date":"3.09", "Coverage":"40", "Size":"7.97", "Link":"https://github.com/mike011/TestabilityChart/commit/e15c59b993bf1e9e74a339f1e8ef75d2c18c351c"},
+				{"Date":"2.24", "Coverage":"45", "Size":"19.26", "Link":"https://github.com/mike011/TestabilityChart/commit/953f0da86424f4a362c2919795cc04abdb947799"},
+				{"Date":"2.16", "Coverage":"57", "Size":"12.25", "Link":"https://github.com/mike011/TestabilityChart/commit/60a0c866681e764a1c48756f87f07a78d0e48193"},
+				{"Date":"1.88", "Coverage":"59", "Size":"7.88", "Link":"https://github.com/mike011/TestabilityChart/commit/3a7ea86c8e2241808759259a16de2b71940b1195"},
+				{"Date":"0.87", "Coverage":"55", "Size":"3.97", "Link":"https://github.com/mike011/TestabilityChart/commit/2234faf9e3e1e3d1c9b8dc618d36a195afe35101"},
+				{"Date":"0.78", "Coverage":"34", "Size":"7.55", "Link":"https://github.com/mike011/TestabilityChart/commit/3f1dc17919cac867b752d7ac7806bf144b645e04"},
+				{"Date":"0.63", "Coverage":"33", "Size":"18.52", "Link":"https://github.com/mike011/TestabilityChart/commit/f85afeb907be926958e47c937483401e23b08b4a"},
+				{"Date":"0.04", "Coverage":"12", "Size":"2.69", "Link":"https://github.com/mike011/TestabilityChart/commit/9bb12551386e50cbecdeed9c553c4fbced669f97"},
+				{"Date":"0.00", "Coverage":"53", "Size":"50.00", "Link":"https://github.com/mike011/TestabilityChart/commit/82bcd08011a73890f42a18cebe86cdd16b6731f5"}
+			]);
+
+		]]>
+	</fx:Script>
+
+	<s:Panel title="Testability Bubble Chart" height="100%" width="100%">
+		<s:layout>
+            <s:VerticalLayout/>
+        </s:layout>
+		<mx:BubbleChart id="chart" showDataTips="true" dataTipFunction="dataTip" mouseMove="handleMouseMove(event)">
+		    <mx:series>
+				<mx:BubbleSeries
+					dataProvider="{s0}"
+					displayName="defected"
+					xField="Date"
+					yField="Coverage"
+					radiusField="Size"
+				/>
+
+				<mx:BubbleSeries
+					dataProvider="{s1}"
+					displayName="mcharland"
+					xField="Date"
+					yField="Coverage"
+					radiusField="Size"
+				/>
+
+			</mx:series>
+			<mx:horizontalAxis>
+        		<mx:LinearAxis title="Date in days since start of project"/>
+      		</mx:horizontalAxis>   
+   
+      		<mx:verticalAxis>
+        		<mx:LinearAxis minimum="-20" maximum="120" title="Test / (Production + Test)" labelFunction="defineVerticalLabel"/>
+      		</mx:verticalAxis> 
+		</mx:BubbleChart>
+		<mx:Legend dataProvider="{chart}"/>
+		<s:TextArea id="ta" width="300" height="50"/>
+	</s:Panel>
+
+</s:Application>

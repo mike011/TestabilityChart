@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:mx="library://ns.adobe.com/flex/mx">
+
+    <fx:Declarations>
+         <s:NumberFormatter id="numForm" useGrouping="true" fractionalDigits="0"/>  
+    </fx:Declarations>
+
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.charts.*;
+    
+    		// For a NumericAxis, you do not use the labelItem argument.
+    		// This example uses a NumberFormatter to add a thousands
+		    // separator (by setting useGrouping to true) and removes decimal values 
+		    // (by setting fractionalDigits to 0).
+		    public function defineVerticalLabel(cat:Object, pcat:Object, ax:LinearAxis):String 
+		    {
+		
+			// You can't have less then zero or more then 100 percentage.
+			if(cat < 0 || cat > 100) {
+				return "";
+			}
+		        return numForm.format(cat) + "%";
+		    }
+		
+		    // Format the x axis.
+		    public function defineHorizontalLabel(cat:Object, pcat:Object, ax:LinearAxis):String 
+		    {
+		        return numForm.format(cat);
+		    }
+		    
+		    // For the bubbles that pop up make them prettier.
+		    private function dataTip(hitData:HitData):String
+            {
+                var item:Object = hitData.item;
+                var html:String = "<b>Day</b>: " + item.Date + "<br>";
+                html += "<b>Coverage</b>: " + item.Coverage + "<br>";
+                html += "<b>Size</b>: " + item.Size + "<br>";
+                html += "<a href=\"" + item.Link + "\">Commit</a>";
+                return html;
+            }
+{1}
+		]]>
+	</fx:Script>
+
+	<mx:Panel title="Testability Bubble Chart" height="100%" width="100%">
+		<mx:BubbleChart height="100%" width="100%" id="myChart" showDataTips="true" dataTipFunction="dataTip">
+		    <mx:series>
+{2}
+			</mx:series>
+			<mx:horizontalAxis>
+        		<mx:LinearAxis title="Date in days since start of project"/>
+      		</mx:horizontalAxis>   
+   
+      		<mx:verticalAxis>
+        		<mx:LinearAxis minimum="-20" maximum="120" title="Test / (Production + Test)" labelFunction="defineVerticalLabel"/>
+      		</mx:verticalAxis> 
+		</mx:BubbleChart>
+		<mx:Legend dataProvider="{myChart}"/>
+	</mx:Panel>
+</s:Application>

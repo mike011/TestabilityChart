@@ -1,0 +1,7 @@
+commit d4572ab6e5ef5a38ec6f14e05515897ea9587947
+Author: Doug Dugs <fad@rot.com>
+Date:   Tue Nov 29 05:39:55 2011 -0500
+
+    adding George Blander and Mark Bloodstone
+
+1	1	permissions.java
