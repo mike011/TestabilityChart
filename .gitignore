@@ -1,5 +1,5 @@
 bin/
-src/res/graph.mxml
-src/res/graph.swf
+*/src/res/graph.mxml
+*/src/res/graph.swf
 *~
-java/out.txt
+out.txt
