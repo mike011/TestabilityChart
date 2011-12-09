@@ -1,4 +1,5 @@
-bin/
+*/bin/
+*/bin-debug/*
 */src/res/graph.mxml
 */src/res/graph.swf
 *~
