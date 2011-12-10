@@ -1,4 +1,4 @@
-package ca.charland.bgm.graph;
+package ca.charland.bgm.flash;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,11 @@ import java.util.TreeMap;
 import junit.framework.Assert;
 
 import org.junit.Test;
+
+import ca.charland.bgm.flash.ArrayCollection;
+import ca.charland.bgm.flash.Bubble;
+import ca.charland.bgm.flash.Graph;
+import ca.charland.bgm.flash.GraphWriter;
 
 /**
  * Tests for GraphWriter.

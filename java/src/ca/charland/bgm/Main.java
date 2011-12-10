@@ -6,10 +6,10 @@ import java.util.Map;
 
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.FileParser;
-import ca.charland.bgm.graph.Bubble;
-import ca.charland.bgm.graph.Graph;
-import ca.charland.bgm.graph.GraphParser;
-import ca.charland.bgm.graph.GraphWriter;
+import ca.charland.bgm.flash.Bubble;
+import ca.charland.bgm.flash.Graph;
+import ca.charland.bgm.flash.GraphParser;
+import ca.charland.bgm.flash.GraphWriter;
 
 /**
  * The main entry point for the application.

@@ -1,4 +1,4 @@
-package ca.charland.bgm.graph;
+package ca.charland.bgm.flash;
 
 /**
  * Holds the MXML representation of a BubbleSeries.

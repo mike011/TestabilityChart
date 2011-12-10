@@ -1,8 +1,10 @@
-package ca.charland.bgm.graph;
+package ca.charland.bgm.flash;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
+
+import ca.charland.bgm.flash.BubbleSeries;
 
 /**
  * Tests for Bubble Series.

@@ -1,4 +1,4 @@
-package ca.charland.bgm.graph;
+package ca.charland.bgm.flash;
 
 import java.util.Date;
 import java.util.Formatter;
