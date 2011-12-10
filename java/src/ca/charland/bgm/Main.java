@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.jfree.ui.RefineryUtilities;
+
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.FileParser;
 import ca.charland.bgm.flash.Bubble;
 import ca.charland.bgm.flash.Graph;
 import ca.charland.bgm.flash.GraphParser;
 import ca.charland.bgm.flash.GraphWriter;
+import ca.charland.bgm.graph.BubbleChart;
 
 /**
  * The main entry point for the application.
@@ -40,5 +43,10 @@ public class Main {
 		writer.loadRawFile();
 		writer.createOutput();
 		writer.writeFile();
+		
+		BubbleChart bubblechartdemo1 = new BubbleChart();
+		bubblechartdemo1.pack();
+		RefineryUtilities.centerFrameOnScreen(bubblechartdemo1);
+		bubblechartdemo1.setVisible(true);
 	}
 }
