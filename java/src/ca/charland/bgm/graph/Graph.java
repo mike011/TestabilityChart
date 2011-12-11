@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Represents the Bubble Graph mxml.
+ * Represents the Bubble Graph.
  * 
  * @author mcharland
  */
@@ -16,9 +16,6 @@ public class Graph {
 
 	/** The _array collection. */
 	private List<ArrayCollection> _arrayCollection;
-
-	/** The Constant NEW_LINE. */
-    static final String NEW_LINE = "\r\n";
 
 	/**
 	 * Instantiates a new graph.

@@ -10,9 +10,6 @@ import java.util.List;
  */
 public class ArrayCollection {
 
-	/** The number. */
-	private final int _number;
-
 	/** The elements. */
 	private final List<Bubble> _elements;
 
@@ -20,7 +17,6 @@ public class ArrayCollection {
 	 * Instantiates a new array collection.
 	 */
 	ArrayCollection(int number) {
-		_number = number;
 		_elements = new ArrayList<Bubble>();
 	}
 
@@ -41,27 +37,5 @@ public class ArrayCollection {
 	 */
 	public List<Bubble> getElements() {
 		return _elements;
-	}
-
-	/** {@inheritDoc} */
-	@Override
-	public String toString() {
-		StringBuffer expected = new StringBuffer();
-		String tabs = "\t\t\t";
-		expected.append(tabs).append("[Bindable]").append(Graph.NEW_LINE);
-		expected.append(tabs).append("private var s");
-		expected.append(_number);
-		expected.append(":ArrayCollection = new ArrayCollection( [").append(Graph.NEW_LINE);
-		int current = 0;
-		for (Bubble element : _elements) {
-			expected.append(tabs).append('\t').append(element);
-			++current;
-			if (current < _elements.size()) {
-				expected.append(',');
-			}
-			expected.append(Graph.NEW_LINE);
-		}
-		expected.append(tabs).append("]);").append(Graph.NEW_LINE);
-		return expected.toString();
 	}
 }
