@@ -20,6 +20,17 @@ import ca.charland.bgm.graph.Graph;
  * @author mcharland
  */
 public class GraphTest {
+	
+	/**
+	 * Assert list.
+	 * 
+	 * @param list
+	 *            the list
+	 */
+	static void assertList(List<?> list) {
+		Assert.assertNotNull(list);
+		Assert.assertEquals("Should be empty", 0, list.size());
+	}
 
 	/**
 	 * Test the constructor.
@@ -27,8 +38,8 @@ public class GraphTest {
 	@Test
 	public void testGraph() {
 		Graph g = new Graph();
-		GraphWriterTest.assertList(g.getAllBubbleData());
-		GraphWriterTest.assertList(g.getAllBubbleSeries());
+		assertList(g.getAllBubbleData());
+	assertList(g.getAllBubbleSeries());
 	}
 
 	/**

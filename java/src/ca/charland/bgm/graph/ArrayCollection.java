@@ -48,10 +48,10 @@ public class ArrayCollection {
 	public String toString() {
 		StringBuffer expected = new StringBuffer();
 		String tabs = "\t\t\t";
-		expected.append(tabs).append("[Bindable]").append(GraphWriter.NEW_LINE);
+		expected.append(tabs).append("[Bindable]").append(Graph.NEW_LINE);
 		expected.append(tabs).append("private var s");
 		expected.append(_number);
-		expected.append(":ArrayCollection = new ArrayCollection( [").append(GraphWriter.NEW_LINE);
+		expected.append(":ArrayCollection = new ArrayCollection( [").append(Graph.NEW_LINE);
 		int current = 0;
 		for (Bubble element : _elements) {
 			expected.append(tabs).append('\t').append(element);
@@ -59,9 +59,9 @@ public class ArrayCollection {
 			if (current < _elements.size()) {
 				expected.append(',');
 			}
-			expected.append(GraphWriter.NEW_LINE);
+			expected.append(Graph.NEW_LINE);
 		}
-		expected.append(tabs).append("]);").append(GraphWriter.NEW_LINE);
+		expected.append(tabs).append("]);").append(Graph.NEW_LINE);
 		return expected.toString();
 	}
 }
