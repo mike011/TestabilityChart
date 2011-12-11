@@ -1,4 +1,4 @@
-package ca.charland.bgm.flash;
+package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -8,7 +8,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import ca.charland.bgm.flash.Bubble;
+import ca.charland.bgm.graph.Bubble;
 
 /**
  * Tests for Bubble.

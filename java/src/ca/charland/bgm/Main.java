@@ -8,11 +8,11 @@ import org.jfree.ui.RefineryUtilities;
 
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.FileParser;
-import ca.charland.bgm.flash.Bubble;
-import ca.charland.bgm.flash.Graph;
-import ca.charland.bgm.flash.GraphParser;
-import ca.charland.bgm.flash.GraphWriter;
+import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.BubbleChart;
+import ca.charland.bgm.graph.Graph;
+import ca.charland.bgm.graph.GraphParser;
+import ca.charland.bgm.graph.GraphWriter;
 
 /**
  * The main entry point for the application.

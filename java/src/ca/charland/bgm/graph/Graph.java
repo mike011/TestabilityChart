@@ -1,4 +1,4 @@
-package ca.charland.bgm.flash;
+package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
 import java.util.List;

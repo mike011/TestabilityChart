@@ -1,4 +1,4 @@
-package ca.charland.bgm.flash;
+package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import ca.charland.bgm.flash.ArrayCollection;
-import ca.charland.bgm.flash.Bubble;
+import ca.charland.bgm.graph.ArrayCollection;
+import ca.charland.bgm.graph.Bubble;
 
 /**
  * Tests for ArrayCollection.

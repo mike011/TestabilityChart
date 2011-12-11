@@ -1,4 +1,4 @@
-package ca.charland.bgm.flash;
+package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,10 +13,10 @@ import org.junit.Test;
 
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.Line;
-import ca.charland.bgm.flash.ArrayCollection;
-import ca.charland.bgm.flash.Bubble;
-import ca.charland.bgm.flash.Graph;
-import ca.charland.bgm.flash.GraphParser;
+import ca.charland.bgm.graph.ArrayCollection;
+import ca.charland.bgm.graph.Bubble;
+import ca.charland.bgm.graph.Graph;
+import ca.charland.bgm.graph.GraphParser;
 
 /**
  * Test for GraphParser.
@@ -26,7 +26,7 @@ import ca.charland.bgm.flash.GraphParser;
 public class GraphParserTest {
 
 	/**
-	 * Test method for {@link ca.charland.bgm.flash.GraphParser#bubbles(java.util.List)}.
+	 * Test method for {@link ca.charland.bgm.graph.GraphParser#bubbles(java.util.List)}.
 	 */
 	@Test
 	public void testBubbles() {
