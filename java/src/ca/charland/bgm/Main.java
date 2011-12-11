@@ -12,7 +12,6 @@ import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.BubbleChart;
 import ca.charland.bgm.graph.Graph;
 import ca.charland.bgm.graph.GraphParser;
-import ca.charland.bgm.graph.GraphWriter;
 
 /**
  * The main entry point for the application.
@@ -39,11 +38,6 @@ public class Main {
 		Graph graph = new Graph();
 		graph.addBubbles(bubbles);
 
-		GraphWriter writer = new GraphWriter(graph);
-		writer.loadRawFile();
-		writer.createOutput();
-		writer.writeFile();
-		
 		BubbleChart bubblechartdemo1 = new BubbleChart();
 		bubblechartdemo1.pack();
 		RefineryUtilities.centerFrameOnScreen(bubblechartdemo1);
