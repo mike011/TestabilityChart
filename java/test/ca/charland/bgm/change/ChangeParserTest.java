@@ -33,17 +33,6 @@ public class ChangeParserTest {
 	}
 
 	/**
-	 * Test the simple case with one Java change.
-	 */
-	@Test
-	public void testOneJava() {
-		List<String> read = FileAccessing.read("test/res/java.txt");
-		List<Change> parse = FileParser.changes(read);
-		assertNotNull(parse);
-		assertEquals(1, parse.size());
-	}
-
-	/**
 	 * Test two.
 	 */
 	@Test

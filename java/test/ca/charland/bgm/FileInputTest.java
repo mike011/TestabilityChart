@@ -24,14 +24,4 @@ public class FileInputTest {
 		Assert.assertNotNull(read);
 		Assert.assertTrue(read.size() > 0);
 	}
-
-	/**
-	 * Test method for {@link ca.charland.bgm.FileAccessing#read()}.
-	 */
-	@Test
-	public void testReadAS() {
-		List<String> read = FileAccessing.read("src/res/raw_graph.mxml");
-		Assert.assertNotNull(read);
-		Assert.assertTrue(read.size() > 0);
-	}
 }

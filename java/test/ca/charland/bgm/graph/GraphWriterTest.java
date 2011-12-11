@@ -2,17 +2,10 @@ package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
-
-import ca.charland.bgm.graph.ArrayCollection;
-import ca.charland.bgm.graph.Bubble;
-import ca.charland.bgm.graph.Graph;
-import ca.charland.bgm.graph.GraphWriter;
 
 /**
  * Tests for GraphWriter.
@@ -51,63 +44,6 @@ public class GraphWriterTest {
 		boolean loaded = graph.loadRawFile();
 
 		Assert.assertTrue(loaded);
-	}
-
-	/**
-	 * Creates the output.
-	 */
-	@Test
-	public void testCreateOutput() {
-
-		// Setup
-		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(null, 0, 0, ""));
-		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
-		changes.put("b1", bubbles);
-
-		Graph g = new Graph();
-		g.addBubbles(changes);
-
-		GraphWriter gw = new GraphWriter(g);
-		gw.loadRawFile();
-
-		// Exercise
-		boolean createOutput = gw.createOutput();
-
-		// Verify
-		Assert.assertTrue(createOutput);
-		List<String> out = gw.getGeneratedMXML();
-		assertParsed(out);
-
-	}
-
-	/**
-	 * Assert parsed.
-	 * 
-	 * @param out
-	 *            the out
-	 */
-	private void assertParsed(List<String> out) {
-		boolean one = false;
-		boolean two = false;
-		boolean data = false;
-		boolean series = false;
-		for (String line : out) {
-			if (line.contains("{1}")) {
-				one = true;
-			} else if (line.contains("private var s") && line.contains(":ArrayCollection = new ArrayCollection( [")) {
-				data = true;
-			} else if (line.contains("{2}")) {
-				two = true;
-			} else if (line.contains("<mx:BubbleSeries")) {
-				series = true;
-			}
-		}
-		Assert.assertFalse("data parsing string not removed", one);
-		Assert.assertTrue("data not added", data);
-
-		Assert.assertFalse("series parsing not removed", two);
-		Assert.assertTrue("series not added", series);
 	}
 
 	/**
