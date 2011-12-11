@@ -15,18 +15,18 @@ import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.Line;
 import ca.charland.bgm.graph.ArrayCollection;
 import ca.charland.bgm.graph.Bubble;
-import ca.charland.bgm.graph.Graph;
-import ca.charland.bgm.graph.GraphParser;
+import ca.charland.bgm.graph.Chart;
+import ca.charland.bgm.graph.ChartParser;
 
 /**
  * Test for GraphParser.
  * 
  * @author mcharland
  */
-public class GraphParserTest {
+public class ChartParserTest {
 
 	/**
-	 * Test method for {@link ca.charland.bgm.graph.GraphParser#bubbles(java.util.List)}.
+	 * Test method for {@link ca.charland.bgm.graph.ChartParser#bubbles(java.util.List)}.
 	 */
 	@Test
 	public void testBubbles() {
@@ -39,7 +39,7 @@ public class GraphParserTest {
 		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 
 		// Exercise
-		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
+		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes);
 
 		// Verify
 		assertNotNull(bubbles);
@@ -61,11 +61,11 @@ public class GraphParserTest {
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);
-		Graph graph = new Graph();
+		Chart graph = new Chart();
 		graph.addBubbles(map);
 
 		// Exercise
-		GraphParser.normaliseBubbleData(map);
+		ChartParser.normaliseBubbleData(map);
 
 		// Verify
 		List<ArrayCollection> normalized = graph.getAllBubbleData();
@@ -91,11 +91,11 @@ public class GraphParserTest {
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);
-		Graph graph = new Graph();
+		Chart graph = new Chart();
 		graph.addBubbles(map);
 
 		// Exercise
-		GraphParser.normaliseBubbleData(map);
+		ChartParser.normaliseBubbleData(map);
 
 		// Verify
 		List<ArrayCollection> normalized = graph.getAllBubbleData();

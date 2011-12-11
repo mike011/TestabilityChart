@@ -1,5 +1,7 @@
 package ca.charland.bgm.graph;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,18 +11,13 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import ca.charland.bgm.graph.ArrayCollection;
-import ca.charland.bgm.graph.Bubble;
-import ca.charland.bgm.graph.BubbleSeries;
-import ca.charland.bgm.graph.Graph;
-
 /**
- * Tests for Graph.
+ * Tests for Chart.
  * 
  * @author mcharland
  */
-public class GraphTest {
-	
+public class ChartTest {
+
 	/**
 	 * Assert list.
 	 * 
@@ -36,10 +33,11 @@ public class GraphTest {
 	 * Test the constructor.
 	 */
 	@Test
-	public void testGraph() {
-		Graph g = new Graph();
+	public void testConstructor() {
+		Chart g = new Chart();
+		assertNotNull(g.getPanel());
 		assertList(g.getAllBubbleData());
-	assertList(g.getAllBubbleSeries());
+		assertList(g.getAllBubbleSeries());
 	}
 
 	/**
@@ -53,7 +51,7 @@ public class GraphTest {
 		bubbles.add(new Bubble(null, 0, 0, ""));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubbles);
-		Graph g = new Graph();
+		Chart g = new Chart();
 
 		// Exercise
 		g.addBubbles(changes);
@@ -82,7 +80,7 @@ public class GraphTest {
 		changes.put("b1", bubblesOne);
 		changes.put("b2", bubblesTwo);
 
-		Graph g = new Graph();
+		Chart g = new Chart();
 
 		// Exercise
 		g.addBubbles(changes);
@@ -101,7 +99,7 @@ public class GraphTest {
 	@Test
 	public void testAddBubblesEmpty() {
 		// Setup
-		Graph g = new Graph();
+		Chart g = new Chart();
 
 		// Exercise
 		g.addBubbles(null);

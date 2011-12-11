@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.jfree.ui.RefineryUtilities;
-
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.FileParser;
 import ca.charland.bgm.graph.Bubble;
-import ca.charland.bgm.graph.BubbleChart;
-import ca.charland.bgm.graph.Graph;
-import ca.charland.bgm.graph.GraphParser;
+import ca.charland.bgm.graph.Chart;
+import ca.charland.bgm.graph.ChartParser;
 
 /**
  * The main entry point for the application.
@@ -32,15 +29,11 @@ public class Main {
 		List<String> lines = FileAccessing.read(args[0]);
 		List<Change> changes = FileParser.changes(lines);
 
-		Map<String, ArrayList<Bubble>> bubbles = GraphParser.bubbles(changes);
-		GraphParser.normaliseBubbleData(bubbles);
+		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes);
+		ChartParser.normaliseBubbleData(bubbles);
 
-		Graph graph = new Graph();
+		Chart graph = new Chart();
 		graph.addBubbles(bubbles);
-
-		BubbleChart bubblechartdemo1 = new BubbleChart();
-		bubblechartdemo1.pack();
-		RefineryUtilities.centerFrameOnScreen(bubblechartdemo1);
-		bubblechartdemo1.setVisible(true);
+		graph.show();
 	}
 }

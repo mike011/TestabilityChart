@@ -12,7 +12,7 @@ import ca.charland.bgm.change.Change;
  * 
  * @author mcharland
  */
-public class GraphParser {
+public class ChartParser {
 
 	/**
 	 * Gets the Bubbles from the changes.

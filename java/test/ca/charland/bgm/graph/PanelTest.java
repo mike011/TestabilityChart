@@ -8,39 +8,38 @@ import org.jfree.data.xy.XYZDataset;
 import org.junit.Test;
 
 /**
- * Testing BubbleChart.
+ * Testing Panel.
  * 
  * @author mcharland
  *
  */
-public class BubbleChartTest {
+public class PanelTest {
 
 	/**
-	 * Test method for {@link ca.charland.bgm.graph.BubbleChart#BubbleChart()}.
+	 * Test the constructor.
 	 */
 	@Test
-	public final void testBubbleChart() {
-		assertNotNull(new BubbleChart());
+	public final void testConstructor() {
+		assertNotNull(new Panel());
 	}
 
 	/**
-	 * Test method for {@link ca.charland.bgm.graph.BubbleChart#createDataset()}.
+	 * Test method for {@link ca.charland.bgm.graph.Panel#createDataset()}.
 	 */
 	@Test
 	public final void testCreateDataset() {
-		BubbleChart bc = new BubbleChart();
+		Panel bc = new Panel();
 		XYZDataset createDataset = bc.createDataset();
 		assertNotNull(createDataset);
 	}
 
 	/**
-	 * Test method for {@link ca.charland.bgm.graph.BubbleChart#createDemoPanel()}.
+	 * Test method for {@link ca.charland.bgm.graph.Panel#createDemoPanel()}.
 	 */
 	@Test
 	public final void testCreateDemoPanel() {
-		BubbleChart bc = new BubbleChart();
+		Panel bc = new Panel();
 		JPanel createDemoPanel = bc.createDemoPanel();
 		assertNotNull(createDemoPanel);
 	}
-
 }

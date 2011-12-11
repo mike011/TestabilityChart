@@ -17,11 +17,11 @@ import org.jfree.data.xy.XYZDataset;
 import org.jfree.ui.ApplicationFrame;
 
 /**
- * The Class BubbleChart.
+ * The Panel
  * 
  * @author mcharland
  */
-public class BubbleChart extends ApplicationFrame {
+public class Panel extends ApplicationFrame {
 
 	/**
      * Used to uniquely identify the class.
@@ -31,7 +31,7 @@ public class BubbleChart extends ApplicationFrame {
 	/**
 	 * Instantiates a new bubble chart demo1.
 	 */
-	public BubbleChart() {
+	public Panel() {
 		super("Testability Chart");
 		JPanel jpanel = createDemoPanel();
 		jpanel.setPreferredSize(new Dimension(500, 270));
@@ -68,10 +68,7 @@ public class BubbleChart extends ApplicationFrame {
 	 * 
 	 * @return the xYZ dataset
 	 */
-	/**
-	 * @return
-	 */
-	public static XYZDataset createDataset() {
+	public XYZDataset createDataset() {
 		DefaultXYZDataset defaultxyzdataset = new DefaultXYZDataset();
 
 		// date
@@ -95,7 +92,7 @@ public class BubbleChart extends ApplicationFrame {
 	 * 
 	 * @return the j panel
 	 */
-	public static JPanel createDemoPanel() {
+	public JPanel createDemoPanel() {
 		JFreeChart jfreechart = createChart(createDataset());
 		ChartPanel chartpanel = new ChartPanel(jfreechart);
 		chartpanel.setMouseWheelEnabled(true);

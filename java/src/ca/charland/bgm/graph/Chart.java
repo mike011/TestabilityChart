@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.jfree.ui.RefineryUtilities;
+
 /**
- * Represents the Bubble Graph.
+ * Represents the chart.
  * 
  * @author mcharland
  */
-public class Graph {
+public class Chart {
 
 	/** The _bubble series. */
 	private List<BubbleSeries> _bubbleSeries;
@@ -17,13 +19,14 @@ public class Graph {
 	/** The _array collection. */
 	private List<ArrayCollection> _arrayCollection;
 
+	/** The panel. */
+	private final Panel _panel;
+
 	/**
-	 * Instantiates a new graph.
-	 * 
-	 * @param bubbles
-	 *            the bubbles
+	 * Instantiates a new chart.
 	 */
-	public Graph() {
+	public Chart() {
+		_panel = new Panel();
 		_arrayCollection = new ArrayList<ArrayCollection>();
 		_bubbleSeries = new ArrayList<BubbleSeries>();
 	}
@@ -81,4 +84,22 @@ public class Graph {
 		return _bubbleSeries;
 	}
 
+	/**
+	 * Gets the panel.
+	 * 
+	 * @return the panel
+	 */
+	public Panel getPanel() {
+		return _panel;
+	}
+
+	/**
+	 * Show.
+	 */
+	public void show() {
+		_panel.pack();
+		RefineryUtilities.centerFrameOnScreen(_panel);
+		_panel.setVisible(true);
+	    
+    }
 }
