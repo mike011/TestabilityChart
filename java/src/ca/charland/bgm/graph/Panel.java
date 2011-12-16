@@ -28,11 +28,16 @@ public class Panel extends ApplicationFrame {
      */
     private static final long serialVersionUID = 2490289293680096781L;
 
+    /**
+     * The title. 
+     */
+    private static final String TITLE = "Testability Chart";
+    
 	/**
 	 * Instantiates a new bubble chart demo1.
 	 */
 	public Panel() {
-		super("Testability Chart");
+		super(TITLE);
 		JPanel jpanel = createDemoPanel();
 		jpanel.setPreferredSize(new Dimension(500, 270));
 		setContentPane(jpanel);
@@ -46,7 +51,9 @@ public class Panel extends ApplicationFrame {
 	 * @return the j free chart
 	 */
 	private static JFreeChart createChart(XYZDataset xyzdataset) {
-		JFreeChart jfreechart = ChartFactory.createBubbleChart("Bubble Chart Demo 1", "X", "Y", xyzdataset,
+		final String x = "date";
+		final String y = "test / (test + source)";
+		JFreeChart jfreechart = ChartFactory.createBubbleChart(TITLE, x, y, xyzdataset,
 		        PlotOrientation.VERTICAL, true, true, false);
 		XYPlot xyplot = (XYPlot) jfreechart.getPlot();
 		xyplot.setForegroundAlpha(0.65F);
