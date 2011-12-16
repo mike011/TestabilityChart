@@ -1,10 +1,9 @@
 package ca.charland.bgm.graph;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import javax.swing.JPanel;
 
-import org.jfree.data.xy.XYZDataset;
 import org.junit.Test;
 
 /**
@@ -21,16 +20,6 @@ public class PanelTest {
 	@Test
 	public final void testConstructor() {
 		assertNotNull(new Panel());
-	}
-
-	/**
-	 * Test method for {@link ca.charland.bgm.graph.Panel#createDataset()}.
-	 */
-	@Test
-	public final void testCreateDataset() {
-		Panel bc = new Panel();
-		XYZDataset createDataset = bc.createDataset();
-		assertNotNull(createDataset);
 	}
 
 	/**

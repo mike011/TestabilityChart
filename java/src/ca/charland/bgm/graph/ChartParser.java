@@ -19,7 +19,7 @@ public class ChartParser {
 	 * 
 	 * @param changes
 	 *            the changes
-	 * @return the map
+	 * @return The map which contains keys of authors and lists of there bubbles.
 	 */
 	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes) {
 

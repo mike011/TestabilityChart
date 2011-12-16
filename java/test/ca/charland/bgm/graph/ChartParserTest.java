@@ -9,14 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.jfree.data.xy.XYZDataset;
 import org.junit.Test;
 
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.Line;
-import ca.charland.bgm.graph.ArrayCollection;
-import ca.charland.bgm.graph.Bubble;
-import ca.charland.bgm.graph.Chart;
-import ca.charland.bgm.graph.ChartParser;
 
 /**
  * Test for GraphParser.
@@ -68,8 +65,8 @@ public class ChartParserTest {
 		ChartParser.normaliseBubbleData(map);
 
 		// Verify
-		List<ArrayCollection> normalized = graph.getAllBubbleData();
-		assertEquals(1, normalized.size());
+		XYZDataset normalized = graph.getDataSet();
+		assertEquals(1, normalized.getSeriesCount());
 
 		ArrayList<Bubble> normalizedBubbles = map.get("author");
 		assertEquals(date.getTime(), normalizedBubbles.get(0).getDate(), 1E5);
@@ -98,9 +95,9 @@ public class ChartParserTest {
 		ChartParser.normaliseBubbleData(map);
 
 		// Verify
-		List<ArrayCollection> normalized = graph.getAllBubbleData();
-		assertEquals(1, normalized.size());
-
+		XYZDataset normalized = graph.getDataSet();
+		assertEquals(1, normalized.getSeriesCount());
+		
 		ArrayList<Bubble> normalizedBubbles = map.get("author");
 		assertEquals(1.0, normalizedBubbles.get(0).getSize(), 0.1);
 		assertEquals(2.17, normalizedBubbles.get(1).getSize(), 0.1);
