@@ -1,6 +1,3 @@
-/*
- * 
- */
 package ca.charland.bgm.graph;
 
 import java.util.ArrayList;
@@ -49,8 +46,8 @@ public class Chart {
 			List<Double> zs = new ArrayList<Double>();
 			for (Bubble b : changes.get(key)) {
 				xs.add((double) b.getDate());
-				ys.add((double) b.getCoverage());
-				zs.add((double) b.getSize());
+				ys.add((double) b.getCoverage() / 100);
+				zs.add((double) b.getSize() / 100);
 			}
 			double[] xs2 = getPrimitiveArray(xs);
 			double[] ys2 = getPrimitiveArray(ys);

@@ -2,6 +2,7 @@ package ca.charland.bgm.graph;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.text.DecimalFormat;
 
 import javax.swing.JPanel;
 
@@ -9,6 +10,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.NumberTickUnit;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
@@ -81,7 +83,7 @@ public class Panel extends ApplicationFrame {
 	private static JFreeChart createChart(XYZDataset xyzdataset) {
 		final String x = "date";
 		final String y = "test / (test + source)";
-		JFreeChart jfreechart = ChartFactory.createBubbleChart(TITLE, x, y, xyzdataset,
+		JFreeChart jfreechart = ChartFactory.createBubbleChart("", x, y, xyzdataset,
 		        PlotOrientation.VERTICAL, true, true, false);
 		XYPlot xyplot = (XYPlot) jfreechart.getPlot();
 		xyplot.setForegroundAlpha(0.65F);
@@ -89,12 +91,16 @@ public class Panel extends ApplicationFrame {
 		xyplot.setRangePannable(true);
 		XYItemRenderer xyitemrenderer = xyplot.getRenderer();
 		xyitemrenderer.setSeriesPaint(0, Color.blue);
-		NumberAxis numberaxis = (NumberAxis) xyplot.getDomainAxis();
-		numberaxis.setLowerMargin(0.14999999999999999D);
-		numberaxis.setUpperMargin(0.14999999999999999D);
-		NumberAxis numberaxis1 = (NumberAxis) xyplot.getRangeAxis();
-		numberaxis1.setLowerMargin(0.14999999999999999D);
-		numberaxis1.setUpperMargin(0.14999999999999999D);
+		
+		NumberAxis xAxis = (NumberAxis) xyplot.getDomainAxis();
+		xAxis.setLowerMargin(0.14999999999999999D);
+		xAxis.setUpperMargin(0.14999999999999999D);
+		
+		NumberAxis yAxis = (NumberAxis) xyplot.getRangeAxis();
+		yAxis.setLowerMargin(0.14999999999999999D);
+		yAxis.setUpperMargin(0.14999999999999999D);
+		yAxis.setTickUnit(new NumberTickUnit(.25, new DecimalFormat("##0%")));
+		
 		return jfreechart;
 	}	
 }
