@@ -4,7 +4,7 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/home/michael/TestabilityChart/java/libs/jfreechart-1.0.14.jar" sourcepath="/home/michael/.m2/repository/org/jfree/jfreechart/1.0.14/jfreechart-1.0.14-sources.jar"/>
-	<classpathentry kind="lib" path="/home/michael/TestabilityChart/java/libs/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="libs/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="libs/jfreechart-1.0.14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
