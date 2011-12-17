@@ -1,14 +1,9 @@
 package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertNotNull;
-
-import java.util.Date;
-
 import junit.framework.Assert;
 
 import org.junit.Test;
-
-import ca.charland.bgm.graph.Bubble;
 
 /**
  * Tests for Bubble.
