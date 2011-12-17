@@ -40,34 +40,6 @@ public class ChartParser {
 	}
 
 	/**
-	 * Set the date range from 0 to 100.
-	 * 
-	 * @param bubbles
-	 *            The bubbles to normalise.
-	 */
-	private static void normaliseDate(Map<String, ArrayList<Bubble>> bubbles) {
-
-		// First find mins and maxes
-		ArrayList<Bubble> arrayList = bubbles.get(bubbles.keySet().toArray()[0]);
-		Bubble bubble = arrayList.get(0);
-		float min = bubble.getDate();
-		float max = bubble.getDate();
-		for (String key : bubbles.keySet()) {
-			for (Bubble b : bubbles.get(key)) {
-				min = Math.min(min, b.getDate());
-				max = Math.max(max, b.getDate());
-			}
-		}
-
-		// Normalising.
-		for (String key : bubbles.keySet()) {
-			for (Bubble b : bubbles.get(key)) {
-				b.normaliseDate(min, max);
-			}
-		}
-	}
-
-	/**
 	 * Set the date range from 0 to 50.
 	 * 
 	 * @param bubbles
@@ -75,7 +47,7 @@ public class ChartParser {
 	 */
 	private static void normaliseSize(Map<String, ArrayList<Bubble>> bubbles) {
 
-		// First find mins and maxes
+		// First find minimums and maximums
 		ArrayList<Bubble> arrayList = bubbles.get(bubbles.keySet().toArray()[0]);
 		Bubble bubble = arrayList.get(0);
 		float min = bubble.getSize();
@@ -102,7 +74,6 @@ public class ChartParser {
 	 *            the bubbles
 	 */
 	public static void normaliseBubbleData(Map<String, ArrayList<Bubble>> bubbles) {
-		normaliseDate(bubbles);
 		normaliseSize(bubbles);
 	}
 }

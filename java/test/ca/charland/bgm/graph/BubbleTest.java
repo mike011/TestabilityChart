@@ -82,67 +82,6 @@ public class BubbleTest {
 	}
 
 	/**
-	 * Test normalise date max.
-	 */
-	@Test
-	public void testNormaliseDateMax() {
-
-		// Setup
-		Date date = new Date(0);
-		Bubble object = new Bubble(date, 0, 0, "");
-
-		long min = 0;
-		long max = 200;
-
-		// Exercise
-		object.normaliseDate(min, max);
-
-		// Verify
-		float actual = object.getDate();
-		Assert.assertEquals(date.getTime(), actual, 1E5);
-	}
-
-	/**
-	 * Test normalise date min.
-	 */
-	@Test
-	public void testNormaliseDateMin() {
-
-		// Setup
-		Bubble object = new Bubble(new Date(0), 0, 0, "");
-
-		long min = 0;
-		long max = 200;
-
-		// Exercise
-		object.normaliseDate(min, max);
-
-		// Verify
-		float date = object.getDate();
-		Assert.assertEquals(0, date, 0.1);
-	}
-
-	/**
-	 * Test normalise date mid.
-	 */
-	@Test
-	public void testNormaliseDateMid() {
-
-		// Setup
-		Date date = new Date(0);
-		Bubble object = new Bubble(date, 0, 0, "");
-		long min = 0;
-		long max = 120;
-
-		// Exercise
-		object.normaliseDate(min, max);
-
-		// Verify
-		float actual = object.getDate();
-		Assert.assertEquals(date.getTime(), actual, 1E10);
-	}
-
-	/**
 	 * Test normalise size for the minimum amount.
 	 */
 	@Test

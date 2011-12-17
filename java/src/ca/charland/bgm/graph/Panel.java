@@ -3,12 +3,14 @@ package ca.charland.bgm.graph;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import javax.swing.JPanel;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.NumberTickUnit;
 import org.jfree.chart.plot.PlotOrientation;
@@ -95,11 +97,15 @@ public class Panel extends ApplicationFrame {
 		NumberAxis xAxis = (NumberAxis) xyplot.getDomainAxis();
 		xAxis.setLowerMargin(0.14999999999999999D);
 		xAxis.setUpperMargin(0.14999999999999999D);
+		xAxis.setTickUnit(new NumberTickUnit(500000000, new DecimalFormat("##%")));
+		
+		// Switch the domain set to the date axis.
+		xyplot.setDomainAxis(new DateAxis());
 		
 		NumberAxis yAxis = (NumberAxis) xyplot.getRangeAxis();
 		yAxis.setLowerMargin(0.14999999999999999D);
 		yAxis.setUpperMargin(0.14999999999999999D);
-		yAxis.setTickUnit(new NumberTickUnit(.25, new DecimalFormat("##0%")));
+		yAxis.setTickUnit(new NumberTickUnit(.25, NumberFormat.getPercentInstance()));
 		
 		return jfreechart;
 	}	

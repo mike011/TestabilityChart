@@ -55,18 +55,6 @@ public class Bubble {
 	}
 
 	/**
-	 * Normalise x.
-	 * 
-	 * @param min
-	 *            the min
-	 * @param max
-	 *            the max
-	 */
-	public void normaliseDate(float min, float max) {
-		date.setTime((long) (date.getTime() - min));
-	}
-
-	/**
 	 * Gets the y.
 	 * 
 	 * @return the y
