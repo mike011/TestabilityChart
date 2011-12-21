@@ -2,8 +2,6 @@ package ca.charland.bgm.graph;
 
 import static org.junit.Assert.assertNotNull;
 
-import javax.swing.JPanel;
-
 import org.junit.Test;
 
 /**
@@ -23,12 +21,12 @@ public class PanelTest {
 	}
 
 	/**
-	 * Test method for {@link ca.charland.bgm.graph.Panel#createDemoPanel()}.
+	 * Test method for {@link ca.charland.bgm.graph.Panel#setJPanel()}.
 	 */
 	@Test
 	public final void testCreateDemoPanel() {
 		Panel bc = new Panel();
-		JPanel createDemoPanel = bc.createDemoPanel();
-		assertNotNull(createDemoPanel);
+		bc.setJPanel();
+		assertNotNull(bc.getContentPane());
 	}
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.jfree.data.xy.DefaultXYZDataset;
 import org.jfree.data.xy.XYZDataset;
 import org.jfree.ui.RefineryUtilities;
 
@@ -19,14 +18,14 @@ public class Chart {
 	private final Panel panel;
 
 	/** The data to be displayed. */
-	private DefaultXYZDataset defaultxyzdataset;
+	private MyXYZDataset dataset;
 
 	/**
 	 * Instantiates a new chart.
 	 */
 	public Chart() {
 		panel = new Panel();
-		defaultxyzdataset = new DefaultXYZDataset();
+		dataset = new MyXYZDataset();
 	}
 
 	/**
@@ -39,6 +38,7 @@ public class Chart {
 		if (changes == null) {
 			return;
 		}
+		dataset.setBubbles(changes);
 		for (String key : changes.keySet()) {
 
 			List<Double> xs = new ArrayList<Double>();
@@ -52,8 +52,8 @@ public class Chart {
 			double[] xs2 = getPrimitiveArray(xs);
 			double[] ys2 = getPrimitiveArray(ys);
 			double[] zs2 = getPrimitiveArray(zs);
-			double ad3[][] = { xs2, ys2, zs2 };
-			addSeries(key, ad3);
+			double data[][] = { xs2, ys2, zs2 };
+			dataset.addSeries(key, data);
 		}
 
 	}
@@ -89,27 +89,12 @@ public class Chart {
 	 * Show the chart.
 	 */
 	public void show() {
-		panel.setDataSet(defaultxyzdataset);
-		panel.createJPanel();
+		panel.setDataSet(dataset);
+		panel.setJPanel();
 		panel.pack();
 		RefineryUtilities.centerFrameOnScreen(panel);
 		panel.setVisible(true);
 
-	}
-
-	/**
-	 * Adds a series to the data set.
-	 * 
-	 * @param name
-	 *            The name of the series.
-	 * @param data
-	 *            The data to be added.
-	 * 
-	 * @return the XYZ data set
-	 */
-	XYZDataset addSeries(String name, double[][] data) {
-		defaultxyzdataset.addSeries(name, data);
-		return defaultxyzdataset;
 	}
 
 	/**
@@ -118,6 +103,6 @@ public class Chart {
 	 * @return the data set
 	 */
 	public XYZDataset getDataSet() {
-		return defaultxyzdataset;
+		return dataset;
 	}
 }

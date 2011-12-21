@@ -130,7 +130,7 @@ public class BubbleTest {
 		String link = object.getLink();
 
 		// Verify
-		Assert.assertEquals("Link is wrong", "https://github.com/mike011/TestabilityChart/commit/98a", link);
+		Assert.assertEquals("Link is wrong", /*"https://github.com/mike011/TestabilityChart/commit/*/"98a", link);
 		
 	}
 
