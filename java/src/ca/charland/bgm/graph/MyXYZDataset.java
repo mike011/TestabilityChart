@@ -12,7 +12,7 @@ import org.jfree.data.xy.DefaultXYZDataset;
  */
 class MyXYZDataset extends DefaultXYZDataset {
 
-	/** Serial Verison UID. */
+	/** Serial Version UID. */
 	private static final long serialVersionUID = 8377539346221547744L;
 
 	/** The bubbles. */

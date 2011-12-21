@@ -51,7 +51,7 @@ public class Panel extends ApplicationFrame implements ChartMouseListener {
 	private JLabel change;
 
 	/**
-	 * Instantiates a new bubble chart demo1.
+	 * Instantiates a new bubble chart demo.
 	 */
 	public Panel() {
 		super(TITLE);
