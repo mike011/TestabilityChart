@@ -1,0 +1,27 @@
+# Definition of Done
+
+Version 0.1
+- Percents on verticles
+- Dates on bottom
+- Bubbles to show size of change
+- When you click on bubble the commit is shown.
+- Size is determined by looking at the git log --numstat values for only java files
+- 90% code coverage
+-- ALL COMPLETED
+
+Version 0.2
+- Better size determination.
+- Link to change description
+- Filter by user
+- Filter by size or ratio to highlight the most suspicious commits
+- Filter by path in the commit tree
+
+Version 0.3
+- Showing each bubble as a pie chart of different file types, and each of their respective tests.
+- Display trend line per team or per area of code
+- Use complexity or test coverage metrics instead of lines of code
+
+Version 0.4
+- Add merge and refactoring commit visualizations
+- Color coding commits to stories, and adding sorting and filters to identify stories with high suspected tech debt.
+- Tie in bug fixes and trace them back to the original commits’ bubbles
