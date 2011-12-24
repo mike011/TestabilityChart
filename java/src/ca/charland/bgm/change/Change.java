@@ -53,13 +53,15 @@ public class Change {
 	/**
 	 * Gets the coverage.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return the coverage
 	 */
-	public float getCoverage() {
+	public float getCoverage(List<String> types) {
 
-		float src = getSrc();
+		float src = getSrc(types);
 
-		float test = getTest();
+		float test = getTest(types);
 
 		// Prevent a divide by zero.
 		if ((src + test) == 0) {
@@ -71,12 +73,14 @@ public class Change {
 	/**
 	 * Gets the test.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return the test
 	 */
-	private int getTest() {
+	private int getTest(List<String> types) {
 		int test = 0;
 		for (Line line : lines) {
-			test += line.getTestDiff();
+			test += line.getTestDiff(types);
 		}
 		return test;
 	}
@@ -84,12 +88,14 @@ public class Change {
 	/**
 	 * Gets the src.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return the src
 	 */
-	private int getSrc() {
+	private int getSrc(List<String> types) {
 		int src = 0;
 		for (Line line : lines) {
-			src += line.getSrcDiff();
+			src += line.getSrcDiff(types);
 		}
 		return src;
 	}
@@ -97,10 +103,12 @@ public class Change {
 	/**
 	 * Gets the lines covered.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return the lines covered
 	 */
-	public int getLinesCovered() {
-		return getSrc() + getTest();
+	public int getLinesCovered(List<String> types) {
+		return getSrc(types) + getTest(types);
 	}
 
 	/** {@inheritDoc} */

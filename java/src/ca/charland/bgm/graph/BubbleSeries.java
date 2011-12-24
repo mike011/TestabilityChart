@@ -10,7 +10,7 @@ public class BubbleSeries {
 
 	/** The number. */
 	private int number;
-	
+
 	/** The author. */
 	private final String author;
 

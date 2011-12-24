@@ -23,7 +23,7 @@ import ca.charland.bgm.change.Line;
 public class ChartParserTest {
 
 	/**
-	 * Test method for {@link ca.charland.bgm.graph.ChartParser#bubbles(java.util.List)}.
+	 * Test method for {@link ca.charland.bgm.graph.ChartParser#bubbles(List, List)}.
 	 */
 	@Test
 	public void testBubbles() {
@@ -34,9 +34,11 @@ public class ChartParserTest {
 		lines.add(new Line("2", "5", "bob.txt"));
 		String author = "Author: defected <defected@defected-P5K-EPU.(none)>";
 		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
 		// Exercise
-		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes);
+		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, types);
 
 		// Verify
 		assertNotNull(bubbles);
@@ -97,7 +99,7 @@ public class ChartParserTest {
 		// Verify
 		XYZDataset normalized = graph.getDataSet();
 		assertEquals(1, normalized.getSeriesCount());
-		
+
 		ArrayList<Bubble> normalizedBubbles = map.get("author");
 		assertEquals(1.0, normalizedBubbles.get(0).getSize(), 0.1);
 		assertEquals(2.17, normalizedBubbles.get(1).getSize(), 0.1);

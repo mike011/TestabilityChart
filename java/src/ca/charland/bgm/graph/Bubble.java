@@ -103,7 +103,7 @@ public class Bubble {
 	 * @return the link
 	 */
 	String getLink() {
-		return /*"https://github.com/mike011/TestabilityChart/commit/" +*/ change;
+		return /* "https://github.com/mike011/TestabilityChart/commit/" + */change;
 	}
 
 	/**

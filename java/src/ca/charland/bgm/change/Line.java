@@ -1,7 +1,9 @@
 package ca.charland.bgm.change;
 
+import java.util.List;
+
 /**
- * For files holds one line of info from the change.
+ * For files, holds one line of info from the change.
  * 
  * @author mcharland
  */
@@ -36,11 +38,13 @@ public class Line {
 	/**
 	 * Gets the test diff.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return the test diff
 	 */
-	public int getTestDiff() {
+	public int getTestDiff(List<String> types) {
 		int total = 0;
-		if (!isSource()) {
+		if (!isSource(types)) {
 			total = getDiff();
 		}
 		return total;
@@ -49,11 +53,13 @@ public class Line {
 	/**
 	 * Gets the src diff.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return the src diff
 	 */
-	public int getSrcDiff() {
+	public int getSrcDiff(List<String> types) {
 		int total = 0;
-		if (isSource()) {
+		if (isSource(types)) {
 			total = getDiff();
 		}
 		return total;
@@ -80,26 +86,37 @@ public class Line {
 	/**
 	 * Checks if is valid.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return true, if is valid
 	 */
-	public boolean isValid() {
-		return file.contains(".java") && !(removed.equals("-") && added.equals("-"));
+	public boolean isValid(List<String> types) {
+
+		boolean typeFound = false;
+		for (String type : types) {
+			if (file.trim().endsWith(type)) {
+				typeFound = true;
+				break;
+			}
+		}
+		return typeFound && !(removed.equals("-") && added.equals("-"));
 	}
 
 	/**
 	 * Checks if is source.
 	 * 
+	 * @param types
+	 *            the types
 	 * @return true, if is source
 	 */
-	public boolean isSource() {
-		return isValid() && !file.contains("test");
+	public boolean isSource(List<String> types) {
+		return isValid(types) && !file.contains("test");
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
+	/**
+	 * {@inheritDoc}
 	 */
+	@Override
 	public String toString() {
 		return file;
 	}

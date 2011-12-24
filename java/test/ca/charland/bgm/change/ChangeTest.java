@@ -35,7 +35,7 @@ public class ChangeTest {
 	public void testGetDiffNone() {
 		List<Line> lines = new ArrayList<Line>();
 		Change change = new Change(null, null, null, null, lines);
-		double diff = change.getCoverage();
+		double diff = change.getCoverage(null);
 		assertEquals(0, diff, 0.1);
 	}
 
@@ -48,10 +48,13 @@ public class ChangeTest {
 		lines.add(new Line("3", "3", "dog.java"));
 		lines.add(new Line("2", "55", "dog.java"));
 		Change change = new Change(null, null, null, null, lines);
-		double diff = change.getCoverage();
+
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		double diff = change.getCoverage(types);
 		assertEquals(0, diff, 0.1);
 	}
-	
+
 	/**
 	 * Test get coverage half.
 	 */
@@ -61,7 +64,10 @@ public class ChangeTest {
 		lines.add(new Line("3", "3", "dog.java"));
 		lines.add(new Line("3", "3", "test.java"));
 		Change change = new Change(null, null, null, null, lines);
-		double diff = change.getCoverage();
+
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		double diff = change.getCoverage(types);
 		assertEquals(0.5, diff, 0.1);
 	}
 
@@ -74,7 +80,10 @@ public class ChangeTest {
 		lines.add(new Line("3", "3", "test"));
 		lines.add(new Line("3", "3", "test"));
 		Change change = new Change(null, null, null, null, lines);
-		double diff = change.getCoverage();
+
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		double diff = change.getCoverage(types);
 		assertEquals(1, diff, 0.1);
 	}
 
@@ -87,7 +96,10 @@ public class ChangeTest {
 		lines.add(new Line("3", "3", "test"));
 		lines.add(new Line("3", "3", "test"));
 		Change change = new Change(null, null, null, null, lines);
-		int covered = change.getLinesCovered();
+
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		int covered = change.getLinesCovered(types);
 		assertEquals(12, covered, 0.1);
 	}
 
@@ -112,14 +124,14 @@ public class ChangeTest {
 
 		String authorString = "Author: defected <defected@defected-P5K-EPU.(none)>";
 		Change change = new Change(null, authorString, null, null, lines);
-		
+
 		// Exercise
 		String author = change.getAuthor();
 
 		// Verify
 		assertEquals("defected", author);
 	}
-	
+
 	/**
 	 * Test if the change is valid.
 	 */
@@ -134,11 +146,11 @@ public class ChangeTest {
 
 		// Exercise
 		boolean valid = change.isValid();
-		
+
 		// Verify
 		assertFalse(valid);
 	}
-	
+
 	/**
 	 * Test if the change is valid.
 	 */
@@ -154,55 +166,55 @@ public class ChangeTest {
 
 		// Exercise
 		boolean valid = change.isValid();
-		
+
 		// Verify
 		assertTrue(valid);
 	}
-	
-	/** 
+
+	/**
 	 * Test equals.
 	 */
 	@Test
 	public void testEquals() {
-	
+
 		// Setup
 		Change c = new Change("commit ax", null, null, null, null);
-		
+
 		// Exercise
 		boolean equals = c.equals(c);
-		
+
 		// Verify
 		Assert.assertTrue("not equal", equals);
 	}
 
-	/** 
+	/**
 	 * Test get commit.
 	 */
 	@Test
 	public void testGetCommit() {
-	
+
 		// Setup
 		Change c = new Change("commit bob", null, null, null, null);
-		
+
 		// Exercise
 		String commit = c.getCommit();
-		
+
 		// Verify
 		Assert.assertEquals("bob", commit);
 	}
 
-	/** 
+	/**
 	 * Test to string.
 	 */
 	@Test
 	public void testToString() {
-	
+
 		// Setup
 		Change c = new Change("commit bob", null, null, null, null);
-		
+
 		// Exercise
 		String commit = c.toString();
-		
+
 		// Verify
 		Assert.assertEquals("bob", commit);
 	}

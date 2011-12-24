@@ -19,15 +19,17 @@ public class ChartParser {
 	 * 
 	 * @param changes
 	 *            the changes
+	 * @param types
+	 *            the types
 	 * @return The map which contains keys of authors and lists of there bubbles.
 	 */
-	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes) {
+	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes, List<String> types) {
 
 		Map<String, ArrayList<Bubble>> series = new TreeMap<String, ArrayList<Bubble>>();
 
 		for (Change change : changes) {
-			float coverage = change.getCoverage();
-			float linesCovered = change.getLinesCovered();
+			float coverage = change.getCoverage(types);
+			float linesCovered = change.getLinesCovered(types);
 			Bubble bubble = new Bubble(change.getDate(), coverage, linesCovered, change.getCommit());
 
 			String author = change.getAuthor();

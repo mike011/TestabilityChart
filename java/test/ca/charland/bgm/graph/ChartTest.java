@@ -92,7 +92,7 @@ public class ChartTest {
 		XYZDataset bubbleData = g.getDataSet();
 		Assert.assertEquals(0, bubbleData.getSeriesCount());
 	}
-	
+
 	/**
 	 * Test getting the data.
 	 */

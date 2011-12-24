@@ -8,7 +8,7 @@ import org.junit.Test;
  * Testing Panel.
  * 
  * @author mcharland
- *
+ * 
  */
 public class PanelTest {
 

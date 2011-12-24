@@ -15,6 +15,9 @@ public class ArrayCollection {
 
 	/**
 	 * Instantiates a new array collection.
+	 * 
+	 * @param number
+	 *            the number
 	 */
 	ArrayCollection(int number) {
 		_elements = new ArrayList<Bubble>();

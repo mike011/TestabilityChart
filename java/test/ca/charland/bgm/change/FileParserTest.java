@@ -5,21 +5,19 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
 
 import ca.charland.bgm.FileAccessing;
-import ca.charland.bgm.change.Change;
-import ca.charland.bgm.change.FileParser;
-import ca.charland.bgm.change.Line;
 
 /**
- * Tests for ChangeParser.
+ * Tests for FileParser.
  * 
  * @author mcharland
  */
-public class ChangeParserTest {
+public class FileParserTest {
 
 	/**
 	 * Test the simple case with one change.
@@ -27,7 +25,9 @@ public class ChangeParserTest {
 	@Test
 	public void testOne() {
 		List<String> read = FileAccessing.read("test/res/one.txt");
-		List<Change> parse = FileParser.changes(read);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		List<Change> parse = FileParser.changes(read, types);
 		assertNotNull(parse);
 		assertTrue("Not empty", parse.isEmpty());
 	}
@@ -38,26 +38,29 @@ public class ChangeParserTest {
 	@Test
 	public void testTwo() {
 		List<String> read = FileAccessing.read("test/res/two.txt");
-		List<Change> parse = FileParser.changes(read);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		List<Change> parse = FileParser.changes(read, types);
 		assertTrue(parse.isEmpty());
 	}
-	
+
 	/**
 	 * Test two java files.
 	 */
 	@Test
 	public void testTwoJava() {
 		List<String> read = FileAccessing.read("test/res/java_two.txt");
-		List<Change> parse = FileParser.changes(read);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		List<Change> parse = FileParser.changes(read, types);
 		assertEquals(2, parse.size());
 
 		Change change = parse.get(0);
 		Change change2 = parse.get(1);
 		assertFalse(change.equals(change2));
 
-		assertEquals(change.getCoverage(), change2.getCoverage(), 0.1);
+		assertEquals(change.getCoverage(types), change2.getCoverage(types), 0.1);
 	}
-
 
 	/**
 	 * Test parse line.
@@ -66,8 +69,21 @@ public class ChangeParserTest {
 	public void testParseLine() {
 		Line line = FileParser.line("1	1	permissions.java");
 		assertNotNull(line);
-		assertTrue(line.isValid());
-		assertEquals(2, line.getSrcDiff());
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		assertTrue(line.isValid(types));
+		assertEquals(2, line.getSrcDiff(types));
 	}
 
+	/**
+	 * Tests if a file is valid.
+	 */
+	@Test
+	public void testIsChangeValid() {
+		Line line = new Line(null, null, null);
+		List<Line> lines = new ArrayList<Line>();
+		lines.add(line);
+		Change change = new Change(null, null, null, null, lines);
+		assertTrue(FileParser.isChangeValid(change, null));
+	}
 }

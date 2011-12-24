@@ -5,6 +5,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
 /**
@@ -15,7 +18,7 @@ import org.junit.Test;
 public class LineTest {
 
 	/**
-	 * Test.
+	 * Test the constructor.
 	 */
 	@Test
 	public void test() {
@@ -33,11 +36,13 @@ public class LineTest {
 		String removed = "1";
 		Line line = new Line(added, removed, "dank.java");
 
-		int diff = line.getSrcDiff();
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		int diff = line.getSrcDiff(types);
 
 		assertEquals(2, diff);
 
-		int test = line.getTestDiff();
+		int test = line.getTestDiff(types);
 		assertEquals(0, test);
 	}
 
@@ -49,12 +54,14 @@ public class LineTest {
 		String added = "1";
 		String removed = "1";
 		Line line = new Line(added, removed, "test/dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		int diff = line.getSrcDiff();
+		int diff = line.getSrcDiff(types);
 
 		assertEquals(0, diff);
 
-		int test = line.getTestDiff();
+		int test = line.getTestDiff(types);
 		assertEquals(2, test);
 	}
 
@@ -66,8 +73,9 @@ public class LineTest {
 		String added = "-";
 		String removed = "1";
 		Line line = new Line(added, removed, "dank.java");
-
-		int src = line.getSrcDiff();
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		int src = line.getSrcDiff(types);
 
 		assertEquals(1, src);
 
@@ -81,8 +89,10 @@ public class LineTest {
 		String added = "1";
 		String removed = "-";
 		Line line = new Line(added, removed, "dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		int diff = line.getSrcDiff();
+		int diff = line.getSrcDiff(types);
 
 		assertEquals(1, diff);
 
@@ -96,8 +106,10 @@ public class LineTest {
 		String added = "1";
 		String removed = "2";
 		Line line = new Line(added, removed, "dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean valid = line.isValid();
+		boolean valid = line.isValid(types);
 
 		assertTrue(valid);
 	}
@@ -110,8 +122,10 @@ public class LineTest {
 		String added = "-";
 		String removed = "2";
 		Line line = new Line(added, removed, "dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean valid = line.isValid();
+		boolean valid = line.isValid(types);
 
 		assertTrue(valid);
 	}
@@ -124,8 +138,10 @@ public class LineTest {
 		String added = "3";
 		String removed = "-";
 		Line line = new Line(added, removed, "dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean valid = line.isValid();
+		boolean valid = line.isValid(types);
 
 		assertTrue(valid);
 	}
@@ -138,12 +154,14 @@ public class LineTest {
 		String added = "-";
 		String removed = "-";
 		Line line = new Line(added, removed, "dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean valid = line.isValid();
+		boolean valid = line.isValid(types);
 
 		assertFalse(valid);
 	}
-	
+
 	/**
 	 * Test is valid no, not a java file.
 	 */
@@ -152,8 +170,26 @@ public class LineTest {
 		String added = "3";
 		String removed = "5";
 		Line line = new Line(added, removed, "dank.tt");
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean valid = line.isValid();
+		boolean valid = line.isValid(types);
+
+		assertFalse(valid);
+	}
+
+	/**
+	 * Test is valid no, not a valid file type.
+	 */
+	@Test
+	public void testisValidNo3() {
+		String added = "3";
+		String removed = "5";
+		Line line = new Line(added, removed, "dank.java");
+		List<String> types = new ArrayList<String>();
+		types.add("tt");
+
+		boolean valid = line.isValid(types);
 
 		assertFalse(valid);
 	}
@@ -167,8 +203,10 @@ public class LineTest {
 		String removed = "7";
 		String file = "dank.java";
 		Line line = new Line(added, removed, file);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean src = line.isSource();
+		boolean src = line.isSource(types);
 
 		assertTrue(src);
 	}
@@ -182,8 +220,10 @@ public class LineTest {
 		String removed = "-";
 		String file = "dank.tt";
 		Line line = new Line(added, removed, file);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean src = line.isSource();
+		boolean src = line.isSource(types);
 
 		assertFalse(src);
 	}
@@ -197,8 +237,10 @@ public class LineTest {
 		String removed = "4";
 		String file = "test/dank.tt";
 		Line line = new Line(added, removed, file);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
 
-		boolean src = line.isSource();
+		boolean src = line.isSource(types);
 
 		assertFalse(src);
 	}

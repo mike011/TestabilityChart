@@ -15,9 +15,11 @@ public class FileParser {
 	 * 
 	 * @param lines
 	 *            the lines
+	 * @param types
+	 *            The types of valid files to accept.
 	 * @return the list
 	 */
-	public static List<Change> changes(List<String> lines) {
+	public static List<Change> changes(List<String> lines, List<String> types) {
 		List<Change> result = new ArrayList<Change>();
 
 		String commit = null;
@@ -48,7 +50,7 @@ public class FileParser {
 					// ignored.
 				} else {
 					Line lineObject = line(line);
-					if (lineObject.isValid()) {
+					if (lineObject.isValid(types)) {
 						fileLines.add(lineObject);
 					}
 				}
@@ -61,6 +63,19 @@ public class FileParser {
 		}
 
 		return result;
+	}
+
+	/**
+	 * Checks if the change is valid.
+	 * 
+	 * @param change
+	 *            the change
+	 * @param types
+	 *            The valid file types.
+	 * @return true, if is valid
+	 */
+	static boolean isChangeValid(Change change, List<String> types) {
+		return change.isValid();
 	}
 
 	/**

@@ -26,7 +26,7 @@ import org.jfree.data.xy.XYZDataset;
 import org.jfree.ui.ApplicationFrame;
 
 /**
- * The Panel
+ * The Panel.
  * 
  * @author mcharland
  */

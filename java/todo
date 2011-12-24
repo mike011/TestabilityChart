@@ -1,7 +1,7 @@
 # Definition of Done
 
 Version 0.1
-- Percents on verticles
+- Percents on verticals
 - Dates on bottom
 - Bubbles to show size of change
 - When you click on bubble the commit is shown.
@@ -9,12 +9,19 @@ Version 0.1
 - 90% code coverage
 -- ALL COMPLETED
 
-Version 0.2
-- Better size determination.
-- Link to change description
+Version 0.15
+- Specify by passing into program type of source code
+- Specify by configuration file program type
+- Sample with log file and jar.
+- HTTP Link to change description
+
+Version 0.20
 - Filter by user
 - Filter by size or ratio to highlight the most suspicious commits
 - Filter by path in the commit tree
+
+Version 0.25
+- Better size determination.
 
 Version 0.3
 - Showing each bubble as a pie chart of different file types, and each of their respective tests.
