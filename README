@@ -1,0 +1,5 @@
+This application is the java based implementation using jfreechart for graph.
+
+Please see http://jawspeak.com/category/testability/ for mor einfo.
+
+You can easily run the application in the Sample folder by running the jar. A sample log of the git log --numstat of this project is used. Also the properties are read from the common properties file.

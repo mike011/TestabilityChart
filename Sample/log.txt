@@ -1,0 +1,813 @@
+commit 8771fcdba5d207e246c366e49dac751ce603e2c7
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 20 21:41:01 2011 -0500
+
+    todo with ideas for version
+
+27	0	java/todo
+
+commit 705bd9d470b4318dd37ca18c62fb319c2bcbb659
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 20 21:40:25 2011 -0500
+
+    Fixed minor spelling bugs
+
+1	1	java/src/ca/charland/bgm/graph/MyXYZDataset.java
+1	1	java/src/ca/charland/bgm/graph/Panel.java
+
+commit 63fc7f99e4e4eeb296b5afcbb1c8403ac9591f55
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 20 21:07:16 2011 -0500
+
+    Panel now has change description
+
+1	1	java/src/ca/charland/bgm/graph/Bubble.java
+8	23	java/src/ca/charland/bgm/graph/Chart.java
+49	0	java/src/ca/charland/bgm/graph/MyXYZDataset.java
+73	41	java/src/ca/charland/bgm/graph/Panel.java
+1	1	java/test/ca/charland/bgm/graph/BubbleTest.java
+0	31	java/test/ca/charland/bgm/graph/ChartTest.java
+50	0	java/test/ca/charland/bgm/graph/MyXYZDatasetTest.java
+3	5	java/test/ca/charland/bgm/graph/PanelTest.java
+
+commit 9057cbf58ee0f46d1e3c2450e406d35fa18fc783
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Fri Dec 16 22:37:48 2011 -0500
+
+    j free chart and common with source
+
+2	2	java/.classpath
+-	-	java/libs/jcommon-1.0.17-src.jar
+-	-	java/libs/jcommon-1.0.17.jar
+-	-	java/libs/jfreechart-1.0.14-src.jar
+0	5	java/test/ca/charland/bgm/graph/BubbleTest.java
+
+commit 7232ac739cc8330d89ff28b6aff4071bd62080e8
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Fri Dec 16 22:04:58 2011 -0500
+
+    Date now shown on bottom
+
+0	12	java/src/ca/charland/bgm/graph/Bubble.java
+1	30	java/src/ca/charland/bgm/graph/ChartParser.java
+7	1	java/src/ca/charland/bgm/graph/Panel.java
+0	61	java/test/ca/charland/bgm/graph/BubbleTest.java
+
+commit 6a1ee4547d90dad7ec114c31f51ee8815cb001bf
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Fri Dec 16 15:02:16 2011 -0500
+
+    Percent now on vertical, and now more double title
+
+2	5	java/src/ca/charland/bgm/graph/Chart.java
+13	7	java/src/ca/charland/bgm/graph/Panel.java
+
+commit b4d69eb369b55af6d850513204d8ba7fe648f2ff
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Thu Dec 15 23:03:50 2011 -0500
+
+    Now uses git data
+
+73	52	java/src/ca/charland/bgm/graph/Chart.java
+1	1	java/src/ca/charland/bgm/graph/ChartParser.java
+31	41	java/src/ca/charland/bgm/graph/Panel.java
+6	9	java/test/ca/charland/bgm/graph/ChartParserTest.java
+51	26	java/test/ca/charland/bgm/graph/ChartTest.java
+1	12	java/test/ca/charland/bgm/graph/PanelTest.java
+
+commit a91002cc678346e895732abacdff466865b124db
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Thu Dec 15 21:53:16 2011 -0500
+
+    fixed libs
+
+2	2	java/.classpath
+
+commit 505cbd7aa3a68ee37b3eb5ed9c8884f70731380a
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Thu Dec 15 20:47:40 2011 -0500
+
+    Minor name fixes
+
+9	2	java/src/ca/charland/bgm/graph/Panel.java
+
+commit 52b6511f41022713ed92339e4be25be9729aa812
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 22:47:26 2011 -0500
+
+    graph vs chart
+
+6	13	java/src/ca/charland/bgm/Main.java
+0	106	java/src/ca/charland/bgm/graph/BubbleChart.java
+105	0	java/src/ca/charland/bgm/graph/Chart.java
+108	0	java/src/ca/charland/bgm/graph/ChartParser.java
+0	84	java/src/ca/charland/bgm/graph/Graph.java
+0	108	java/src/ca/charland/bgm/graph/GraphParser.java
+103	0	java/src/ca/charland/bgm/graph/Panel.java
+0	46	java/test/ca/charland/bgm/graph/BubbleChartTest.java
+109	0	java/test/ca/charland/bgm/graph/ChartParserTest.java
+111	0	java/test/ca/charland/bgm/graph/ChartTest.java
+0	109	java/test/ca/charland/bgm/graph/GraphParserTest.java
+0	113	java/test/ca/charland/bgm/graph/GraphTest.java
+45	0	java/test/ca/charland/bgm/graph/PanelTest.java
+
+commit d925e89e79fa9bdc38b5c9c6d3aa13df6bf1091f
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 22:31:15 2011 -0500
+
+    remove tostring in ac
+
+0	26	java/src/ca/charland/bgm/graph/ArrayCollection.java
+1	4	java/src/ca/charland/bgm/graph/Graph.java
+0	44	java/test/ca/charland/bgm/graph/ArrayCollectionTest.java
+
+commit 54bab6703bb010ec69afdeeacaac2bde7f35cf8f
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 22:27:56 2011 -0500
+
+    Forgot to update Main
+
+0	6	java/src/ca/charland/bgm/Main.java
+
+commit a22decd98e6666a14671a502cd99c64b8caeab36
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 22:21:02 2011 -0500
+
+    Bye bye GraphWriter.
+
+4	4	java/src/ca/charland/bgm/graph/ArrayCollection.java
+3	0	java/src/ca/charland/bgm/graph/Graph.java
+0	99	java/src/ca/charland/bgm/graph/GraphWriter.java
+13	2	java/test/ca/charland/bgm/graph/GraphTest.java
+0	76	java/test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 2e7325f6e3e9ba611c21165f97592e7ab8043960
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 22:18:35 2011 -0500
+
+    Removing uneeded mxml content
+
+0	3	java/src/res/graph.html
+0	64	java/src/res/raw_graph.mxml
+0	26	java/src/res/raw_graph.mxml~
+0	10	java/test/ca/charland/bgm/FileInputTest.java
+0	11	java/test/ca/charland/bgm/change/ChangeParserTest.java
+0	64	java/test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 50366a38e6bb8c82715b4833270b331fb5b7a551
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 21:55:57 2011 -0500
+
+    Flash folder isn't needed
+
+4	4	java/src/ca/charland/bgm/Main.java
+0	67	java/src/ca/charland/bgm/flash/ArrayCollection.java
+0	146	java/src/ca/charland/bgm/flash/Bubble.java
+0	48	java/src/ca/charland/bgm/flash/BubbleSeries.java
+0	84	java/src/ca/charland/bgm/flash/Graph.java
+0	108	java/src/ca/charland/bgm/flash/GraphParser.java
+0	99	java/src/ca/charland/bgm/flash/GraphWriter.java
+67	0	java/src/ca/charland/bgm/graph/ArrayCollection.java
+146	0	java/src/ca/charland/bgm/graph/Bubble.java
+48	0	java/src/ca/charland/bgm/graph/BubbleSeries.java
+84	0	java/src/ca/charland/bgm/graph/Graph.java
+108	0	java/src/ca/charland/bgm/graph/GraphParser.java
+99	0	java/src/ca/charland/bgm/graph/GraphWriter.java
+0	87	java/test/ca/charland/bgm/flash/ArrayCollectionTest.java
+0	47	java/test/ca/charland/bgm/flash/BubbleSeriesTest.java
+0	225	java/test/ca/charland/bgm/flash/BubbleTest.java
+0	109	java/test/ca/charland/bgm/flash/GraphParserTest.java
+0	102	java/test/ca/charland/bgm/flash/GraphTest.java
+0	140	java/test/ca/charland/bgm/flash/GraphWriterTest.java
+87	0	java/test/ca/charland/bgm/graph/ArrayCollectionTest.java
+47	0	java/test/ca/charland/bgm/graph/BubbleSeriesTest.java
+225	0	java/test/ca/charland/bgm/graph/BubbleTest.java
+109	0	java/test/ca/charland/bgm/graph/GraphParserTest.java
+102	0	java/test/ca/charland/bgm/graph/GraphTest.java
+140	0	java/test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit d3ee0dc8745c95e650321eaa290e6222ed2771aa
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 16:25:36 2011 -0500
+
+    Adding simple bubble chart test
+
+46	0	java/test/ca/charland/bgm/graph/BubbleChartTest.java
+
+commit 4122653c10348838b30b0a7d3663008eec814290
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 13:54:28 2011 -0500
+
+    Rename to Bubble Chart
+
+8	0	java/src/ca/charland/bgm/Main.java
+106	0	java/src/ca/charland/bgm/graph/BubbleChart.java
+0	89	java/src/ca/charland/bgm/graph/BubbleChartDemo1.java
+
+commit 4b6f9d9f3c46744abbf0816179e4b1eb2cdc0f39
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 13:27:33 2011 -0500
+
+    Adding in jfreechart demo
+
+2	0	java/.classpath
+-	-	java/libs/jcommon-1.0.17.jar
+-	-	java/libs/jfreechart-1.0.14.jar
+89	0	java/src/ca/charland/bgm/graph/BubbleChartDemo1.java
+
+commit 3b78120844a87b40917b17a7de74176294cf9885
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 10 13:13:32 2011 -0500
+
+    Move flash code to flash dir
+
+4	4	java/src/ca/charland/bgm/Main.java
+67	0	java/src/ca/charland/bgm/flash/ArrayCollection.java
+146	0	java/src/ca/charland/bgm/flash/Bubble.java
+48	0	java/src/ca/charland/bgm/flash/BubbleSeries.java
+84	0	java/src/ca/charland/bgm/flash/Graph.java
+108	0	java/src/ca/charland/bgm/flash/GraphParser.java
+99	0	java/src/ca/charland/bgm/flash/GraphWriter.java
+0	67	java/src/ca/charland/bgm/graph/ArrayCollection.java
+0	146	java/src/ca/charland/bgm/graph/Bubble.java
+0	48	java/src/ca/charland/bgm/graph/BubbleSeries.java
+0	84	java/src/ca/charland/bgm/graph/Graph.java
+0	108	java/src/ca/charland/bgm/graph/GraphParser.java
+0	99	java/src/ca/charland/bgm/graph/GraphWriter.java
+87	0	java/test/ca/charland/bgm/flash/ArrayCollectionTest.java
+47	0	java/test/ca/charland/bgm/flash/BubbleSeriesTest.java
+225	0	java/test/ca/charland/bgm/flash/BubbleTest.java
+109	0	java/test/ca/charland/bgm/flash/GraphParserTest.java
+102	0	java/test/ca/charland/bgm/flash/GraphTest.java
+140	0	java/test/ca/charland/bgm/flash/GraphWriterTest.java
+0	84	java/test/ca/charland/bgm/graph/ArrayCollectionTest.java
+0	45	java/test/ca/charland/bgm/graph/BubbleSeriesTest.java
+0	223	java/test/ca/charland/bgm/graph/BubbleTest.java
+0	105	java/test/ca/charland/bgm/graph/GraphParserTest.java
+0	97	java/test/ca/charland/bgm/graph/GraphTest.java
+0	135	java/test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit d471133f01f6a3be126edf5bc020d62638d63210
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 20:35:23 2011 -0500
+
+    flash is evil
+
+0	40	flash/.actionScriptProperties
+0	17	flash/.project
+0	3	flash/.settings/org.eclipse.core.resources.prefs
+0	12	flash/src/Testability_flash.as
+
+commit 13b1c2da39a8a6e9bd6021bf93c299b46d0231fa
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 10:29:20 2011 -0500
+
+    First commit of new flash project
+
+2	1	.gitignore
+40	0	flash/.actionScriptProperties
+17	0	flash/.project
+3	0	flash/.settings/org.eclipse.core.resources.prefs
+12	0	flash/src/Testability_flash.as
+
+commit 277dfbeaa12a0b1d38f876f2df6a6bb505ffbb8e
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 10:16:47 2011 -0500
+
+    Ignore better
+
+3	3	.gitignore
+
+commit bd54b6096580e2c129a3dd6ad0d01b196c9e2875
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 10:12:24 2011 -0500
+
+    more cleanup
+
+8	0	java/.classpath
+17	0	java/.project
+270	0	java/.settings/org.eclipse.jdt.core.prefs
+4	0	java/.settings/org.eclipse.jdt.ui.prefs
+-	-	java/bin/ca/charland/bgm/FileAccessing.class
+-	-	java/bin/ca/charland/bgm/FileInputTest.class
+-	-	java/bin/ca/charland/bgm/Main.class
+-	-	java/bin/ca/charland/bgm/change/Change.class
+-	-	java/bin/ca/charland/bgm/change/ChangeParserTest.class
+-	-	java/bin/ca/charland/bgm/change/ChangeTest.class
+-	-	java/bin/ca/charland/bgm/change/FileParser.class
+-	-	java/bin/ca/charland/bgm/change/Line.class
+-	-	java/bin/ca/charland/bgm/change/LineTest.class
+-	-	java/bin/ca/charland/bgm/graph/ArrayCollection.class
+-	-	java/bin/ca/charland/bgm/graph/ArrayCollectionTest.class
+-	-	java/bin/ca/charland/bgm/graph/Bubble.class
+-	-	java/bin/ca/charland/bgm/graph/BubbleSeries.class
+-	-	java/bin/ca/charland/bgm/graph/BubbleSeriesTest.class
+-	-	java/bin/ca/charland/bgm/graph/BubbleTest.class
+-	-	java/bin/ca/charland/bgm/graph/Graph.class
+-	-	java/bin/ca/charland/bgm/graph/GraphParser.class
+-	-	java/bin/ca/charland/bgm/graph/GraphParserTest.class
+-	-	java/bin/ca/charland/bgm/graph/GraphTest.class
+-	-	java/bin/ca/charland/bgm/graph/GraphWriter.class
+-	-	java/bin/ca/charland/bgm/graph/GraphWriterTest.class
+0	3	java/bin/res/graph.html
+0	119	java/bin/res/graph.mxml
+-	-	java/bin/res/graph.swf
+0	7	java/bin/res/java.txt
+0	15	java/bin/res/java_two.txt
+0	7	java/bin/res/one.txt
+0	64	java/bin/res/raw_graph.mxml
+0	26	java/bin/res/raw_graph.mxml~
+0	15	java/bin/res/two.txt
+0	362	java/out.txt
+0	119	java/src/res/graph.mxml
+-	-	java/src/res/graph.swf
+
+commit 505d3ecc3a8dbcf0232022f1d09140f5d20cfec9
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 10:02:14 2011 -0500
+
+    Accidently removed git ignore
+
+5	0	.gitignore
+
+commit 3acff0270168484ac02311d440c521c57f5d0bf9
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 10:00:15 2011 -0500
+
+    Moving java project to java folder
+
+0	8	.classpath
+0	5	.gitignore
+0	17	.project
+0	280	.settings/org.eclipse.jdt.core.prefs
+0	4	.settings/org.eclipse.jdt.ui.prefs
+-	-	java/bin/ca/charland/bgm/FileAccessing.class
+-	-	java/bin/ca/charland/bgm/FileInputTest.class
+-	-	java/bin/ca/charland/bgm/Main.class
+-	-	java/bin/ca/charland/bgm/change/Change.class
+-	-	java/bin/ca/charland/bgm/change/ChangeParserTest.class
+-	-	java/bin/ca/charland/bgm/change/ChangeTest.class
+-	-	java/bin/ca/charland/bgm/change/FileParser.class
+-	-	java/bin/ca/charland/bgm/change/Line.class
+-	-	java/bin/ca/charland/bgm/change/LineTest.class
+-	-	java/bin/ca/charland/bgm/graph/ArrayCollection.class
+-	-	java/bin/ca/charland/bgm/graph/ArrayCollectionTest.class
+-	-	java/bin/ca/charland/bgm/graph/Bubble.class
+-	-	java/bin/ca/charland/bgm/graph/BubbleSeries.class
+-	-	java/bin/ca/charland/bgm/graph/BubbleSeriesTest.class
+-	-	java/bin/ca/charland/bgm/graph/BubbleTest.class
+-	-	java/bin/ca/charland/bgm/graph/Graph.class
+-	-	java/bin/ca/charland/bgm/graph/GraphParser.class
+-	-	java/bin/ca/charland/bgm/graph/GraphParserTest.class
+-	-	java/bin/ca/charland/bgm/graph/GraphTest.class
+-	-	java/bin/ca/charland/bgm/graph/GraphWriter.class
+-	-	java/bin/ca/charland/bgm/graph/GraphWriterTest.class
+3	0	java/bin/res/graph.html
+119	0	java/bin/res/graph.mxml
+-	-	java/bin/res/graph.swf
+7	0	java/bin/res/java.txt
+15	0	java/bin/res/java_two.txt
+7	0	java/bin/res/one.txt
+64	0	java/bin/res/raw_graph.mxml
+26	0	java/bin/res/raw_graph.mxml~
+15	0	java/bin/res/two.txt
+362	0	java/out.txt
+84	0	java/src/ca/charland/bgm/FileAccessing.java
+44	0	java/src/ca/charland/bgm/Main.java
+166	0	java/src/ca/charland/bgm/change/Change.java
+79	0	java/src/ca/charland/bgm/change/FileParser.java
+106	0	java/src/ca/charland/bgm/change/Line.java
+67	0	java/src/ca/charland/bgm/graph/ArrayCollection.java
+146	0	java/src/ca/charland/bgm/graph/Bubble.java
+48	0	java/src/ca/charland/bgm/graph/BubbleSeries.java
+84	0	java/src/ca/charland/bgm/graph/Graph.java
+108	0	java/src/ca/charland/bgm/graph/GraphParser.java
+99	0	java/src/ca/charland/bgm/graph/GraphWriter.java
+3	0	java/src/res/graph.html
+119	0	java/src/res/graph.mxml
+-	-	java/src/res/graph.swf
+64	0	java/src/res/raw_graph.mxml
+26	0	java/src/res/raw_graph.mxml~
+37	0	java/test/ca/charland/bgm/FileInputTest.java
+84	0	java/test/ca/charland/bgm/change/ChangeParserTest.java
+209	0	java/test/ca/charland/bgm/change/ChangeTest.java
+205	0	java/test/ca/charland/bgm/change/LineTest.java
+84	0	java/test/ca/charland/bgm/graph/ArrayCollectionTest.java
+45	0	java/test/ca/charland/bgm/graph/BubbleSeriesTest.java
+223	0	java/test/ca/charland/bgm/graph/BubbleTest.java
+105	0	java/test/ca/charland/bgm/graph/GraphParserTest.java
+97	0	java/test/ca/charland/bgm/graph/GraphTest.java
+135	0	java/test/ca/charland/bgm/graph/GraphWriterTest.java
+7	0	java/test/res/java.txt
+15	0	java/test/res/java_two.txt
+7	0	java/test/res/one.txt
+15	0	java/test/res/two.txt
+0	0	readme
+0	84	src/ca/charland/bgm/FileAccessing.java
+0	44	src/ca/charland/bgm/Main.java
+0	166	src/ca/charland/bgm/change/Change.java
+0	79	src/ca/charland/bgm/change/FileParser.java
+0	106	src/ca/charland/bgm/change/Line.java
+0	67	src/ca/charland/bgm/graph/ArrayCollection.java
+0	146	src/ca/charland/bgm/graph/Bubble.java
+0	48	src/ca/charland/bgm/graph/BubbleSeries.java
+0	84	src/ca/charland/bgm/graph/Graph.java
+0	108	src/ca/charland/bgm/graph/GraphParser.java
+0	99	src/ca/charland/bgm/graph/GraphWriter.java
+0	3	src/res/graph.html
+0	64	src/res/raw_graph.mxml
+0	37	test/ca/charland/bgm/FileInputTest.java
+0	84	test/ca/charland/bgm/change/ChangeParserTest.java
+0	209	test/ca/charland/bgm/change/ChangeTest.java
+0	205	test/ca/charland/bgm/change/LineTest.java
+0	84	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+0	45	test/ca/charland/bgm/graph/BubbleSeriesTest.java
+0	223	test/ca/charland/bgm/graph/BubbleTest.java
+0	105	test/ca/charland/bgm/graph/GraphParserTest.java
+0	97	test/ca/charland/bgm/graph/GraphTest.java
+0	135	test/ca/charland/bgm/graph/GraphWriterTest.java
+0	7	test/res/java.txt
+0	15	test/res/java_two.txt
+0	7	test/res/one.txt
+0	15	test/res/two.txt
+
+commit 66a38c469847008cac128e6eb83ff79b0fe0f677
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 9 09:57:20 2011 -0500
+
+    Add commit to graph
+
+1	0	.gitignore
+6	9	src/ca/charland/bgm/change/Change.java
+29	11	src/ca/charland/bgm/graph/Bubble.java
+1	1	src/ca/charland/bgm/graph/GraphParser.java
+2	1	src/res/raw_graph.mxml
+50	0	test/ca/charland/bgm/change/ChangeTest.java
+4	4	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+33	12	test/ca/charland/bgm/graph/BubbleTest.java
+5	5	test/ca/charland/bgm/graph/GraphParserTest.java
+3	3	test/ca/charland/bgm/graph/GraphTest.java
+2	2	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 5ffb6d29acfa96f4c3aaa6e4a5e9b09ecf347973
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Thu Dec 8 18:27:29 2011 -0500
+
+    prettier bubble tip data
+
+12	1	src/res/raw_graph.mxml
+
+commit 2e373c11abc9f331bb4f9aea3306906ed84b75be
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Thu Dec 8 17:11:44 2011 -0500
+
+    Fixed up indenting
+
+5	4	src/ca/charland/bgm/graph/ArrayCollection.java
+3	3	src/ca/charland/bgm/graph/Bubble.java
+8	7	src/ca/charland/bgm/graph/BubbleSeries.java
+9	3	src/ca/charland/bgm/graph/GraphParser.java
+2	2	src/ca/charland/bgm/graph/GraphWriter.java
+1	1	src/res/raw_graph.mxml
+11	9	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+8	7	test/ca/charland/bgm/graph/BubbleSeriesTest.java
+6	6	test/ca/charland/bgm/graph/BubbleTest.java
+4	4	test/ca/charland/bgm/graph/GraphParserTest.java
+
+commit c74060cef746fe1adcb02619af1dcbb4b19cbeac
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Thu Dec 8 16:12:51 2011 -0500
+
+    In Bubble use hte date object not just the millis since 1970
+
+10	8	src/ca/charland/bgm/graph/Bubble.java
+1	3	src/ca/charland/bgm/graph/GraphParser.java
+4	4	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+20	17	test/ca/charland/bgm/graph/BubbleTest.java
+8	6	test/ca/charland/bgm/graph/GraphParserTest.java
+3	3	test/ca/charland/bgm/graph/GraphTest.java
+2	2	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 95e24429fa9d373ec6772542177b997cfd55db7b
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Wed Dec 7 19:09:34 2011 -0500
+
+    Vertical column now has percents
+
+35	7	src/res/raw_graph.mxml
+
+commit 5118c54ef6e81fce18724947b811328513fd6e13
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Wed Dec 7 18:24:49 2011 -0500
+
+    Don't use percents
+
+0	1	src/ca/charland/bgm/graph/Bubble.java
+2	2	test/ca/charland/bgm/graph/BubbleTest.java
+
+commit 91a23c1b92490f8c5a4f14432a44cbf9d3d9549a
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Wed Dec 7 00:13:32 2011 -0500
+
+    Bubble and ArrayCOllection ugliness sorted out, graph is looking better
+
+1	0	src/ca/charland/bgm/change/Change.java
+5	26	src/ca/charland/bgm/graph/ArrayCollection.java
+52	11	src/ca/charland/bgm/graph/Bubble.java
+4	4	src/ca/charland/bgm/graph/GraphParser.java
+8	4	src/res/raw_graph.mxml
+8	7	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+48	15	test/ca/charland/bgm/graph/BubbleTest.java
+2	2	test/ca/charland/bgm/graph/GraphParserTest.java
+
+commit ee12e4889b7ba038f1938b93fa63b599bc1c3acf
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 22:00:45 2011 -0500
+
+    Vertical is 0 to 100
+
+5	5	src/ca/charland/bgm/graph/Bubble.java
+0	16	src/ca/charland/bgm/graph/GraphWriter.java
+1	1	src/res/raw_graph.mxml
+58	3	test/ca/charland/bgm/graph/BubbleTest.java
+2	3	test/ca/charland/bgm/graph/GraphParserTest.java
+
+commit c39819b51e2e7d9f96fcc77b3d21018df0b5fa6b
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 21:17:48 2011 -0500
+
+    Author fixed
+
+7	7	src/ca/charland/bgm/change/Change.java
+13	7	src/ca/charland/bgm/graph/BubbleSeries.java
+1	1	src/ca/charland/bgm/graph/Graph.java
+4	4	test/ca/charland/bgm/change/ChangeTest.java
+7	4	test/ca/charland/bgm/graph/BubbleSeriesTest.java
+5	1	test/ca/charland/bgm/graph/GraphParserTest.java
+
+commit fb4933eb12a07f8025b969f94f5f1e0d4574f5fa
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 20:29:28 2011 -0500
+
+    Now supports only showing source files that changed
+
+10	1	src/ca/charland/bgm/change/Change.java
+12	6	src/ca/charland/bgm/change/FileParser.java
+1	1	src/ca/charland/bgm/change/Line.java
+1	1	test/ca/charland/bgm/FileInputTest.java
+27	5	test/ca/charland/bgm/change/ChangeParserTest.java
+49	7	test/ca/charland/bgm/change/ChangeTest.java
+27	13	test/ca/charland/bgm/change/LineTest.java
+7	0	test/res/java.txt
+15	0	test/res/java_two.txt
+7	0	test/res/one.txt
+0	7	test/res/simple.txt
+4	4	test/res/two.txt
+
+commit d7a57069af6c7a4bfb25a779c4f49587f224bf2b
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 18:59:35 2011 -0500
+
+    First commit to add parsing
+
+2	1	src/ca/charland/bgm/change/FileParser.java
+1	1	test/ca/charland/bgm/change/ChangeTest.java
+1	1	test/res/simple.txt
+3	3	test/res/two.txt
+
+commit 3b3d180986e63f3086a41a037af65df3ed36991a
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 18:22:20 2011 -0500
+
+    formatting setup
+
+4	0	.settings/org.eclipse.jdt.ui.prefs
+
+commit 16518fe2c707bc658174f02df4db784c4d1ae1f3
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 18:21:53 2011 -0500
+
+    Now with formatting
+
+8	5	src/ca/charland/bgm/FileAccessing.java
+11	10	src/ca/charland/bgm/Main.java
+31	25	src/ca/charland/bgm/change/Change.java
+8	7	src/ca/charland/bgm/change/FileParser.java
+2	2	src/ca/charland/bgm/graph/ArrayCollection.java
+28	21	src/ca/charland/bgm/graph/Bubble.java
+1	1	src/ca/charland/bgm/graph/Graph.java
+11	12	src/ca/charland/bgm/graph/GraphParser.java
+2	2	test/ca/charland/bgm/FileInputTest.java
+3	3	test/ca/charland/bgm/change/ChangeParserTest.java
+8	8	test/ca/charland/bgm/change/ChangeTest.java
+35	36	test/ca/charland/bgm/change/LineTest.java
+6	7	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+34	17	test/ca/charland/bgm/graph/BubbleTest.java
+38	8	test/ca/charland/bgm/graph/GraphParserTest.java
+5	5	test/ca/charland/bgm/graph/GraphTest.java
+3	4	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit bba0d8aa4e75a49b41c6c9b121ead72a48678cdb
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Tue Dec 6 00:34:03 2011 -0500
+
+    Date and Size are now normazlied, still needs to look better
+
+269	1	.settings/org.eclipse.jdt.core.prefs
+1	1	src/ca/charland/bgm/graph/Bubble.java
+49	38	src/ca/charland/bgm/graph/GraphParser.java
+2	2	test/ca/charland/bgm/graph/BubbleTest.java
+2	2	test/ca/charland/bgm/graph/GraphParserTest.java
+
+commit c62bd3deeef8efad0b4da3a5c48b62ced006edf0
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Dec 5 22:26:03 2011 -0500
+
+    remove unused import
+
+0	2	test/ca/charland/bgm/graph/GraphTest.java
+
+commit e15c59b993bf1e9e74a339f1e8ef75d2c18c351c
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Dec 5 19:39:16 2011 -0500
+
+    Moved normalization to GraphParser
+
+2	1	src/ca/charland/bgm/Main.java
+1	47	src/ca/charland/bgm/graph/Graph.java
+51	1	src/ca/charland/bgm/graph/GraphParser.java
+37	6	test/ca/charland/bgm/graph/GraphParserTest.java
+0	25	test/ca/charland/bgm/graph/GraphTest.java
+
+commit 953f0da86424f4a362c2919795cc04abdb947799
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sun Dec 4 23:53:15 2011 -0500
+
+    Graph Writer was holding way too much information, quickly/uglily moved it out to Graph
+
+7	6	src/ca/charland/bgm/Main.java
+107	51	src/ca/charland/bgm/graph/Graph.java
+10	63	src/ca/charland/bgm/graph/GraphWriter.java
+81	9	test/ca/charland/bgm/graph/GraphTest.java
+22	89	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 60a0c866681e764a1c48756f87f07a78d0e48193
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sun Dec 4 22:09:05 2011 -0500
+
+    It works!!!! Kind of.
+
+32	22	src/ca/charland/bgm/graph/ArrayCollection.java
+7	5	src/ca/charland/bgm/graph/BubbleSeries.java
+37	16	src/ca/charland/bgm/graph/GraphWriter.java
+18	32	src/res/raw_graph.mxml
+24	4	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+4	4	test/ca/charland/bgm/graph/BubbleSeriesTest.java
+87	33	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 4932913dbe3a30c50a0880fefcbc318d1ca42f9d
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sun Dec 4 22:08:34 2011 -0500
+
+    swf shouldn't be in git
+
+1	0	.gitignore
+-	-	src/res/graph.swf
+
+commit 3a7ea86c8e2241808759259a16de2b71940b1195
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sun Dec 4 15:24:08 2011 -0500
+
+    Bubble Series is now in GraphWriter
+
+8	2	src/ca/charland/bgm/graph/BubbleSeries.java
+37	23	src/ca/charland/bgm/graph/GraphWriter.java
+77	22	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 2234faf9e3e1e3d1c9b8dc618d36a195afe35101
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 3 15:55:32 2011 -0500
+
+    adding bubble series from mxml
+
+33	0	src/ca/charland/bgm/graph/BubbleSeries.java
+41	0	test/ca/charland/bgm/graph/BubbleSeriesTest.java
+
+commit 3f1dc17919cac867b752d7ac7806bf144b645e04
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 3 13:46:52 2011 -0500
+
+    making javadocs better
+
+2	2	src/ca/charland/bgm/FileAccessing.java
+3	1	src/ca/charland/bgm/Main.java
+3	1	src/ca/charland/bgm/change/Change.java
+3	1	src/ca/charland/bgm/change/FileParser.java
+34	27	src/ca/charland/bgm/change/Line.java
+3	1	src/ca/charland/bgm/graph/ArrayCollection.java
+3	1	src/ca/charland/bgm/graph/Bubble.java
+3	1	src/ca/charland/bgm/graph/Graph.java
+8	5	src/ca/charland/bgm/graph/GraphParser.java
+3	1	src/ca/charland/bgm/graph/GraphWriter.java
+1	4	test/ca/charland/bgm/FileInputTest.java
+1	4	test/ca/charland/bgm/change/ChangeParserTest.java
+1	4	test/ca/charland/bgm/change/ChangeTest.java
+5	7	test/ca/charland/bgm/change/LineTest.java
+3	8	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+1	1	test/ca/charland/bgm/graph/BubbleTest.java
+1	4	test/ca/charland/bgm/graph/GraphParserTest.java
+1	4	test/ca/charland/bgm/graph/GraphTest.java
+1	4	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit f85afeb907be926958e47c937483401e23b08b4a
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 3 10:26:49 2011 -0500
+
+    javadocs galore
+
+12	0	src/ca/charland/bgm/FileAccessing.java
+8	0	src/ca/charland/bgm/Main.java
+62	0	src/ca/charland/bgm/change/Change.java
+15	0	src/ca/charland/bgm/change/FileParser.java
+43	0	src/ca/charland/bgm/change/Line.java
+28	0	src/ca/charland/bgm/graph/ArrayCollection.java
+42	0	src/ca/charland/bgm/graph/Bubble.java
+15	1	src/ca/charland/bgm/graph/Graph.java
+9	0	src/ca/charland/bgm/graph/GraphParser.java
+49	0	src/ca/charland/bgm/graph/GraphWriter.java
+2	1	test/ca/charland/bgm/FileInputTest.java
+11	1	test/ca/charland/bgm/change/ChangeParserTest.java
+26	1	test/ca/charland/bgm/change/ChangeTest.java
+38	1	test/ca/charland/bgm/change/LineTest.java
+11	1	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+21	0	test/ca/charland/bgm/graph/BubbleTest.java
+2	1	test/ca/charland/bgm/graph/GraphParserTest.java
+7	1	test/ca/charland/bgm/graph/GraphTest.java
+17	1	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 9bb12551386e50cbecdeed9c553c4fbced669f97
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 2 20:37:08 2011 -0500
+
+    updates
+
+1	1	src/ca/charland/bgm/Main.java
+0	1	src/ca/charland/bgm/graph/Graph.java
+12	23	src/ca/charland/bgm/graph/GraphWriter.java
+-	-	src/res/graph.swf
+1	11	src/res/raw_graph.mxml
+1	1	test/ca/charland/bgm/FileInputTest.java
+1	2	test/ca/charland/bgm/graph/GraphWriterTest.java
+
+commit 69e5de2deab1f04b32b87b843de714681d53e2c8
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 2 19:46:14 2011 -0500
+
+    Ingore and delete graph.mxml as this file is generated.
+
+2	0	.gitignore
+0	57	src/res/graph.mxml
+
+commit 82bcd08011a73890f42a18cebe86cdd16b6731f5
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 2 19:39:26 2011 -0500
+
+    first commit of src and tests
+
+8	0	.classpath
+1	0	.gitignore
+17	0	.project
+12	0	.settings/org.eclipse.jdt.core.prefs
+69	0	src/ca/charland/bgm/FileAccessing.java
+31	0	src/ca/charland/bgm/Main.java
+89	0	src/ca/charland/bgm/change/Change.java
+54	0	src/ca/charland/bgm/change/FileParser.java
+56	0	src/ca/charland/bgm/change/Line.java
+47	0	src/ca/charland/bgm/graph/ArrayCollection.java
+35	0	src/ca/charland/bgm/graph/Bubble.java
+59	0	src/ca/charland/bgm/graph/Graph.java
+32	0	src/ca/charland/bgm/graph/GraphParser.java
+93	0	src/ca/charland/bgm/graph/GraphWriter.java
+3	0	src/res/graph.html
+57	0	src/res/graph.mxml
+-	-	src/res/graph.swf
+44	0	src/res/raw_graph.mxml
+39	0	test/ca/charland/bgm/FileInputTest.java
+55	0	test/ca/charland/bgm/change/ChangeParserTest.java
+95	0	test/ca/charland/bgm/change/ChangeTest.java
+157	0	test/ca/charland/bgm/change/LineTest.java
+57	0	test/ca/charland/bgm/graph/ArrayCollectionTest.java
+73	0	test/ca/charland/bgm/graph/BubbleTest.java
+41	0	test/ca/charland/bgm/graph/GraphParserTest.java
+49	0	test/ca/charland/bgm/graph/GraphTest.java
+82	0	test/ca/charland/bgm/graph/GraphWriterTest.java
+7	0	test/res/simple.txt
+15	0	test/res/two.txt
+
+commit e119f32bc0d468ac760f626e6bd9ac9d5784a309
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 2 19:30:00 2011 -0500
+
+    first commit
+
+0	0	readme
