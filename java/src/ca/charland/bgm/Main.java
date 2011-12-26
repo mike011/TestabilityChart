@@ -1,8 +1,11 @@
 package ca.charland.bgm;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.FileParser;
@@ -23,6 +26,9 @@ public class Main {
 	/** The types of source files to look at. */
 	private ArrayList<String> _types;
 
+	/** The properties file. */
+	private String _propertiesFile = "common.properties";;
+
 	/**
 	 * The main method.
 	 * 
@@ -30,17 +36,44 @@ public class Main {
 	 *            the arguments
 	 */
 	public static void main(String args[]) {
-		new Main(args).go();
+		Main main = new Main();
+		main.setup(args);
+		main.go();
 	}
 
 	/**
-	 * Instantiates a new main.
+	 * Setup.
 	 * 
 	 * @param args
-	 *            the args
+	 *            the new up
 	 */
-	public Main(String[] args) {
+	void setup(String[] args) {
+		checkPropertiesFile();
 		parseArgs(args);
+	}
+
+	/**
+	 * Check properties file.
+	 */
+	private void checkPropertiesFile() {
+
+		Properties properties = new Properties();
+		try {
+			properties.load(new FileInputStream(_propertiesFile));
+		} catch (IOException e) {
+			System.err.println("File not found: " + e.getMessage());
+		}
+
+		if (properties != null) {
+			_logFile = properties.getProperty("log.file");
+			String types = properties.getProperty("types");
+			if (types != null) {
+				_types = new ArrayList<String>();
+				for (String type : types.split(" ")) {
+					_types.add(type);
+				}
+			}
+		}
 	}
 
 	/**
@@ -69,11 +102,15 @@ public class Main {
 	 *            the arguments.
 	 */
 	private void parseArgs(String[] args) {
-		_logFile = args[0];
-		if (args.length > 1) {
-			_types = new ArrayList<String>();
-			for (int x = 1; x < args.length; x++) {
-				_types.add(args[x]);
+		if (args != null) {
+			if (args.length > 0 && args[0].length() > 0) {
+				_logFile = args[0];
+			}
+			if (args.length > 1) {
+				_types = new ArrayList<String>();
+				for (int x = 1; x < args.length; x++) {
+					_types.add(args[x]);
+				}
 			}
 		}
 	}
@@ -94,5 +131,15 @@ public class Main {
 	 */
 	List<String> getTypes() {
 		return _types;
+	}
+
+	/**
+	 * Sets the properties file.
+	 * 
+	 * @param file
+	 *            the new properties file
+	 */
+	void setPropertiesFile(String file) {
+		_propertiesFile = file;
 	}
 }
