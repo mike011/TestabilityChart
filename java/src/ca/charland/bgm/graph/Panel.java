@@ -1,7 +1,13 @@
 package ca.charland.bgm.graph;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -30,7 +36,7 @@ import org.jfree.ui.ApplicationFrame;
  * 
  * @author mcharland
  */
-public class Panel extends ApplicationFrame implements ChartMouseListener {
+public class Panel extends ApplicationFrame implements ChartMouseListener, ActionListener {
 
 	/**
 	 * Used to uniquely identify the class.
@@ -48,7 +54,7 @@ public class Panel extends ApplicationFrame implements ChartMouseListener {
 	private MyXYZDataset dataSet;
 
 	/** The change. */
-	private JLabel change;
+	private JLink change;
 
 	/**
 	 * Instantiates a new bubble chart demo.
@@ -72,9 +78,11 @@ public class Panel extends ApplicationFrame implements ChartMouseListener {
 		JPanel panel = new JPanel();
 		panel.add(chartpanel);
 		panel.add(new JLabel("Commit:"));
-		change = new JLabel("");
+		change = new JLink();
+		change.setEnabled(false);
+		change.addActionListener(this);
 		panel.add(change);
-		panel.setPreferredSize(new Dimension(500, 300));
+		panel.setPreferredSize(new Dimension(500, 310));
 		setContentPane(panel);
 	}
 
@@ -132,7 +140,9 @@ public class Panel extends ApplicationFrame implements ChartMouseListener {
 			DefaultXYZDataset ds = (DefaultXYZDataset) cie.getDataset();
 			String seriesKey = ds.getSeriesKey(cie.getSeriesIndex()).toString();
 			Bubble bubble = dataSet.getBubble(seriesKey, cie.getItem());
-			this.change.setText(bubble.getLink());
+			change.setEnabled(true);
+			change.setText(bubble.getChange());
+			change.setURL(bubble.getLink());
 		}
 	}
 
@@ -140,5 +150,17 @@ public class Panel extends ApplicationFrame implements ChartMouseListener {
 	@Override
 	public void chartMouseMoved(ChartMouseEvent event) {
 		// not used
+	}
+
+	/** {@inheritDoc} */
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		try {
+			Desktop.getDesktop().browse(new URI(change.getURL()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 }

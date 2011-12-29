@@ -118,6 +118,23 @@ public class BubbleTest {
 	}
 
 	/**
+	 * Test get change.
+	 */
+	@Test
+	public void testGetChange() {
+
+		// Setup
+		Bubble object = new Bubble(null, 0, 120, "98a");
+
+		// Exercise
+		String change = object.getChange();
+
+		// Verify
+		Assert.assertEquals("Change is wrong", /* "https://github.com/mike011/TestabilityChart/commit/ */"98a", change);
+
+	}
+
+	/**
 	 * Test get link.
 	 */
 	@Test
@@ -130,7 +147,7 @@ public class BubbleTest {
 		String link = object.getLink();
 
 		// Verify
-		Assert.assertEquals("Link is wrong", /* "https://github.com/mike011/TestabilityChart/commit/ */"98a", link);
+		Assert.assertEquals("Link is wrong", "https://github.com/mike011/TestabilityChart/commit/98a", link);
 
 	}
 
@@ -151,7 +168,7 @@ public class BubbleTest {
 		bubblesData.append("{\"Date\":\"").append("0.00").append('"');
 		bubblesData.append(", \"Coverage\":\"").append("0").append('"');
 		bubblesData.append(", \"Size\":\"").append("120.00").append('"');
-		bubblesData.append(", \"Link\":\"").append(bubble.getLink()).append('"');
+		bubblesData.append(", \"Change\":\"").append(bubble.getChange()).append('"');
 		bubblesData.append("}");
 		Assert.assertEquals(bubblesData.toString(), out);
 

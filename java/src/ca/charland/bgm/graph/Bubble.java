@@ -98,12 +98,21 @@ public class Bubble {
 	}
 
 	/**
+	 * Gets the change.
+	 * 
+	 * @return the change
+	 */
+	String getChange() {
+		return change;
+	}
+
+	/**
 	 * Gets the link.
 	 * 
 	 * @return the link
 	 */
 	String getLink() {
-		return /* "https://github.com/mike011/TestabilityChart/commit/" + */change;
+		return "https://github.com/mike011/TestabilityChart/commit/" + getChange();
 	}
 
 	/**
@@ -127,7 +136,7 @@ public class Bubble {
 		result.append("{\"Date\":\"").append(format(getDate() / 84000000)).append("\"");
 		result.append(", \"Coverage\":\"").append(getCoverageString()).append("\"");
 		result.append(", \"Size\":\"").append(format(getSize())).append("\"");
-		result.append(", \"Link\":\"").append(getLink()).append('"');
+		result.append(", \"Change\":\"").append(getChange()).append('"');
 		result.append("}");
 		return result.toString();
 	}
