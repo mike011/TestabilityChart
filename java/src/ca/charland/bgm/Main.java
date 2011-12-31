@@ -61,7 +61,7 @@ public class Main {
 		try {
 			properties.load(new FileInputStream(_propertiesFile));
 		} catch (IOException e) {
-			System.err.println("File not found: " + e.getMessage());
+			System.err.println("File not found: " + e.getMessage() + ". Relying on arguments passed in.");
 		}
 
 		if (properties != null) {
