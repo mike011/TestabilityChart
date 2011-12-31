@@ -16,6 +16,12 @@ Version 0.15
 - HTTP Link to change description
 -- ALL COMPLETED
 
+Version 0.17 - Be able to handle a larger project (qt)
+- Legend becomes ridiculously large
+- Grab screen shots for projects and have them show up in github as examples.
+- Fix URL path for different projects
+- Maybe change title for current project.
+
 Version 0.20
 - Filter by user
 - Filter by size or ratio to highlight the most suspicious commits
