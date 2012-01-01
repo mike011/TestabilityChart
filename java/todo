@@ -20,7 +20,10 @@ Version 0.17 - Be able to handle a larger project (qt)
 - Legend becomes ridiculously large
 - Grab screen shots for projects and have them show up in github as examples.
 - Fix URL path for different projects
+-- COMPLETE
 - Maybe change title for current project.
+- Add in version name in title.
+- Be able to set properties file by passing in system variable.
 
 Version 0.20
 - Filter by user

@@ -21,16 +21,19 @@ import ca.charland.bgm.graph.ChartParser;
 public class Main {
 
 	/** The log file. */
-	private String _logFile;
+	private String logFile;
 
 	/** The types of source files to look at. */
-	private ArrayList<String> _types;
+	private ArrayList<String> types;
 
 	/** The properties file. */
-	private String _propertiesFile = "common.properties";
+	private String propertiesFile = "common.properties";
 
 	/** The base URL. */
-	private String _baseURL;
+	private String baseURL;
+
+	/** Are you debugging?. */
+	private boolean debug;
 
 	/**
 	 * The main method.
@@ -62,21 +65,22 @@ public class Main {
 
 		Properties properties = new Properties();
 		try {
-			properties.load(new FileInputStream(_propertiesFile));
+			properties.load(new FileInputStream(propertiesFile));
 		} catch (IOException e) {
 			System.err.println("File not found: " + e.getMessage() + ". Relying on arguments passed in.");
 		}
 
 		if (properties != null) {
-			_logFile = properties.getProperty("log.file");
-			String types = properties.getProperty("types");
-			if (types != null) {
-				_types = new ArrayList<String>();
-				for (String type : types.split(" ")) {
-					_types.add(type);
+			logFile = properties.getProperty("log.file");
+			String typesProps = properties.getProperty("types");
+			if (typesProps != null) {
+				types = new ArrayList<String>();
+				for (String type : typesProps.split(" ")) {
+					types.add(type);
 				}
 			}
-			_baseURL = properties.getProperty("base.url");
+			baseURL = properties.getProperty("base.url");
+			debug = Boolean.parseBoolean(properties.getProperty("debug"));
 		}
 	}
 
@@ -90,14 +94,16 @@ public class Main {
 		List<Change> changes = FileParser.changes(lines, getTypes());
 
 		// Create the bubbles.
-		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, getTypes(), _baseURL);
+		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, getTypes(), baseURL);
 		ChartParser.normaliseBubbleData(bubbles);
 
-		// Debug
-		for (String person : bubbles.keySet()) {
-			System.out.println(person);
-			for (Bubble b : bubbles.get(person)) {
-				System.out.println(b);
+		if (debug) {
+			// Debug
+			for (String person : bubbles.keySet()) {
+				System.out.println(person);
+				for (Bubble b : bubbles.get(person)) {
+					System.out.println(b);
+				}
 			}
 		}
 
@@ -116,12 +122,12 @@ public class Main {
 	private void parseArgs(String[] args) {
 		if (args != null) {
 			if (args.length > 0 && args[0].length() > 0) {
-				_logFile = args[0];
+				logFile = args[0];
 			}
 			if (args.length > 1) {
-				_types = new ArrayList<String>();
+				types = new ArrayList<String>();
 				for (int x = 1; x < args.length; x++) {
-					_types.add(args[x]);
+					types.add(args[x]);
 				}
 			}
 		}
@@ -133,7 +139,7 @@ public class Main {
 	 * @return the log file
 	 */
 	String getLogFile() {
-		return _logFile;
+		return logFile;
 	}
 
 	/**
@@ -142,7 +148,7 @@ public class Main {
 	 * @return the types
 	 */
 	List<String> getTypes() {
-		return _types;
+		return types;
 	}
 
 	/**
@@ -152,7 +158,7 @@ public class Main {
 	 *            the new properties file
 	 */
 	void setPropertiesFile(String file) {
-		_propertiesFile = file;
+		propertiesFile = file;
 	}
 
 	/**
@@ -161,6 +167,15 @@ public class Main {
 	 * @return the base URL.
 	 */
 	String getBaseURL() {
-		return _baseURL;
+		return baseURL;
+	}
+
+	/**
+	 * Checks if you are debugging.
+	 * 
+	 * @return true, if you are debugging
+	 */
+	boolean isDebugging() {
+		return debug;
 	}
 }

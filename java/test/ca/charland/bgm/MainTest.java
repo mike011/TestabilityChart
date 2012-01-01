@@ -52,7 +52,7 @@ public class MainTest {
 		Assert.assertNull(m.getLogFile());
 		Assert.assertNull(m.getTypes());
 	}
-	
+
 	/**
 	 * Test parsing the log file that has not been inited.
 	 */
@@ -62,12 +62,12 @@ public class MainTest {
 		Main m = new Main();
 
 		// Exercise
-		m.setup(new String[]{});
+		m.setup(new String[] {});
 
 		Assert.assertNull(m.getLogFile());
 		Assert.assertNull(m.getTypes());
 	}
-	
+
 	/**
 	 * Test parsing the log file that is an empty string.
 	 */
@@ -220,7 +220,7 @@ public class MainTest {
 		List<String> types = m.getTypes();
 		Assert.assertEquals(5, types.size());
 	}
-	
+
 	/**
 	 * Test loading the link from the properties file.
 	 */
@@ -234,9 +234,9 @@ public class MainTest {
 		m.setup(null);
 
 		// Verify
-		Assert.assertNull(m.getBaseURL());		
+		Assert.assertNull(m.getBaseURL());
 	}
-	
+
 	/**
 	 * Test loading the link from the properties file.
 	 */
@@ -250,7 +250,22 @@ public class MainTest {
 		m.setup(null);
 
 		// Verify
-		Assert.assertEquals("www.nba.com/", m.getBaseURL());		
+		Assert.assertEquals("www.nba.com/", m.getBaseURL());
 	}
 
+	/**
+	 * Test turning on debugging.
+	 */
+	@Test
+	public void testPropertiesDebug() {
+		// Setup
+		Main m = new Main();
+		m.setPropertiesFile("test/res/common.properties");
+
+		// Exercise
+		m.setup(null);
+
+		// Verify
+		Assert.assertTrue(m.isDebugging());
+	}
 }
