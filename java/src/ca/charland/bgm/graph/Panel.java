@@ -128,6 +128,7 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 		yAxis.setUpperMargin(0.14999999999999999D);
 		yAxis.setTickUnit(new NumberTickUnit(.25, NumberFormat.getPercentInstance()));
 
+		jfreechart.removeLegend();
 		return jfreechart;
 	}
 
@@ -140,9 +141,12 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 			DefaultXYZDataset ds = (DefaultXYZDataset) cie.getDataset();
 			String seriesKey = ds.getSeriesKey(cie.getSeriesIndex()).toString();
 			Bubble bubble = dataSet.getBubble(seriesKey, cie.getItem());
-			change.setEnabled(true);
 			change.setText(bubble.getChange());
-			change.setURL(bubble.getLink());
+			String link = bubble.getLink();
+			if (link != null) {
+				change.setURL(link);
+				change.setEnabled(true);
+			}
 		}
 	}
 
@@ -162,5 +166,14 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * Gets the change.
+	 * 
+	 * @return the change
+	 */
+	JLink getChange() {
+		return change;
 	}
 }

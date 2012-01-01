@@ -21,16 +21,17 @@ public class ChartParser {
 	 *            the changes
 	 * @param types
 	 *            the types
+	 * @param url The URL to link.
 	 * @return The map which contains keys of authors and lists of there bubbles.
 	 */
-	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes, List<String> types) {
+	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes, List<String> types, String url) {
 
 		Map<String, ArrayList<Bubble>> series = new TreeMap<String, ArrayList<Bubble>>();
 
 		for (Change change : changes) {
 			float coverage = change.getCoverage(types);
 			float linesCovered = change.getLinesCovered(types);
-			Bubble bubble = new Bubble(change.getDate(), coverage, linesCovered, change.getCommit());
+			Bubble bubble = new Bubble(change.getDate(), coverage, linesCovered, change.getCommit(), url);
 
 			String author = change.getAuthor();
 			if (!series.containsKey(author)) {

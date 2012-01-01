@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.jfree.data.xy.XYZDataset;
 import org.jfree.ui.RefineryUtilities;
 
 /**
@@ -102,7 +101,7 @@ public class Chart {
 	 * 
 	 * @return the data set
 	 */
-	public XYZDataset getDataSet() {
+	public MyXYZDataset getDataSet() {
 		return dataset;
 	}
 }

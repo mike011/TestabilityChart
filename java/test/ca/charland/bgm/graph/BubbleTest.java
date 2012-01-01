@@ -7,15 +7,17 @@ import org.junit.Test;
 
 /**
  * Tests for Bubble.
+ * 
+ * @author mcharland
  */
 public class BubbleTest {
 
 	/**
-	 * Test.
+	 * Test the constructor.
 	 */
 	@Test
 	public void test() {
-		assertNotNull(new Bubble(null, 0, 0, ""));
+		assertNotNull(new Bubble(null, 0, 0, null, null));
 	}
 
 	/**
@@ -25,7 +27,7 @@ public class BubbleTest {
 	public void testGetDate() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 0, "");
+		Bubble object = new Bubble(null, 0, 0, null, null);
 
 		// Exercise
 		float date = object.getDate();
@@ -39,7 +41,7 @@ public class BubbleTest {
 	public void testGetSize() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 0, "");
+		Bubble object = new Bubble(null, 0, 0, null, null);
 
 		// Exercise
 		float date = object.getSize();
@@ -53,7 +55,7 @@ public class BubbleTest {
 	public void testGetCoverage() {
 
 		// Setup
-		Bubble object = new Bubble(null, 1, 0, "");
+		Bubble object = new Bubble(null, 1, 0, null, null);
 
 		// Exercise
 		float date = object.getCoverage();
@@ -67,7 +69,7 @@ public class BubbleTest {
 	public void testGetCoverageString() {
 
 		// Setup
-		Bubble object = new Bubble(null, 1, 0, "");
+		Bubble object = new Bubble(null, 1, 0, null, null);
 
 		// Exercise
 		String date = object.getCoverageString();
@@ -83,7 +85,7 @@ public class BubbleTest {
 	public void testNormaliseSizeMin() {
 		// Setup
 		long size = 0;
-		Bubble object = new Bubble(null, 0, size, "");
+		Bubble object = new Bubble(null, 0, size, null, null);
 
 		long min = 0;
 		long max = 120;
@@ -104,7 +106,7 @@ public class BubbleTest {
 
 		// Setup
 		long size = 120;
-		Bubble object = new Bubble(null, 0, size, "");
+		Bubble object = new Bubble(null, 0, size, null, null);
 
 		long min = 0;
 		long max = 120;
@@ -124,31 +126,44 @@ public class BubbleTest {
 	public void testGetChange() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 120, "98a");
+		Bubble object = new Bubble(null, 0, 120, "98a", null);
 
 		// Exercise
 		String change = object.getChange();
 
 		// Verify
-		Assert.assertEquals("Change is wrong", /* "https://github.com/mike011/TestabilityChart/commit/ */"98a", change);
+		Assert.assertEquals("Change is wrong", "98a", change);
+	}
+	
+	/**
+	 * Test a different link.
+	 */
+	@Test
+	public void testLink() {
+		// Setup
+		Bubble object = new Bubble(null, 0, 120, "a", "http://www.nba.com/");
+		
+		// Exercise
+		String link = object.getLink();
 
+		// Verify
+		Assert.assertEquals("Link is wrong", "http://www.nba.com/a", link);
 	}
 
 	/**
-	 * Test get link.
+	 * Test get link, but the base url is null.
 	 */
 	@Test
-	public void testGetLink() {
+	public void testGetLinkNull() {
 
 		// Setup
-		Bubble object = new Bubble(null, 0, 120, "98a");
+		Bubble object = new Bubble(null, 0, 120, "98a", null);
 
 		// Exercise
 		String link = object.getLink();
 
 		// Verify
-		Assert.assertEquals("Link is wrong", "https://github.com/mike011/TestabilityChart/commit/98a", link);
-
+		Assert.assertNull(link);
 	}
 
 	/**
@@ -158,19 +173,17 @@ public class BubbleTest {
 	public void testToString() {
 
 		// Setup
-		Bubble bubble = new Bubble(null, 0, 120, "123423");
+		Bubble bubble = new Bubble(null, 0, 120, "123423", null);
 
 		// Exercise
 		String out = bubble.toString();
 
 		// Verify
 		StringBuffer bubblesData = new StringBuffer();
-		bubblesData.append("{\"Date\":\"").append("0.00").append('"');
-		bubblesData.append(", \"Coverage\":\"").append("0").append('"');
-		bubblesData.append(", \"Size\":\"").append("120.00").append('"');
-		bubblesData.append(", \"Change\":\"").append(bubble.getChange()).append('"');
-		bubblesData.append("}");
+		bubblesData.append("Date:").append("0.00");
+		bubblesData.append(", Coverage:").append("0");
+		bubblesData.append(", Size:").append("120.00");
+		bubblesData.append(", Change:").append(bubble.getChange());
 		Assert.assertEquals(bubblesData.toString(), out);
-
 	}
 }

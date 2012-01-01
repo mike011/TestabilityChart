@@ -244,4 +244,13 @@ public class LineTest {
 
 		assertFalse(src);
 	}
+	
+	/**
+	 * Test to string.
+	 */
+	@Test
+	public void testToString() {
+		Line line = new Line(null, null, "file");
+		assertEquals("file", line.toString());
+	}
 }

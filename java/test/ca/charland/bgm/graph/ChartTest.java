@@ -38,7 +38,7 @@ public class ChartTest {
 
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(null, 0, 0, ""));
+		bubbles.add(new Bubble(null, 0, 0, "", null));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubbles);
 		Chart g = new Chart();
@@ -59,10 +59,10 @@ public class ChartTest {
 
 		// Setup
 		ArrayList<Bubble> bubblesOne = new ArrayList<Bubble>();
-		bubblesOne.add(new Bubble(null, 0, 0, ""));
+		bubblesOne.add(new Bubble(null, 0, 0, "", null));
 
 		ArrayList<Bubble> bubblesTwo = new ArrayList<Bubble>();
-		bubblesTwo.add(new Bubble(null, 0, 0, ""));
+		bubblesTwo.add(new Bubble(null, 0, 0, "", null));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubblesOne);
 		changes.put("b2", bubblesTwo);

@@ -21,9 +21,6 @@ public class Change {
 	/** The date string. */
 	private final String dateString;
 
-	/** The description. */
-	private final String description;
-
 	/** The lines. */
 	private final List<Line> lines;
 
@@ -45,7 +42,6 @@ public class Change {
 		this.commit = commit;
 		this.author = author;
 		this.dateString = date;
-		this.description = description;
 		this.lines = lines;
 
 	}

@@ -36,7 +36,7 @@ public class MyXYZDatasetTest {
 		MyXYZDataset ds = new MyXYZDataset();
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		ArrayList<Bubble> arrayList = new ArrayList<Bubble>();
-		Bubble expected = new Bubble(null, 0, 0, null);
+		Bubble expected = new Bubble(null, 0, 0, null, null);
 		arrayList.add(expected);
 		changes.put("key", arrayList);
 		ds.setBubbles(changes);

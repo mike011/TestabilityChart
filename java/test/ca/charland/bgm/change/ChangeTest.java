@@ -3,6 +3,7 @@ package ca.charland.bgm.change;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -111,6 +112,16 @@ public class ChangeTest {
 		Change change = new Change(null, null, "Date:     Wed Nov 30 13:51:05 2011 -0500", null, null);
 		Date date = change.getDate();
 		assertNotNull(date);
+	}
+	
+	/**
+	 * Test get date, but will throw a ParseException.
+	 */
+	@Test
+	public void testGetDateParseException() {
+		Change change = new Change(null, null, "Date:     UU", null, null);
+		Date date = change.getDate();
+		assertNull(date);
 	}
 
 	/**

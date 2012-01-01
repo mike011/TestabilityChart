@@ -23,6 +23,9 @@ public class Bubble {
 	/** The link. to the change. */
 	private String change;
 
+	/** The base URL. */
+	private final String baseURL;
+
 	/**
 	 * Instantiates a new bubble.
 	 * 
@@ -34,12 +37,15 @@ public class Bubble {
 	 *            The amount of lines covered.
 	 * @param change
 	 *            The change.
+	 * @param baseURL
+	 *            The URL to link too.
 	 */
-	Bubble(Date date, float coverage, float linesCovered, String change) {
+	Bubble(Date date, float coverage, float linesCovered, String change, String baseURL) {
 		this.date = date;
 		this.coverage = coverage;
 		this.size = linesCovered;
 		this.change = change;
+		this.baseURL = baseURL;
 	}
 
 	/**
@@ -112,7 +118,10 @@ public class Bubble {
 	 * @return the link
 	 */
 	String getLink() {
-		return "https://github.com/mike011/TestabilityChart/commit/" + getChange();
+		if(baseURL == null) {
+			return null;
+		}
+		return baseURL + getChange();
 	}
 
 	/**
@@ -133,11 +142,10 @@ public class Bubble {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append("{\"Date\":\"").append(format(getDate() / 84000000)).append("\"");
-		result.append(", \"Coverage\":\"").append(getCoverageString()).append("\"");
-		result.append(", \"Size\":\"").append(format(getSize())).append("\"");
-		result.append(", \"Change\":\"").append(getChange()).append('"');
-		result.append("}");
+		result.append("Date:").append(format(getDate() / 84000000));
+		result.append(", Coverage:").append(getCoverageString());
+		result.append(", Size:").append(format(getSize()));
+		result.append(", Change:").append(getChange());
 		return result.toString();
 	}
 }

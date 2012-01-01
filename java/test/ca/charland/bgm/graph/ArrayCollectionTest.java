@@ -31,7 +31,7 @@ public class ArrayCollectionTest {
 	@Test
 	public void testAdd() {
 		ArrayCollection ac = new ArrayCollection(2);
-		Bubble b = new Bubble(null, 0, 0, "");
+		Bubble b = new Bubble(null, 0, 0, "", null);
 
 		ac.add(b);
 

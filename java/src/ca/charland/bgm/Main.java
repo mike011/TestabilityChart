@@ -27,7 +27,10 @@ public class Main {
 	private ArrayList<String> _types;
 
 	/** The properties file. */
-	private String _propertiesFile = "common.properties";;
+	private String _propertiesFile = "common.properties";
+
+	/** The base URL. */
+	private String _baseURL;
 
 	/**
 	 * The main method.
@@ -73,6 +76,7 @@ public class Main {
 					_types.add(type);
 				}
 			}
+			_baseURL = properties.getProperty("base.url");
 		}
 	}
 
@@ -86,8 +90,16 @@ public class Main {
 		List<Change> changes = FileParser.changes(lines, getTypes());
 
 		// Create the bubbles.
-		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, getTypes());
+		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, getTypes(), _baseURL);
 		ChartParser.normaliseBubbleData(bubbles);
+
+		// Debug
+		for (String person : bubbles.keySet()) {
+			System.out.println(person);
+			for (Bubble b : bubbles.get(person)) {
+				System.out.println(b);
+			}
+		}
 
 		// Make the graph.
 		Chart graph = new Chart();
@@ -141,5 +153,14 @@ public class Main {
 	 */
 	void setPropertiesFile(String file) {
 		_propertiesFile = file;
+	}
+
+	/**
+	 * Gets the base URL.
+	 * 
+	 * @return the base URL.
+	 */
+	String getBaseURL() {
+		return _baseURL;
 	}
 }

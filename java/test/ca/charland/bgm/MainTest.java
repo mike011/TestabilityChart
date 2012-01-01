@@ -220,4 +220,37 @@ public class MainTest {
 		List<String> types = m.getTypes();
 		Assert.assertEquals(5, types.size());
 	}
+	
+	/**
+	 * Test loading the link from the properties file.
+	 */
+	@Test
+	public void testPropertiesFileLinkNotSet() {
+		// Setup
+		Main m = new Main();
+		m.setPropertiesFile("test/res/log.properties");
+
+		// Exercise
+		m.setup(null);
+
+		// Verify
+		Assert.assertNull(m.getBaseURL());		
+	}
+	
+	/**
+	 * Test loading the link from the properties file.
+	 */
+	@Test
+	public void testPropertiesFileLink() {
+		// Setup
+		Main m = new Main();
+		m.setPropertiesFile("test/res/common.properties");
+
+		// Exercise
+		m.setup(null);
+
+		// Verify
+		Assert.assertEquals("www.nba.com/", m.getBaseURL());		
+	}
+
 }
