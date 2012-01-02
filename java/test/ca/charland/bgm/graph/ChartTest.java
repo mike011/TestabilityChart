@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import junit.framework.Assert;
-
 import org.jfree.data.xy.XYZDataset;
 import org.junit.Test;
 
@@ -24,18 +22,20 @@ public class ChartTest {
 	 */
 	@Test
 	public void testConstructor() {
+		// Setup & Exercise
 		Chart g = new Chart(null);
+		
+		// Verify
 		assertNotNull(g.getPanel());
 		XYZDataset dataSet = g.getDataSet();
 		assertNotNull(dataSet);
 	}
 
 	/**
-	 * Test adding the bubbles.
+	 * Test adding one bubble.
 	 */
 	@Test
 	public void testAddBubbles() {
-
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 		bubbles.add(new Bubble(null, 0, 0, "", null));
@@ -48,15 +48,14 @@ public class ChartTest {
 
 		// Verify
 		XYZDataset ds = g.getDataSet();
-		Assert.assertEquals(1, ds.getSeriesCount());
+		assertEquals(1, ds.getSeriesCount());
 	}
 
 	/**
-	 * Test adding the bubbles.
+	 * Test adding two bubbles.
 	 */
 	@Test
 	public void testAddBubblesTwo() {
-
 		// Setup
 		ArrayList<Bubble> bubblesOne = new ArrayList<Bubble>();
 		bubblesOne.add(new Bubble(null, 0, 0, "", null));
@@ -74,7 +73,7 @@ public class ChartTest {
 
 		// Verify
 		XYZDataset ds = g.getDataSet();
-		Assert.assertEquals(2, ds.getSeriesCount());
+		assertEquals(2, ds.getSeriesCount());
 	}
 
 	/**
@@ -90,7 +89,7 @@ public class ChartTest {
 
 		// Verify
 		XYZDataset bubbleData = g.getDataSet();
-		Assert.assertEquals(0, bubbleData.getSeriesCount());
+		assertEquals(0, bubbleData.getSeriesCount());
 	}
 
 	/**
@@ -98,8 +97,13 @@ public class ChartTest {
 	 */
 	@Test
 	public void testGetData() {
+		// Setup
 		Chart g = new Chart(null);
+		
+		// Exercise
 		XYZDataset dataSet = g.getDataSet();
+		
+		// Verify
 		assertEquals(0, dataSet.getSeriesCount());
 	}
 }

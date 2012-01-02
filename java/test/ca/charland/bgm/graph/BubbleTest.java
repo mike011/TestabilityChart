@@ -1,7 +1,8 @@
 package ca.charland.bgm.graph;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import junit.framework.Assert;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -25,7 +26,6 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testGetDate() {
-
 		// Setup
 		Bubble object = new Bubble(null, 0, 0, null, null);
 
@@ -33,7 +33,7 @@ public class BubbleTest {
 		float date = object.getDate();
 
 		// Verify
-		Assert.assertEquals(0.0, date, 0.1);
+		assertEquals(0.0, date, 0.1);
 	}
 
 	/** Test getting the size. */
@@ -47,13 +47,12 @@ public class BubbleTest {
 		float date = object.getSize();
 
 		// Verify
-		Assert.assertEquals(0.0, date, 0.1);
+		assertEquals(0.0, date, 0.1);
 	}
 
 	/** Test getting the y value. */
 	@Test
 	public void testGetCoverage() {
-
 		// Setup
 		Bubble object = new Bubble(null, 1, 0, null, null);
 
@@ -61,13 +60,12 @@ public class BubbleTest {
 		float date = object.getCoverage();
 
 		// Verify
-		Assert.assertEquals(100.0, date, 0.1);
+		assertEquals(100.0, date, 0.1);
 	}
 
 	/** Test getting the y string value. */
 	@Test
 	public void testGetCoverageString() {
-
 		// Setup
 		Bubble object = new Bubble(null, 1, 0, null, null);
 
@@ -75,7 +73,7 @@ public class BubbleTest {
 		String date = object.getCoverageString();
 
 		// Verify
-		Assert.assertEquals("100", date);
+		assertEquals("100", date);
 	}
 
 	/**
@@ -95,7 +93,7 @@ public class BubbleTest {
 
 		// Verify
 		float date = object.getSize();
-		Assert.assertEquals(1.0, date, 0.1);
+		assertEquals(1.0, date, 0.1);
 	}
 
 	/**
@@ -103,7 +101,6 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testNormaliseSizeMax() {
-
 		// Setup
 		long size = 120;
 		Bubble object = new Bubble(null, 0, size, null, null);
@@ -116,7 +113,7 @@ public class BubbleTest {
 
 		// Verify
 		float date = object.getSize();
-		Assert.assertEquals(50, date, 0.1);
+		assertEquals(50, date, 0.1);
 	}
 
 	/**
@@ -124,7 +121,6 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testGetChange() {
-
 		// Setup
 		Bubble object = new Bubble(null, 0, 120, "98a", null);
 
@@ -132,7 +128,7 @@ public class BubbleTest {
 		String change = object.getChange();
 
 		// Verify
-		Assert.assertEquals("Change is wrong", "98a", change);
+		assertEquals("Change is wrong", "98a", change);
 	}
 	
 	/**
@@ -147,15 +143,14 @@ public class BubbleTest {
 		String link = object.getLink();
 
 		// Verify
-		Assert.assertEquals("Link is wrong", "http://www.nba.com/a", link);
+		assertEquals("Link is wrong", "http://www.nba.com/a", link);
 	}
 
 	/**
-	 * Test get link, but the base url is null.
+	 * Test get link, but the base URL is null.
 	 */
 	@Test
 	public void testGetLinkNull() {
-
 		// Setup
 		Bubble object = new Bubble(null, 0, 120, "98a", null);
 
@@ -163,7 +158,7 @@ public class BubbleTest {
 		String link = object.getLink();
 
 		// Verify
-		Assert.assertNull(link);
+		assertNull(link);
 	}
 
 	/**
@@ -171,7 +166,6 @@ public class BubbleTest {
 	 */
 	@Test
 	public void testToString() {
-
 		// Setup
 		Bubble bubble = new Bubble(null, 0, 120, "123423", null);
 
@@ -184,6 +178,6 @@ public class BubbleTest {
 		bubblesData.append(", Coverage:").append("0");
 		bubblesData.append(", Size:").append("120.00");
 		bubblesData.append(", Change:").append(bubble.getChange());
-		Assert.assertEquals(bubblesData.toString(), out);
+		assertEquals(bubblesData.toString(), out);
 	}
 }

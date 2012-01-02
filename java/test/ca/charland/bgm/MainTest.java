@@ -1,8 +1,10 @@
 package ca.charland.bgm;
 
-import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
-import junit.framework.Assert;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -26,8 +28,9 @@ public class MainTest {
 		// Exercise
 		m.setup(args);
 
-		Assert.assertEquals("sample.log", m.getLogFile());
-		Assert.assertNull(m.getTypes());
+		// Verify
+		assertEquals("sample.log", m.getLogFile());
+		assertNull(m.getTypes());
 	}
 
 	/**
@@ -35,7 +38,7 @@ public class MainTest {
 	 */
 	@Test
 	public void testGetLogFile() {
-		Assert.assertNull(new Main().getLogFile());
+		assertNull(new Main().getLogFile());
 	}
 
 	/**
@@ -49,8 +52,9 @@ public class MainTest {
 		// Exercise
 		m.setup(null);
 
-		Assert.assertNull(m.getLogFile());
-		Assert.assertNull(m.getTypes());
+		// Verify
+		assertNull(m.getLogFile());
+		assertNull(m.getTypes());
 	}
 
 	/**
@@ -64,8 +68,9 @@ public class MainTest {
 		// Exercise
 		m.setup(new String[] {});
 
-		Assert.assertNull(m.getLogFile());
-		Assert.assertNull(m.getTypes());
+		// Verify
+		assertNull(m.getLogFile());
+		assertNull(m.getTypes());
 	}
 
 	/**
@@ -80,8 +85,9 @@ public class MainTest {
 		// Exercise
 		m.setup(args);
 
-		Assert.assertNull(m.getLogFile());
-		Assert.assertNull(m.getTypes());
+		// Verify
+		assertNull(m.getLogFile());
+		assertNull(m.getTypes());
 	}
 
 	/**
@@ -97,10 +103,10 @@ public class MainTest {
 		m.setup(args);
 
 		// Verify
-		Assert.assertEquals("sample.log", m.getLogFile());
+		assertEquals("sample.log", m.getLogFile());
 		List<String> types = m.getTypes();
-		Assert.assertEquals(1, types.size());
-		Assert.assertEquals("java", types.get(0));
+		assertEquals(1, types.size());
+		assertEquals("java", types.get(0));
 	}
 
 	/**
@@ -116,13 +122,13 @@ public class MainTest {
 		m.setup(args);
 
 		// Verify
-		Assert.assertEquals("sample.log", m.getLogFile());
+		assertEquals("sample.log", m.getLogFile());
 		List<String> types = m.getTypes();
-		Assert.assertEquals(4, types.size());
-		Assert.assertEquals("java", types.get(0));
-		Assert.assertEquals("cpp", types.get(1));
-		Assert.assertEquals("c", types.get(2));
-		Assert.assertEquals("cc", types.get(3));
+		assertEquals(4, types.size());
+		assertEquals("java", types.get(0));
+		assertEquals("cpp", types.get(1));
+		assertEquals("c", types.get(2));
+		assertEquals("cc", types.get(3));
 	}
 
 	/**
@@ -130,7 +136,7 @@ public class MainTest {
 	 */
 	@Test
 	public void testGetTypes() {
-		Assert.assertNull(new Main().getTypes());
+		assertNull(new Main().getTypes());
 	}
 
 	/**
@@ -146,9 +152,9 @@ public class MainTest {
 		m.setup(new String[] { "" });
 
 		// Verify
-		Assert.assertEquals("dog.txt", m.getLogFile());
+		assertEquals("dog.txt", m.getLogFile());
 		List<String> types = m.getTypes();
-		Assert.assertEquals(5, types.size());
+		assertEquals(5, types.size());
 	}
 
 	/**
@@ -164,8 +170,8 @@ public class MainTest {
 		m.setup(new String[] { "" });
 
 		// Verify
-		Assert.assertEquals("sample.log", m.getLogFile());
-		Assert.assertNull(m.getTypes());
+		assertEquals("sample.log", m.getLogFile());
+		assertNull(m.getTypes());
 	}
 
 	/**
@@ -181,9 +187,9 @@ public class MainTest {
 		m.setup(new String[] { "" });
 
 		// Verify
-		Assert.assertNull(m.getLogFile());
+		assertNull(m.getLogFile());
 		List<String> types = m.getTypes();
-		Assert.assertEquals(4, types.size());
+		assertEquals(4, types.size());
 	}
 
 	/**
@@ -199,8 +205,8 @@ public class MainTest {
 		m.setup(new String[] { "" });
 
 		// Verify
-		Assert.assertNull(m.getLogFile());
-		Assert.assertNull(m.getTypes());
+		assertNull(m.getLogFile());
+		assertNull(m.getTypes());
 	}
 
 	/**
@@ -216,9 +222,9 @@ public class MainTest {
 		m.setup(new String[] { "" });
 
 		// Verify
-		Assert.assertEquals("dog.txt", m.getLogFile());
+		assertEquals("dog.txt", m.getLogFile());
 		List<String> types = m.getTypes();
-		Assert.assertEquals(5, types.size());
+		assertEquals(5, types.size());
 	}
 
 	/**
@@ -234,7 +240,7 @@ public class MainTest {
 		m.setup(null);
 
 		// Verify
-		Assert.assertNull(m.getBaseURL());
+		assertNull(m.getBaseURL());
 	}
 
 	/**
@@ -250,7 +256,7 @@ public class MainTest {
 		m.setup(null);
 
 		// Verify
-		Assert.assertEquals("www.nba.com/", m.getBaseURL());
+		assertEquals("www.nba.com/", m.getBaseURL());
 	}
 
 	/**
@@ -266,7 +272,7 @@ public class MainTest {
 		m.setup(null);
 
 		// Verify
-		Assert.assertTrue(m.isDebugging());
+		assertTrue(m.isDebugging());
 	}
 
 	/**
@@ -282,6 +288,6 @@ public class MainTest {
 		m.setup(null);
 
 		// Verify
-		Assert.assertEquals("Testability", m.getProjectName());
+		assertEquals("Testability", m.getProjectName());
 	}
 }

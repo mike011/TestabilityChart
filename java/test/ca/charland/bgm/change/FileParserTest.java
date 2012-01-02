@@ -23,24 +23,34 @@ public class FileParserTest {
 	 * Test the simple case with one change.
 	 */
 	@Test
-	public void testOne() {
+	public void testOneChange() {
+		// Setup
 		List<String> read = FileAccessing.read("test/res/one.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		List<Change> parse = FileParser.changes(read, types);
+		
+		// Verify
 		assertNotNull(parse);
 		assertTrue("Not empty", parse.isEmpty());
 	}
 
 	/**
-	 * Test two.
+	 * Test two changes.
 	 */
 	@Test
-	public void testTwo() {
+	public void testTwoChanges() {
+		// Setup
 		List<String> read = FileAccessing.read("test/res/two.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		List<Change> parse = FileParser.changes(read, types);
+		
+		// Verify
 		assertTrue(parse.isEmpty());
 	}
 
@@ -49,10 +59,15 @@ public class FileParserTest {
 	 */
 	@Test
 	public void testTwoJava() {
+		// Setup
 		List<String> read = FileAccessing.read("test/res/java_two.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		List<Change> parse = FileParser.changes(read, types);
+		
+		// Verify
 		assertEquals(2, parse.size());
 
 		Change change = parse.get(0);
@@ -67,12 +82,15 @@ public class FileParserTest {
 	 */
 	@Test
 	public void testParseLine() {
+		// Setup & Exercise
 		Line line = FileParser.line("1	1	permissions.java");
+		
+		// Verify
 		assertNotNull(line);
 		List<String> types = new ArrayList<String>();
 		types.add("java");
 		assertTrue(line.isValid(types));
-		assertEquals(2, line.getSrcDiff(types));
+		assertEquals(2, line.getSourceDifference(types));
 	}
 
 	/**
@@ -80,10 +98,13 @@ public class FileParserTest {
 	 */
 	@Test
 	public void testIsChangeValid() {
+		// Setup
 		Line line = new Line(null, null, null);
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(line);
 		Change change = new Change(null, null, null, null, lines);
+		
+		// Exercise & Verify
 		assertTrue(FileParser.isChangeValid(change, null));
 	}
 }

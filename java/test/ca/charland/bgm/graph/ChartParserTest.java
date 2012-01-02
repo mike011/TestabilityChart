@@ -26,8 +26,7 @@ public class ChartParserTest {
 	 * Test method for {@link ca.charland.bgm.graph.ChartParser#bubbles(List, List, String)}.
 	 */
 	@Test
-	public void testBubbles() {
-
+	public void testBubblesOneBubble() {
 		// Setup
 		List<Change> changes = new ArrayList<Change>();
 		ArrayList<Line> lines = new ArrayList<Line>();
@@ -48,8 +47,7 @@ public class ChartParserTest {
 	 * Test method for {@link ca.charland.bgm.graph.ChartParser#bubbles(List, List, String)}.
 	 */
 	@Test
-	public void testTwoBubblesDiff() {
-
+	public void testBubblesTwoBubblesDiff() {
 		// Setup
 		List<Change> changes = new ArrayList<Change>();
 		ArrayList<Line> lines = new ArrayList<Line>();
@@ -72,8 +70,7 @@ public class ChartParserTest {
 	 * Test method for {@link ca.charland.bgm.graph.ChartParser#bubbles(List, List, String)}.
 	 */
 	@Test
-	public void testTwoBubblesSame() {
-
+	public void testBubblesTwoBubblesSame() {
 		// Setup
 		List<Change> changes = new ArrayList<Change>();
 		ArrayList<Line> lines = new ArrayList<Line>();
@@ -93,13 +90,10 @@ public class ChartParserTest {
 	}
 	
 	/**
-	 * Gets the normalised bubbles.
-	 * 
-	 * @return the normalised bubbles
+	 * Testing normaliseBubbleData.
 	 */
 	@Test
-	public void getNormalisedBubblesDate() {
-
+	public void getNormalisedBubblesData() {
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 		Date date = new Date(0);
@@ -124,13 +118,10 @@ public class ChartParserTest {
 	}
 
 	/**
-	 * Gets the normalised bubbles.
-	 * 
-	 * @return the normalised bubbles
+	 * Test getting the normalised bubbles.
 	 */
 	@Test
 	public void getNormalisedBubblesSize() {
-
 		// Setup
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 		bubbles.add(new Bubble(new Date(0), 0, 500, "", null));

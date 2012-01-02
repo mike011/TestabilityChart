@@ -1,8 +1,8 @@
 package ca.charland.bgm.graph;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
 
 /**
  * Testing of JLink
@@ -18,10 +18,13 @@ public class JLinkTest {
 	@Test
 	public void testURL() {
 		
+		// Setup
 		JLink link = new JLink();
 		
+		// Exercise
 		link.setURL("url");
 		
-		Assert.assertEquals("url", link.getURL());
+		// Verify
+		assertEquals("url", link.getURL());
 	}
 }

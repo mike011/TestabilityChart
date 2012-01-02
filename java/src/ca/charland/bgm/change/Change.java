@@ -91,7 +91,7 @@ public class Change {
 	private int getSrc(List<String> types) {
 		int src = 0;
 		for (Line line : lines) {
-			src += line.getSrcDiff(types);
+			src += line.getSourceDifference(types);
 		}
 		return src;
 	}

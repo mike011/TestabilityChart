@@ -1,12 +1,11 @@
 package ca.charland.bgm;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
-
-import ca.charland.bgm.FileAccessing;
 
 /**
  * Tests for FileInput.
@@ -20,8 +19,11 @@ public class FileInputTest {
 	 */
 	@Test
 	public void testReadTxt() {
+		// Setup & Exercise
 		List<String> read = FileAccessing.read("test/res/one.txt");
-		Assert.assertNotNull(read);
-		Assert.assertTrue(read.size() > 0);
+		
+		// Verify
+		assertNotNull(read);
+		assertTrue(read.size() > 0);
 	}
 }

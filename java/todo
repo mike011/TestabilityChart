@@ -28,6 +28,7 @@ Version 0.17 - Be able to handle a larger project (qt)
 - Be able to set properties file by passing in system variable.
 -- COMPLETE
 - For unit tests only statically import.
+-- COMPLETE
 - Remove passing in arguments and base only on property file.
 
 Version 0.20

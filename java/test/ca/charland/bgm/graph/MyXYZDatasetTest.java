@@ -1,20 +1,18 @@
-/**
- * 
- */
 package ca.charland.bgm.graph;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 /**
- * @author michael
+ * Testing of MyXYZDataset.
+ * 
+ * @author mcharland
  * 
  */
 public class MyXYZDatasetTest {
@@ -45,6 +43,6 @@ public class MyXYZDatasetTest {
 		Bubble result = ds.getBubble("key", 0);
 
 		// Verify
-		Assert.assertEquals(expected, result);
+		assertEquals(expected, result);
 	}
 }

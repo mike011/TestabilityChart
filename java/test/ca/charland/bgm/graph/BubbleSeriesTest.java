@@ -1,10 +1,9 @@
 package ca.charland.bgm.graph;
 
-import junit.framework.Assert;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-
-import ca.charland.bgm.graph.BubbleSeries;
 
 /**
  * Tests for Bubble Series.
@@ -19,7 +18,7 @@ public class BubbleSeriesTest {
 	 */
 	@Test
 	public void test() {
-		Assert.assertNotNull(new BubbleSeries(3, "author"));
+		assertNotNull(new BubbleSeries(3, "author"));
 	}
 
 	/**
@@ -27,6 +26,7 @@ public class BubbleSeriesTest {
 	 */
 	@Test
 	public void testToString() {
+		// Setup
 		BubbleSeries bs = new BubbleSeries(2, "mcharland");
 
 		// Exercise
@@ -42,6 +42,6 @@ public class BubbleSeriesTest {
 		actual.append(tabs).append('\t').append("yField=\"Coverage\"\r\n");
 		actual.append(tabs).append('\t').append("radiusField=\"Size\"\r\n");
 		actual.append(tabs).append("/>\r\n");
-		Assert.assertEquals(actual.toString(), string);
+		assertEquals(actual.toString(), string);
 	}
 }

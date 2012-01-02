@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 /**
@@ -30,13 +28,18 @@ public class ChangeTest {
 	}
 
 	/**
-	 * Test get diff none.
+	 * Test get coverage none.
 	 */
 	@Test
-	public void testGetDiffNone() {
+	public void testGetCoverageNone() {
+		// Setup
 		List<Line> lines = new ArrayList<Line>();
 		Change change = new Change(null, null, null, null, lines);
+		
+		// Exercise
 		double diff = change.getCoverage(null);
+		
+		// Verify
 		assertEquals(0, diff, 0.1);
 	}
 
@@ -45,6 +48,7 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetCoverageZero() {
+		// Setup
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "dog.java"));
 		lines.add(new Line("2", "55", "dog.java"));
@@ -52,7 +56,11 @@ public class ChangeTest {
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		double diff = change.getCoverage(types);
+		
+		// Verify
 		assertEquals(0, diff, 0.1);
 	}
 
@@ -61,6 +69,7 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetCoverageHalf() {
+		// Setup
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "dog.java"));
 		lines.add(new Line("3", "3", "test.java"));
@@ -68,7 +77,11 @@ public class ChangeTest {
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		double diff = change.getCoverage(types);
+		
+		// Verify
 		assertEquals(0.5, diff, 0.1);
 	}
 
@@ -77,6 +90,7 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetCoverageOne() {
+		// Setup
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "test"));
 		lines.add(new Line("3", "3", "test"));
@@ -84,7 +98,11 @@ public class ChangeTest {
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		double diff = change.getCoverage(types);
+		
+		// Verify
 		assertEquals(1, diff, 0.1);
 	}
 
@@ -93,6 +111,7 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetLinesCovered() {
+		// Setup
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("3", "3", "test"));
 		lines.add(new Line("3", "3", "test"));
@@ -100,7 +119,11 @@ public class ChangeTest {
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
+		
+		// Exercise
 		int covered = change.getLinesCovered(types);
+		
+		// Verify
 		assertEquals(12, covered, 0.1);
 	}
 
@@ -109,8 +132,13 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetDate() {
+		// Setup
 		Change change = new Change(null, null, "Date:     Wed Nov 30 13:51:05 2011 -0500", null, null);
+		
+		// Exercise
 		Date date = change.getDate();
+		
+		// Verify
 		assertNotNull(date);
 	}
 	
@@ -119,8 +147,13 @@ public class ChangeTest {
 	 */
 	@Test
 	public void testGetDateParseException() {
+		// Setup
 		Change change = new Change(null, null, "Date:     UU", null, null);
+		
+		// Exercise
 		Date date = change.getDate();
+		
+		// Verify
 		assertNull(date);
 	}
 
@@ -195,7 +228,7 @@ public class ChangeTest {
 		boolean equals = c.equals(c);
 
 		// Verify
-		Assert.assertTrue("not equal", equals);
+		assertTrue("not equal", equals);
 	}
 
 	/**
@@ -211,7 +244,7 @@ public class ChangeTest {
 		String commit = c.getCommit();
 
 		// Verify
-		Assert.assertEquals("bob", commit);
+		assertEquals("bob", commit);
 	}
 
 	/**
@@ -227,6 +260,6 @@ public class ChangeTest {
 		String commit = c.toString();
 
 		// Verify
-		Assert.assertEquals("bob", commit);
+		assertEquals("bob", commit);
 	}
 }

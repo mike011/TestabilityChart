@@ -36,41 +36,41 @@ public class Line {
 	}
 
 	/**
-	 * Gets the test diff.
+	 * Gets the test difference.
 	 * 
 	 * @param types
 	 *            the types
-	 * @return the test diff
+	 * @return the test difference
 	 */
 	public int getTestDiff(List<String> types) {
 		int total = 0;
 		if (!isSource(types)) {
-			total = getDiff();
+			total = getDifference();
 		}
 		return total;
 	}
 
 	/**
-	 * Gets the src diff.
+	 * Gets the source difference.
 	 * 
 	 * @param types
 	 *            the types
-	 * @return the src diff
+	 * @return the source difference
 	 */
-	public int getSrcDiff(List<String> types) {
+	public int getSourceDifference(List<String> types) {
 		int total = 0;
 		if (isSource(types)) {
-			total = getDiff();
+			total = getDifference();
 		}
 		return total;
 	}
 
 	/**
-	 * Gets the diff.
+	 * Gets the difference.
 	 * 
-	 * @return the diff
+	 * @return the difference.
 	 */
-	private int getDiff() {
+	private int getDifference() {
 		int total = 0;
 		if (!removed.equals("-")) {
 			total += Integer.parseInt(removed);

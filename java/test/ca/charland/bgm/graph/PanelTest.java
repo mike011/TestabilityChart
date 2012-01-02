@@ -32,7 +32,10 @@ public class PanelTest {
 	 */
 	@Test
 	public void testConstructor() {
+		// Setup & Exercise
 		Panel panel = new Panel(null);
+		
+		// Verify
 		assertNotNull(panel);
 		assertEquals("Testability Chart 0.15", panel.getTitle());
 	}
@@ -42,13 +45,18 @@ public class PanelTest {
 	 */
 	@Test
 	public void testCreateDemoPanel() {
+		// Setup
 		Panel bc = new Panel(null);
+		
+		// Exercise
 		bc.setJPanel();
+		
+		// Verify
 		assertNotNull(bc.getContentPane());
 	}
 
 	/**
-	 * Test mouse clicked.
+	 * Test mouse clicked, but it's the wrong event type.
 	 */
 	@Test
 	public void testChartMouseClickedWrongEventType() {
@@ -67,7 +75,7 @@ public class PanelTest {
 	}
 
 	/**
-	 * Test mouse clicked.
+	 * Test mouse clicked, with a valid event type.
 	 */
 	@Test
 	public void testChartMouseClicked() {
@@ -85,7 +93,7 @@ public class PanelTest {
 	}
 
 	/**
-	 * Test mouse clicked.
+	 * Test mouse clicked, but the link is null.
 	 */
 	@Test
 	public void testChartMouseClickedNullLink() {
@@ -103,10 +111,10 @@ public class PanelTest {
 	}
 
 	/**
-	 * Gets the ChartMouseEvent.
+	 * Helper method that gets the ChartMouseEvent.
 	 * 
 	 * @param link
-	 *            The link url.
+	 *            The link URL.
 	 * 
 	 * @return the ChartMouseEvent
 	 */
@@ -121,10 +129,10 @@ public class PanelTest {
 	}
 
 	/**
-	 * Gets the data set.
+	 * Helper method that gets the data set.
 	 * 
 	 * @param link
-	 *            The http link.
+	 *            The HTTP link.
 	 * 
 	 * @return the data set
 	 */
