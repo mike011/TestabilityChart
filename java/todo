@@ -30,11 +30,13 @@ Version 0.17 - Be able to handle a larger project (qt)
 - Remove passing in arguments and base only on property file.
 - Legend becomes ridiculously large
 - Grab screen shots for projects and have them show up in github as examples.
+-- COMPLETE
 - Large commits dominate the screen and this makes the graph less effective. So Bubble size should 
 not size determined by size of commit, but rather relative to other bubbles. Example B1 = 50 lines 
 changed, B2 = 5 lines changed, B3 = 10 lines changed. Currently you'd have one massive bubble, and 
 two very very small bubbles. What if B1 was just a size larger then B2 which was a size larger then
 B3? 
+- Move todo to readme.
 
 Version 0.20
 - Use Branch to do work in.

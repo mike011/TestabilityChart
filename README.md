@@ -25,6 +25,8 @@ You can optionally also set:
 ##Examples
 - QT
 --A very very large project with thousands of commits and many different developers.
+![QT](https://raw.github.com/mike011/TestabilityChart/master/samples/qt/qt.png)
 
 - Testability Chart
 --This project that has very high coverage (95%+)
+![Testability Chart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart/TestabilityChart.png)
