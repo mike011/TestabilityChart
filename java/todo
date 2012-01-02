@@ -21,10 +21,14 @@ Version 0.17 - Be able to handle a larger project (qt)
 - Grab screen shots for projects and have them show up in github as examples.
 - Fix URL path for different projects
 -- COMPLETE
-- Maybe change title for current project.
+- Change title for current project.
+-- COMPLETE
 - Add in version name in title.
+-- COMPLETE
 - Be able to set properties file by passing in system variable.
--- Not needed, just run jar from current directory.
+-- COMPLETE
+- For unit tests only statically import.
+- Remove passing in arguments and base only on property file.
 
 Version 0.20
 - Filter by user

@@ -20,6 +20,9 @@ import ca.charland.bgm.graph.ChartParser;
  */
 public class Main {
 
+	/** The current version number. */
+	public static final String VERSION = "0.15";
+
 	/** The log file. */
 	private String logFile;
 
@@ -34,6 +37,9 @@ public class Main {
 
 	/** Are you debugging?. */
 	private boolean debug;
+
+	/** The title of project. */
+	private String projectName;
 
 	/**
 	 * The main method.
@@ -63,15 +69,24 @@ public class Main {
 	 */
 	private void checkPropertiesFile() {
 
+		// See if the project folder has been set by system argument.
+		Properties sys = System.getProperties();
+		String projectFolder = sys.getProperty("PROJECT_FOLDER", "");
+
+		// Try to load the properties file.
 		Properties properties = new Properties();
 		try {
-			properties.load(new FileInputStream(propertiesFile));
+			properties.load(new FileInputStream(projectFolder + propertiesFile));
 		} catch (IOException e) {
 			System.err.println("File not found: " + e.getMessage() + ". Relying on arguments passed in.");
 		}
 
+		// Was the properties file found?
 		if (properties != null) {
-			logFile = properties.getProperty("log.file");
+			String logFileProperty = properties.getProperty("log.file");
+			if(logFileProperty != null) {
+				logFile = projectFolder + logFileProperty;
+			}
 			String typesProps = properties.getProperty("types");
 			if (typesProps != null) {
 				types = new ArrayList<String>();
@@ -81,6 +96,7 @@ public class Main {
 			}
 			baseURL = properties.getProperty("base.url");
 			debug = Boolean.parseBoolean(properties.getProperty("debug"));
+			projectName = properties.getProperty("project.name");
 		}
 	}
 
@@ -108,7 +124,7 @@ public class Main {
 		}
 
 		// Make the graph.
-		Chart graph = new Chart();
+		Chart graph = new Chart(projectName);
 		graph.addBubbles(bubbles);
 		graph.show();
 	}
@@ -177,5 +193,14 @@ public class Main {
 	 */
 	boolean isDebugging() {
 		return debug;
+	}
+
+	/**
+	 * Gets the name of the project.
+	 * 
+	 * @return the title
+	 */
+	String getProjectName() {
+		return projectName;
 	}
 }

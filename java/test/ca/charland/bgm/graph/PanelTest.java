@@ -1,15 +1,19 @@
 package ca.charland.bgm.graph;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.awt.Container;
 import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartMouseEvent;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.entity.XYItemEntity;
 import org.jfree.chart.plot.PlotOrientation;
@@ -28,7 +32,9 @@ public class PanelTest {
 	 */
 	@Test
 	public void testConstructor() {
-		assertNotNull(new Panel());
+		Panel panel = new Panel(null);
+		assertNotNull(panel);
+		assertEquals("Testability Chart 0.15", panel.getTitle());
 	}
 
 	/**
@@ -36,7 +42,7 @@ public class PanelTest {
 	 */
 	@Test
 	public void testCreateDemoPanel() {
-		Panel bc = new Panel();
+		Panel bc = new Panel(null);
 		bc.setJPanel();
 		assertNotNull(bc.getContentPane());
 	}
@@ -47,7 +53,7 @@ public class PanelTest {
 	@Test
 	public void testChartMouseClickedWrongEventType() {
 		// Setup
-		Panel bc = new Panel();
+		Panel bc = new Panel(null);
 		bc.setJPanel();
 		JFreeChart createBubbleChart = ChartFactory.createBubbleChart("", "", "", new MyXYZDataset(),
 		        PlotOrientation.VERTICAL, true, true, false);
@@ -66,7 +72,7 @@ public class PanelTest {
 	@Test
 	public void testChartMouseClicked() {
 		// Setup
-		Panel bc = new Panel();
+		Panel bc = new Panel(null);
 		String link = "link";
 		bc.setDataSet(getDataSet(link));
 		bc.setJPanel();
@@ -84,7 +90,7 @@ public class PanelTest {
 	@Test
 	public void testChartMouseClickedNullLink() {
 		// Setup
-		Panel bc = new Panel();
+		Panel bc = new Panel(null);
 		String link = null;
 		bc.setDataSet(getDataSet(link));
 		bc.setJPanel();
@@ -128,8 +134,48 @@ public class PanelTest {
 		bubbles.add(new Bubble(null, 0, 0, null, link));
 		changes.put("key", bubbles);
 
-		Chart chart = new Chart();
+		Chart chart = new Chart(null);
 		chart.addBubbles(changes);
 		return chart.getDataSet();
+	}
+	
+	/**
+	 * Test that the panel title is not set.
+	 */
+	@Test
+	public void testPanelTitleNull() {
+		// Setup
+		Panel bc = new Panel(null);
+		String link = null;
+		bc.setDataSet(getDataSet(link));
+		
+		// Exercise
+		bc.setJPanel();
+		
+		// Verify
+		Container contentPane = bc.getContentPane();
+		ChartPanel chart = (ChartPanel)contentPane.getComponents()[0];
+		JFreeChart jfc = chart.getChart();
+		assertNull(jfc.getTitle());
+	}
+	
+	/**
+	 * Test that the panel title is correctly set.
+	 */
+	@Test
+	public void testPanelTitle() {
+		// Setup
+		Panel bc = new Panel("Frank");
+		String link = null;
+		bc.setDataSet(getDataSet(link));
+		
+		// Exercise
+		bc.setJPanel();
+		
+		// Verify
+		Container contentPane = bc.getContentPane();
+		ChartPanel chart = (ChartPanel)contentPane.getComponents()[0];
+		JFreeChart jfc = chart.getChart();
+		assertEquals("Project: Frank", jfc.getTitle().getText());
 	}
 }

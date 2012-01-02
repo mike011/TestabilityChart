@@ -31,8 +31,10 @@ import org.jfree.data.xy.DefaultXYZDataset;
 import org.jfree.data.xy.XYZDataset;
 import org.jfree.ui.ApplicationFrame;
 
+import ca.charland.bgm.Main;
+
 /**
- * The Panel.
+ * The Panel which is what is showing the chart.
  * 
  * @author mcharland
  */
@@ -46,7 +48,7 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 	/**
 	 * The title.
 	 */
-	private static final String TITLE = "Testability Chart";
+	private static final String TITLE = "Testability Chart " + Main.VERSION;
 
 	/**
 	 * The data set.
@@ -56,18 +58,25 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 	/** The change. */
 	private JLink change;
 
+	/** The title of the project. */
+	private final String title;
+
 	/**
 	 * Instantiates a new bubble chart demo.
+	 * 
+	 * @param title
+	 *            The title of the project.
 	 */
-	public Panel() {
+	public Panel(String title) {
 		super(TITLE);
+		this.title = title;
 	}
 
 	/**
 	 * Sets the j panel.
 	 */
 	void setJPanel() {
-		JFreeChart jfreechart = createChart(dataSet);
+		JFreeChart jfreechart = createChart(dataSet, title);
 		ChartPanel chartpanel = new ChartPanel(jfreechart);
 		chartpanel.setMouseWheelEnabled(true);
 		chartpanel.setDomainZoomable(true);
@@ -100,14 +109,19 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 	 * Creates the chart.
 	 * 
 	 * @param xyzdataset
-	 *            the xyzdataset
+	 *            the x y z data set
+	 * @param title
+	 *            The title to set.
 	 * @return the j free chart
 	 */
-	private static JFreeChart createChart(XYZDataset xyzdataset) {
+	private static JFreeChart createChart(XYZDataset xyzdataset, String title) {
 		final String x = "date";
 		final String y = "test / (test + source)";
-		JFreeChart jfreechart = ChartFactory.createBubbleChart("", x, y, xyzdataset, PlotOrientation.VERTICAL, true, true,
-		        false);
+		if(title != null) {
+			title = "Project: " + title;
+		}
+		JFreeChart jfreechart = ChartFactory.createBubbleChart(title, x, y, xyzdataset,
+		        PlotOrientation.VERTICAL, true, true, false);
 		XYPlot xyplot = (XYPlot) jfreechart.getPlot();
 		xyplot.setForegroundAlpha(0.65F);
 		xyplot.setDomainPannable(true);

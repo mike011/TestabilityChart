@@ -7,7 +7,7 @@ import java.util.Map;
 import org.jfree.ui.RefineryUtilities;
 
 /**
- * Represents the chart.
+ * Represents the chart which biggest responsibility is containing the panel.
  * 
  * @author mcharland
  */
@@ -21,9 +21,12 @@ public class Chart {
 
 	/**
 	 * Instantiates a new chart.
+	 * 
+	 * @param title
+	 *            The title of the project.
 	 */
-	public Chart() {
-		panel = new Panel();
+	public Chart(String title) {
+		panel = new Panel(title);
 		dataset = new MyXYZDataset();
 	}
 

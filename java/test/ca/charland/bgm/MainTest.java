@@ -268,4 +268,20 @@ public class MainTest {
 		// Verify
 		Assert.assertTrue(m.isDebugging());
 	}
+
+	/**
+	 * Test getting the title.
+	 */
+	@Test
+	public void testPropertiesTitle() {
+		// Setup
+		Main m = new Main();
+		m.setPropertiesFile("test/res/common.properties");
+
+		// Exercise
+		m.setup(null);
+
+		// Verify
+		Assert.assertEquals("Testability", m.getProjectName());
+	}
 }

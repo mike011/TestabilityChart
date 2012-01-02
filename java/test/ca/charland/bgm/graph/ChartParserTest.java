@@ -108,7 +108,7 @@ public class ChartParserTest {
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);
-		Chart graph = new Chart();
+		Chart graph = new Chart(null);
 		graph.addBubbles(map);
 
 		// Exercise
@@ -138,7 +138,7 @@ public class ChartParserTest {
 
 		Map<String, ArrayList<Bubble>> map = new TreeMap<String, ArrayList<Bubble>>();
 		map.put("author", bubbles);
-		Chart graph = new Chart();
+		Chart graph = new Chart(null);
 		graph.addBubbles(map);
 
 		// Exercise

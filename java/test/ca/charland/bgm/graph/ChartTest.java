@@ -24,7 +24,7 @@ public class ChartTest {
 	 */
 	@Test
 	public void testConstructor() {
-		Chart g = new Chart();
+		Chart g = new Chart(null);
 		assertNotNull(g.getPanel());
 		XYZDataset dataSet = g.getDataSet();
 		assertNotNull(dataSet);
@@ -41,7 +41,7 @@ public class ChartTest {
 		bubbles.add(new Bubble(null, 0, 0, "", null));
 		Map<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		changes.put("b1", bubbles);
-		Chart g = new Chart();
+		Chart g = new Chart(null);
 
 		// Exercise
 		g.addBubbles(changes);
@@ -67,7 +67,7 @@ public class ChartTest {
 		changes.put("b1", bubblesOne);
 		changes.put("b2", bubblesTwo);
 
-		Chart g = new Chart();
+		Chart g = new Chart(null);
 
 		// Exercise
 		g.addBubbles(changes);
@@ -83,7 +83,7 @@ public class ChartTest {
 	@Test
 	public void testAddBubblesEmpty() {
 		// Setup
-		Chart g = new Chart();
+		Chart g = new Chart(null);
 
 		// Exercise
 		g.addBubbles(null);
@@ -98,7 +98,7 @@ public class ChartTest {
 	 */
 	@Test
 	public void testGetData() {
-		Chart g = new Chart();
+		Chart g = new Chart(null);
 		XYZDataset dataSet = g.getDataSet();
 		assertEquals(0, dataSet.getSeriesCount());
 	}
