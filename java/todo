@@ -24,6 +24,7 @@ Version 0.17 - Be able to handle a larger project (qt)
 - Maybe change title for current project.
 - Add in version name in title.
 - Be able to set properties file by passing in system variable.
+-- Not needed, just run jar from current directory.
 
 Version 0.20
 - Filter by user

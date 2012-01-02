@@ -1,3 +1,126 @@
+commit 3d2995528940fe3235b8ddffe433bfb880056812
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 31 23:22:27 2011 -0500
+
+    multiple samples and debug can be set via props file
+
+-	-	Sample/TestabilityChart.jar
+0	3	Sample/common.properties
+0	813	Sample/log.txt
+40	25	java/src/ca/charland/bgm/Main.java
+22	7	java/test/ca/charland/bgm/MainTest.java
+2	1	java/test/res/common.properties
+3	0	java/todo
+-	-	samples/TestabilityChart/TestabilityChart.jar
+3	0	samples/TestabilityChart/common.properties
+813	0	samples/TestabilityChart/log.txt
+-	-	samples/qt/TestabilityChart.jar
+3	0	samples/qt/common.properties
+926459	0	samples/qt/log.txt
+
+commit 23694827d6ee04ddb1f97e25d2d18d748e48c458
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 31 22:20:34 2011 -0500
+
+    Link now pulled from properties file
+
+1	0	Sample/common.properties
+24	3	java/src/ca/charland/bgm/Main.java
+0	4	java/src/ca/charland/bgm/change/Change.java
+15	7	java/src/ca/charland/bgm/graph/Bubble.java
+1	2	java/src/ca/charland/bgm/graph/Chart.java
+3	2	java/src/ca/charland/bgm/graph/ChartParser.java
+15	2	java/src/ca/charland/bgm/graph/Panel.java
+33	0	java/test/ca/charland/bgm/MainTest.java
+11	0	java/test/ca/charland/bgm/change/ChangeTest.java
+9	0	java/test/ca/charland/bgm/change/LineTest.java
+1	1	java/test/ca/charland/bgm/graph/ArrayCollectionTest.java
+35	22	java/test/ca/charland/bgm/graph/BubbleTest.java
+59	12	java/test/ca/charland/bgm/graph/ChartParserTest.java
+3	3	java/test/ca/charland/bgm/graph/ChartTest.java
+1	1	java/test/ca/charland/bgm/graph/MyXYZDatasetTest.java
+105	2	java/test/ca/charland/bgm/graph/PanelTest.java
+2	1	java/test/res/common.properties
+
+commit ca0e894def29d3ae1618351276e9140581880cd5
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 31 09:52:52 2011 -0500
+
+    New version 0.17
+
+6	0	java/todo
+
+commit 1125ba0a790ec9cc0fc89886a3eb80a7f47be9ba
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Sat Dec 31 08:39:42 2011 -0500
+
+    Made better error msg
+
+1	1	java/src/ca/charland/bgm/Main.java
+
+commit 296e7bf3f698e345e83fabb9f2a191cdcdf54f0e
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Wed Dec 28 20:14:58 2011 -0500
+
+    0.15 version complete
+
+-	-	Sample/TestabilityChart.jar
+11	2	java/src/ca/charland/bgm/graph/Bubble.java
+37	0	java/src/ca/charland/bgm/graph/JLink.java
+28	6	java/src/ca/charland/bgm/graph/Panel.java
+19	2	java/test/ca/charland/bgm/graph/BubbleTest.java
+27	0	java/test/ca/charland/bgm/graph/JLinkTest.java
+1	0	java/todo
+
+commit 9db663c8a17c536f777777b9fcd822de7012fa72
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Dec 26 14:03:07 2011 -0500
+
+    Sample jar now available
+
+5	0	README
+-	-	Sample/TestabilityChart.jar
+2	0	Sample/common.properties
+813	0	Sample/log.txt
+
+commit b7d07998a289125beaf8f2bf92f74bc72f206f9d
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Dec 26 13:54:27 2011 -0500
+
+    You can specify the log file and file types via a properties file common properties is the name of the file
+
+56	9	java/src/ca/charland/bgm/Main.java
+149	8	java/test/ca/charland/bgm/MainTest.java
+2	0	java/test/res/common.properties
+1	0	java/test/res/log.properties
+1	0	java/test/res/types.properties
+
+commit 86308776070de85e548b5c110513e41bf0cd99a1
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Fri Dec 23 22:58:40 2011 -0500
+
+    You can now specify the file type(s) you want to show on the graph
+
+62	3	java/src/ca/charland/bgm/Main.java
+17	9	java/src/ca/charland/bgm/change/Change.java
+17	2	java/src/ca/charland/bgm/change/FileParser.java
+30	13	java/src/ca/charland/bgm/change/Line.java
+3	0	java/src/ca/charland/bgm/graph/ArrayCollection.java
+1	1	java/src/ca/charland/bgm/graph/Bubble.java
+1	1	java/src/ca/charland/bgm/graph/BubbleSeries.java
+5	3	java/src/ca/charland/bgm/graph/ChartParser.java
+1	1	java/src/ca/charland/bgm/graph/Panel.java
+82	0	java/test/ca/charland/bgm/MainTest.java
+0	73	java/test/ca/charland/bgm/change/ChangeParserTest.java
+36	24	java/test/ca/charland/bgm/change/ChangeTest.java
+89	0	java/test/ca/charland/bgm/change/FileParserTest.java
+59	17	java/test/ca/charland/bgm/change/LineTest.java
+3	3	java/test/ca/charland/bgm/graph/BubbleTest.java
+5	3	java/test/ca/charland/bgm/graph/ChartParserTest.java
+1	1	java/test/ca/charland/bgm/graph/ChartTest.java
+1	1	java/test/ca/charland/bgm/graph/PanelTest.java
+11	4	java/todo
+
 commit 8771fcdba5d207e246c366e49dac751ce603e2c7
 Author: mcharland <mike_ch_1@hotmail.com>
 Date:   Tue Dec 20 21:41:01 2011 -0500
