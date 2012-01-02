@@ -13,14 +13,20 @@ You have create a common.properties file in the same directory as the jar file.
 
 ##Manditory Arguments
 At minimum you have to set:
-- log.file -> the name of the file that contains the results of running "git log --numstat", example: out.txt
-- types -> what type of source code is your project using? Examples: java, cpp, c
+<table border="1">
+<tr><td>Option</td><td>Explanation</td><td>Examples</td></tr>
+<tr><td>log.file</td><td>the name of the file that contains the results of running "git log --numstat"</td><td>out.txt</td></tr>
+<tr><td>types</td><td>what type of source code is your project using?</td><td>java, cpp, c</td></tr>
+</table>
 
 ##Optional Arguments
 You can optionally also set:
-- base.url -> for commits where on the Internet can you link too, example: http://qt.gitorious.org/qt/qt/commit/
-- project.name -> The name of the project that can show up on the chart, example: QT
-- debug -> Enable or disable debugging, disabled by default, examples: TRUE, FALSE
+<table border="1">
+<tr><td>Option</td><td>Explanation</td><td>Examples</td></tr>
+<tr><td>base.url</td><td>for commits where on the Internet can you link too</td><td>http://qt.gitorious.org/qt/qt/commit/</td></tr>
+<tr><td>project.name</td><td>The name of the project that can show up on the chart</td><td>QT</td></tr>
+<tr><td>debug</td><td>Enable or disable debugging, disabled by default</td><td>TRUE, FALSE</td></tr>
+</table>
 
 ##Examples
 - QT
