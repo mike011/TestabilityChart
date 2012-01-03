@@ -1,0 +1,84 @@
+<HTML>
+
+<H1>Definition of Done</H1>
+Defines what needs to be done to meet each major version. <FONT COLOR="GREEN">Green</FONT> indicates the task or version has 
+been completed. <FONT COLOR="ORANGE">Orange</FONT> indicates a work in progress.
+</BR>
+</BR>
+<FONT COLOR="GREEN">
+<B>Version 0.1</B> 
+<UL>
+<LI>Percents on verticals</LI>
+<LI>Dates on bottom</LI>
+<LI>Bubbles to show size of change</LI>
+<LI>When you click on bubble the commit is shown.</LI>
+<LI>Size is determined by looking at the git log --numstat values for only java files</LI>
+<LI>90% code coverage</LI>
+</UL>
+</BR>
+
+<B>Version 0.15</B>
+<UL>
+<LI>Specify by passing into program type of source code</LI>
+<LI>Specify by configuration file program type</LI>
+<LI>Sample with log file and jar.</LI>
+<LI>HTTP Link to change description</LI>
+</UL>
+</BR>
+
+<FONT COLOR="ORANGE">
+<B>Version 0.17 - Be able to handle a larger project</B>
+</FONT> </BR>
+<FONT COLOR="BLACK">
+QT has been added as a sample project to show case the handling of large projects. QT has 
+thousands of commits with hundreds of different developers.
+</FONT>  
+<UL>
+<LI>Fix URL path for different projects</LI>
+<LI>Change title for current project.</LI>
+<LI>Add in Version name in title.</LI>
+<LI>Be able to set properties file by passing in system variable.</LI>
+<LI>For unit tests only statically import.</LI>
+<LI>Grab screen shots for projects and have them show up in github as examples.
+</FONT>
+<LI>Remove passing in arguments and base only on property file.
+<LI>Legend becomes ridiculously large for large projects and dominates the screen. Maybe a smaller
+scrollable window is needed?</LI>
+<LI> Chart and Panel are fixed in size, they should be dynamic</LI>
+</UL>
+</BR>
+
+<B>Version 0.20 - Filtering</B>
+<UL>
+<LI>Starting using Branch to do work in.</LI>
+<LI>Filter by user</LI>
+<LI>Filter by size or ratio to highlight the most suspicious commits</LI>
+<LI>Filter by path in the commit tree</LI>
+</UL>
+</BR>
+
+<B>Version 0.25 - Better size determination.</B>
+<UL>
+<LI>Large commits dominate the screen and this makes the graph less effective. So Bubble size should 
+not size determined by size of commit, but rather relative to other bubbles. Example B1 = 50 lines 
+changed, B2 = 5 lines changed, B3 = 10 lines changed. Currently you'd have one massive bubble, and 
+two very very small bubbles. What if B1 was just a size larger then B2 which was a size larger then
+B3? </LI>
+</UL>
+</BR>
+
+<B>Version 0.3</B>
+<UL>
+<LI>Showing each bubble as a pie chart of different file types, and each of their respective tests.</LI>
+<LI>Display trend line per team or per area of code</LI>
+<LI>Use complexity or test coverage metrics instead of lines of code</LI>
+</UL>
+</BR>
+
+<B>Version 0.4</B>
+<UL>
+<LI>Add merge and refactoring commit visualizations</LI>
+<LI>Color coding commits to stories, and adding sorting and filters to identify stories with high suspected tech debt.</LI>
+<LI>Tie in bug fixes and trace them back to the original commits’ bubbles</LI>
+</UL>
+</HTML>
