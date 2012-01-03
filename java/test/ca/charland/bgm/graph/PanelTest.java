@@ -89,7 +89,9 @@ public class PanelTest {
 		bc.chartMouseClicked(getChartMouseEvent(link));
 
 		// Verify
-		assertTrue(bc.getChange().isEnabled());
+		JLink change = bc.getChange();
+		assertTrue(change.isEnabled());
+		assertEquals("change by key", change.getText());
 	}
 
 	/**
@@ -139,7 +141,7 @@ public class PanelTest {
 	private static MyXYZDataset getDataSet(String link) {
 		TreeMap<String, ArrayList<Bubble>> changes = new TreeMap<String, ArrayList<Bubble>>();
 		ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
-		bubbles.add(new Bubble(null, 0, 0, null, link));
+		bubbles.add(new Bubble(null, 0, 0, "change", link));
 		changes.put("key", bubbles);
 
 		Chart chart = new Chart(null);

@@ -2,7 +2,7 @@ package ca.charland.bgm.graph;
 
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -11,6 +11,7 @@ import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -82,16 +83,19 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 		chartpanel.setDomainZoomable(true);
 		chartpanel.setRangeZoomable(true);
 		chartpanel.addChartMouseListener(this);
-		chartpanel.setPreferredSize(new Dimension(500, 270));
 
 		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 		panel.add(chartpanel);
-		panel.add(new JLabel("Commit:"));
+
+		JPanel label = new JPanel(new FlowLayout());
+		label.add(new JLabel("Commit:"));
 		change = new JLink();
 		change.setEnabled(false);
 		change.addActionListener(this);
-		panel.add(change);
-		panel.setPreferredSize(new Dimension(500, 310));
+		label.add(change);
+		panel.add(label);
+
 		setContentPane(panel);
 	}
 
@@ -117,11 +121,11 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 	private static JFreeChart createChart(XYZDataset xyzdataset, String title) {
 		final String x = "date";
 		final String y = "test / (test + source)";
-		if(title != null) {
+		if (title != null) {
 			title = "Project: " + title;
 		}
-		JFreeChart jfreechart = ChartFactory.createBubbleChart(title, x, y, xyzdataset,
-		        PlotOrientation.VERTICAL, true, true, false);
+		JFreeChart jfreechart = ChartFactory.createBubbleChart(title, x, y, xyzdataset, PlotOrientation.VERTICAL, true,
+		        true, false);
 		XYPlot xyplot = (XYPlot) jfreechart.getPlot();
 		xyplot.setForegroundAlpha(0.65F);
 		xyplot.setDomainPannable(true);
@@ -142,7 +146,12 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 		yAxis.setUpperMargin(0.14999999999999999D);
 		yAxis.setTickUnit(new NumberTickUnit(.25, NumberFormat.getPercentInstance()));
 
-		jfreechart.removeLegend();
+		if (xyzdataset != null) {
+			int seriesCount = xyzdataset.getSeriesCount();
+			if (seriesCount > 10) {
+				jfreechart.removeLegend();
+			}
+		}
 		return jfreechart;
 	}
 
@@ -155,7 +164,7 @@ public class Panel extends ApplicationFrame implements ChartMouseListener, Actio
 			DefaultXYZDataset ds = (DefaultXYZDataset) cie.getDataset();
 			String seriesKey = ds.getSeriesKey(cie.getSeriesIndex()).toString();
 			Bubble bubble = dataSet.getBubble(seriesKey, cie.getItem());
-			change.setText(bubble.getChange());
+			change.setText(bubble.getChange() + " by " + seriesKey);
 			String link = bubble.getLink();
 			if (link != null) {
 				change.setURL(link);
