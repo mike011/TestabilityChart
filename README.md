@@ -4,7 +4,7 @@ Current Version: 0.17
 ##Overview
 This application is the java based implementation using jfreechart for graph.
 
-Please see http://jawspeak.com/category/testability/ for more info.
+Please see <a href="http://jawspeak.com/category/testability/">JAW Speak</a> for more info.
 
 You can easily run the application in the Sample folder by running the jar. A sample log of the git log --numstat of this project is used. Also the properties are read from the common properties file.
 
@@ -35,14 +35,14 @@ and log.txt from the projects folder.
 <b>QT</b>
 <UL>
 <LI>A very very large project with thousands of commits and many different developers.</LI>
-<LI>Located in <a href="https://raw.github.com/mike011/TestabilityChart/master/samples/qt">samples/qt<a></LI>
+<LI>Located in <a href="https://github.com/mike011/TestabilityChart/tree/master/samples/qt">samples/qt<a></LI>
 </UL>
 ![QT](https://raw.github.com/mike011/TestabilityChart/master/samples/qt/screenshot.png)
 
 <b>Testability Chart</b>
 <UL>
 <LI>This is this git project and has a very unit test high coverage (95%+)</LI>
-<LI>Located in <a href="https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart">samples/TestabilityChart<a></LI>
+<LI>Located in <a href="https://github.com/mike011/TestabilityChart/tree/master/samples/TestabilityChart">samples/TestabilityChart<a></LI>
 </UL>
 ![Testability Chart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart/screenshot.png)
 
