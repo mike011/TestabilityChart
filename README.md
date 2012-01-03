@@ -29,13 +29,21 @@ You can optionally also set:
 <tr><td>debug</td><td>Enable or disable debugging, disabled by default</td><td>TRUE, FALSE</td></tr>
 </table>
 
-##Examples
-- QT
---A very very large project with thousands of commits and many different developers.
+##Samples
+To launch a sample from the project folder execute: java -jar ..\TestabilityChart.jar. This uses the common.properties
+and log.txt from the projects folder.
+<b>QT</b>
+<UL>
+<LI>A very very large project with thousands of commits and many different developers.</LI>
+<LI>Located in the samples/qt</LI>
+</UL>
 ![QT](https://raw.github.com/mike011/TestabilityChart/master/samples/qt/screenshot.png)
 
-- Testability Chart
---This project that has very high coverage (95%+)
+<b>Testability Chart</b>
+<UL>
+<LI>This is this git project and has a very unit test high coverage (95%+)</LI>
+<LI>Located in the samples/TestabilityChart</LI>
+</UL>
 ![Testability Chart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart/screenshot.png)
 
 ##History
