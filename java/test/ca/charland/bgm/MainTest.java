@@ -17,23 +17,6 @@ import org.junit.Test;
 public class MainTest {
 
 	/**
-	 * Test parsing just the log file.
-	 */
-	@Test
-	public void testParseArgsLogFile() {
-		// Setup
-		String[] args = { "sample.log" };
-		Main m = new Main();
-
-		// Exercise
-		m.setup(args);
-
-		// Verify
-		assertEquals("sample.log", m.getLogFile());
-		assertNull(m.getTypes());
-	}
-
-	/**
 	 * Test getting the log file.
 	 */
 	@Test
@@ -88,47 +71,6 @@ public class MainTest {
 		// Verify
 		assertNull(m.getLogFile());
 		assertNull(m.getTypes());
-	}
-
-	/**
-	 * Test parsing the log file and one type.
-	 */
-	@Test
-	public void testParseArgsLogFileAndOneType() {
-		// Setup
-		String[] args = { "sample.log", "java" };
-		Main m = new Main();
-
-		// Exercise
-		m.setup(args);
-
-		// Verify
-		assertEquals("sample.log", m.getLogFile());
-		List<String> types = m.getTypes();
-		assertEquals(1, types.size());
-		assertEquals("java", types.get(0));
-	}
-
-	/**
-	 * Test parsing the log file and one type.
-	 */
-	@Test
-	public void testParseArgsLogFileAndManyType() {
-		// Setup
-		String[] args = { "sample.log", "java", "cpp", "c", "cc" };
-		Main m = new Main();
-
-		// Exercise
-		m.setup(args);
-
-		// Verify
-		assertEquals("sample.log", m.getLogFile());
-		List<String> types = m.getTypes();
-		assertEquals(4, types.size());
-		assertEquals("java", types.get(0));
-		assertEquals("cpp", types.get(1));
-		assertEquals("c", types.get(2));
-		assertEquals("cc", types.get(3));
 	}
 
 	/**

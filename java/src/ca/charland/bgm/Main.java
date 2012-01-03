@@ -61,7 +61,6 @@ public class Main {
 	 */
 	void setup(String[] args) {
 		checkPropertiesFile();
-		parseArgs(args);
 	}
 
 	/**
@@ -127,26 +126,6 @@ public class Main {
 		Chart graph = new Chart(projectName);
 		graph.addBubbles(bubbles);
 		graph.show();
-	}
-
-	/**
-	 * Parses the arguments.
-	 * 
-	 * @param args
-	 *            the arguments.
-	 */
-	private void parseArgs(String[] args) {
-		if (args != null) {
-			if (args.length > 0 && args[0].length() > 0) {
-				logFile = args[0];
-			}
-			if (args.length > 1) {
-				types = new ArrayList<String>();
-				for (int x = 1; x < args.length; x++) {
-					types.add(args[x]);
-				}
-			}
-		}
 	}
 
 	/**

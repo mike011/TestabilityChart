@@ -9,7 +9,8 @@ Please see http://jawspeak.com/category/testability/ for mor einfo.
 You can easily run the application in the Sample folder by running the jar. A sample log of the git log --numstat of this project is used. Also the properties are read from the common properties file.
 
 ##Launching
-You have create a common.properties file in the same directory as the jar file. 
+You have create a common.properties file in the same directory as the jar file. You can optionally set the directory
+to run from by setting the system variable PROJECT_FOLDER. Example: -DPROJECT_FOLDER=../samples/qt/
 
 ##Manditory Arguments
 At minimum you have to set:
