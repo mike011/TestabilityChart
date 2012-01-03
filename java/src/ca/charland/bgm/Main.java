@@ -21,7 +21,7 @@ import ca.charland.bgm.graph.ChartParser;
 public class Main {
 
 	/** The current version number. */
-	public static final String VERSION = "0.15";
+	public static final String VERSION = "0.17";
 
 	/** The log file. */
 	private String logFile;

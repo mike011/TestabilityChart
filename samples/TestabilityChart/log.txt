@@ -1,3 +1,139 @@
+commit 17420e8cf7c580e8cd120867bec29f884e11a7e4
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 22:20:19 2012 -0500
+
+    Panel is now dynamic in size
+
+19	10	java/src/ca/charland/bgm/graph/Panel.java
+4	2	java/test/ca/charland/bgm/graph/PanelTest.java
+14	14	java/versions.html
+
+commit 5d9eb5781366a91e64725655ad1b454fdd0dce2e
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 21:00:15 2012 -0500
+
+    No more argument parsing, args based soley off of properties file
+
+2	1	README.md
+0	21	java/src/ca/charland/bgm/Main.java
+0	58	java/test/ca/charland/bgm/MainTest.java
+3	3	java/versions.html
+
+commit 5555ae72fcc0d35d49a415f8ad2d1e47bbcb247b
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 19:24:03 2012 -0500
+
+    todo is now versions
+
+0	58	java/todo
+84	0	java/versions.html
+
+commit 1081bff662a63305cd23df744b56a5758b3a52b3
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 15:56:53 2012 -0500
+
+    Use html table for options.
+
+11	5	README.md
+
+commit 6ad8f04a01226d8c45a331717d6d42e4157cf6c5
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 15:45:39 2012 -0500
+
+    added screenshots
+
+2	0	README.md
+2	0	java/todo
+
+commit 359c8147ed1c5226052abeecfa2f5c3efa4a803b
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 15:27:38 2012 -0500
+
+    Adding screenshots
+
+-	-	samples/TestabilityChart/TestabilityChart.png
+-	-	samples/qt/qt.png
+
+commit ed91fb6cee07519194114303c77f9b3504f09e2b
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 14:44:55 2012 -0500
+
+    extension should be lower case
+
+0	30	README.MD
+30	0	README.md
+
+commit 47def3046c45e430d87d37ceabb0ed08233abfb8
+Author: mcharland <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 14:42:46 2012 -0500
+
+    New readme
+
+0	5	README
+30	0	README.MD
+
+commit a795a254c1700e7ec0bb0a40e7ae44b7b992c1b8
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 11:21:52 2012 -0500
+
+    Rerarranged tasks for what's left in 0.17, and added new ones
+
+8	2	java/todo
+
+commit 6af9aa44ee402af24bde7366c844ef137bf9a17c
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Mon Jan 2 11:13:45 2012 -0500
+
+    Only used static imports, also cleaned up comments
+
+1	1	java/src/ca/charland/bgm/change/Change.java
+10	10	java/src/ca/charland/bgm/change/Line.java
+0	44	java/src/ca/charland/bgm/graph/ArrayCollection.java
+8	6	java/test/ca/charland/bgm/FileInputTest.java
+41	35	java/test/ca/charland/bgm/MainTest.java
+40	7	java/test/ca/charland/bgm/change/ChangeTest.java
+25	4	java/test/ca/charland/bgm/change/FileParserTest.java
+76	28	java/test/ca/charland/bgm/change/LineTest.java
+0	43	java/test/ca/charland/bgm/graph/ArrayCollectionTest.java
+5	5	java/test/ca/charland/bgm/graph/BubbleSeriesTest.java
+13	19	java/test/ca/charland/bgm/graph/BubbleTest.java
+6	15	java/test/ca/charland/bgm/graph/ChartParserTest.java
+13	9	java/test/ca/charland/bgm/graph/ChartTest.java
+6	3	java/test/ca/charland/bgm/graph/JLinkTest.java
+6	8	java/test/ca/charland/bgm/graph/MyXYZDatasetTest.java
+15	7	java/test/ca/charland/bgm/graph/PanelTest.java
+1	0	java/todo
+
+commit ce3efb368e702937d200a94d5f2c23cfde943f1b
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Sun Jan 1 23:42:57 2012 -0500
+
+    Title now can be set and the version number is shown
+
+28	3	java/src/ca/charland/bgm/Main.java
+6	3	java/src/ca/charland/bgm/graph/Chart.java
+22	8	java/src/ca/charland/bgm/graph/Panel.java
+16	0	java/test/ca/charland/bgm/MainTest.java
+2	2	java/test/ca/charland/bgm/graph/ChartParserTest.java
+5	5	java/test/ca/charland/bgm/graph/ChartTest.java
+52	6	java/test/ca/charland/bgm/graph/PanelTest.java
+2	1	java/test/res/common.properties
+6	2	java/todo
+1	0	samples/TestabilityChart/common.properties
+1	0	samples/qt/common.properties
+
+commit e7596602d5a4afcf7ab4430e8dddd50aada46cfe
+Author: defected <mike_ch_1@hotmail.com>
+Date:   Sun Jan 1 22:57:21 2012 -0500
+
+    Jar in each folder not needed, updated log for this proj
+
+1	0	java/todo
+-	-	samples/TestabilityChart.jar
+-	-	samples/TestabilityChart/TestabilityChart.jar
+123	0	samples/TestabilityChart/log.txt
+-	-	samples/qt/TestabilityChart.jar
+
 commit 3d2995528940fe3235b8ddffe433bfb880056812
 Author: mcharland <mike_ch_1@hotmail.com>
 Date:   Sat Dec 31 23:22:27 2011 -0500

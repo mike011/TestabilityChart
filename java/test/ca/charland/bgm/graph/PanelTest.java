@@ -37,7 +37,7 @@ public class PanelTest {
 		
 		// Verify
 		assertNotNull(panel);
-		assertEquals("Testability Chart 0.15", panel.getTitle());
+		assertEquals("Testability Chart 0.17", panel.getTitle());
 	}
 
 	/**
