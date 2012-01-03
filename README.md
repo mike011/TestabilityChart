@@ -35,14 +35,14 @@ and log.txt from the projects folder.
 <b>QT</b>
 <UL>
 <LI>A very very large project with thousands of commits and many different developers.</LI>
-<LI>Located in [samples/qt](https://raw.github.com/mike011/TestabilityChart/master/samples/qt)</LI>
+<LI>Located in <a href="https://raw.github.com/mike011/TestabilityChart/master/samples/qt">samples/qt<a></LI>
 </UL>
 ![QT](https://raw.github.com/mike011/TestabilityChart/master/samples/qt/screenshot.png)
 
 <b>Testability Chart</b>
 <UL>
 <LI>This is this git project and has a very unit test high coverage (95%+)</LI>
-<LI>Located in [samples/TestabilityChart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart)</LI>
+<LI>Located in <a href="https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart">samples/TestabilityChart<a></LI>
 </UL>
 ![Testability Chart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart/screenshot.png)
 
