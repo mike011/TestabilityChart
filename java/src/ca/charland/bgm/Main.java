@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import ca.charland.bgm.change.Change;
-import ca.charland.bgm.change.FileParser;
+import ca.charland.bgm.change.GitFileParser;
 import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.Chart;
 import ca.charland.bgm.graph.ChartParser;
@@ -106,7 +106,7 @@ public class Main {
 
 		// Gather change info.
 		List<String> lines = FileAccessing.read(getLogFile());
-		List<Change> changes = FileParser.changes(lines, getTypes());
+		List<Change> changes = GitFileParser.changes(lines, getTypes());
 
 		// Create the bubbles.
 		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, getTypes(), baseURL);
