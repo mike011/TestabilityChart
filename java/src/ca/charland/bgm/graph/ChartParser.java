@@ -24,7 +24,7 @@ public class ChartParser {
 	 * @param url The URL to link.
 	 * @return The map which contains keys of authors and lists of there bubbles.
 	 */
-	public static Map<String, ArrayList<Bubble>> bubbles(List<Change> changes, List<String> types, String url) {
+	public static Map<String, ArrayList<Bubble>> bubbles(List<? extends Change> changes, List<String> types, String url) {
 
 		Map<String, ArrayList<Bubble>> series = new TreeMap<String, ArrayList<Bubble>>();
 

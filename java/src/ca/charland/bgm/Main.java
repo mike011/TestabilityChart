@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import ca.charland.bgm.change.Change;
 import ca.charland.bgm.change.GitFileParser;
+import ca.charland.bgm.change.IntegrityFileParser;
 import ca.charland.bgm.graph.Bubble;
 import ca.charland.bgm.graph.Chart;
 import ca.charland.bgm.graph.ChartParser;
@@ -41,6 +42,8 @@ public class Main {
 	/** The title of project. */
 	private String projectName;
 
+	private String repoType;
+
 	/**
 	 * The main method.
 	 * 
@@ -49,23 +52,14 @@ public class Main {
 	 */
 	public static void main(String args[]) {
 		Main main = new Main();
-		main.setup(args);
+		main.setup();
 		main.go();
 	}
 
-	/**
-	 * Setup.
-	 * 
-	 * @param args
-	 *            the new up
-	 */
-	void setup(String[] args) {
+	void setup() {
 		checkPropertiesFile();
 	}
 
-	/**
-	 * Check properties file.
-	 */
 	private void checkPropertiesFile() {
 
 		// See if the project folder has been set by system argument.
@@ -96,6 +90,7 @@ public class Main {
 			baseURL = properties.getProperty("base.url");
 			debug = Boolean.parseBoolean(properties.getProperty("debug"));
 			projectName = properties.getProperty("project.name");
+			repoType = properties.getProperty("repo.type");
 		}
 	}
 
@@ -104,9 +99,7 @@ public class Main {
 	 */
 	void go() {
 
-		// Gather change info.
-		List<String> lines = FileAccessing.read(getLogFile());
-		List<Change> changes = GitFileParser.changes(lines, getTypes());
+		List<? extends Change> changes = gatherChangeInfo();
 
 		// Create the bubbles.
 		Map<String, ArrayList<Bubble>> bubbles = ChartParser.bubbles(changes, getTypes(), baseURL);
@@ -127,6 +120,19 @@ public class Main {
 		graph.addBubbles(bubbles);
 		graph.show();
 	}
+
+	private List<? extends Change> gatherChangeInfo() {
+		if(getRepoType().equals("git")) {
+			List<String> lines = FileAccessing.read(getLogFile());
+			List<? extends Change> changes = new GitFileParser().changes(lines, getTypes());
+			return changes;
+		} else if(getRepoType().equals("integrity")) {
+			IntegrityFileParser ifp = new IntegrityFileParser(getLogFile());
+			ifp.load();
+			return ifp.parse();
+		} 
+		throw new IllegalArgumentException("Invalid repo type " + getRepoType());
+    }
 
 	/**
 	 * Gets the log file.
@@ -182,4 +188,11 @@ public class Main {
 	String getProjectName() {
 		return projectName;
 	}
+
+	public String getRepoType() {
+		if(null == repoType) {
+			return "git";
+		}
+		return repoType;
+    }
 }

@@ -13,15 +13,10 @@ import org.junit.Test;
 import ca.charland.bgm.FileAccessing;
 
 /**
- * Tests for FileParser.
- * 
  * @author mcharland
  */
 public class GitFileParserTest {
 
-	/**
-	 * Test the simple case with one change.
-	 */
 	@Test
 	public void testOneChange() {
 		// Setup
@@ -30,16 +25,13 @@ public class GitFileParserTest {
 		types.add("java");
 		
 		// Exercise
-		List<Change> parse = GitFileParser.changes(read, types);
+		List<? extends Change> parse = new GitFileParser().changes(read, types);
 		
 		// Verify
 		assertNotNull(parse);
 		assertTrue("Not empty", parse.isEmpty());
 	}
 
-	/**
-	 * Test two changes.
-	 */
 	@Test
 	public void testTwoChanges() {
 		// Setup
@@ -48,15 +40,12 @@ public class GitFileParserTest {
 		types.add("java");
 		
 		// Exercise
-		List<Change> parse = GitFileParser.changes(read, types);
+		List<? extends Change> parse = new GitFileParser().changes(read, types);
 		
 		// Verify
 		assertTrue(parse.isEmpty());
 	}
 
-	/**
-	 * Test two java files.
-	 */
 	@Test
 	public void testTwoJava() {
 		// Setup
@@ -65,7 +54,7 @@ public class GitFileParserTest {
 		types.add("java");
 		
 		// Exercise
-		List<Change> parse = GitFileParser.changes(read, types);
+		List<? extends Change> parse = new GitFileParser().changes(read, types);
 		
 		// Verify
 		assertEquals(2, parse.size());
@@ -77,13 +66,10 @@ public class GitFileParserTest {
 		assertEquals(change.getCoverage(types), change2.getCoverage(types), 0.1);
 	}
 
-	/**
-	 * Test parse line.
-	 */
 	@Test
 	public void testParseLine() {
 		// Setup & Exercise
-		Line line = GitFileParser.line("1	1	permissions.java");
+		Line line = new GitFileParser().line("1	1	permissions.java");
 		
 		// Verify
 		assertNotNull(line);
@@ -93,18 +79,15 @@ public class GitFileParserTest {
 		assertEquals(2, line.getSourceDifference(types));
 	}
 
-	/**
-	 * Tests if a file is valid.
-	 */
 	@Test
 	public void testIsChangeValid() {
 		// Setup
 		Line line = new Line(null, null, null);
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(line);
-		Change change = new Change(null, null, null, null, lines);
+		GitChange change = new GitChange(null, null, null, null, lines);
 		
 		// Exercise & Verify
-		assertTrue(GitFileParser.isChangeValid(change, null));
+		assertTrue(new GitFileParser().isChangeValid(change, null));
 	}
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Response command="viewcp" app="si" version="4.13.5401 0-0 5401">
+  <App-Connection port="7030" userID="mcharland" server="hqrdsi.mks.com"></App-Connection>
+  <WorkItems selectionType="IChangePackageSelection">
+    <WorkItem id="781199:1" modelType="si.ChangePackage" displayId="781199:1">
+      <Field name="MKSEntries">
+        <List elementType="item">
+          <Item id="hqrdsi.mks.com\:7030:/rds/src/itf/java/mks/itf/framework/mksapi/im/project.pj:mainline:FieldAndValuePair.java:1.5:Update" context="781199:1" modelType="si.ChangePackage.Entry" displayId="hqrdsi.mks.com\:7030:/rds/src/itf/java/mks/itf/framework/mksapi/im/project.pj:mainline:FieldAndValuePair.java:1.5:Update">
+            <Field name="linesadded">
+              <Value dataType="long">
+                <TokenValue>23</TokenValue>
+              </Value>
+            </Field>
+            <Field name="linesdeleted">
+              <Value dataType="long">
+                <TokenValue>5</TokenValue>
+              </Value>
+            </Field>
+          </Item>
+        </List>
+      </Field>
+      <Field name="closeddate">
+        <Value dataType="datetime">
+          <TokenValue>2012-08-15T20:06:15</TokenValue>
+        </Value>
+      </Field>
+    </WorkItem>
+    <WorkItem id="769541:1" modelType="si.ChangePackage" displayId="769541:1">
+      <Field name="MKSEntries">
+        <List elementType="item">
+          <Item id="hqrdsi.mks.com\:7030:/rds/src/collmgr/gwt/thinclient/test/com/mks/thinclient/client/document/concreteui/project.pj:mainline:LinkFieldListGridTest.java:1.7:Update" context="769541:1" modelType="si.ChangePackage.Entry" displayId="hqrdsi.mks.com\:7030:/rds/src/collmgr/gwt/thinclient/test/com/mks/thinclient/client/document/concreteui/project.pj:mainline:LinkFieldListGridTest.java:1.7:Update">
+            <Field name="linesadded">
+              <Value dataType="long">
+                <TokenValue>34</TokenValue>
+              </Value>
+            </Field>
+            <Field name="linesdeleted">
+              <Value dataType="long">
+                <TokenValue>31</TokenValue>
+              </Value>
+            </Field>
+          </Item>
+        </List>
+      </Field>
+      <Field name="closeddate">
+        <Value dataType="datetime">
+          <TokenValue>2012-08-01T13:17:09</TokenValue>
+        </Value>
+      </Field>
+    </WorkItem>
+  </WorkItems>
+</Response>

@@ -12,7 +12,7 @@ import java.util.TreeMap;
 import org.jfree.data.xy.XYZDataset;
 import org.junit.Test;
 
-import ca.charland.bgm.change.Change;
+import ca.charland.bgm.change.GitChange;
 import ca.charland.bgm.change.Line;
 
 /**
@@ -28,11 +28,11 @@ public class ChartParserTest {
 	@Test
 	public void testBubblesOneBubble() {
 		// Setup
-		List<Change> changes = new ArrayList<Change>();
+		List<GitChange> changes = new ArrayList<GitChange>();
 		ArrayList<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("2", "5", "bob.txt"));
 		String author = "Author: defected <defected@defected-P5K-EPU.(none)>";
-		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new GitChange("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 		List<String> types = new ArrayList<String>();
 		types.add("java");
 
@@ -49,12 +49,12 @@ public class ChartParserTest {
 	@Test
 	public void testBubblesTwoBubblesDiff() {
 		// Setup
-		List<Change> changes = new ArrayList<Change>();
+		List<GitChange> changes = new ArrayList<GitChange>();
 		ArrayList<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("2", "5", "bob.txt"));
 		String author = "Author: defected <defected@defected-P5K-EPU.(none)>";
-		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
-		changes.add(new Change("commit b", "Author: frank <", "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new GitChange("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new GitChange("commit b", "Author: frank <", "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 		List<String> types = new ArrayList<String>();
 		types.add("java");
 
@@ -72,12 +72,12 @@ public class ChartParserTest {
 	@Test
 	public void testBubblesTwoBubblesSame() {
 		// Setup
-		List<Change> changes = new ArrayList<Change>();
+		List<GitChange> changes = new ArrayList<GitChange>();
 		ArrayList<Line> lines = new ArrayList<Line>();
 		lines.add(new Line("2", "5", "bob.txt"));
 		String author = "Author: defected <defected@defected-P5K-EPU.(none)>";
-		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
-		changes.add(new Change("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new GitChange("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
+		changes.add(new GitChange("commit b", author, "Date:  Tue Nov 29 10:36:43 2011 -0500", null, lines));
 		List<String> types = new ArrayList<String>();
 		types.add("java");
 

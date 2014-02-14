@@ -33,7 +33,7 @@ public class MainTest {
 		Main m = new Main();
 
 		// Exercise
-		m.setup(null);
+		m.setup();
 
 		// Verify
 		assertNull(m.getLogFile());
@@ -49,7 +49,7 @@ public class MainTest {
 		Main m = new Main();
 
 		// Exercise
-		m.setup(new String[] {});
+		m.setup();
 
 		// Verify
 		assertNull(m.getLogFile());
@@ -62,11 +62,10 @@ public class MainTest {
 	@Test
 	public void testParseArgsEmptyString() {
 		// Setup
-		String[] args = { "" };
 		Main m = new Main();
 
 		// Exercise
-		m.setup(args);
+		m.setup();
 
 		// Verify
 		assertNull(m.getLogFile());
@@ -91,7 +90,7 @@ public class MainTest {
 		m.setPropertiesFile("test/res/common.properties");
 
 		// Exercise
-		m.setup(new String[] { "" });
+		m.setup();
 
 		// Verify
 		assertEquals("dog.txt", m.getLogFile());
@@ -109,7 +108,7 @@ public class MainTest {
 		m.setPropertiesFile("test/res/log.properties");
 
 		// Exercise
-		m.setup(new String[] { "" });
+		m.setup();
 
 		// Verify
 		assertEquals("sample.log", m.getLogFile());
@@ -126,7 +125,7 @@ public class MainTest {
 		m.setPropertiesFile("test/res/types.properties");
 
 		// Exercise
-		m.setup(new String[] { "" });
+		m.setup();
 
 		// Verify
 		assertNull(m.getLogFile());
@@ -144,7 +143,7 @@ public class MainTest {
 		m.setPropertiesFile("bad.file");
 
 		// Exercise
-		m.setup(new String[] { "" });
+		m.setup();
 
 		// Verify
 		assertNull(m.getLogFile());
@@ -161,7 +160,7 @@ public class MainTest {
 		m.setPropertiesFile("test/res/common.properties");
 
 		// Exercise
-		m.setup(new String[] { "" });
+		m.setup();
 
 		// Verify
 		assertEquals("dog.txt", m.getLogFile());
@@ -179,7 +178,7 @@ public class MainTest {
 		m.setPropertiesFile("test/res/log.properties");
 
 		// Exercise
-		m.setup(null);
+		m.setup();
 
 		// Verify
 		assertNull(m.getBaseURL());
@@ -195,7 +194,7 @@ public class MainTest {
 		m.setPropertiesFile("test/res/common.properties");
 
 		// Exercise
-		m.setup(null);
+		m.setup();
 
 		// Verify
 		assertEquals("www.nba.com/", m.getBaseURL());
@@ -211,15 +210,12 @@ public class MainTest {
 		m.setPropertiesFile("test/res/common.properties");
 
 		// Exercise
-		m.setup(null);
+		m.setup();
 
 		// Verify
 		assertTrue(m.isDebugging());
 	}
 
-	/**
-	 * Test getting the title.
-	 */
 	@Test
 	public void testPropertiesTitle() {
 		// Setup
@@ -227,9 +223,35 @@ public class MainTest {
 		m.setPropertiesFile("test/res/common.properties");
 
 		// Exercise
-		m.setup(null);
+		m.setup();
 
 		// Verify
 		assertEquals("Testability", m.getProjectName());
+	}
+	
+	@Test
+	public void testPropertiesRepoTypeDefault() {
+		// Setup
+		Main m = new Main();
+		m.setPropertiesFile("");
+
+		// Exercise
+		m.setup();
+
+		// Verify
+		assertEquals("git", m.getRepoType());
+	}
+	
+	@Test
+	public void testPropertiesRepoTypeSet() {
+		// Setup
+		Main m = new Main();
+		m.setPropertiesFile("test/res/common.properties");
+
+		// Exercise
+		m.setup();
+
+		// Verify
+		assertEquals("svn", m.getRepoType());
 	}
 }

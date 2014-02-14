@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Response command="viewcp" app="si" version="4.13.5401 0-0 5401">
+  <App-Connection port="7030" userID="mcharland" server="hqrdsi.mks.com"></App-Connection>
+  <WorkItems selectionType="IChangePackageSelection">
+  </WorkItems>
+</Response>
