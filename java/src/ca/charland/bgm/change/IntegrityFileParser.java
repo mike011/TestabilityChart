@@ -24,18 +24,17 @@ public class IntegrityFileParser {
 	}
 
 	public List<Change> parse() {
-		NodeList nList = doc.getElementsByTagName("WorkItem");
+		NodeList workItems = doc.getElementsByTagName("WorkItem");
 
 		List<Change> changes = new ArrayList<Change>();
 		int changeIndex = 0;
-		for (Element element : getElements(nList)) {
-			List<Line> files = getFiles(element);
-			changes.add(new Change(getCommit(changeIndex), getAuthor(), getDate(changeIndex), "", files));
+		for (Element workItem : getElements(workItems)) {
+			List<Line> files = getFiles(workItem);
+			changes.add(new Change(getCommit(workItem), getAuthor(), getDate(workItem, changeIndex), "", files));
 			++changeIndex;
 		}
 		return changes;
 	}
-	
 
 	private List<Element> getElements(NodeList nodeList) {
 		List<Element> elements = new ArrayList<Element>();
@@ -50,48 +49,50 @@ public class IntegrityFileParser {
 		return elements;
 	}
 
-	private List<Line> getFiles(Element line) {
+	private List<Line> getFiles(Element workItem) {
 		List<Line> files = new ArrayList<Line>();
 		
-		List<String> list = get("Item", "id");
+		List<String> list = getList(workItem, "Item", "id");
 		int index = 0;
 		for(String item : list) {
-			String file = extracted(item);
-			files.add(new Line(getLinesAdded(index), getLinesRemoved(index), file));
+			String file = getFileName(item);
+			files.add(new Line(getLinesAdded(workItem, index), getLinesRemoved(workItem, index), file));
 			++index;
 		}
 		return files;
 	}
 
-	private String extracted(String item) {
+	private String getFileName(String item) {
 	    String file = item.substring(0, item.lastIndexOf(':'));
 	    file = file.substring(0, file.lastIndexOf(':'));
 	    return file;
     }
 
 
-	private String getLinesRemoved(int fileIndex) {
-		return get("Field", "linesdeleted", "TokenValue", 0).get(fileIndex);
+	private String getLinesRemoved(Element workItem, int fileIndex) {
+		return get(workItem, "Field", "linesdeleted").get(fileIndex);
 	}
 
-	private String getLinesAdded(int fileIndex) {
-		return get("Field", "linesadded", "TokenValue", 0).get(fileIndex);
+	private String getLinesAdded(Element workItem, int fileIndex) {
+		return get(workItem, "Field", "linesadded").get(fileIndex);
 	}
 
 	private String getAuthor() {
-		return get("App-Connection", "userID").get(0);
+		NodeList appConnection = doc.getElementsByTagName("App-Connection");
+		Element element = (Element)appConnection.item(0);
+		return element.getAttribute("userID");
 	}
 
-	private String getCommit(int changeIndex) {
-		return get("WorkItem", "id").get(changeIndex);
+	private String getCommit(Element workItem) {
+	    return workItem.getAttribute("id");
+    }
+	
+	private String getDate(Element workItem, int changeIndex) {
+		return get(workItem, "Field", "closeddate").get(0).replace('T', ' ');
 	}
 
-	private String getDate(int changeIndex) {
-		return get("Field", "closeddate", "TokenValue", changeIndex).get(0).replace('T', ' ');
-	}
-
-	private List<String> get(String tagname, String name, String secondTag, int index) {
-		NodeList node = doc.getElementsByTagName(tagname);
+	private List<String> get(Element element, String tagname, String name) {
+	    NodeList node = element.getElementsByTagName(tagname);
 
 		List<String> results = new ArrayList<String>();
 		for (int temp = 0; temp < node.getLength(); temp++) {
@@ -103,7 +104,7 @@ public class IntegrityFileParser {
 			}
 		}
 		return results;
-	}
+    }
 
 	private String getLines(Element line) {
 		Node item = line.getElementsByTagName("TokenValue").item(0);
@@ -114,9 +115,9 @@ public class IntegrityFileParser {
 		return null;
 	}
 
-	private List<String> get(String tagname, String name) {
+	private List<String> getList(Element workItem, String tagname, String name) {
 		List<String> results = new ArrayList<String>();
-		NodeList node = doc.getElementsByTagName(tagname);
+		NodeList node = workItem.getElementsByTagName(tagname);
 
 		for (int temp = 0; temp < node.getLength(); temp++) {
 			Node nNode = node.item(temp);

@@ -86,13 +86,13 @@ public class IntegrityFileParserTest {
 
 		List<Line> files = changes.get(1).getFiles();
 		Line line = files.get(0);
-		assertEquals("hqrdsi.mks.com\\:7030:/rds/src/itf/java/mks/itf/framework/mksapi/im/project.pj:mainline:LinkFieldListGridTest.java",
+		assertEquals("hqrdsi.mks.com\\:7030:/rds/src/collmgr/gwt/thinclient/test/com/mks/thinclient/client/document/concreteui/project.pj:mainline:LinkFieldListGridTest.java",
 		        line.toString());
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		assertEquals(0, line.getTestDiff(types));
-		assertEquals(26, line.getSourceDifference(types));
+		assertEquals(65, line.getTestDiff(types));
+		assertEquals(0, line.getSourceDifference(types));
 
 	}
 }
