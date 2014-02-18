@@ -17,94 +17,16 @@ public class GitChange extends Change {
 
 	}
 
-	/**
-	 * Gets the coverage.
-	 * 
-	 * @param types
-	 *            the types
-	 * @return the coverage
-	 */
-	public float getCoverage(List<String> types) {
-
-		float src = getSrc(types);
-
-		float test = getTest(types);
-
-		// Prevent a divide by zero.
-		if ((src + test) == 0) {
-			src = 1;
-		}
-		return test / (src + test);
-	}
-
-	/**
-	 * Gets the test.
-	 * 
-	 * @param types
-	 *            the types
-	 * @return the test
-	 */
-	private int getTest(List<String> types) {
-		int test = 0;
-		for (Line line : lines) {
-			test += line.getTestDiff(types);
-		}
-		return test;
-	}
-
-	/**
-	 * Gets the src.
-	 * 
-	 * @param types
-	 *            the types
-	 * @return the src
-	 */
-	private int getSrc(List<String> types) {
-		int src = 0;
-		for (Line line : lines) {
-			src += line.getSourceDifference(types);
-		}
-		return src;
-	}
-
-	/**
-	 * Gets the lines covered.
-	 * 
-	 * @param types
-	 *            the types
-	 * @return the lines covered
-	 */
-	public float getLinesCovered(List<String> types) {
-		return getSrc(types) + getTest(types);
-	}
-
-	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object o) {
 		GitChange c2 = (GitChange) o;
 		return getCommit().equals(c2.getCommit());
 	}
 
-	/**
-	 * Gets the commit.
-	 * 
-	 * @return the commit
-	 */
 	public String getCommit() {
 		return commit.substring("commit ".length()).trim();
 	}
 
-	/** {@inheritDoc} */
-	@Override
-	public String toString() {
-		return getCommit();
-	}
-
-	/**
-	 * Gets the date.
-	 * 
-	 * @return the date
-	 */
 	public Date getDate() {
 		SimpleDateFormat formatter = new SimpleDateFormat("E MMM dd HH:mm:ss yyyy Z");
 
@@ -118,11 +40,6 @@ public class GitChange extends Change {
 		return date;
 	}
 
-	/**
-	 * Gets the parsed author.
-	 * 
-	 * @return the author
-	 */
 	public String getAuthor() {
 		int start = "Author:".length();
 		int end = author.indexOf('<');
@@ -130,11 +47,6 @@ public class GitChange extends Change {
 		return parsed;
 	}
 
-	/**
-	 * Checks if the Change is valid meaning that it containing any lines.
-	 * 
-	 * @return If the Change is valid.
-	 */
 	public boolean isValid() {
 		return !lines.isEmpty();
 	}

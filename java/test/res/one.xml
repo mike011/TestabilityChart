@@ -24,6 +24,15 @@
           <TokenValue>2012-08-15T20:06:15</TokenValue>
         </Value>
       </Field>
+      <Field name="user">
+        <Item id="mcharland" modelType="si.User" displayId="jeshepherd">
+          <Field name="fullname">
+            <Value dataType="string">
+              <TokenValue>Shepherd, Jeff</TokenValue>
+            </Value>
+          </Field>
+        </Item>
+      </Field>
     </WorkItem>
   </WorkItems>
 </Response>

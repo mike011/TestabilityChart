@@ -120,18 +120,6 @@ public class GitChangeTest {
 		// Verify
 		assertNotNull(date);
 	}
-	
-	@Test
-	public void testGetDateParseException() {
-		// Setup
-		GitChange change = new GitChange(null, null, "Date:     UU", null, null);
-		
-		// Exercise
-		Date date = change.getDate();
-		
-		// Verify
-		assertNull(date);
-	}
 
 	@Test
 	public void testGetAuthor() {

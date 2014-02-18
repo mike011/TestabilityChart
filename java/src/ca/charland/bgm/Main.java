@@ -94,9 +94,6 @@ public class Main {
 		}
 	}
 
-	/**
-	 * Go.
-	 */
 	void go() {
 
 		List<? extends Change> changes = gatherChangeInfo();
@@ -106,7 +103,6 @@ public class Main {
 		ChartParser.normaliseBubbleData(bubbles);
 
 		if (debug) {
-			// Debug
 			for (String person : bubbles.keySet()) {
 				System.out.println(person);
 				for (Bubble b : bubbles.get(person)) {

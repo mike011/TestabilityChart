@@ -29,8 +29,11 @@ public class IntegrityFileParser {
 		List<Change> changes = new ArrayList<Change>();
 		int changeIndex = 0;
 		for (Element workItem : getElements(workItems)) {
-			List<Line> files = getFiles(workItem);
-			changes.add(new Change(getCommit(workItem), getAuthor(), getDate(workItem, changeIndex), "", files));
+			List<? extends Line> files = getFiles(workItem);
+			String date = getDate(workItem, changeIndex);
+			if (date != null) {
+				changes.add(new Change(getCommit(workItem), getAuthor(workItem), date, "", files));
+			}
 			++changeIndex;
 		}
 		return changes;
@@ -49,25 +52,24 @@ public class IntegrityFileParser {
 		return elements;
 	}
 
-	private List<Line> getFiles(Element workItem) {
+	private List<? extends Line> getFiles(Element workItem) {
 		List<Line> files = new ArrayList<Line>();
-		
-		List<String> list = getList(workItem, "Item", "id");
+
+		List<String> list = getList(workItem, "Item", "modelType", "si.ChangePackage.Entry", "id");
 		int index = 0;
-		for(String item : list) {
+		for (String item : list) {
 			String file = getFileName(item);
-			files.add(new Line(getLinesAdded(workItem, index), getLinesRemoved(workItem, index), file));
+			files.add(new IntegrityLine(getLinesAdded(workItem, index), getLinesRemoved(workItem, index), file));
 			++index;
 		}
 		return files;
 	}
 
 	private String getFileName(String item) {
-	    String file = item.substring(0, item.lastIndexOf(':'));
-	    file = file.substring(0, file.lastIndexOf(':'));
-	    return file;
-    }
-
+		String file = item.substring(0, item.lastIndexOf(':'));
+		file = file.substring(0, file.lastIndexOf(':'));
+		return file;
+	}
 
 	private String getLinesRemoved(Element workItem, int fileIndex) {
 		return get(workItem, "Field", "linesdeleted").get(fileIndex);
@@ -77,22 +79,30 @@ public class IntegrityFileParser {
 		return get(workItem, "Field", "linesadded").get(fileIndex);
 	}
 
-	private String getAuthor() {
-		NodeList appConnection = doc.getElementsByTagName("App-Connection");
-		Element element = (Element)appConnection.item(0);
-		return element.getAttribute("userID");
+	private String getAuthor(Element workItem) {
+		List<String> list = getList(workItem, "Item", "modelType", "si.User", "id");
+		return list.get(0);
 	}
 
 	private String getCommit(Element workItem) {
-	    return workItem.getAttribute("id");
-    }
-	
+		return workItem.getAttribute("id");
+	}
+
 	private String getDate(Element workItem, int changeIndex) {
-		return get(workItem, "Field", "closeddate").get(0).replace('T', ' ');
+		List<String> list = get(workItem, "Field", "closeddate");
+		if(list.isEmpty()) {
+			// change was created another server
+			return null;
+		}
+		String string = list.get(0);
+		if (string == null) {
+			return null;
+		}
+		return string.replace('T', ' ');
 	}
 
 	private List<String> get(Element element, String tagname, String name) {
-	    NodeList node = element.getElementsByTagName(tagname);
+		NodeList node = element.getElementsByTagName(tagname);
 
 		List<String> results = new ArrayList<String>();
 		for (int temp = 0; temp < node.getLength(); temp++) {
@@ -104,7 +114,7 @@ public class IntegrityFileParser {
 			}
 		}
 		return results;
-    }
+	}
 
 	private String getLines(Element line) {
 		Node item = line.getElementsByTagName("TokenValue").item(0);
@@ -115,14 +125,18 @@ public class IntegrityFileParser {
 		return null;
 	}
 
-	private List<String> getList(Element workItem, String tagname, String name) {
+	private List<String> getList(Element workItem, String tagname, String name, String type, String id) {
 		List<String> results = new ArrayList<String>();
 		NodeList node = workItem.getElementsByTagName(tagname);
 
 		for (int temp = 0; temp < node.getLength(); temp++) {
 			Node nNode = node.item(temp);
 			Element eElement = (Element) nNode;
-			results.add(eElement.getAttribute(name));
+			String attribute = eElement.getAttribute(name);
+			if (attribute.equals(type)) {
+				results.add(eElement.getAttribute(id));
+			}
+
 		}
 		return results;
 	}

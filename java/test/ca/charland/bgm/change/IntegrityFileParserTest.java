@@ -32,7 +32,7 @@ public class IntegrityFileParserTest {
 		assertEquals("mcharland", change.getAuthor());
 		assertEquals("Wed Aug 15 20:06:15 EDT 2012", change.getDate().toString());
 		assertEquals(1, change.getFiles().size());
-		List<Line> files = change.getFiles();
+		List<? extends Line> files = change.getFiles();
 		assertFirstFileFromChange(files.get(0));
 	}
 
@@ -49,7 +49,7 @@ public class IntegrityFileParserTest {
 		assertEquals("mcharland", change.getAuthor());
 		assertEquals("Wed Aug 15 20:06:15 EDT 2012", change.getDate().toString());
 		assertEquals(2, change.getFiles().size());
-		List<Line> files = change.getFiles();
+		List<? extends Line> files = change.getFiles();
 		assertFirstFileFromChange(files.get(0));
 		assertSecondFileFromChange(files.get(1));
 	}
@@ -61,8 +61,8 @@ public class IntegrityFileParserTest {
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		assertEquals(0, line.getTestDiff(types));
-		assertEquals(28, line.getSourceDifference(types));
+		assertEquals(28, line.getTestDiff(types));
+		assertEquals(0, line.getSourceDifference(types));
 	}
 
 	private void assertSecondFileFromChange(Line line) {
@@ -71,8 +71,8 @@ public class IntegrityFileParserTest {
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		assertEquals(0, line.getTestDiff(types));
-		assertEquals(26, line.getSourceDifference(types));
+		assertEquals(26, line.getTestDiff(types));
+		assertEquals(0, line.getSourceDifference(types));
 	}
 
 	@Test
@@ -81,18 +81,19 @@ public class IntegrityFileParserTest {
 		ifp.load();
 		List<Change> changes = ifp.parse();
 		assertEquals(2, changes.size());
-		assertEquals("781199:1", changes.get(0).getCommit());
-		assertEquals("769541:1", changes.get(1).getCommit());
-
-		List<Line> files = changes.get(1).getFiles();
+		assertEquals("769541:1", changes.get(0).getCommit());
+		assertEquals("781199:1", changes.get(1).getCommit());
+		
+		List<? extends Line> files = changes.get(1).getFiles();
 		Line line = files.get(0);
-		assertEquals("hqrdsi.mks.com\\:7030:/rds/src/collmgr/gwt/thinclient/test/com/mks/thinclient/client/document/concreteui/project.pj:mainline:LinkFieldListGridTest.java",
+		assertEquals("hqrdsi.mks.com\\:7030:/rds/src/itf/java/mks/itf/framework/mksapi/im/project.pj:mainline:FieldAndValuePair.java",
 		        line.toString());
 
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		assertEquals(65, line.getTestDiff(types));
+		assertEquals(28, line.getTestDiff(types));
 		assertEquals(0, line.getSourceDifference(types));
+		assertEquals("jeshepherd", changes.get(1).getAuthor());
 
 	}
 }
