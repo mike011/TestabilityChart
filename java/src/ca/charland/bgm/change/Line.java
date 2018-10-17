@@ -11,13 +11,16 @@ public class Line {
 
 	private final String removed;
 	private final String added;
-	private final String file;
+	protected final String file;
 
 	public Line(String added, String removed, String file) {
 		this.added = added;
 		this.removed = removed;
-		this.file = file;
-
+		String name = "";
+		if (file != null) {
+			name = file.trim();
+		}
+		this.file = name;
 	}
 
 	public int getTestDiff(List<String> types) {
@@ -53,7 +56,7 @@ public class Line {
 
 		boolean typeFound = false;
 		for (String type : types) {
-			if (file.trim().endsWith(type)) {
+			if (file.endsWith(type)) {
 				typeFound = true;
 				break;
 			}
@@ -62,7 +65,7 @@ public class Line {
 	}
 
 	public boolean isSource(List<String> types) {
-		return isValid(types) && !file.contains("test");
+		return isValid(types) && !file.toLowerCase().contains("test");
 	}
 
 	@Override

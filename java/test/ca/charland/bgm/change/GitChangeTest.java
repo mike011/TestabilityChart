@@ -54,6 +54,23 @@ public class GitChangeTest {
 		// Verify
 		assertEquals(0, diff, 0.1);
 	}
+	
+	@Test
+	public void testGetCoverageZeroBecauseOfPodFile() {
+		// Setup
+		List<Line> lines = new ArrayList<Line>();
+		lines.add(new Line("1", "23", "Pods/dog.java"));
+		GitChange change = new GitChange(null, null, null, null, lines);
+
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+		
+		// Exercise
+		double diff = change.getCoverage(types);
+		
+		// Verify
+		assertEquals(0, diff, 0.1);
+	}
 
 	@Test
 	public void testGetCoverageHalf() {

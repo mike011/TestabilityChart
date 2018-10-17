@@ -249,6 +249,48 @@ public class LineTest {
 		// Verify
 		assertTrue(src);
 	}
+	
+
+	/**
+	 * Test to see if the fact the file is a test file is correctly recognized.
+	 */
+	@Test
+	public void testIsTest() {
+		// Setup
+		String added = "6";
+		String removed = "7";
+		String file = "test/dank.java";
+		Line line = new Line(added, removed, file);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+
+		// Exercise
+		boolean src = line.isSource(types);
+
+		// Verify
+		assertFalse(src);
+	}
+	
+	/**
+	 * Test to see if the fact the file is a test file is correctly recognized.
+	 */
+	@Test
+	public void testIsTestCaseSensitive() {
+		// Setup
+		String added = "6";
+		String removed = "7";
+		String file = "Test/dank.java";
+		Line line = new Line(added, removed, file);
+		List<String> types = new ArrayList<String>();
+		types.add("java");
+
+		// Exercise
+		boolean src = line.isSource(types);
+
+		// Verify
+		assertFalse(src);
+	}
+
 
 	/**
 	 * Test is source no, with nothing added or removed.
@@ -289,6 +331,23 @@ public class LineTest {
 		// Verify
 		assertFalse(src);
 	}
+	
+
+	/**
+	 * Test trimming white spaces
+	 */
+	@Test
+	public void testTrimmingWhiteSpaces() {
+		// Setup
+		String file = "   file.name  ";
+
+		// Exercise
+		Line line = new Line("5", "5", file);
+
+		// Verify
+		assertEquals("file.name", line.toString());
+	}
+	
 	
 	/**
 	 * Test to string.

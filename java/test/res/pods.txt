@@ -1,0 +1,245 @@
+commit aa35405966d9ebee60d04d36970d11225ef257a7
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Thu Aug 9 20:26:59 2018 +0800
+
+    Initial commit.
+
+68	0	.gitignore
+45	0	CODE_OF_CONDUCT.md
+277	0	CONTRIBUTING.md
+28	0	LICENSE.md
+34	0	Podfile
+42	0	Podfile.lock
+9	0	Pods/DZNEmptyDataSet/LICENSE
+296	0	Pods/DZNEmptyDataSet/README.md
+280	0	Pods/DZNEmptyDataSet/Source/UIScrollView+EmptyDataSet.h
+1074	0	Pods/DZNEmptyDataSet/Source/UIScrollView+EmptyDataSet.m
+22	0	Pods/MKRingProgressView/LICENSE
+223	0	Pods/MKRingProgressView/MKRingProgressView/MKGradientGenerator.swift
+303	0	Pods/MKRingProgressView/MKRingProgressView/MKRingProgressLayer.swift
+186	0	Pods/MKRingProgressView/MKRingProgressView/MKRingProgressView.swift
+84	0	Pods/MKRingProgressView/README.md
+42	0	Pods/Manifest.lock
+2522	0	Pods/Pods.xcodeproj/project.pbxproj
+19	0	Pods/QuickLayout/LICENSE
+22	0	Pods/QuickLayout/QuickLayout/QLCompatibility.swift
+111	0	Pods/QuickLayout/QuickLayout/QLUtils.swift
+114	0	Pods/QuickLayout/QuickLayout/UIView+QLContentWrap.swift
+271	0	Pods/QuickLayout/QuickLayout/UIView+QuickLayout.swift
+218	0	Pods/QuickLayout/QuickLayout/UIViewArray+QuickLayout.swift
+430	0	Pods/QuickLayout/README.md
+20	0	Pods/SDWebImage/LICENSE
+178	0	Pods/SDWebImage/README.md
+259	0	Pods/SDWebImage/SDWebImage/NSButton+WebCache.h
+147	0	Pods/SDWebImage/SDWebImage/NSButton+WebCache.m
+42	0	Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h
+98	0	Pods/SDWebImage/SDWebImage/NSData+ImageContentType.m
+23	0	Pods/SDWebImage/SDWebImage/NSImage+WebCache.h
+41	0	Pods/SDWebImage/SDWebImage/NSImage+WebCache.m
+20	0	Pods/SDWebImage/SDWebImage/SDAnimatedImageRep.h
+66	0	Pods/SDWebImage/SDWebImage/SDAnimatedImageRep.m
+299	0	Pods/SDWebImage/SDWebImage/SDImageCache.h
+759	0	Pods/SDWebImage/SDWebImage/SDImageCache.m
+52	0	Pods/SDWebImage/SDWebImage/SDImageCacheConfig.h
+28	0	Pods/SDWebImage/SDWebImage/SDImageCacheConfig.m
+119	0	Pods/SDWebImage/SDWebImage/SDWebImageCoder.h
+31	0	Pods/SDWebImage/SDWebImage/SDWebImageCoder.m
+52	0	Pods/SDWebImage/SDWebImage/SDWebImageCoderHelper.h
+258	0	Pods/SDWebImage/SDWebImage/SDWebImageCoderHelper.m
+58	0	Pods/SDWebImage/SDWebImage/SDWebImageCodersManager.h
+145	0	Pods/SDWebImage/SDWebImage/SDWebImageCodersManager.m
+107	0	Pods/SDWebImage/SDWebImage/SDWebImageCompat.h
+67	0	Pods/SDWebImage/SDWebImage/SDWebImageCompat.m
+271	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h
+409	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloader.m
+125	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h
+516	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m
+34	0	Pods/SDWebImage/SDWebImage/SDWebImageFrame.h
+28	0	Pods/SDWebImage/SDWebImage/SDWebImageFrame.m
+23	0	Pods/SDWebImage/SDWebImage/SDWebImageGIFCoder.h
+183	0	Pods/SDWebImage/SDWebImage/SDWebImageGIFCoder.m
+30	0	Pods/SDWebImage/SDWebImage/SDWebImageImageIOCoder.h
+507	0	Pods/SDWebImage/SDWebImage/SDWebImageImageIOCoder.m
+328	0	Pods/SDWebImage/SDWebImage/SDWebImageManager.h
+366	0	Pods/SDWebImage/SDWebImage/SDWebImageManager.m
+15	0	Pods/SDWebImage/SDWebImage/SDWebImageOperation.h
+112	0	Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h
+144	0	Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.m
+98	0	Pods/SDWebImage/SDWebImage/SDWebImageTransition.h
+137	0	Pods/SDWebImage/SDWebImage/SDWebImageTransition.m
+255	0	Pods/SDWebImage/SDWebImage/UIButton+WebCache.h
+181	0	Pods/SDWebImage/SDWebImage/UIButton+WebCache.m
+17	0	Pods/SDWebImage/SDWebImage/UIImage+ForceDecode.h
+30	0	Pods/SDWebImage/SDWebImage/UIImage+ForceDecode.m
+25	0	Pods/SDWebImage/SDWebImage/UIImage+GIF.h
+27	0	Pods/SDWebImage/SDWebImage/UIImage+GIF.m
+30	0	Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h
+73	0	Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.m
+94	0	Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h
+52	0	Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.m
+194	0	Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h
+139	0	Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m
+139	0	Pods/SDWebImage/SDWebImage/UIView+WebCache.h
+371	0	Pods/SDWebImage/SDWebImage/UIView+WebCache.m
+38	0	Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h
+70	0	Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.m
+21	0	Pods/SavannaKit/LICENSE
+40	0	Pods/SavannaKit/README.md
+323	0	Pods/SavannaKit/Sources/SavannaKit/ASTVisualizer.swift
+15	0	Pods/SavannaKit/Sources/SavannaKit/Model/Lexer.swift
+47	0	Pods/SavannaKit/Sources/SavannaKit/Model/Paragraph.swift
+114	0	Pods/SavannaKit/Sources/SavannaKit/Model/RegexLexer.swift
+53	0	Pods/SavannaKit/Sources/SavannaKit/Model/SyntaxColorTheme.swift
+33	0	Pods/SavannaKit/Sources/SavannaKit/Model/Token.swift
+85	0	Pods/SavannaKit/Sources/SavannaKit/Util/NSMutableAttributedString+Tokens.swift
+35	0	Pods/SavannaKit/Sources/SavannaKit/Util/NSTextView+UIKit.swift
+17	0	Pods/SavannaKit/Sources/SavannaKit/Util/String+Range.swift
+50	0	Pods/SavannaKit/Sources/SavannaKit/Util/Types.swift
+176	0	Pods/SavannaKit/Sources/SavannaKit/View/InnerTextView.swift
+128	0	Pods/SavannaKit/Sources/SavannaKit/View/LineNumberLayoutManager.swift
+183	0	Pods/SavannaKit/Sources/SavannaKit/View/Paragraphs.swift
+386	0	Pods/SavannaKit/Sources/SavannaKit/View/SyntaxTextView+TextViewDelegate.swift
+548	0	Pods/SavannaKit/Sources/SavannaKit/View/SyntaxTextView.swift
+124	0	Pods/SavannaKit/Sources/SavannaKit/View/SyntaxTextViewLayoutManager.swift
+106	0	Pods/SavannaKit/Sources/SavannaKit/View/TextViewWrapperView.swift
+21	0	Pods/SourceEditor/LICENSE
+9	0	Pods/SourceEditor/README.md
+54	0	Pods/SourceEditor/Sources/Languages/Python3Lexer.swift
+65	0	Pods/SourceEditor/Sources/Languages/SwiftLexer.swift
+46	0	Pods/SourceEditor/Sources/SourceCodeRegexLexer.swift
+40	0	Pods/SourceEditor/Sources/SourceCodeTheme.swift
+46	0	Pods/SourceEditor/Sources/SourceCodeToken.swift
+57	0	Pods/SourceEditor/Sources/Themes/DefaultSourceCodeTheme.swift
+21	0	Pods/SwiftEntryKit/LICENSE
+725	0	Pods/SwiftEntryKit/README.md
+18	0	Pods/SwiftEntryKit/Source/Extensions/UIApplication+EKAppearance.swift
+14	0	Pods/SwiftEntryKit/Source/Extensions/UIEdgeInsets+Utils.swift
+14	0	Pods/SwiftEntryKit/Source/Extensions/UIRectCorner+Short.swift
+37	0	Pods/SwiftEntryKit/Source/Extensions/UIView+Shadow.swift
+90	0	Pods/SwiftEntryKit/Source/Extensions/UIView+Utils.swift
+71	0	Pods/SwiftEntryKit/Source/Infra/EKBackgroundView.swift
+754	0	Pods/SwiftEntryKit/Source/Infra/EKContentView.swift
+168	0	Pods/SwiftEntryKit/Source/Infra/EKEntryView.swift
+199	0	Pods/SwiftEntryKit/Source/Infra/EKRootViewController.swift
+41	0	Pods/SwiftEntryKit/Source/Infra/EKStyleView.swift
+34	0	Pods/SwiftEntryKit/Source/Infra/EKWindow.swift
+142	0	Pods/SwiftEntryKit/Source/Infra/EKWindowProvider.swift
+23	0	Pods/SwiftEntryKit/Source/Infra/EKWrapperView.swift
+83	0	Pods/SwiftEntryKit/Source/MessageViews/EKAlertMessageView.swift
+104	0	Pods/SwiftEntryKit/Source/MessageViews/EKFormMessageView.swift
+109	0	Pods/SwiftEntryKit/Source/MessageViews/EKMessageContentView.swift
+62	0	Pods/SwiftEntryKit/Source/MessageViews/EKNotificationMessageView.swift
+93	0	Pods/SwiftEntryKit/Source/MessageViews/EKPopUpMessageView.swift
+84	0	Pods/SwiftEntryKit/Source/MessageViews/EKRatingMessageView.swift
+41	0	Pods/SwiftEntryKit/Source/MessageViews/EKSimpleMessageView.swift
+207	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKButtonBarView.swift
+69	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKRatingSymbolView.swift
+54	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKRatingSymbolsContainerView.swift
+63	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKTextField.swift
+33	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKAccessoryNoteMessageView.swift
+28	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKImageNoteMessageView.swift
+53	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKNoteMessageView.swift
+45	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKProcessingNoteMessageView.swift
+47	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKXStatusBarMessageView.swift
+30	0	Pods/SwiftEntryKit/Source/Model/EKAlertMessage.swift
+39	0	Pods/SwiftEntryKit/Source/Model/EKNotificationMessage.swift
+55	0	Pods/SwiftEntryKit/Source/Model/EKPopUpMessage.swift
+169	0	Pods/SwiftEntryKit/Source/Model/EKProperty.swift
+56	0	Pods/SwiftEntryKit/Source/Model/EKRatingMessage.swift
+27	0	Pods/SwiftEntryKit/Source/Model/EKSimpleMessage.swift
+171	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Animation.swift
+67	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+BackgroundStyle.swift
+19	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Count.swift
+66	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+DisplayPriority.swift
+12	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Duration.swift
+77	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+FrameStyle.swift
+38	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+HapticFeedback.swift
+41	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+LifecycleActions.swift
+30	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+PopBehavior.swift
+37	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Position.swift
+171	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+PositionConstraints.swift
+97	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Presets.swift
+74	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Scroll.swift
+40	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Shadow.swift
+80	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+StatusBar.swift
+84	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+UserInteraction.swift
+30	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Validations.swift
+42	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+WindowLevel.swift
+92	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes.swift
+116	0	Pods/SwiftEntryKit/Source/SwiftEntryKit.swift
+36	0	Pods/SwiftEntryKit/Source/Utils/GradientView.swift
+20	0	Pods/SwiftEntryKit/Source/Utils/HapticFeedbackGenerator.swift
+22	0	Pods/SwiftEntryKit/Source/Utils/UIView+Responder.swift
+5	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-dummy.m
+12	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-prefix.pch
+17	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-umbrella.h
+6	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet.modulemap
+9	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet.xcconfig
+26	0	Pods/Target Support Files/DZNEmptyDataSet/Info.plist
+26	0	Pods/Target Support Files/MKRingProgressView/Info.plist
+5	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView-dummy.m
+12	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView-prefix.pch
+16	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView-umbrella.h
+6	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView.modulemap
+10	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView.xcconfig
+26	0	Pods/Target Support Files/Pods-Unwrap/Info.plist
+164	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-acknowledgements.markdown
+232	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-acknowledgements.plist
+5	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-dummy.m
+165	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-frameworks.sh
+118	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-resources.sh
+16	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-umbrella.h
+11	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.debug.xcconfig
+6	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.modulemap
+11	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.release.xcconfig
+26	0	Pods/Target Support Files/Pods-UnwrapTests/Info.plist
+3	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-acknowledgements.markdown
+29	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-acknowledgements.plist
+5	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-dummy.m
+146	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-frameworks.sh
+118	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-resources.sh
+16	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-umbrella.h
+8	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.debug.xcconfig
+6	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.modulemap
+8	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.release.xcconfig
+26	0	Pods/Target Support Files/Pods-UnwrapUITests/Info.plist
+3	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-acknowledgements.markdown
+29	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-acknowledgements.plist
+5	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-dummy.m
+146	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-frameworks.sh
+118	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-resources.sh
+16	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-umbrella.h
+8	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig
+6	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.modulemap
+8	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig
+26	0	Pods/Target Support Files/QuickLayout/Info.plist
+5	0	Pods/Target Support Files/QuickLayout/QuickLayout-dummy.m
+12	0	Pods/Target Support Files/QuickLayout/QuickLayout-prefix.pch
+16	0	Pods/Target Support Files/QuickLayout/QuickLayout-umbrella.h
+6	0	Pods/Target Support Files/QuickLayout/QuickLayout.modulemap
+9	0	Pods/Target Support Files/QuickLayout/QuickLayout.xcconfig
+26	0	Pods/Target Support Files/SDWebImage/Info.plist
+5	0	Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m
+12	0	Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch
+43	0	Pods/Target Support Files/SDWebImage/SDWebImage-umbrella.h
+6	0	Pods/Target Support Files/SDWebImage/SDWebImage.modulemap
+9	0	Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig
+26	0	Pods/Target Support Files/SavannaKit/Info.plist
+5	0	Pods/Target Support Files/SavannaKit/SavannaKit-dummy.m
+12	0	Pods/Target Support Files/SavannaKit/SavannaKit-prefix.pch
+16	0	Pods/Target Support Files/SavannaKit/SavannaKit-umbrella.h
+6	0	Pods/Target Support Files/SavannaKit/SavannaKit.modulemap
+9	0	Pods/Target Support Files/SavannaKit/SavannaKit.xcconfig
+26	0	Pods/Target Support Files/SourceEditor/Info.plist
+5	0	Pods/Target Support Files/SourceEditor/SourceEditor-dummy.m
+12	0	Pods/Target Support Files/SourceEditor/SourceEditor-prefix.pch
+16	0	Pods/Target Support Files/SourceEditor/SourceEditor-umbrella.h
+6	0	Pods/Target Support Files/SourceEditor/SourceEditor.modulemap
+10	0	Pods/Target Support Files/SourceEditor/SourceEditor.xcconfig
+26	0	Pods/Target Support Files/SwiftEntryKit/Info.plist
+5	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit-dummy.m
+12	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit-prefix.pch
+16	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit-umbrella.h
+6	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit.modulemap
+11	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit.xcconfig
+74	0	README.md

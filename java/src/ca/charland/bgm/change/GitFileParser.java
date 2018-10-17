@@ -58,10 +58,9 @@ public class GitFileParser {
 		return change.isValid();
 	}
 
-	Line line(String line) {
+	GitLine line(String line) {
 		String[] splits = line.split("\t");
-		Line result = null;
-		result = new Line(splits[0], splits[1], splits[2]);
+		GitLine result = new GitLine(splits[0], splits[1], splits[2]);
 		return result;
 	}
 }

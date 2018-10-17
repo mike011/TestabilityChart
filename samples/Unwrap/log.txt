@@ -1,0 +1,1390 @@
+commit 7be783fdff80f246696a0dc94eef334a78d8174d
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 22:17:57 2018 +0100
+
+    Lots of new Predict The Output questions.
+
+85	1	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutput.json
+1	1	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutputPractice.swift
+16	5	Unwrap/Extensions/String-Placeholders.swift
+
+commit c0f379da46eca36b0cef92e93017e9bbec9b6a8e
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 20:39:59 2018 +0100
+
+    Added lots more Tap To Code practice questions.
+
+214	1	Unwrap/Activities/Practice/TapToCode/TapToCode.json
+39	0	Unwrap/Extensions/String-Placeholders.swift
+
+commit 12fc9f5056acb28f57f27425cef11e604a805b76
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 20:38:02 2018 +0100
+
+    Added an alternative solution.
+
+2	1	Unwrap/Activities/Practice/FreeCoding/FreeCoding.json
+
+commit 10aa665f7e04128be9a97e3c184b3e76474e4ba2
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 15:05:43 2018 +0100
+
+    Updated project file to include new editing toolbar.
+
+4	0	Unwrap.xcodeproj/project.pbxproj
+
+commit ca8a70c112b68a12fa929e99e78ae12b27bf36f1
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 14:59:14 2018 +0100
+
+    Added Apple copyright line to credits.
+
+2	0	Unwrap/Activities/Home/Help/Credits/Credits.md
+
+commit 2f22c5e291825fbf3f6eb7cc72767ab6fe02a1bc
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 14:58:48 2018 +0100
+
+    3D Touch quick actions now work when the app is running.
+
+4	0	Unwrap/AppDelegate.swift
+12	8	Unwrap/MainTabBarController.swift
+
+commit 745a2f438abf3ee62bb7491ee3f7a98c6fd9bee2
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 14:58:00 2018 +0100
+
+    Free Coding editing toolbar now makes keyboard sounds when they are enabled.
+
+1	0	Unwrap/Activities/Practice/FreeCoding/FreeCodingViewController.swift
+3	2	Unwrap/Extensions/UIView-EditingToolbar.swift
+15	0	Unwrap/Reusables/EditingToolbarView.swift
+
+commit 4e81998c5cb9e3dfcca65d4132ead1d7fd3b7229
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 07:55:36 2018 +0200
+
+    Fixed protocols and extensions summary not being completable.
+
+840	1011	Pods/Pods.xcodeproj/project.pbxproj
+1	1	Unwrap/Content/SixtySeconds/protocols-and-extensions-summary.json
+
+commit d96618bcdb874441e956f7cfbf0d3dab2451e8b0
+Merge: 7402691 02fcaea
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Oct 8 06:43:25 2018 +0200
+
+    Merge pull request #44 from darrarski/xcode10
+    
+    Initial update for Xcode 10.
+
+commit 02fcaea464b3c1e539fa8c4272136a2ba3554821
+Author: Dariusz Rybicki <darrarski@gmail.com>
+Date:   Sat Oct 6 19:26:59 2018 +0200
+
+    Fix correctAnswers in PracticeTests.testFreeCoding
+
+2	2	UnwrapTests/PracticeTests.swift
+
+commit 98b4360a6e6e8ba6988e4ea1f6fa64b606355c97
+Author: Dariusz Rybicki <darrarski@gmail.com>
+Date:   Sat Oct 6 18:27:22 2018 +0200
+
+    Use Swift version 4.1 for all targets
+
+6	6	Unwrap.xcodeproj/project.pbxproj
+
+commit 972307bb832582300d91c0a32734046b835f4994
+Author: Dariusz Rybicki <darrarski@gmail.com>
+Date:   Sat Oct 6 18:18:46 2018 +0200
+
+    Add post install script that sets Swift version to 4.1 for all pods
+    
+    CocoaPods version used: 1.5.3
+
+6	0	Podfile
+1	1	Podfile.lock
+1	1	Pods/Manifest.lock
+1033	856	Pods/Pods.xcodeproj/project.pbxproj
+
+commit 74026910fea7946851a4ef0598d019fe5ddb2a86
+Merge: 63e67d6 b60eb1a
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Tue Oct 2 22:30:23 2018 +0100
+
+    Merge pull request #36 from ihak/reviewfix
+    
+    Fixed keyboard not hiding issue in SingleSelectReviewViewController
+
+commit 63e67d69bda2d321377f626b07029905377ac3ed
+Merge: 45b0cd3 2546d88
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Tue Oct 2 22:29:58 2018 +0100
+
+    Merge pull request #42 from davidhuangio/ui-test
+    
+    UITests and accessibility identifiers for HomeViewController.
+
+commit 2546d88c8d6ccf10ec08e1001cee5de81c3b6d5e
+Author: davidhuangio <hello@davidhuang.io>
+Date:   Mon Oct 1 15:10:24 2018 -0700
+
+    UITests for HomeViewController, Added Accessability Identifiers for HomeViewController on Storyboard and override Accessability Identifer/Enabled for Badges and Streaks to UITest
+
+6	0	Unwrap/Activities/Home/HomeDataSource.swift
+30	17	Unwrap/Base.lproj/Main.storyboard
+46	3	UnwrapUITests/UnwrapUITests.swift
+
+commit b60eb1af4f110a4c2d21b96412ec828780efadfc
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Tue Sep 4 16:21:37 2018 +0500
+
+    Fixed keyboard not hiding issue in SingleSelectReviewViewController
+
+1	0	Unwrap/Activities/Learn/Review/SingleSelectReviewViewController.swift
+
+commit 45b0cd33d24c9a31a08fe8ae1939cc5addefb547
+Merge: 96ced6d ebba471
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Wed Aug 29 09:17:44 2018 +0800
+
+    Merge pull request #28 from ihak/typo
+    
+    Missing closing <code> tag in creating-empty-collections.json.
+
+commit ebba47133e75709492eadc5b255934f53230980c
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Tue Aug 28 10:03:38 2018 +0500
+
+    Missing closing <code> tag in creating-empty-collections.json
+
+1	1	Unwrap/Content/SixtySeconds/creating-empty-collections.json
+
+commit 96ced6d50db74ced897b5724aceeecfb2be6ed6c
+Merge: 85c2121 cc90cda
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Aug 27 21:30:54 2018 +0800
+
+    Merge pull request #25 from ihak/typo
+    
+    Fixed a typo in help section.
+
+commit 85c2121a8c4344cf0ea285d4b39c960a56960bca
+Merge: 86af3ba 77878ad
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Aug 27 21:30:04 2018 +0800
+
+    Merge pull request #26 from ihak/syntaxerror
+    
+    Fixed syntax errors in review section.
+
+commit 86af3bab214f70f3d5d337b482e2f028e85a5ab6
+Merge: 7d80737 c6aff7b
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Mon Aug 27 21:29:07 2018 +0800
+
+    Merge pull request #21 from ihak/master
+    
+    Fixed a bug in Credits screen.
+
+commit cc90cda5c6eb8896e51657403fded6cdc7a62ead
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Mon Aug 27 16:05:40 2018 +0500
+
+    Fixed typo in the review section of Creating Empty Collections.
+
+1	1	Unwrap/Content/SixtySeconds/creating-empty-collections.json
+
+commit 77878ad36a632097832684f0748ca2ec42b89f37
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Mon Aug 27 14:55:44 2018 +0500
+
+    Fixed syntax errors in review section
+
+2	2	Unwrap/Content/SixtySeconds/arrays.json
+
+commit 40786a2a4a0efb615ed679d74a73207e789e286c
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Mon Aug 27 11:58:14 2018 +0500
+
+    Fixed a typo in help section.
+
+2	2	Unwrap/Activities/Home/Help/Help.json
+
+commit c6aff7bbcf098fa60e1baf952096b3350cfedf9f
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Mon Aug 27 09:55:12 2018 +0500
+
+    Code and comment refactoring.
+
+3	3	Unwrap/Activities/Home/Help/Credits/CreditsViewController.swift
+
+commit 7d807379df8b34b06385e4ce8f07d1ef4b80b970
+Merge: 197ae52 57fac6b
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Sun Aug 26 14:58:28 2018 +0800
+
+    Merge pull request #20 from emilshouse/master
+    
+    Fix duplicate hint for Tuples.
+
+commit 197ae52ab6b8c1942ff25c2e2831d7e8605b488d
+Merge: bdc9679 98f6caf
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Sun Aug 26 14:57:44 2018 +0800
+
+    Merge pull request #19 from devsedo/pr1
+    
+    Remove code duplication and fix comments.
+
+commit bdc9679bf7535b93181486c07bde3c8cdce75b3a
+Merge: 51ddc0f 47a8570
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Sun Aug 26 14:56:36 2018 +0800
+
+    Merge pull request #18 from rizwankce/patch-1
+    
+    Modify README.md to make it clear users must open the workspace file.
+
+commit 67824f30a0e6355319a43efe204c914c4b56dcf5
+Author: Hassan Ahmed <hassan.ahmed@arpatech.com>
+Date:   Tue Aug 21 14:35:10 2018 +0500
+
+    Set the content offset to zero to fix pre-scrolled content bug at the start.
+
+6	0	Unwrap/Activities/Home/Help/Credits/CreditsViewController.swift
+
+commit 57fac6ba32376b3765db2ff95ca2fc34adb69dd5
+Author: emilshouse <emilshouse@gmail.com>
+Date:   Fri Aug 17 17:01:39 2018 -0700
+
+    Hint reused.
+    
+    The Set hint was re-used in the tuples.json file.
+
+1	1	Unwrap/Content/SixtySeconds/tuples.json
+
+commit 98f6caf87253c74d55f0c27e510b87a8f2df149c
+Author: Eduard Sergeev <eduard.sergeev@enterra-inc.com>
+Date:   Wed Aug 15 17:36:41 2018 +0700
+
+    Remove code duplication. Fix comments so they will act like descriptions.
+
+1	1	Unwrap/Extensions/TypeGeneration/TypeGenerating.swift
+3	4	Unwrap/Swift42.swift
+
+commit 47a857057dfc65890f6107975860e2cc0af8c4d9
+Author: Rizwan Mohamed Ibrahim <rizwankce@users.noreply.github.com>
+Date:   Wed Aug 15 16:08:28 2018 +0800
+
+    [ADD] Metion to open workspace file
+    
+    To avoid opening the Xcode project file added a line to open workspace file
+
+1	1	README.md
+
+commit 51ddc0f1ecbec9bbfe431e6d05ec992c1b2df9a5
+Merge: 7cd9def ac2c4cf
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Tue Aug 14 11:07:55 2018 +0800
+
+    Merge pull request #12 from Marcoc88/while-loop-review-fixed-bug
+    
+    Fixed while loop bugs. Removed duplicate "is". Switched > to <.
+
+commit 7cd9def0b85118757293b0f032cb8aa627c6c7ec
+Merge: f05668b 39cd3be
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Tue Aug 14 11:04:05 2018 +0800
+
+    Merge pull request #10 from jmcsmith/master
+    
+    Corrections to Practice questions.
+
+commit f05668bec348b9568d7ea0ba0563f695f47e94b6
+Merge: b657fbb c0cacc8
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Tue Aug 14 10:57:59 2018 +0800
+
+    Merge pull request #6 from rizwankce/fix/failing-tests
+    
+    Fixes and improves unit tests.
+
+commit b657fbb27875414ad043032f5e4e4dbb950d12ca
+Merge: 0155e94 6f3194e
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Tue Aug 14 10:54:58 2018 +0800
+
+    Merge pull request #5 from rizwankce/improve-storyboarded-protocol
+    
+    Improve Storyboarded protocol.
+
+commit ac2c4cf20172ca79fb08b93f5531587ca513b87c
+Author: Marco <marcoacontino@gmail.com>
+Date:   Fri Aug 10 20:23:39 2018 -0400
+
+    Fixed while loop bugs. Removed duplicate "is". Switched > to <
+
+1	1	Unwrap/Content/SixtySeconds/while-loops.json
+
+commit 39cd3be259bea30100fdb6717ce6ba36d4956170
+Author: Joseph Smith <jmcsmith@gmail.com>
+Date:   Fri Aug 10 15:13:04 2018 -0400
+
+    Correction to Comparison Operators question answers.
+
+1	1	Unwrap/Content/SixtySeconds/comparison-operators.json
+
+commit 4377bad2f66a5874b723c887e2b47e1a0e3d7971
+Author: Joseph Smith <jmcsmith@gmail.com>
+Date:   Fri Aug 10 13:07:34 2018 -0400
+
+    Correction to Practice question about comparing two strings ignoring case.
+
+2	2	Unwrap/Activities/Practice/FreeCoding/FreeCoding.json
+
+commit c0cacc86b93006efed69e3ac1f944b2f89e4b71b
+Author: Rizwan Mohamed Ibrahim <rizwankce@users.noreply.github.com>
+Date:   Fri Aug 10 17:11:43 2018 +0800
+
+    [FIX] Faling test for read badges and practice counting
+
+4	8	UnwrapTests/BadgeTests.swift
+
+commit bda7de77cebe64189f7f9adf46f62ac55161eca2
+Author: Rizwan Mohamed Ibrahim <rizwankce@users.noreply.github.com>
+Date:   Fri Aug 10 12:31:07 2018 +0800
+
+    [FIX] Failing tests
+
+1	1	UnwrapTests/BundleLoadingTests.swift
+2	2	UnwrapTests/PracticeTests.swift
+
+commit 6f3194eb03295215febed3fd6c9a3abe86450489
+Author: Rizwan Mohamed Ibrahim <rizwankce@users.noreply.github.com>
+Date:   Fri Aug 10 12:30:36 2018 +0800
+
+    [ADD] Use Swift String describing method to get viewcontroller name
+
+3	4	Unwrap/Protocols/Storyboarded.swift
+
+commit 0155e942da0a264ae9a75250c474f409895bb8ed
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Fri Aug 10 09:59:34 2018 +0800
+
+    Corrected old text in a Predict the Output question. Fixes #4.
+
+2	2	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutput.json
+
+commit 1b8b4689989478df4cb0ce95d8a743235e5662fd
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Fri Aug 10 09:53:35 2018 +0800
+
+    Corrects a typo in arithmetic operators quiz. Fixes #3.
+
+2	2	Unwrap/Content/SixtySeconds/arithmetic-operators.json
+
+commit d4c3f118108a07f8f5fd1c763fb4ef0a220d13ac
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Fri Aug 10 09:50:51 2018 +0800
+
+    Forces StudyTextView to be uneditable. Fixes #2.
+
+1	0	Unwrap/Activities/Learn/Study/StudyTextView.swift
+
+commit 9b22cbf08320424abeb947a35c23fb12b4774878
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Fri Aug 10 09:45:34 2018 +0800
+
+    Pushed back creation of MainTabBarController; potentially fixes #1.
+
+3	2	Unwrap/AppDelegate.swift
+
+commit aa35405966d9ebee60d04d36970d11225ef257a7
+Author: Paul Hudson <paul.hudson@gmail.com>
+Date:   Thu Aug 9 20:26:59 2018 +0800
+
+    Initial commit.
+
+68	0	.gitignore
+45	0	CODE_OF_CONDUCT.md
+277	0	CONTRIBUTING.md
+28	0	LICENSE.md
+34	0	Podfile
+42	0	Podfile.lock
+9	0	Pods/DZNEmptyDataSet/LICENSE
+296	0	Pods/DZNEmptyDataSet/README.md
+280	0	Pods/DZNEmptyDataSet/Source/UIScrollView+EmptyDataSet.h
+1074	0	Pods/DZNEmptyDataSet/Source/UIScrollView+EmptyDataSet.m
+22	0	Pods/MKRingProgressView/LICENSE
+223	0	Pods/MKRingProgressView/MKRingProgressView/MKGradientGenerator.swift
+303	0	Pods/MKRingProgressView/MKRingProgressView/MKRingProgressLayer.swift
+186	0	Pods/MKRingProgressView/MKRingProgressView/MKRingProgressView.swift
+84	0	Pods/MKRingProgressView/README.md
+42	0	Pods/Manifest.lock
+2522	0	Pods/Pods.xcodeproj/project.pbxproj
+19	0	Pods/QuickLayout/LICENSE
+22	0	Pods/QuickLayout/QuickLayout/QLCompatibility.swift
+111	0	Pods/QuickLayout/QuickLayout/QLUtils.swift
+114	0	Pods/QuickLayout/QuickLayout/UIView+QLContentWrap.swift
+271	0	Pods/QuickLayout/QuickLayout/UIView+QuickLayout.swift
+218	0	Pods/QuickLayout/QuickLayout/UIViewArray+QuickLayout.swift
+430	0	Pods/QuickLayout/README.md
+20	0	Pods/SDWebImage/LICENSE
+178	0	Pods/SDWebImage/README.md
+259	0	Pods/SDWebImage/SDWebImage/NSButton+WebCache.h
+147	0	Pods/SDWebImage/SDWebImage/NSButton+WebCache.m
+42	0	Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h
+98	0	Pods/SDWebImage/SDWebImage/NSData+ImageContentType.m
+23	0	Pods/SDWebImage/SDWebImage/NSImage+WebCache.h
+41	0	Pods/SDWebImage/SDWebImage/NSImage+WebCache.m
+20	0	Pods/SDWebImage/SDWebImage/SDAnimatedImageRep.h
+66	0	Pods/SDWebImage/SDWebImage/SDAnimatedImageRep.m
+299	0	Pods/SDWebImage/SDWebImage/SDImageCache.h
+759	0	Pods/SDWebImage/SDWebImage/SDImageCache.m
+52	0	Pods/SDWebImage/SDWebImage/SDImageCacheConfig.h
+28	0	Pods/SDWebImage/SDWebImage/SDImageCacheConfig.m
+119	0	Pods/SDWebImage/SDWebImage/SDWebImageCoder.h
+31	0	Pods/SDWebImage/SDWebImage/SDWebImageCoder.m
+52	0	Pods/SDWebImage/SDWebImage/SDWebImageCoderHelper.h
+258	0	Pods/SDWebImage/SDWebImage/SDWebImageCoderHelper.m
+58	0	Pods/SDWebImage/SDWebImage/SDWebImageCodersManager.h
+145	0	Pods/SDWebImage/SDWebImage/SDWebImageCodersManager.m
+107	0	Pods/SDWebImage/SDWebImage/SDWebImageCompat.h
+67	0	Pods/SDWebImage/SDWebImage/SDWebImageCompat.m
+271	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h
+409	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloader.m
+125	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h
+516	0	Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m
+34	0	Pods/SDWebImage/SDWebImage/SDWebImageFrame.h
+28	0	Pods/SDWebImage/SDWebImage/SDWebImageFrame.m
+23	0	Pods/SDWebImage/SDWebImage/SDWebImageGIFCoder.h
+183	0	Pods/SDWebImage/SDWebImage/SDWebImageGIFCoder.m
+30	0	Pods/SDWebImage/SDWebImage/SDWebImageImageIOCoder.h
+507	0	Pods/SDWebImage/SDWebImage/SDWebImageImageIOCoder.m
+328	0	Pods/SDWebImage/SDWebImage/SDWebImageManager.h
+366	0	Pods/SDWebImage/SDWebImage/SDWebImageManager.m
+15	0	Pods/SDWebImage/SDWebImage/SDWebImageOperation.h
+112	0	Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h
+144	0	Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.m
+98	0	Pods/SDWebImage/SDWebImage/SDWebImageTransition.h
+137	0	Pods/SDWebImage/SDWebImage/SDWebImageTransition.m
+255	0	Pods/SDWebImage/SDWebImage/UIButton+WebCache.h
+181	0	Pods/SDWebImage/SDWebImage/UIButton+WebCache.m
+17	0	Pods/SDWebImage/SDWebImage/UIImage+ForceDecode.h
+30	0	Pods/SDWebImage/SDWebImage/UIImage+ForceDecode.m
+25	0	Pods/SDWebImage/SDWebImage/UIImage+GIF.h
+27	0	Pods/SDWebImage/SDWebImage/UIImage+GIF.m
+30	0	Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h
+73	0	Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.m
+94	0	Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h
+52	0	Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.m
+194	0	Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h
+139	0	Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m
+139	0	Pods/SDWebImage/SDWebImage/UIView+WebCache.h
+371	0	Pods/SDWebImage/SDWebImage/UIView+WebCache.m
+38	0	Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h
+70	0	Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.m
+21	0	Pods/SavannaKit/LICENSE
+40	0	Pods/SavannaKit/README.md
+323	0	Pods/SavannaKit/Sources/SavannaKit/ASTVisualizer.swift
+15	0	Pods/SavannaKit/Sources/SavannaKit/Model/Lexer.swift
+47	0	Pods/SavannaKit/Sources/SavannaKit/Model/Paragraph.swift
+114	0	Pods/SavannaKit/Sources/SavannaKit/Model/RegexLexer.swift
+53	0	Pods/SavannaKit/Sources/SavannaKit/Model/SyntaxColorTheme.swift
+33	0	Pods/SavannaKit/Sources/SavannaKit/Model/Token.swift
+85	0	Pods/SavannaKit/Sources/SavannaKit/Util/NSMutableAttributedString+Tokens.swift
+35	0	Pods/SavannaKit/Sources/SavannaKit/Util/NSTextView+UIKit.swift
+17	0	Pods/SavannaKit/Sources/SavannaKit/Util/String+Range.swift
+50	0	Pods/SavannaKit/Sources/SavannaKit/Util/Types.swift
+176	0	Pods/SavannaKit/Sources/SavannaKit/View/InnerTextView.swift
+128	0	Pods/SavannaKit/Sources/SavannaKit/View/LineNumberLayoutManager.swift
+183	0	Pods/SavannaKit/Sources/SavannaKit/View/Paragraphs.swift
+386	0	Pods/SavannaKit/Sources/SavannaKit/View/SyntaxTextView+TextViewDelegate.swift
+548	0	Pods/SavannaKit/Sources/SavannaKit/View/SyntaxTextView.swift
+124	0	Pods/SavannaKit/Sources/SavannaKit/View/SyntaxTextViewLayoutManager.swift
+106	0	Pods/SavannaKit/Sources/SavannaKit/View/TextViewWrapperView.swift
+21	0	Pods/SourceEditor/LICENSE
+9	0	Pods/SourceEditor/README.md
+54	0	Pods/SourceEditor/Sources/Languages/Python3Lexer.swift
+65	0	Pods/SourceEditor/Sources/Languages/SwiftLexer.swift
+46	0	Pods/SourceEditor/Sources/SourceCodeRegexLexer.swift
+40	0	Pods/SourceEditor/Sources/SourceCodeTheme.swift
+46	0	Pods/SourceEditor/Sources/SourceCodeToken.swift
+57	0	Pods/SourceEditor/Sources/Themes/DefaultSourceCodeTheme.swift
+21	0	Pods/SwiftEntryKit/LICENSE
+725	0	Pods/SwiftEntryKit/README.md
+18	0	Pods/SwiftEntryKit/Source/Extensions/UIApplication+EKAppearance.swift
+14	0	Pods/SwiftEntryKit/Source/Extensions/UIEdgeInsets+Utils.swift
+14	0	Pods/SwiftEntryKit/Source/Extensions/UIRectCorner+Short.swift
+37	0	Pods/SwiftEntryKit/Source/Extensions/UIView+Shadow.swift
+90	0	Pods/SwiftEntryKit/Source/Extensions/UIView+Utils.swift
+71	0	Pods/SwiftEntryKit/Source/Infra/EKBackgroundView.swift
+754	0	Pods/SwiftEntryKit/Source/Infra/EKContentView.swift
+168	0	Pods/SwiftEntryKit/Source/Infra/EKEntryView.swift
+199	0	Pods/SwiftEntryKit/Source/Infra/EKRootViewController.swift
+41	0	Pods/SwiftEntryKit/Source/Infra/EKStyleView.swift
+34	0	Pods/SwiftEntryKit/Source/Infra/EKWindow.swift
+142	0	Pods/SwiftEntryKit/Source/Infra/EKWindowProvider.swift
+23	0	Pods/SwiftEntryKit/Source/Infra/EKWrapperView.swift
+83	0	Pods/SwiftEntryKit/Source/MessageViews/EKAlertMessageView.swift
+104	0	Pods/SwiftEntryKit/Source/MessageViews/EKFormMessageView.swift
+109	0	Pods/SwiftEntryKit/Source/MessageViews/EKMessageContentView.swift
+62	0	Pods/SwiftEntryKit/Source/MessageViews/EKNotificationMessageView.swift
+93	0	Pods/SwiftEntryKit/Source/MessageViews/EKPopUpMessageView.swift
+84	0	Pods/SwiftEntryKit/Source/MessageViews/EKRatingMessageView.swift
+41	0	Pods/SwiftEntryKit/Source/MessageViews/EKSimpleMessageView.swift
+207	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKButtonBarView.swift
+69	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKRatingSymbolView.swift
+54	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKRatingSymbolsContainerView.swift
+63	0	Pods/SwiftEntryKit/Source/MessageViews/MessagesUtils/EKTextField.swift
+33	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKAccessoryNoteMessageView.swift
+28	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKImageNoteMessageView.swift
+53	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKNoteMessageView.swift
+45	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKProcessingNoteMessageView.swift
+47	0	Pods/SwiftEntryKit/Source/MessageViews/Notes/EKXStatusBarMessageView.swift
+30	0	Pods/SwiftEntryKit/Source/Model/EKAlertMessage.swift
+39	0	Pods/SwiftEntryKit/Source/Model/EKNotificationMessage.swift
+55	0	Pods/SwiftEntryKit/Source/Model/EKPopUpMessage.swift
+169	0	Pods/SwiftEntryKit/Source/Model/EKProperty.swift
+56	0	Pods/SwiftEntryKit/Source/Model/EKRatingMessage.swift
+27	0	Pods/SwiftEntryKit/Source/Model/EKSimpleMessage.swift
+171	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Animation.swift
+67	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+BackgroundStyle.swift
+19	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Count.swift
+66	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+DisplayPriority.swift
+12	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Duration.swift
+77	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+FrameStyle.swift
+38	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+HapticFeedback.swift
+41	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+LifecycleActions.swift
+30	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+PopBehavior.swift
+37	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Position.swift
+171	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+PositionConstraints.swift
+97	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Presets.swift
+74	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Scroll.swift
+40	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Shadow.swift
+80	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+StatusBar.swift
+84	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+UserInteraction.swift
+30	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+Validations.swift
+42	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes+WindowLevel.swift
+92	0	Pods/SwiftEntryKit/Source/Model/EntryAttributes/EKAttributes.swift
+116	0	Pods/SwiftEntryKit/Source/SwiftEntryKit.swift
+36	0	Pods/SwiftEntryKit/Source/Utils/GradientView.swift
+20	0	Pods/SwiftEntryKit/Source/Utils/HapticFeedbackGenerator.swift
+22	0	Pods/SwiftEntryKit/Source/Utils/UIView+Responder.swift
+5	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-dummy.m
+12	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-prefix.pch
+17	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-umbrella.h
+6	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet.modulemap
+9	0	Pods/Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet.xcconfig
+26	0	Pods/Target Support Files/DZNEmptyDataSet/Info.plist
+26	0	Pods/Target Support Files/MKRingProgressView/Info.plist
+5	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView-dummy.m
+12	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView-prefix.pch
+16	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView-umbrella.h
+6	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView.modulemap
+10	0	Pods/Target Support Files/MKRingProgressView/MKRingProgressView.xcconfig
+26	0	Pods/Target Support Files/Pods-Unwrap/Info.plist
+164	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-acknowledgements.markdown
+232	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-acknowledgements.plist
+5	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-dummy.m
+165	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-frameworks.sh
+118	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-resources.sh
+16	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap-umbrella.h
+11	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.debug.xcconfig
+6	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.modulemap
+11	0	Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.release.xcconfig
+26	0	Pods/Target Support Files/Pods-UnwrapTests/Info.plist
+3	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-acknowledgements.markdown
+29	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-acknowledgements.plist
+5	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-dummy.m
+146	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-frameworks.sh
+118	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-resources.sh
+16	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests-umbrella.h
+8	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.debug.xcconfig
+6	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.modulemap
+8	0	Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.release.xcconfig
+26	0	Pods/Target Support Files/Pods-UnwrapUITests/Info.plist
+3	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-acknowledgements.markdown
+29	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-acknowledgements.plist
+5	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-dummy.m
+146	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-frameworks.sh
+118	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-resources.sh
+16	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests-umbrella.h
+8	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig
+6	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.modulemap
+8	0	Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig
+26	0	Pods/Target Support Files/QuickLayout/Info.plist
+5	0	Pods/Target Support Files/QuickLayout/QuickLayout-dummy.m
+12	0	Pods/Target Support Files/QuickLayout/QuickLayout-prefix.pch
+16	0	Pods/Target Support Files/QuickLayout/QuickLayout-umbrella.h
+6	0	Pods/Target Support Files/QuickLayout/QuickLayout.modulemap
+9	0	Pods/Target Support Files/QuickLayout/QuickLayout.xcconfig
+26	0	Pods/Target Support Files/SDWebImage/Info.plist
+5	0	Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m
+12	0	Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch
+43	0	Pods/Target Support Files/SDWebImage/SDWebImage-umbrella.h
+6	0	Pods/Target Support Files/SDWebImage/SDWebImage.modulemap
+9	0	Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig
+26	0	Pods/Target Support Files/SavannaKit/Info.plist
+5	0	Pods/Target Support Files/SavannaKit/SavannaKit-dummy.m
+12	0	Pods/Target Support Files/SavannaKit/SavannaKit-prefix.pch
+16	0	Pods/Target Support Files/SavannaKit/SavannaKit-umbrella.h
+6	0	Pods/Target Support Files/SavannaKit/SavannaKit.modulemap
+9	0	Pods/Target Support Files/SavannaKit/SavannaKit.xcconfig
+26	0	Pods/Target Support Files/SourceEditor/Info.plist
+5	0	Pods/Target Support Files/SourceEditor/SourceEditor-dummy.m
+12	0	Pods/Target Support Files/SourceEditor/SourceEditor-prefix.pch
+16	0	Pods/Target Support Files/SourceEditor/SourceEditor-umbrella.h
+6	0	Pods/Target Support Files/SourceEditor/SourceEditor.modulemap
+10	0	Pods/Target Support Files/SourceEditor/SourceEditor.xcconfig
+26	0	Pods/Target Support Files/SwiftEntryKit/Info.plist
+5	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit-dummy.m
+12	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit-prefix.pch
+16	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit-umbrella.h
+6	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit.modulemap
+11	0	Pods/Target Support Files/SwiftEntryKit/SwiftEntryKit.xcconfig
+74	0	README.md
+3193	0	Unwrap.xcodeproj/project.pbxproj
+7	0	Unwrap.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+8	0	Unwrap.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+10	0	Unwrap.xcworkspace/contents.xcworkspacedata
+8	0	Unwrap.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+5	0	Unwrap/.swiftlint.yml
+82	0	Unwrap/Activities/Awards/AwardPointsViewController.swift
+17	0	Unwrap/Activities/Awards/AwardType.swift
+15	0	Unwrap/Activities/Challenges/ChallengeResult.swift
+131	0	Unwrap/Activities/Challenges/ChallengesCoordinator.swift
+73	0	Unwrap/Activities/Challenges/ChallengesDataSource.swift
+51	0	Unwrap/Activities/Challenges/ChallengesViewController.swift
+36	0	Unwrap/Activities/Home/Badge.swift
+14	0	Unwrap/Activities/Home/BadgeCollectionViewCell.swift
+43	0	Unwrap/Activities/Home/BadgeDataSource.swift
+26	0	Unwrap/Activities/Home/BadgeTableViewCell.swift
+177	0	Unwrap/Activities/Home/Badges.json
+19	0	Unwrap/Activities/Home/BadgesView.swift
+100	0	Unwrap/Activities/Home/Help/Credits/Credits.md
+22	0	Unwrap/Activities/Home/Help/Credits/CreditsViewController.swift
+32	0	Unwrap/Activities/Home/Help/Help.json
+54	0	Unwrap/Activities/Home/Help/HelpDataSource.swift
+15	0	Unwrap/Activities/Home/Help/HelpItem.swift
+13	0	Unwrap/Activities/Home/Help/HelpTableViewCell.swift
+45	0	Unwrap/Activities/Home/Help/HelpViewController.swift
+116	0	Unwrap/Activities/Home/HomeCoordinator.swift
+223	0	Unwrap/Activities/Home/HomeDataSource.swift
+83	0	Unwrap/Activities/Home/HomeViewController.swift
+13	0	Unwrap/Activities/Home/StatusTableViewCell.swift
+95	0	Unwrap/Activities/Home/StatusView.swift
+19	0	Unwrap/Activities/Learn/Chapter.swift
+173	0	Unwrap/Activities/Learn/LearnCoordinator.swift
+67	0	Unwrap/Activities/Learn/LearnDataSource.swift
+54	0	Unwrap/Activities/Learn/LearnViewController.swift
+15	0	Unwrap/Activities/Learn/Review/Answer.swift
+122	0	Unwrap/Activities/Learn/Review/MultipleSelectReviewDataSource.swift
+48	0	Unwrap/Activities/Learn/Review/MultipleSelectReviewViewController.swift
+35	0	Unwrap/Activities/Learn/Review/ReviewViewController.swift
+95	0	Unwrap/Activities/Learn/Review/SingleSelectReviewViewController.swift
+44	0	Unwrap/Activities/Learn/Study/StudyReview.swift
+25	0	Unwrap/Activities/Learn/Study/StudyTextView.swift
+47	0	Unwrap/Activities/Learn/Study/StudyViewController.swift
+30	0	Unwrap/Activities/News/NewsArticle.swift
+55	0	Unwrap/Activities/News/NewsCoordinator.swift
+97	0	Unwrap/Activities/News/NewsDataSource.swift
+43	0	Unwrap/Activities/News/NewsEmptyDataSource.swift
+94	0	Unwrap/Activities/News/NewsViewController.swift
+69	0	Unwrap/Activities/Practice/FreeCoding/FreeCoding.json
+148	0	Unwrap/Activities/Practice/FreeCoding/FreeCodingPractice.swift
+24	0	Unwrap/Activities/Practice/FreeCoding/FreeCodingQuestion.swift
+113	0	Unwrap/Activities/Practice/FreeCoding/FreeCodingViewController.swift
+28	0	Unwrap/Activities/Practice/PracticeActivity.swift
+94	0	Unwrap/Activities/Practice/PracticeCoordinator.swift
+54	0	Unwrap/Activities/Practice/PracticeDataSource.swift
+42	0	Unwrap/Activities/Practice/PracticeViewController.swift
+16	0	Unwrap/Activities/Practice/PracticingViewController.swift
+93	0	Unwrap/Activities/Practice/PredictTheOutput/Condition.swift
+57	0	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutput.json
+15	0	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutputAnswer.swift
+102	0	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutputPractice.swift
+15	0	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutputQuestion.swift
+93	0	Unwrap/Activities/Practice/PredictTheOutput/PredictTheOutputViewController.swift
+157	0	Unwrap/Activities/Practice/RearrangeTheLines/RearrangeTheLines.json
+91	0	Unwrap/Activities/Practice/RearrangeTheLines/RearrangeTheLinesDataSource.swift
+55	0	Unwrap/Activities/Practice/RearrangeTheLines/RearrangeTheLinesPractice.swift
+16	0	Unwrap/Activities/Practice/RearrangeTheLines/RearrangeTheLinesQuestion.swift
+83	0	Unwrap/Activities/Practice/RearrangeTheLines/RearrangeTheLinesViewController.swift
+16	0	Unwrap/Activities/Practice/SpotTheError/CodeError.swift
+59	0	Unwrap/Activities/Practice/SpotTheError/CodeErrorType.swift
+7	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-1.txt
+11	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-10.txt
+17	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-11.txt
+15	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-12.txt
+9	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-2.txt
+13	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-3.txt
+15	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-4.txt
+8	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-5.txt
+12	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-6.txt
+6	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-7.txt
+6	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-8.txt
+14	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError-9.txt
+238	0	Unwrap/Activities/Practice/SpotTheError/Content/SpotTheError.json
+18	0	Unwrap/Activities/Practice/SpotTheError/Replacement.swift
+94	0	Unwrap/Activities/Practice/SpotTheError/SpotTheErrorDataSource.swift
+206	0	Unwrap/Activities/Practice/SpotTheError/SpotTheErrorPractice.swift
+22	0	Unwrap/Activities/Practice/SpotTheError/SpotTheErrorQuestion.swift
+100	0	Unwrap/Activities/Practice/SpotTheError/SpotTheErrorViewController.swift
+15	0	Unwrap/Activities/Practice/TapToCode/CollectionViews.swift
+62	0	Unwrap/Activities/Practice/TapToCode/TapToCode.json
+153	0	Unwrap/Activities/Practice/TapToCode/TapToCodeDataSource.swift
+92	0	Unwrap/Activities/Practice/TapToCode/TapToCodeModel.swift
+41	0	Unwrap/Activities/Practice/TapToCode/TapToCodePractice.swift
+16	0	Unwrap/Activities/Practice/TapToCode/TapToCodeQuestion.swift
+138	0	Unwrap/Activities/Practice/TapToCode/TapToCodeViewController.swift
+43	0	Unwrap/Activities/Practice/TapToCode/WordCollectionViewCell.swift
+114	0	Unwrap/Activities/Practice/TypeChecker/TypeCheckerDataSource.swift
+74	0	Unwrap/Activities/Practice/TypeChecker/TypeCheckerPractice.swift
+77	0	Unwrap/Activities/Practice/TypeChecker/TypeCheckerViewController.swift
+27	0	Unwrap/Activities/Welcome/Tour.json
+31	0	Unwrap/Activities/Welcome/TourHostViewController.swift
+16	0	Unwrap/Activities/Welcome/TourItem.swift
+52	0	Unwrap/Activities/Welcome/TourItemViewController.swift
+65	0	Unwrap/Activities/Welcome/TourPageViewController.swift
+42	0	Unwrap/Activities/Welcome/WelcomeView.swift
+27	0	Unwrap/Activities/Welcome/WelcomeViewController.swift
+30	0	Unwrap/AppDelegate.swift
+69	0	Unwrap/Base.lproj/LaunchScreen.storyboard
+1720	0	Unwrap/Base.lproj/Main.storyboard
+-	-	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/AppStore.png
+104	0	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/Contents.json
+-	-	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/iPadPro@2x.png
+-	-	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/icon60@2x.png
+-	-	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/icon60@3x.png
+-	-	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/icon76.png
+-	-	Unwrap/Content/Assets.xcassets/AppIcon.appiconset/icon76@2x-1.png
+6	0	Unwrap/Content/Assets.xcassets/Contents.json
+21	0	Unwrap/Content/Assets.xcassets/Empty.imageset/Contents.json
+109	0	Unwrap/Content/Assets.xcassets/Empty.imageset/Empty.pdf
+20	0	Unwrap/Content/Colors.xcassets/AlertBackgroundDim.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/BackgroundDark.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Badge-Challenge.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Badge-Chapter.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Badge-Misc.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Badge-Practice.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Badge-Streak.colorset/Contents.json
+6	0	Unwrap/Content/Colors.xcassets/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/CourseFull.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/CoursePartial.colorset/Contents.json
+18	0	Unwrap/Content/Colors.xcassets/Locked.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Primary.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/PrimaryDisabled.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Rank-End.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Rank-Start.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/ReviewCorrect.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/ReviewWrong.colorset/Contents.json
+20	0	Unwrap/Content/Colors.xcassets/Secondary.colorset/Contents.json
+18	0	Unwrap/Content/Colors.xcassets/StatusViewRingBackground.colorset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-A-Class-Of-Their-Own.imageset/Badge-A-Class-Of-Their-Own.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-A-Class-Of-Their-Own.imageset/Contents.json
+622	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-All-Tapped-Out.imageset/Badge-All-Tapped-Out.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-All-Tapped-Out.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Amateur-Challenger.imageset/Badge-Amateur-Challenger.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Amateur-Challenger.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Bug-Hunter.imageset/Badge-Bug-Hunter.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Bug-Hunter.imageset/Contents.json
+619	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Closed-For-Business.imageset/Badge-Closed-For-Business.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Closed-For-Business.imageset/Contents.json
+617	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Epic-Streak.imageset/Badge-Epic-Streak.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Epic-Streak.imageset/Contents.json
+619	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Experienced-Challenger.imageset/Badge-Experienced-Challenger.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Experienced-Challenger.imageset/Contents.json
+621	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Freestyler.imageset/Badge-Freestyler.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Freestyler.imageset/Contents.json
+618	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Functioning-Adult.imageset/Badge-Functioning-Adult.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Functioning-Adult.imageset/Contents.json
+622	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Hello-Operator.imageset/Badge-Hello-Operator.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Hello-Operator.imageset/Contents.json
+618	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Human-Compiler.imageset/Badge-Human-Compiler.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Human-Compiler.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Its-Complicated.imageset/Badge-Its-Complicated.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Its-Complicated.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Keen-Reader.imageset/Badge-Keen-Reader.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Keen-Reader.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Long-Streak.imageset/Badge-Long-Streak.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Long-Streak.imageset/Contents.json
+610	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Medium-Streak.imageset/Badge-Medium-Streak.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Medium-Streak.imageset/Contents.json
+617	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-One-Of-A-Type.imageset/Badge-One-Of-A-Type.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-One-Of-A-Type.imageset/Contents.json
+617	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Optionals-Maybe.imageset/Badge-Optionals-Maybe.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Optionals-Maybe.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Protocol-Droid.imageset/Badge-Protocol-Droid.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Protocol-Droid.imageset/Contents.json
+686	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Short-Streak.imageset/Badge-Short-Streak.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Short-Streak.imageset/Contents.json
+621	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Simply-Read.imageset/Badge-Simply-Read.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Simply-Read.imageset/Contents.json
+618	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Social-Sharer.imageset/Badge-Social-Sharer.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Social-Sharer.imageset/Contents.json
+619	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Strictly-Structs.imageset/Badge-Strictly-Structs.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Strictly-Structs.imageset/Contents.json
+620	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-The-Unjumbler.imageset/Badge-The-Unjumbler.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-The-Unjumbler.imageset/Contents.json
+618	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Thrown-For-A-Loop.imageset/Badge-Thrown-For-A-Loop.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Thrown-For-A-Loop.imageset/Contents.json
+619	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Veteran-Challenger.imageset/Badge-Veteran-Challenger.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Badge-Veteran-Challenger.imageset/Contents.json
+110	0	Unwrap/Content/FontAwesomeIcons.xcassets/Challenges.imageset/Challenges.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Challenges.imageset/Contents.json
+129	0	Unwrap/Content/FontAwesomeIcons.xcassets/Check.imageset/Check.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Check.imageset/Contents.json
+6	0	Unwrap/Content/FontAwesomeIcons.xcassets/Contents.json
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Cross.imageset/Contents.json
+110	0	Unwrap/Content/FontAwesomeIcons.xcassets/Cross.imageset/Cross.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Home.imageset/Contents.json
+122	0	Unwrap/Content/FontAwesomeIcons.xcassets/Home.imageset/Home.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Info.imageset/Contents.json
+110	0	Unwrap/Content/FontAwesomeIcons.xcassets/Info.imageset/Info.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Learn.imageset/Contents.json
+121	0	Unwrap/Content/FontAwesomeIcons.xcassets/Learn.imageset/Learn.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Lock.imageset/Contents.json
+109	0	Unwrap/Content/FontAwesomeIcons.xcassets/Lock.imageset/Lock.pdf
+15	0	Unwrap/Content/FontAwesomeIcons.xcassets/News-Placeholder.imageset/Contents.json
+122	0	Unwrap/Content/FontAwesomeIcons.xcassets/News-Placeholder.imageset/News-Placeholder.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/News.imageset/Contents.json
+102	0	Unwrap/Content/FontAwesomeIcons.xcassets/News.imageset/News.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-FreeCoding.imageset/Contents.json
+103	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-FreeCoding.imageset/Practice-FreeCoding.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-PredictTheOutput.imageset/Contents.json
+100	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-PredictTheOutput.imageset/Practice-PredictTheOutput.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-RearrangeTheLines.imageset/Contents.json
+104	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-RearrangeTheLines.imageset/Practice-RearrangeTheLines.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-SpotTheError.imageset/Contents.json
+100	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-SpotTheError.imageset/Practice-SpotTheError.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-TapToCode.imageset/Contents.json
+101	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-TapToCode.imageset/Practice-TapToCode.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-TypeChecker.imageset/Contents.json
+99	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice-TypeChecker.imageset/Practice-TypeChecker.pdf
+16	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice.imageset/Contents.json
+123	0	Unwrap/Content/FontAwesomeIcons.xcassets/Practice.imageset/Practice.pdf
+6	0	Unwrap/Content/Ranks.xcassets/Contents.json
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 1.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 1.imageset/rank-1.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 10.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 10.imageset/rank-10.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 11.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 11.imageset/rank-11.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 12.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 12.imageset/rank-12.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 13.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 13.imageset/rank-13.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 14.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 14.imageset/rank-14.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 15.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 15.imageset/rank-15.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 16.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 16.imageset/rank-16.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 17.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 17.imageset/rank-17.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 18.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 18.imageset/rank-18.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 19.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 19.imageset/rank-19.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 2.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 2.imageset/rank-2.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 20.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 20.imageset/rank-20.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 21.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 21.imageset/rank-21.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 3.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 3.imageset/rank-3.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 4.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 4.imageset/rank-4.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 5.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 5.imageset/rank-5.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 6.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 6.imageset/rank-6.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 7.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 7.imageset/rank-7.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 8.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 8.imageset/rank-8.pdf
+15	0	Unwrap/Content/Ranks.xcassets/Rank Level 9.imageset/Contents.json
+-	-	Unwrap/Content/Ranks.xcassets/Rank Level 9.imageset/rank-9.pdf
+155	0	Unwrap/Content/SixtySeconds/Chapters.json
+17	0	Unwrap/Content/SixtySeconds/HTMLWrapper.html
+20	0	Unwrap/Content/SixtySeconds/accepting-parameters-in-a-closure.html
+24	0	Unwrap/Content/SixtySeconds/accepting-parameters-in-a-closure.json
+-	-	Unwrap/Content/SixtySeconds/accepting-parameters-in-a-closure.mp4
+-	-	Unwrap/Content/SixtySeconds/accepting-parameters-in-a-closure.png
+28	0	Unwrap/Content/SixtySeconds/accepting-parameters.html
+24	0	Unwrap/Content/SixtySeconds/accepting-parameters.json
+-	-	Unwrap/Content/SixtySeconds/accepting-parameters.mp4
+-	-	Unwrap/Content/SixtySeconds/accepting-parameters.png
+46	0	Unwrap/Content/SixtySeconds/access-control.html
+24	0	Unwrap/Content/SixtySeconds/access-control.json
+-	-	Unwrap/Content/SixtySeconds/access-control.mp4
+-	-	Unwrap/Content/SixtySeconds/access-control.png
+37	0	Unwrap/Content/SixtySeconds/arithmetic-operators.html
+24	0	Unwrap/Content/SixtySeconds/arithmetic-operators.json
+-	-	Unwrap/Content/SixtySeconds/arithmetic-operators.mp4
+-	-	Unwrap/Content/SixtySeconds/arithmetic-operators.png
+26	0	Unwrap/Content/SixtySeconds/arrays-vs-sets-vs-tuples.html
+24	0	Unwrap/Content/SixtySeconds/arrays-vs-sets-vs-tuples.json
+-	-	Unwrap/Content/SixtySeconds/arrays-vs-sets-vs-tuples.mp4
+-	-	Unwrap/Content/SixtySeconds/arrays-vs-sets-vs-tuples.png
+24	0	Unwrap/Content/SixtySeconds/arrays.html
+24	0	Unwrap/Content/SixtySeconds/arrays.json
+-	-	Unwrap/Content/SixtySeconds/arrays.mp4
+-	-	Unwrap/Content/SixtySeconds/arrays.png
+47	0	Unwrap/Content/SixtySeconds/capturing-values.html
+24	0	Unwrap/Content/SixtySeconds/capturing-values.json
+-	-	Unwrap/Content/SixtySeconds/capturing-values.mp4
+-	-	Unwrap/Content/SixtySeconds/capturing-values.png
+39	0	Unwrap/Content/SixtySeconds/class-inheritance.html
+24	0	Unwrap/Content/SixtySeconds/class-inheritance.json
+-	-	Unwrap/Content/SixtySeconds/class-inheritance.mp4
+-	-	Unwrap/Content/SixtySeconds/class-inheritance.png
+10	0	Unwrap/Content/SixtySeconds/classes-summary.html
+24	0	Unwrap/Content/SixtySeconds/classes-summary.json
+-	-	Unwrap/Content/SixtySeconds/classes-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/classes-summary.png
+32	0	Unwrap/Content/SixtySeconds/closures-as-parameters.html
+24	0	Unwrap/Content/SixtySeconds/closures-as-parameters.json
+-	-	Unwrap/Content/SixtySeconds/closures-as-parameters.mp4
+-	-	Unwrap/Content/SixtySeconds/closures-as-parameters.png
+9	0	Unwrap/Content/SixtySeconds/closures-summary.html
+24	0	Unwrap/Content/SixtySeconds/closures-summary.json
+-	-	Unwrap/Content/SixtySeconds/closures-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/closures-summary.png
+25	0	Unwrap/Content/SixtySeconds/closures-with-multiple-parameters.html
+24	0	Unwrap/Content/SixtySeconds/closures-with-multiple-parameters.json
+-	-	Unwrap/Content/SixtySeconds/closures-with-multiple-parameters.mp4
+-	-	Unwrap/Content/SixtySeconds/closures-with-multiple-parameters.png
+36	0	Unwrap/Content/SixtySeconds/comparison-operators.html
+28	0	Unwrap/Content/SixtySeconds/comparison-operators.json
+-	-	Unwrap/Content/SixtySeconds/comparison-operators.mp4
+-	-	Unwrap/Content/SixtySeconds/comparison-operators.png
+10	0	Unwrap/Content/SixtySeconds/complex-types-summary.html
+24	0	Unwrap/Content/SixtySeconds/complex-types-summary.json
+-	-	Unwrap/Content/SixtySeconds/complex-types-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/complex-types-summary.png
+19	0	Unwrap/Content/SixtySeconds/compound-assignment-operators.html
+24	0	Unwrap/Content/SixtySeconds/compound-assignment-operators.json
+-	-	Unwrap/Content/SixtySeconds/compound-assignment-operators.mp4
+-	-	Unwrap/Content/SixtySeconds/compound-assignment-operators.png
+39	0	Unwrap/Content/SixtySeconds/computed-properties.html
+24	0	Unwrap/Content/SixtySeconds/computed-properties.json
+-	-	Unwrap/Content/SixtySeconds/computed-properties.mp4
+-	-	Unwrap/Content/SixtySeconds/computed-properties.png
+40	0	Unwrap/Content/SixtySeconds/conditions.html
+24	0	Unwrap/Content/SixtySeconds/conditions.json
+-	-	Unwrap/Content/SixtySeconds/conditions.mp4
+-	-	Unwrap/Content/SixtySeconds/conditions.png
+11	0	Unwrap/Content/SixtySeconds/constants.html
+24	0	Unwrap/Content/SixtySeconds/constants.json
+-	-	Unwrap/Content/SixtySeconds/constants.mp4
+-	-	Unwrap/Content/SixtySeconds/constants.png
+47	0	Unwrap/Content/SixtySeconds/copying-objects.html
+24	0	Unwrap/Content/SixtySeconds/copying-objects.json
+-	-	Unwrap/Content/SixtySeconds/copying-objects.mp4
+-	-	Unwrap/Content/SixtySeconds/copying-objects.png
+20	0	Unwrap/Content/SixtySeconds/creating-basic-closures.html
+24	0	Unwrap/Content/SixtySeconds/creating-basic-closures.json
+-	-	Unwrap/Content/SixtySeconds/creating-basic-closures.mp4
+-	-	Unwrap/Content/SixtySeconds/creating-basic-closures.png
+44	0	Unwrap/Content/SixtySeconds/creating-empty-collections.html
+24	0	Unwrap/Content/SixtySeconds/creating-empty-collections.json
+-	-	Unwrap/Content/SixtySeconds/creating-empty-collections.mp4
+-	-	Unwrap/Content/SixtySeconds/creating-empty-collections.png
+25	0	Unwrap/Content/SixtySeconds/creating-your-own-classes.html
+24	0	Unwrap/Content/SixtySeconds/creating-your-own-classes.json
+-	-	Unwrap/Content/SixtySeconds/creating-your-own-classes.mp4
+-	-	Unwrap/Content/SixtySeconds/creating-your-own-classes.png
+29	0	Unwrap/Content/SixtySeconds/creating-your-own-structs.html
+24	0	Unwrap/Content/SixtySeconds/creating-your-own-structs.json
+-	-	Unwrap/Content/SixtySeconds/creating-your-own-structs.mp4
+-	-	Unwrap/Content/SixtySeconds/creating-your-own-structs.png
+25	0	Unwrap/Content/SixtySeconds/default-parameters.html
+24	0	Unwrap/Content/SixtySeconds/default-parameters.json
+-	-	Unwrap/Content/SixtySeconds/default-parameters.mp4
+-	-	Unwrap/Content/SixtySeconds/default-parameters.png
+38	0	Unwrap/Content/SixtySeconds/deinitializers.html
+24	0	Unwrap/Content/SixtySeconds/deinitializers.json
+-	-	Unwrap/Content/SixtySeconds/deinitializers.mp4
+-	-	Unwrap/Content/SixtySeconds/deinitializers.png
+22	0	Unwrap/Content/SixtySeconds/dictionaries.html
+24	0	Unwrap/Content/SixtySeconds/dictionaries.json
+-	-	Unwrap/Content/SixtySeconds/dictionaries.mp4
+-	-	Unwrap/Content/SixtySeconds/dictionaries.png
+36	0	Unwrap/Content/SixtySeconds/dictionary-default-values.html
+24	0	Unwrap/Content/SixtySeconds/dictionary-default-values.json
+-	-	Unwrap/Content/SixtySeconds/dictionary-default-values.mp4
+-	-	Unwrap/Content/SixtySeconds/dictionary-default-values.png
+20	0	Unwrap/Content/SixtySeconds/doubles-and-booleans.html
+23	0	Unwrap/Content/SixtySeconds/doubles-and-booleans.json
+-	-	Unwrap/Content/SixtySeconds/doubles-and-booleans.mp4
+-	-	Unwrap/Content/SixtySeconds/doubles-and-booleans.png
+36	0	Unwrap/Content/SixtySeconds/enum-associated-values.html
+24	0	Unwrap/Content/SixtySeconds/enum-associated-values.json
+-	-	Unwrap/Content/SixtySeconds/enum-associated-values.mp4
+-	-	Unwrap/Content/SixtySeconds/enum-associated-values.png
+36	0	Unwrap/Content/SixtySeconds/enum-raw-values.html
+24	0	Unwrap/Content/SixtySeconds/enum-raw-values.json
+-	-	Unwrap/Content/SixtySeconds/enum-raw-values.mp4
+-	-	Unwrap/Content/SixtySeconds/enum-raw-values.png
+39	0	Unwrap/Content/SixtySeconds/enumerations.html
+24	0	Unwrap/Content/SixtySeconds/enumerations.json
+-	-	Unwrap/Content/SixtySeconds/enumerations.mp4
+-	-	Unwrap/Content/SixtySeconds/enumerations.png
+29	0	Unwrap/Content/SixtySeconds/exiting-loops.html
+24	0	Unwrap/Content/SixtySeconds/exiting-loops.json
+-	-	Unwrap/Content/SixtySeconds/exiting-loops.mp4
+-	-	Unwrap/Content/SixtySeconds/exiting-loops.png
+45	0	Unwrap/Content/SixtySeconds/exiting-multiple-loops.html
+24	0	Unwrap/Content/SixtySeconds/exiting-multiple-loops.json
+-	-	Unwrap/Content/SixtySeconds/exiting-multiple-loops.mp4
+-	-	Unwrap/Content/SixtySeconds/exiting-multiple-loops.png
+34	0	Unwrap/Content/SixtySeconds/extensions.html
+24	0	Unwrap/Content/SixtySeconds/extensions.json
+-	-	Unwrap/Content/SixtySeconds/extensions.mp4
+-	-	Unwrap/Content/SixtySeconds/extensions.png
+29	0	Unwrap/Content/SixtySeconds/failable-initializers.html
+24	0	Unwrap/Content/SixtySeconds/failable-initializers.json
+-	-	Unwrap/Content/SixtySeconds/failable-initializers.mp4
+-	-	Unwrap/Content/SixtySeconds/failable-initializers.png
+17	0	Unwrap/Content/SixtySeconds/final-classes.html
+24	0	Unwrap/Content/SixtySeconds/final-classes.json
+-	-	Unwrap/Content/SixtySeconds/final-classes.mp4
+-	-	Unwrap/Content/SixtySeconds/final-classes.png
+42	0	Unwrap/Content/SixtySeconds/for-loops.html
+24	0	Unwrap/Content/SixtySeconds/for-loops.json
+-	-	Unwrap/Content/SixtySeconds/for-loops.mp4
+-	-	Unwrap/Content/SixtySeconds/for-loops.png
+21	0	Unwrap/Content/SixtySeconds/force-unwrapping.html
+24	0	Unwrap/Content/SixtySeconds/force-unwrapping.json
+-	-	Unwrap/Content/SixtySeconds/force-unwrapping.mp4
+-	-	Unwrap/Content/SixtySeconds/force-unwrapping.png
+11	0	Unwrap/Content/SixtySeconds/functions-summary.html
+24	0	Unwrap/Content/SixtySeconds/functions-summary.json
+-	-	Unwrap/Content/SixtySeconds/functions-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/functions-summary.png
+19	0	Unwrap/Content/SixtySeconds/handling-missing-data.html
+24	0	Unwrap/Content/SixtySeconds/handling-missing-data.json
+-	-	Unwrap/Content/SixtySeconds/handling-missing-data.mp4
+-	-	Unwrap/Content/SixtySeconds/handling-missing-data.png
+12	0	Unwrap/Content/SixtySeconds/implicitly-unwrapped-optionals.html
+24	0	Unwrap/Content/SixtySeconds/implicitly-unwrapped-optionals.json
+-	-	Unwrap/Content/SixtySeconds/implicitly-unwrapped-optionals.mp4
+-	-	Unwrap/Content/SixtySeconds/implicitly-unwrapped-optionals.png
+18	0	Unwrap/Content/SixtySeconds/infinite-loops.html
+24	0	Unwrap/Content/SixtySeconds/infinite-loops.json
+-	-	Unwrap/Content/SixtySeconds/infinite-loops.mp4
+-	-	Unwrap/Content/SixtySeconds/infinite-loops.png
+43	0	Unwrap/Content/SixtySeconds/initializers.html
+24	0	Unwrap/Content/SixtySeconds/initializers.json
+-	-	Unwrap/Content/SixtySeconds/initializers.mp4
+-	-	Unwrap/Content/SixtySeconds/initializers.png
+21	0	Unwrap/Content/SixtySeconds/inout-parameters.html
+24	0	Unwrap/Content/SixtySeconds/inout-parameters.json
+-	-	Unwrap/Content/SixtySeconds/inout-parameters.mp4
+-	-	Unwrap/Content/SixtySeconds/inout-parameters.png
+43	0	Unwrap/Content/SixtySeconds/lazy-properties.html
+24	0	Unwrap/Content/SixtySeconds/lazy-properties.json
+-	-	Unwrap/Content/SixtySeconds/lazy-properties.mp4
+-	-	Unwrap/Content/SixtySeconds/lazy-properties.png
+11	0	Unwrap/Content/SixtySeconds/looping-summary.html
+24	0	Unwrap/Content/SixtySeconds/looping-summary.json
+-	-	Unwrap/Content/SixtySeconds/looping-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/looping-summary.png
+24	0	Unwrap/Content/SixtySeconds/methods.html
+24	0	Unwrap/Content/SixtySeconds/methods.json
+-	-	Unwrap/Content/SixtySeconds/methods.mp4
+-	-	Unwrap/Content/SixtySeconds/methods.png
+26	0	Unwrap/Content/SixtySeconds/multi-line-strings.html
+24	0	Unwrap/Content/SixtySeconds/multi-line-strings.json
+-	-	Unwrap/Content/SixtySeconds/multi-line-strings.mp4
+-	-	Unwrap/Content/SixtySeconds/multi-line-strings.png
+25	0	Unwrap/Content/SixtySeconds/mutability.html
+24	0	Unwrap/Content/SixtySeconds/mutability.json
+-	-	Unwrap/Content/SixtySeconds/mutability.mp4
+-	-	Unwrap/Content/SixtySeconds/mutability.png
+24	0	Unwrap/Content/SixtySeconds/mutating-methods.html
+24	0	Unwrap/Content/SixtySeconds/mutating-methods.json
+-	-	Unwrap/Content/SixtySeconds/mutating-methods.mp4
+-	-	Unwrap/Content/SixtySeconds/mutating-methods.png
+24	0	Unwrap/Content/SixtySeconds/nil-coalescing.html
+24	0	Unwrap/Content/SixtySeconds/nil-coalescing.json
+-	-	Unwrap/Content/SixtySeconds/nil-coalescing.mp4
+-	-	Unwrap/Content/SixtySeconds/nil-coalescing.png
+20	0	Unwrap/Content/SixtySeconds/omitting-parameter-labels.html
+24	0	Unwrap/Content/SixtySeconds/omitting-parameter-labels.json
+-	-	Unwrap/Content/SixtySeconds/omitting-parameter-labels.mp4
+-	-	Unwrap/Content/SixtySeconds/omitting-parameter-labels.png
+29	0	Unwrap/Content/SixtySeconds/operator-overloading.html
+24	0	Unwrap/Content/SixtySeconds/operator-overloading.json
+-	-	Unwrap/Content/SixtySeconds/operator-overloading.mp4
+-	-	Unwrap/Content/SixtySeconds/operator-overloading.png
+9	0	Unwrap/Content/SixtySeconds/operators-and-conditions-summary.html
+24	0	Unwrap/Content/SixtySeconds/operators-and-conditions-summary.json
+-	-	Unwrap/Content/SixtySeconds/operators-and-conditions-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/operators-and-conditions-summary.png
+19	0	Unwrap/Content/SixtySeconds/optional-chaining.html
+24	0	Unwrap/Content/SixtySeconds/optional-chaining.json
+-	-	Unwrap/Content/SixtySeconds/optional-chaining.mp4
+-	-	Unwrap/Content/SixtySeconds/optional-chaining.png
+47	0	Unwrap/Content/SixtySeconds/optional-try.html
+24	0	Unwrap/Content/SixtySeconds/optional-try.json
+-	-	Unwrap/Content/SixtySeconds/optional-try.mp4
+-	-	Unwrap/Content/SixtySeconds/optional-try.png
+12	0	Unwrap/Content/SixtySeconds/optionals-summary.html
+24	0	Unwrap/Content/SixtySeconds/optionals-summary.json
+-	-	Unwrap/Content/SixtySeconds/optionals-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/optionals-summary.png
+37	0	Unwrap/Content/SixtySeconds/overriding-methods.html
+24	0	Unwrap/Content/SixtySeconds/overriding-methods.json
+-	-	Unwrap/Content/SixtySeconds/overriding-methods.mp4
+-	-	Unwrap/Content/SixtySeconds/overriding-methods.png
+37	0	Unwrap/Content/SixtySeconds/parameter-labels.html
+24	0	Unwrap/Content/SixtySeconds/parameter-labels.json
+-	-	Unwrap/Content/SixtySeconds/parameter-labels.mp4
+-	-	Unwrap/Content/SixtySeconds/parameter-labels.png
+51	0	Unwrap/Content/SixtySeconds/properties-and-methods-of-arrays.html
+24	0	Unwrap/Content/SixtySeconds/properties-and-methods-of-arrays.json
+-	-	Unwrap/Content/SixtySeconds/properties-and-methods-of-arrays.mp4
+-	-	Unwrap/Content/SixtySeconds/properties-and-methods-of-arrays.png
+42	0	Unwrap/Content/SixtySeconds/properties-and-methods-of-strings.html
+24	0	Unwrap/Content/SixtySeconds/properties-and-methods-of-strings.json
+-	-	Unwrap/Content/SixtySeconds/properties-and-methods-of-strings.mp4
+-	-	Unwrap/Content/SixtySeconds/properties-and-methods-of-strings.png
+38	0	Unwrap/Content/SixtySeconds/property-observers.html
+24	0	Unwrap/Content/SixtySeconds/property-observers.json
+-	-	Unwrap/Content/SixtySeconds/property-observers.mp4
+-	-	Unwrap/Content/SixtySeconds/property-observers.png
+35	0	Unwrap/Content/SixtySeconds/protocol-extensions.html
+24	0	Unwrap/Content/SixtySeconds/protocol-extensions.json
+-	-	Unwrap/Content/SixtySeconds/protocol-extensions.mp4
+-	-	Unwrap/Content/SixtySeconds/protocol-extensions.png
+26	0	Unwrap/Content/SixtySeconds/protocol-inheritance.html
+24	0	Unwrap/Content/SixtySeconds/protocol-inheritance.json
+-	-	Unwrap/Content/SixtySeconds/protocol-inheritance.mp4
+-	-	Unwrap/Content/SixtySeconds/protocol-inheritance.png
+36	0	Unwrap/Content/SixtySeconds/protocol-oriented-programming.html
+24	0	Unwrap/Content/SixtySeconds/protocol-oriented-programming.json
+-	-	Unwrap/Content/SixtySeconds/protocol-oriented-programming.mp4
+-	-	Unwrap/Content/SixtySeconds/protocol-oriented-programming.png
+8	0	Unwrap/Content/SixtySeconds/protocols-and-extensions-summary.html
+24	0	Unwrap/Content/SixtySeconds/protocols-and-extensions-summary.json
+-	-	Unwrap/Content/SixtySeconds/protocols-and-extensions-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/protocols-and-extensions-summary.png
+31	0	Unwrap/Content/SixtySeconds/protocols.html
+24	0	Unwrap/Content/SixtySeconds/protocols.json
+-	-	Unwrap/Content/SixtySeconds/protocols.mp4
+-	-	Unwrap/Content/SixtySeconds/protocols.png
+19	0	Unwrap/Content/SixtySeconds/range-operators.html
+24	0	Unwrap/Content/SixtySeconds/range-operators.json
+-	-	Unwrap/Content/SixtySeconds/range-operators.mp4
+-	-	Unwrap/Content/SixtySeconds/range-operators.png
+16	0	Unwrap/Content/SixtySeconds/referring-to-the-current-instance.html
+24	0	Unwrap/Content/SixtySeconds/referring-to-the-current-instance.json
+-	-	Unwrap/Content/SixtySeconds/referring-to-the-current-instance.mp4
+-	-	Unwrap/Content/SixtySeconds/referring-to-the-current-instance.png
+36	0	Unwrap/Content/SixtySeconds/repeat-loops.html
+24	0	Unwrap/Content/SixtySeconds/repeat-loops.json
+-	-	Unwrap/Content/SixtySeconds/repeat-loops.mp4
+-	-	Unwrap/Content/SixtySeconds/repeat-loops.png
+32	0	Unwrap/Content/SixtySeconds/returning-closures-from-functions.html
+24	0	Unwrap/Content/SixtySeconds/returning-closures-from-functions.json
+-	-	Unwrap/Content/SixtySeconds/returning-closures-from-functions.mp4
+-	-	Unwrap/Content/SixtySeconds/returning-closures-from-functions.png
+30	0	Unwrap/Content/SixtySeconds/returning-values-from-a-closure.html
+24	0	Unwrap/Content/SixtySeconds/returning-values-from-a-closure.json
+-	-	Unwrap/Content/SixtySeconds/returning-values-from-a-closure.mp4
+-	-	Unwrap/Content/SixtySeconds/returning-values-from-a-closure.png
+22	0	Unwrap/Content/SixtySeconds/returning-values.html
+24	0	Unwrap/Content/SixtySeconds/returning-values.json
+-	-	Unwrap/Content/SixtySeconds/returning-values.mp4
+-	-	Unwrap/Content/SixtySeconds/returning-values.png
+16	0	Unwrap/Content/SixtySeconds/running-throwing-functions.html
+24	0	Unwrap/Content/SixtySeconds/running-throwing-functions.json
+-	-	Unwrap/Content/SixtySeconds/running-throwing-functions.mp4
+-	-	Unwrap/Content/SixtySeconds/running-throwing-functions.png
+23	0	Unwrap/Content/SixtySeconds/sets.html
+24	0	Unwrap/Content/SixtySeconds/sets.json
+-	-	Unwrap/Content/SixtySeconds/sets.mp4
+-	-	Unwrap/Content/SixtySeconds/sets.png
+64	0	Unwrap/Content/SixtySeconds/shorthand-parameter-names.html
+24	0	Unwrap/Content/SixtySeconds/shorthand-parameter-names.json
+-	-	Unwrap/Content/SixtySeconds/shorthand-parameter-names.mp4
+-	-	Unwrap/Content/SixtySeconds/shorthand-parameter-names.png
+8	0	Unwrap/Content/SixtySeconds/simple-types-summary.html
+24	0	Unwrap/Content/SixtySeconds/simple-types-summary.json
+-	-	Unwrap/Content/SixtySeconds/simple-types-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/simple-types-summary.png
+15	0	Unwrap/Content/SixtySeconds/skipping-items.html
+24	0	Unwrap/Content/SixtySeconds/skipping-items.json
+-	-	Unwrap/Content/SixtySeconds/skipping-items.mp4
+-	-	Unwrap/Content/SixtySeconds/skipping-items.png
+39	0	Unwrap/Content/SixtySeconds/static-properties-and-methods.html
+24	0	Unwrap/Content/SixtySeconds/static-properties-and-methods.json
+-	-	Unwrap/Content/SixtySeconds/static-properties-and-methods.mp4
+-	-	Unwrap/Content/SixtySeconds/static-properties-and-methods.png
+20	0	Unwrap/Content/SixtySeconds/string-interpolation.html
+24	0	Unwrap/Content/SixtySeconds/string-interpolation.json
+-	-	Unwrap/Content/SixtySeconds/string-interpolation.mp4
+-	-	Unwrap/Content/SixtySeconds/string-interpolation.png
+19	0	Unwrap/Content/SixtySeconds/strings-and-integers.html
+24	0	Unwrap/Content/SixtySeconds/strings-and-integers.json
+-	-	Unwrap/Content/SixtySeconds/strings-and-integers.mp4
+-	-	Unwrap/Content/SixtySeconds/strings-and-integers.png
+11	0	Unwrap/Content/SixtySeconds/structs-summary.html
+24	0	Unwrap/Content/SixtySeconds/structs-summary.json
+-	-	Unwrap/Content/SixtySeconds/structs-summary.mp4
+-	-	Unwrap/Content/SixtySeconds/structs-summary.png
+45	0	Unwrap/Content/SixtySeconds/switch-statements.html
+24	0	Unwrap/Content/SixtySeconds/switch-statements.json
+-	-	Unwrap/Content/SixtySeconds/switch-statements.mp4
+-	-	Unwrap/Content/SixtySeconds/switch-statements.png
+23	0	Unwrap/Content/SixtySeconds/the-ternary-operator.html
+24	0	Unwrap/Content/SixtySeconds/the-ternary-operator.json
+-	-	Unwrap/Content/SixtySeconds/the-ternary-operator.mp4
+-	-	Unwrap/Content/SixtySeconds/the-ternary-operator.png
+34	0	Unwrap/Content/SixtySeconds/trailing-closure-syntax.html
+24	0	Unwrap/Content/SixtySeconds/trailing-closure-syntax.json
+-	-	Unwrap/Content/SixtySeconds/trailing-closure-syntax.mp4
+-	-	Unwrap/Content/SixtySeconds/trailing-closure-syntax.png
+31	0	Unwrap/Content/SixtySeconds/tuples.html
+24	0	Unwrap/Content/SixtySeconds/tuples.json
+-	-	Unwrap/Content/SixtySeconds/tuples.mp4
+-	-	Unwrap/Content/SixtySeconds/tuples.png
+21	0	Unwrap/Content/SixtySeconds/type-annotations.html
+24	0	Unwrap/Content/SixtySeconds/type-annotations.json
+-	-	Unwrap/Content/SixtySeconds/type-annotations.mp4
+-	-	Unwrap/Content/SixtySeconds/type-annotations.png
+37	0	Unwrap/Content/SixtySeconds/typecasting.html
+24	0	Unwrap/Content/SixtySeconds/typecasting.json
+-	-	Unwrap/Content/SixtySeconds/typecasting.mp4
+-	-	Unwrap/Content/SixtySeconds/typecasting.png
+25	0	Unwrap/Content/SixtySeconds/unwrapping-optionals.html
+24	0	Unwrap/Content/SixtySeconds/unwrapping-optionals.json
+-	-	Unwrap/Content/SixtySeconds/unwrapping-optionals.mp4
+-	-	Unwrap/Content/SixtySeconds/unwrapping-optionals.png
+17	0	Unwrap/Content/SixtySeconds/unwrapping-with-guard.html
+24	0	Unwrap/Content/SixtySeconds/unwrapping-with-guard.json
+-	-	Unwrap/Content/SixtySeconds/unwrapping-with-guard.mp4
+-	-	Unwrap/Content/SixtySeconds/unwrapping-with-guard.png
+24	0	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-accept-parameters.html
+24	0	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-accept-parameters.json
+-	-	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-accept-parameters.mp4
+-	-	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-accept-parameters.png
+24	0	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-return-values.html
+24	0	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-return-values.json
+-	-	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-return-values.mp4
+-	-	Unwrap/Content/SixtySeconds/using-closures-as-parameters-when-they-return-values.png
+21	0	Unwrap/Content/SixtySeconds/variables.html
+24	0	Unwrap/Content/SixtySeconds/variables.json
+-	-	Unwrap/Content/SixtySeconds/variables.mp4
+-	-	Unwrap/Content/SixtySeconds/variables.png
+30	0	Unwrap/Content/SixtySeconds/variadic-functions.html
+24	0	Unwrap/Content/SixtySeconds/variadic-functions.json
+-	-	Unwrap/Content/SixtySeconds/variadic-functions.mp4
+-	-	Unwrap/Content/SixtySeconds/variadic-functions.png
+11	0	Unwrap/Content/SixtySeconds/where-now.html
+24	0	Unwrap/Content/SixtySeconds/where-now.json
+-	-	Unwrap/Content/SixtySeconds/where-now.png
+15	0	Unwrap/Content/SixtySeconds/while-loops.html
+24	0	Unwrap/Content/SixtySeconds/while-loops.json
+-	-	Unwrap/Content/SixtySeconds/while-loops.mp4
+-	-	Unwrap/Content/SixtySeconds/while-loops.png
+27	0	Unwrap/Content/SixtySeconds/writing-functions.html
+24	0	Unwrap/Content/SixtySeconds/writing-functions.json
+-	-	Unwrap/Content/SixtySeconds/writing-functions.mp4
+-	-	Unwrap/Content/SixtySeconds/writing-functions.png
+25	0	Unwrap/Content/SixtySeconds/writing-throwing-functions.html
+24	0	Unwrap/Content/SixtySeconds/writing-throwing-functions.json
+-	-	Unwrap/Content/SixtySeconds/writing-throwing-functions.mp4
+-	-	Unwrap/Content/SixtySeconds/writing-throwing-functions.png
+6	0	Unwrap/Content/Tour.xcassets/Contents.json
+22	0	Unwrap/Content/Tour.xcassets/Tour1.imageset/Contents.json
+-	-	Unwrap/Content/Tour.xcassets/Tour1.imageset/Tour1@2x.png
+-	-	Unwrap/Content/Tour.xcassets/Tour1.imageset/Tour1@3x.png
+22	0	Unwrap/Content/Tour.xcassets/Tour2.imageset/Contents.json
+-	-	Unwrap/Content/Tour.xcassets/Tour2.imageset/Tour2@2x.png
+-	-	Unwrap/Content/Tour.xcassets/Tour2.imageset/Tour2@3x.png
+22	0	Unwrap/Content/Tour.xcassets/Tour3.imageset/Contents.json
+-	-	Unwrap/Content/Tour.xcassets/Tour3.imageset/Tour3@2x.png
+-	-	Unwrap/Content/Tour.xcassets/Tour3.imageset/Tour3@3x.png
+22	0	Unwrap/Content/Tour.xcassets/Tour4.imageset/Contents.json
+-	-	Unwrap/Content/Tour.xcassets/Tour4.imageset/Tour4@2x.png
+-	-	Unwrap/Content/Tour.xcassets/Tour4.imageset/Tour4@3x.png
+22	0	Unwrap/Content/Tour.xcassets/Tour5.imageset/Contents.json
+-	-	Unwrap/Content/Tour.xcassets/Tour5.imageset/Tour5@2x.png
+-	-	Unwrap/Content/Tour.xcassets/Tour5.imageset/Tour5@3x.png
+108	0	Unwrap/Extensions/BundleLoading.swift
+27	0	Unwrap/Extensions/Date-Math.swift
+49	0	Unwrap/Extensions/Formatted.swift
+42	0	Unwrap/Extensions/KeyboardAvoidingScrollView.swift
+59	0	Unwrap/Extensions/NSAttributedString-Formatting.swift
+20	0	Unwrap/Extensions/NSRegularExpression-HardCoded.swift
+70	0	Unwrap/Extensions/String-Attributed.swift
+16	0	Unwrap/Extensions/String-Letters.swift
+31	0	Unwrap/Extensions/String-Lines.swift
+328	0	Unwrap/Extensions/String-Placeholders.swift
+20	0	Unwrap/Extensions/String-Range.swift
+28	0	Unwrap/Extensions/String-Regex.swift
+106	0	Unwrap/Extensions/String-Variables.swift
+35	0	Unwrap/Extensions/TypeGeneration/BoolNames.swift
+42	0	Unwrap/Extensions/TypeGeneration/DoubleNames.swift
+25	0	Unwrap/Extensions/TypeGeneration/FloatNames.swift
+36	0	Unwrap/Extensions/TypeGeneration/IntNames.swift
+66	0	Unwrap/Extensions/TypeGeneration/StringNames.swift
+27	0	Unwrap/Extensions/TypeGeneration/TypeGenerating.swift
+23	0	Unwrap/Extensions/UIBezierPath-Logo.swift
+48	0	Unwrap/Extensions/UIButton-Types.swift
+24	0	Unwrap/Extensions/UIImage-Sharing.swift
+24	0	Unwrap/Extensions/UIResponder-Coordinated.swift
+35	0	Unwrap/Extensions/UITableViewCell-Styling.swift
+68	0	Unwrap/Extensions/UIView-EditingToolbar.swift
+20	0	Unwrap/Extensions/UIView-FadeIn.swift
+44	0	Unwrap/Extensions/UIViewController-Alerts.swift
+16	0	Unwrap/Extensions/URL-String.swift
+64	0	Unwrap/Info.plist
+37	0	Unwrap/MainTabBarController.swift
+15	0	Unwrap/Protocols/AlertHandling.swift
+27	0	Unwrap/Protocols/AlertShowing.swift
+15	0	Unwrap/Protocols/AnswerHandling.swift
+39	0	Unwrap/Protocols/Awarding.swift
+14	0	Unwrap/Protocols/Coordinator.swift
+14	0	Unwrap/Protocols/Sequenced.swift
+26	0	Unwrap/Protocols/Skippable.swift
+24	0	Unwrap/Protocols/Storyboarded.swift
+14	0	Unwrap/Protocols/TappableTextViewDelegate.swift
+26	0	Unwrap/Protocols/UserTracking.swift
+86	0	Unwrap/Reusables/AlertViewController.swift
+14	0	Unwrap/Reusables/CoordinatedNavigationController.swift
+66	0	Unwrap/Reusables/CountedSet.swift
+77	0	Unwrap/Reusables/CountingLabel.swift
+29	0	Unwrap/Reusables/GradientView.swift
+50	0	Unwrap/Reusables/LeftAlignedCollectionViewFlowLayout.swift
+84	0	Unwrap/Reusables/ShapeView.swift
+70	0	Unwrap/Reusables/TappableTextView.swift
+75	0	Unwrap/Reusables/Themes/Dark/DarkTheme.css
+49	0	Unwrap/Reusables/Themes/Dark/DarkTheme.swift
+79	0	Unwrap/Reusables/Themes/Light/LightTheme.css
+49	0	Unwrap/Reusables/Themes/Light/LightTheme.swift
+79	0	Unwrap/Swift42.swift
+24	0	Unwrap/Unwrap.swift
+67	0	Unwrap/User/User-Serialization.swift
+48	0	Unwrap/User/User-StaticProperties.swift
+324	0	Unwrap/User/User.swift
+5	0	UnwrapTests/.swiftlint.yml
+159	0	UnwrapTests/BadgeTests.swift
+49	0	UnwrapTests/BundleLoadingTests.swift
+98	0	UnwrapTests/ContentTests.swift
+128	0	UnwrapTests/CountedSetTests.swift
+96	0	UnwrapTests/ExtensionTests.swift
+22	0	UnwrapTests/Info.plist
+107	0	UnwrapTests/PracticeTests.swift
+17	0	UnwrapTests/UnwrapTests.swift
+131	0	UnwrapTests/UserTests.swift
+22	0	UnwrapUITests/Info.plist
+36	0	UnwrapUITests/UnwrapUITests.swift
+-	-	Working/logo.png
+-	-	Working/logo.psd
