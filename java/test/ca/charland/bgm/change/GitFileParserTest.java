@@ -23,10 +23,10 @@ public class GitFileParserTest {
 		List<String> read = FileAccessing.read("test/res/one.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		
+
 		// Exercise
 		List<? extends Change> parse = new GitFileParser().changes(read, types);
-		
+
 		// Verify
 		assertNotNull(parse);
 		assertTrue("Not empty", parse.isEmpty());
@@ -38,12 +38,26 @@ public class GitFileParserTest {
 		List<String> read = FileAccessing.read("test/res/two.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		
+
 		// Exercise
 		List<? extends Change> parse = new GitFileParser().changes(read, types);
-		
+
 		// Verify
 		assertTrue(parse.isEmpty());
+	}
+
+	@Test
+	public void testAlot() {
+		// Setup
+		List<String> read = FileAccessing.read("test/res/alot.txt");
+		List<String> types = new ArrayList<String>();
+		types.add("xml");
+
+		// Exercise
+		List<? extends Change> parse = new GitFileParser().changes(read, types);
+
+		// Verify
+		assertEquals(259, parse.size());
 	}
 
 	@Test
@@ -52,10 +66,10 @@ public class GitFileParserTest {
 		List<String> read = FileAccessing.read("test/res/java_two.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("java");
-		
+
 		// Exercise
 		List<? extends Change> parse = new GitFileParser().changes(read, types);
-		
+
 		// Verify
 		assertEquals(2, parse.size());
 
@@ -65,17 +79,17 @@ public class GitFileParserTest {
 
 		assertEquals(change.getCoverage(types), change2.getCoverage(types), 0.1);
 	}
-	
+
 	@Test
 	public void testPodFile() {
 		// Setup
 		List<String> read = FileAccessing.read("test/res/pods.txt");
 		List<String> types = new ArrayList<String>();
 		types.add("swift");
-		
+
 		// Exercise
 		List<? extends Change> parse = new GitFileParser().changes(read, types);
-		
+
 		// Verify
 		assertEquals(0, parse.size());
 	}
@@ -84,7 +98,7 @@ public class GitFileParserTest {
 	public void testParseLine() {
 		// Setup & Exercise
 		Line line = new GitFileParser().line("1	1	permissions.java");
-		
+
 		// Verify
 		assertNotNull(line);
 		List<String> types = new ArrayList<String>();
@@ -92,20 +106,18 @@ public class GitFileParserTest {
 		assertTrue(line.isValid(types));
 		assertEquals(2, line.getSourceDifference(types));
 	}
-	
+
 	@Test
 	public void testParseLineIngorningPods() {
 		// Setup & Exercise
 		Line line = new GitFileParser().line("1	1	Pods/permissions.java");
-		
+
 		// Verify
 		assertNotNull(line);
 		List<String> types = new ArrayList<String>();
 		types.add("java");
 		assertFalse(line.isValid(types));
 	}
-
-	
 
 	@Test
 	public void testIsChangeValid() {
@@ -114,7 +126,7 @@ public class GitFileParserTest {
 		List<Line> lines = new ArrayList<Line>();
 		lines.add(line);
 		GitChange change = new GitChange(null, null, null, null, lines);
-		
+
 		// Exercise & Verify
 		assertTrue(new GitFileParser().isChangeValid(change, null));
 	}

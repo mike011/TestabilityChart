@@ -61,7 +61,7 @@ public class Chart {
 	}
 
 	/**
-	 * Gets the primitive array.
+	 * For all the elmements in an array converts the type from a Double to a double. 
 	 * 
 	 * @param objectList
 	 *            The object list to cast down.

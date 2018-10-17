@@ -43,7 +43,7 @@ public class ChartParser {
 	}
 
 	/**
-	 * Set the date range from 0 to 50.
+	 * Set the size of the bubble to an acceptable range.
 	 * 
 	 * @param bubbles
 	 *            The bubbles to normalise.
