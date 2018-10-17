@@ -1,18 +1,18 @@
-#Testability Chart
+# Testability Chart # 
 Current Version: 0.17
 
-##Overview
+## Overview ##
 This application is the java based implementation using jfreechart for graph.
 
 Please see <a href="http://jawspeak.com/category/testability/">JAW Speak</a> for more info.
 
 You can easily run the application in the Sample folder by running the jar. A sample log of the git log --numstat of this project is used. Also the properties are read from the common properties file.
 
-##Launching
+## Launching ##
 You have create a common.properties file in the same directory as the jar file. You can optionally set the directory
 to run from by setting the system variable PROJECT_FOLDER. Example: -DPROJECT_FOLDER=../samples/qt/
 
-##Manditory Arguments
+## Manditory Arguments ##
 At minimum you have to set:
 <table border="1">
 <tr><td>Option</td><td>Explanation</td><td>Examples</td></tr>
@@ -20,7 +20,7 @@ At minimum you have to set:
 <tr><td>types</td><td>what type of source code is your project using?</td><td>java, cpp, c</td></tr>
 </table>
 
-##Optional Arguments
+## Optional Arguments ##
 You can optionally also set:
 <table border="1">
 <tr><td>Option</td><td>Explanation</td><td>Examples</td></tr>
@@ -29,7 +29,7 @@ You can optionally also set:
 <tr><td>debug</td><td>Enable or disable debugging, disabled by default</td><td>TRUE, FALSE</td></tr>
 </table>
 
-##Samples
+## Samples ##
 To launch a sample from the project folder execute: java -jar ..\TestabilityChart.jar. This uses the common.properties
 and log.txt from the projects folder.
 <b>QT</b>
@@ -46,7 +46,7 @@ and log.txt from the projects folder.
 </UL>
 ![Testability Chart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart/screenshot.png)
 
-##History
+## History ##
 <B>Version 0.1</B> 
 <UL>
 <LI>Percents on verticals</LI>
