@@ -174,7 +174,7 @@ public class BubbleTest {
 
 		// Verify
 		StringBuffer bubblesData = new StringBuffer();
-		bubblesData.append("Date:").append("0.00");
+		bubblesData.append("Date:").append("Wed Dec 31 19:00:00 EST 1969");
 		bubblesData.append(", Coverage:").append("0");
 		bubblesData.append(", Size:").append("120.00");
 		bubblesData.append(", Change:").append(bubble.getChange());

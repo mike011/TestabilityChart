@@ -135,6 +135,7 @@ public class Bubble {
 		StringBuilder sb = new StringBuilder();
 		Formatter formatter = new Formatter(sb, Locale.US);
 		formatter.format("%.2f", x);
+		formatter.close();
 		return sb.toString();
 	}
 
@@ -142,7 +143,7 @@ public class Bubble {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append("Date:").append(format(getDate() / 84000000));
+		result.append("Date:").append(new Date((long)getDate()));
 		result.append(", Coverage:").append(getCoverageString());
 		result.append(", Size:").append(format(getSize()));
 		result.append(", Change:").append(getChange());
