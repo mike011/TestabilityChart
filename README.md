@@ -37,6 +37,7 @@ and log.txt from the projects folder.
 <LI>A very very large project with thousands of commits and many different developers.</LI>
 <LI>Located in <a href="https://github.com/mike011/TestabilityChart/tree/master/samples/qt">samples/qt<a></LI>
 </UL>
+  
 ![QT](https://raw.github.com/mike011/TestabilityChart/master/samples/qt/screenshot.png)
 
 <b>Testability Chart</b>
@@ -44,6 +45,7 @@ and log.txt from the projects folder.
 <LI>This is this git project and has a very unit test high coverage (95%+)</LI>
 <LI>Located in <a href="https://github.com/mike011/TestabilityChart/tree/master/samples/TestabilityChart">samples/TestabilityChart<a></LI>
 </UL>
+  
 ![Testability Chart](https://raw.github.com/mike011/TestabilityChart/master/samples/TestabilityChart/screenshot.png)
 
 ## History ##
